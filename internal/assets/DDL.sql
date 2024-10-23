@@ -30,7 +30,7 @@ CREATE TABLE mst_merchant(
     id_user uuid REFERENCES mst_user(id_user),
     name_merchant VARCHAR(255) NOT NULL,
     address VARCHAR(255) NOT NULL,
-    id_product uuid REFERENCES mst_produk(id_product),
+    id_product uuid REFERENCES mst_product(id_product),
     balance DOUBLE PRECISION NOT NULL
 );
 
