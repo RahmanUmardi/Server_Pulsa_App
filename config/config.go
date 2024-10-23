@@ -3,14 +3,11 @@ package config
 import (
 	"fmt"
 	"os"
-	"strconv"
-	"time"
 
-	"github.com/golang-jwt/jwt"
 	"github.com/joho/godotenv"
 )
 
-type DbConfig struct {
+type DBConfig struct {
 	Host     string
 	Port     string
 	User     string
@@ -23,26 +20,17 @@ type ApiConfig struct {
 	ApiPort string
 }
 
-type TokenConfig struct {
-	IssuerName       string `json:"IssuerName"`
-	JwtSignatureKy   []byte `json:"JwtSignatureKy"`
-	JwtSigningMethod *jwt.SigningMethodHMAC
-	JwtExpiresTime   time.Duration
-}
-
 type Config struct {
-	DbConfig
+	DBConfig
 	ApiConfig
-	TokenConfig
 }
 
-func (c *Config) readConfigEnvironment() error {
+func (c *Config) readConfig() error {
 	err := godotenv.Load()
 	if err != nil {
-		return fmt.Errorf("missing .env file %v", err.Error())
+		return fmt.Errorf("missing env file %v", err.Error())
 	}
-
-	c.DbConfig = DbConfig{
+	c.DBConfig = DBConfig{
 		Host:     os.Getenv("DB_HOST"),
 		Port:     os.Getenv("DB_PORT"),
 		User:     os.Getenv("DB_USER"),
@@ -53,16 +41,7 @@ func (c *Config) readConfigEnvironment() error {
 
 	c.ApiConfig = ApiConfig{ApiPort: os.Getenv("API_PORT")}
 
-	tokenExpire, _ := strconv.Atoi(os.Getenv("TOKEN_EXPIRE"))
-	c.TokenConfig = TokenConfig{
-		IssuerName:       os.Getenv("TOKEN_ISSUE"),
-		JwtSignatureKy:   []byte(os.Getenv("TOKEN_SECRET")),
-		JwtSigningMethod: jwt.SigningMethodHS256,
-		JwtExpiresTime:   time.Duration(tokenExpire) * time.Minute,
-	}
-
-	if c.Host == "" || c.Port == "" || c.User == "" || c.Name == "" || c.Driver == "" || c.ApiPort == "" ||
-		c.IssuerName == "" || c.JwtExpiresTime < 0 || len(c.JwtSignatureKy) == 0 {
+	if c.Host == "" || c.Port == "" || c.User == "" || c.Name == "" || c.Driver == "" || c.ApiPort == "" {
 		return fmt.Errorf("missing required environment")
 	}
 
@@ -72,9 +51,8 @@ func (c *Config) readConfigEnvironment() error {
 
 func NewConfig() (*Config, error) {
 	cfg := &Config{}
-	if err := cfg.readConfigEnvironment(); err != nil {
+	if err := cfg.readConfig(); err != nil {
 		return nil, err
 	}
-
 	return cfg, nil
 }
