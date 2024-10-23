@@ -4,6 +4,9 @@ import (
 	"database/sql"
 	"fmt"
 	"server-pulsa-app/config"
+	"server-pulsa-app/internal/handler"
+	"server-pulsa-app/internal/repository"
+	"server-pulsa-app/internal/usecase"
 
 	_ "github.com/lib/pq"
 
@@ -12,11 +15,14 @@ import (
 
 type Server struct {
 	// usecase
-	engine *gin.Engine
-	host   string
+	merchantUc usecase.MerchantUseCase
+	engine     *gin.Engine
+	host       string
 }
 
 func (s *Server) initRoute() {
+	rg := s.engine.Group(config.ApiGroup)
+	handler.NewMerchantController(s.merchantUc, rg).Route()
 }
 
 func (s *Server) Run() {
@@ -30,15 +36,17 @@ func NewServer() *Server {
 	cfg, _ := config.NewConfig()
 	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		cfg.Host, cfg.Port, cfg.User, cfg.Password, cfg.Name)
-	_, err := sql.Open(cfg.Driver, dsn)
+	db, err := sql.Open(cfg.Driver, dsn)
 	if err != nil {
 		fmt.Println("connection error", err)
 	}
-
+	merchantRepo := repository.NewMerchantRepository(db)
+	merchantUc := usecase.NewMerchantUseCase(merchantRepo)
 	engine := gin.Default()
 	host := fmt.Sprintf(":%s", cfg.ApiPort)
 	return &Server{
-		engine: engine,
-		host:   host,
+		merchantUc: merchantUc,
+		engine:     engine,
+		host:       host,
 	}
 }
