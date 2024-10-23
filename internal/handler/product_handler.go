@@ -15,6 +15,8 @@ type ProductController struct {
 	authMiddleware middleware.AuthMiddleware // middleware untuk autentikasi
 }
 
+
+
 func (p *ProductController) Route() {
 
 	p.rg.POST("/Products", p.authMiddleware.RequireToken("admin"), p.createProduct)
