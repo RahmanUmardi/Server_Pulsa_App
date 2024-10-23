@@ -83,7 +83,7 @@ func (m *MerchantController) Route() {
 	m.rg.GET(config.GetMerchantList, m.listHandler)
 	m.rg.GET(config.GetMerchant, m.getHandler)
 	m.rg.PUT(config.PutMerchant, m.updateHandler)
-	m.rg.DELETE(config.DelMerchant, m.deleteHandler)
+	m.rg.DELETE(config.DeleteMerchant, m.deleteHandler)
 }
 
 func NewMerchantController(merchantUc usecase.MerchantUseCase, rg *gin.RouterGroup) *MerchantController {
