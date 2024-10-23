@@ -8,7 +8,6 @@ import (
 	"server-pulsa-app/internal/usecase"
 
 	"github.com/gin-gonic/gin"
-	"github.com/google/uuid"
 )
 
 type ProductController struct {
@@ -60,7 +59,7 @@ func (p *ProductController) getAllProduct(c *gin.Context) {
 }
 
 func (p *ProductController) getProductpyId(c *gin.Context) {
-	id, _ := uuid.Parse(c.Param("id"))
+	id := (c.Param("id"))
 	Product, err := p.useCase.FindProductpyId(id)
 	if err != nil {
 
@@ -73,11 +72,7 @@ func (p *ProductController) getProductpyId(c *gin.Context) {
 
 func (b *ProductController) updateProduct(c *gin.Context) {
 	var payload entity.Product
-	id, err := uuid.Parse(c.Param("id"))
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"err": "Invalid product ID"})
-		return
-	}
+	id := (c.Param("id"))
 
 	if err := c.ShouldBindJSON(&payload); err != nil {
 
@@ -98,11 +93,11 @@ func (b *ProductController) updateProduct(c *gin.Context) {
 }
 
 func (p *ProductController) deleteProduct(c *gin.Context) {
-	id, _ := uuid.Parse(c.Param("id"))
+	id := c.Param("id")
+
 	err := p.useCase.DeleteProduct(id)
 	if err != nil {
-
-		c.JSON(http.StatusInternalServerError, gin.H{"err": "Failed to delete Product"})
+		c.JSON(http.StatusNotFound, err.Error())
 		return
 	}
 

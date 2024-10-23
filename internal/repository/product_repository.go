@@ -3,16 +3,14 @@ package repository
 import (
 	"database/sql"
 	"server-pulsa-app/internal/entity"
-
-	"github.com/google/uuid"
 )
 
 type ProductRepository interface {
 	Create(product entity.Product) (entity.Product, error)
 	List() ([]entity.Product, error)
-	Get(id uuid.UUID) (entity.Product, error)
-	Update(id uuid.UUID,product entity.Product) (entity.Product, error)
-	Delete(id uuid.UUID) error
+	Get(id string) (entity.Product, error)
+	Update(id string, product entity.Product) (entity.Product, error)
+	Delete(id string) error
 }
 
 type productRepository struct {
@@ -20,18 +18,16 @@ type productRepository struct {
 }
 
 func (p *productRepository) Create(product entity.Product) (entity.Product, error) {
-	var productId uuid.UUID
-	err := p.db.QueryRow("INSERT INTO mst_product (name_provider, nominal, price, id_supliyer) VALUES ($1, $2, $3, $4) RETURNING id_product", product.NameProvider, product.Nominal, product.Price, product.IdSupliyer).Scan(&productId)
+	err := p.db.QueryRow("INSERT INTO mst_product (name_provider, nominal, price, id_supliyer) VALUES ($1, $2, $3, $4) RETURNING id_product", product.NameProvider, product.Nominal, product.Price, product.IdSupliyer).Scan(&product.IdProduct)
 	if err != nil {
 		return entity.Product{}, err
 	}
-	product.IdProduct = productId
 
 	return product, nil
 
 }
 
-func (p *productRepository) Get(id uuid.UUID) (entity.Product, error) {
+func (p *productRepository) Get(id string) (entity.Product, error) {
 	var product entity.Product
 	err := p.db.QueryRow("SELECT id_product, name_provider, nominal, price, id_supliyer FROM mst_product WHERE id_product = $1", id).Scan(&product.IdProduct, &product.NameProvider, &product.Nominal, &product.Price, &product.IdSupliyer)
 	if err != nil {
@@ -60,7 +56,7 @@ func (p *productRepository) List() ([]entity.Product, error) {
 	return products, nil
 }
 
-func (b *productRepository) Update(id uuid.UUID, product entity.Product) (entity.Product, error) {
+func (b *productRepository) Update(id string, product entity.Product) (entity.Product, error) {
 	// Menggunakan id yang diberikan untuk mengupdate buku
 	_, err := b.db.Exec("UPDATE mst_product SET name_provider = $1, nominal = $2, price = $3, id_supliyer = $4 WHERE id_product = $5", product.NameProvider, product.Nominal, product.Price, product.IdSupliyer, id)
 	if err != nil {
@@ -72,7 +68,7 @@ func (b *productRepository) Update(id uuid.UUID, product entity.Product) (entity
 	return product, nil
 }
 
-func (p *productRepository) Delete(id uuid.UUID) error {
+func (p *productRepository) Delete(id string) error {
 	_, err := p.db.Exec("DELETE FROM mst_product WHERE id_product = $1", id)
 	if err != nil {
 		return err
