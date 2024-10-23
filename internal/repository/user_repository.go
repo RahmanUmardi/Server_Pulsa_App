@@ -18,7 +18,7 @@ type userRepository struct {
 }
 
 func (u *userRepository) RegisterUser(user entity.User) (entity.User, error) {
-	err := u.db.QueryRow(`INSERT INTO mst_user (username, password, role) VALUES ($1, $2, $3, $4) RETURNING id_user`, user.Username, user.Password, user.Role).Scan(&user.Id_user)
+	err := u.db.QueryRow(`INSERT INTO mst_user (username, password, role) VALUES ($1, $2, $3) RETURNING id_user`, user.Username, user.Password, user.Role).Scan(&user.Id_user)
 	if err != nil {
 		return entity.User{}, err
 	}
@@ -60,5 +60,5 @@ func (u *userRepository) DeleteUser(id string) error {
 }
 
 func NewUserRepository(db *sql.DB) UserRepository {
-	return &userRepository{db}
+	return &userRepository{db: db}
 }
