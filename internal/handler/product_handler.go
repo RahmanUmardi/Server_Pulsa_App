@@ -58,10 +58,18 @@ func (p *ProductController) getAllProduct(c *gin.Context) {
 	}
 
 	if len(Products) > 0 {
+		response := struct {
+			Message string
+			Data    []entity.Product
+		}{
+			Message: "List All Product",
+			Data:    Products,
+		}
 
-		c.JSON(http.StatusOK, Products)
+		c.JSON(http.StatusOK, response)
 		return
 	}
+
 	c.JSON(http.StatusOK, gin.H{"message": "List Product empty"})
 }
 
@@ -74,7 +82,15 @@ func (p *ProductController) getProductpyId(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, Product)
+	response := struct {
+		Message string
+		Data    entity.Product
+	}{
+		Message: "Product found",
+		Data:    Product,
+	}
+
+	c.JSON(http.StatusOK, response)
 }
 
 func (b *ProductController) updateProduct(c *gin.Context) {
@@ -95,8 +111,15 @@ func (b *ProductController) updateProduct(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"err": err.Error()})
 		return
 	}
+	response := struct {
+		Message string
+		Data    entity.Product
+	}{
+		Message: "The product has been updated",
+		Data:    product,
+	}
 
-	c.JSON(http.StatusOK, product)
+	c.JSON(http.StatusOK, response)
 }
 
 func (p *ProductController) deleteProduct(c *gin.Context) {
@@ -108,7 +131,15 @@ func (p *ProductController) deleteProduct(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusNoContent, nil)
+	response := struct {
+		Message string
+		Data    entity.Product
+	}{
+		Message: "The product has been deleted",
+		Data:    entity.Product{},
+	}
+
+	c.JSON(http.StatusNoContent, response)
 }
 
 func NewProductController(useCase usecase.ProductUseCase, rg *gin.RouterGroup, authMiddleware middleware.AuthMiddleware) *ProductController {
