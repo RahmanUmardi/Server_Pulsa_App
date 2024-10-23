@@ -30,6 +30,7 @@ func NewServer() *Server {
 	cfg, _ := config.NewConfig()
 	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		cfg.Host, cfg.Port, cfg.User, cfg.Password, cfg.Name)
+	// change the _ prefix into db for injecting layer dependencies
 	_, err := sql.Open(cfg.Driver, dsn)
 	if err != nil {
 		fmt.Println("connection error", err)
