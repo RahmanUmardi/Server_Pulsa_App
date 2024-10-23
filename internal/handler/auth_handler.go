@@ -22,7 +22,7 @@ func (a *AuthController) loginHandler(ctx *gin.Context) {
 	}
 	token, err := a.authUsecase.Login(payload)
 	if err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		ctx.JSON(http.StatusUnauthorized, gin.H{"error": err.Error()})
 		return
 	}
 	ctx.JSON(http.StatusOK, token)
@@ -38,7 +38,7 @@ func (a *AuthController) registerHandler(ctx *gin.Context) {
 	fmt.Println("payload trigger: ", payload)
 	user, err := a.authUsecase.Register(payload)
 	if err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		ctx.JSON(http.StatusConflict, gin.H{"error": err.Error()})
 		return
 	}
 	ctx.JSON(http.StatusCreated, user)

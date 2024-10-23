@@ -8,6 +8,6 @@ import (
 func main() {
 	logger.InitLogger()
 	log := logger.GetLogger()
-	log.Info("Server Pulsa App")
+	log.Info("Server Pulsa App Started")
 	internal.NewServer().Run()
 }
