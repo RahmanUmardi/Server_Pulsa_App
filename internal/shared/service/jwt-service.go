@@ -45,12 +45,12 @@ func (j *jwtService) ValidateToken(tokenString string) (*model.Claim, error) {
 	})
 
 	if err != nil {
-		return nil, fmt.Errorf("Unauthorized", err)
+		return nil, fmt.Errorf("unauthorized", err)
 	}
 
 	claim, ok := token.Claims.(*model.Claim)
 	if !ok || !token.Valid {
-		return nil, fmt.Errorf("Unauthorized", err)
+		return nil, fmt.Errorf("unauthorized", err)
 	}
 
 	return claim, nil
