@@ -2,7 +2,9 @@ package handler
 
 import (
 	"net/http"
+	"server-pulsa-app/config"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/middleware"
 	"server-pulsa-app/internal/usecase"
 
 	"github.com/gin-gonic/gin"
@@ -15,19 +17,12 @@ type ProductController struct {
 	authMiddleware middleware.AuthMiddleware // middleware untuk autentikasi
 }
 
-
-
 func (p *ProductController) Route() {
-
-	p.rg.POST("/Products", p.authMiddleware.RequireToken("admin"), p.createProduct)
-
-	p.rg.GET("/Products", p.authMiddleware.RequireToken("admin", "user"), p.getAllProduct)
-
-	p.rg.GET("/Products/:id", p.authMiddleware.RequireToken("admin", "user"), p.getProductpyId)
-
-	p.rg.PUT("/Products/:id", p.authMiddleware.RequireToken("admin"), p.updateProduct)
-
-	p.rg.DELETE("/Products/:id", p.authMiddleware.RequireToken("admin"), p.deleteProduct)
+	p.rg.POST(config.PostProduct, p.createProduct)
+	p.rg.GET(config.GetProductList, p.getAllProduct)
+	p.rg.GET(config.GetProduct, p.getProductpyId)
+	p.rg.PUT(config.PutProduct, p.updateProduct)
+	p.rg.DELETE(config.DeleteProduct, p.deleteProduct)
 }
 
 func (p *ProductController) createProduct(c *gin.Context) {
@@ -76,48 +71,30 @@ func (p *ProductController) getProductpyId(c *gin.Context) {
 	c.JSON(http.StatusOK, Product)
 }
 
-// func (p *ProductController) updateProduct(c *gin.Context) {
-// 	var payload entity.Product
-// 	if err := c.ShouldBindJSON(&payload); err != nil {
-
-// 		c.JSON(http.StatusBadRequest, gin.H{"err": err.Error()})
-// 		return
-// 	}
-
-// 	Product, err := p.useCase.UpdateProduct(payload)
-// 	if err != nil {
-
-// 		c.JSON(http.StatusInternalServerError, gin.H{"err": err.Error()})
-// 		return
-// 	}
-
-// 	c.JSON(http.StatusOK, Product)
-// }
-
 func (b *ProductController) updateProduct(c *gin.Context) {
-	var payload entity.Product 
-	id, err := uuid.Parse(c.Param("id")) 
+	var payload entity.Product
+	id, err := uuid.Parse(c.Param("id"))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"err": "Invalid product ID"})
 		return
 	}
 
 	if err := c.ShouldBindJSON(&payload); err != nil {
-		
+
 		c.JSON(http.StatusBadRequest, gin.H{"err": err.Error()})
 		return
 	}
 
-	payload.IdProduct = id 
+	payload.IdProduct = id
 
-	product, err := b.useCase.UpdateProduct(payload) 
+	product, err := b.useCase.UpdateProduct(payload)
 	if err != nil {
-		
+
 		c.JSON(http.StatusInternalServerError, gin.H{"err": err.Error()})
 		return
 	}
 
-	c.JSON(http.StatusOK, product) 
+	c.JSON(http.StatusOK, product)
 }
 
 func (p *ProductController) deleteProduct(c *gin.Context) {

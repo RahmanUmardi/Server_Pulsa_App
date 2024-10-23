@@ -26,7 +26,7 @@ func (j *jwtService) CreateToken(user entity.User) (dto.AuthResponseDto, error) 
 			IssuedAt:  jwt.NewNumericDate(time.Now()),
 			ExpiresAt: jwt.NewNumericDate(time.Now().Add(j.cfgToken.JwtExpiresTime)),
 		},
-		UserId: user.ID,
+		UserId: user.Id_user,
 		Role:   user.Role,
 	}
 
