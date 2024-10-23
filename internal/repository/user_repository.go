@@ -8,6 +8,7 @@ import (
 type UserRepository interface {
 	RegisterUser(user entity.User) (entity.User, error)
 	GetUserByID(id string) (entity.User, error)
+	GetUserByUsername(username string) (entity.User, error)
 	UpdateUser(user entity.User) (entity.User, error)
 	DeleteUser(id string) error
 }
@@ -23,6 +24,16 @@ func (u *userRepository) RegisterUser(user entity.User) (entity.User, error) {
 	}
 	return user, nil
 }
+
+func (u *userRepository) GetUserByUsername(username string) (entity.User, error) {
+	var user entity.User
+	err := u.db.QueryRow(`SELECT id_user, username, password, role FROM mst_user WHERE username = $1`, username).Scan(&user.Id_user, &user.Username, &user.Password, &user.Role)
+	if err != nil {
+		return entity.User{}, err
+	}
+	return user, nil
+}
+
 func (u *userRepository) GetUserByID(id string) (entity.User, error) {
 	var user entity.User
 
