@@ -4,6 +4,10 @@ import (
 	"fmt"
 	"os"
 
+<<<<<<< Updated upstream
+=======
+	"github.com/golang-jwt/jwt/v5"
+>>>>>>> Stashed changes
 	"github.com/joho/godotenv"
 )
 
