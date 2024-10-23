@@ -39,7 +39,14 @@ func (p *ProductController) createProduct(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusCreated, Product)
+	response := struct {
+		Message string
+		Data    entity.Product
+	}{
+		Message: "Product Created",
+		Data:    Product,
+	}
+	c.JSON(http.StatusCreated, response)
 }
 
 func (p *ProductController) getAllProduct(c *gin.Context) {
