@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"server-pulsa-app/config"
 	"server-pulsa-app/internal/handler"
+	"server-pulsa-app/internal/middleware"
 	"server-pulsa-app/internal/repository"
+	"server-pulsa-app/internal/shared/service"
 	"server-pulsa-app/internal/usecase"
 
 	_ "github.com/lib/pq"
@@ -14,7 +16,9 @@ import (
 )
 
 type Server struct {
-	// usecase
+	jwtService service.JwtService
+	authUc     usecase.AuthUseCase
+	productUc  usecase.ProductUseCase
 	merchantUc usecase.MerchantUseCase
 	engine     *gin.Engine
 	host       string
@@ -22,7 +26,11 @@ type Server struct {
 
 func (s *Server) initRoute() {
 	rg := s.engine.Group(config.ApiGroup)
-	handler.NewMerchantController(s.merchantUc, rg).Route()
+	authMiddleware := middleware.NewAuthMiddleware(s.jwtService)
+
+	handler.NewMerchantHandler(s.merchantUc, authMiddleware, rg).Route()
+	handler.NewAuthController(s.authUc, rg).Route()
+	handler.NewProductController(s.productUc, rg, authMiddleware).Route()
 }
 
 func (s *Server) Run() {
@@ -36,16 +44,30 @@ func NewServer() *Server {
 	cfg, _ := config.NewConfig()
 	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
 		cfg.Host, cfg.Port, cfg.User, cfg.Password, cfg.Name)
-	// change the _ prefix into db for injecting layer dependencies
+
 	db, err := sql.Open(cfg.Driver, dsn)
 	if err != nil {
 		fmt.Println("connection error", err)
 	}
+
+	//inject dependencies repo layer
+	userRepo := repository.NewUserRepository(db)
+	productRepo := repository.NewProductRepository(db)
 	merchantRepo := repository.NewMerchantRepository(db)
+
+	//inject dependencies usecase layer
+	jwtService := service.NewJwtService(cfg.TokenConfig)
+	userUc := usecase.NewUserUsecase(userRepo)
+	authUc := usecase.NewAuthUseCase(userUc, jwtService)
+	productUc := usecase.NewProductUseCase(productRepo)
 	merchantUc := usecase.NewMerchantUseCase(merchantRepo)
+
 	engine := gin.Default()
 	host := fmt.Sprintf(":%s", cfg.ApiPort)
 	return &Server{
+		jwtService: jwtService,
+		authUc:     authUc,
+		productUc:  productUc,
 		merchantUc: merchantUc,
 		engine:     engine,
 		host:       host,

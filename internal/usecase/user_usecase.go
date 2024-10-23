@@ -11,6 +11,7 @@ import (
 type UserUsecase interface {
 	RegisterUser(user entity.User) (entity.User, error)
 	GetUserByID(id string) (entity.User, error)
+	FindUserByUsernamePassword(username, password string) (entity.User, error)
 	UpdateUser(user entity.User) (entity.User, error)
 	DeleteUser(id string) error
 }
@@ -20,18 +21,18 @@ type userUsecase struct {
 }
 
 func (u *userUsecase) RegisterUser(user entity.User) (entity.User, error) {
-	exitUser, err := u.UserRepository.GetUserByUsername(user.Username)
-	if exitUser.Username != user.Username {
+	existUser, _ := u.UserRepository.GetUserByUsername(user.Username)
+	if existUser.Username == user.Username {
 		return entity.User{}, fmt.Errorf("username already exist")
 	}
-	user.Role = "user"
+	user.Role = "employee"
 	hash, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
 	if err != nil {
 		return entity.User{}, err
 	}
 	user.Password = string(hash)
 
-	return u.UserRepository.RegisterUser(user)
+	return u.UserRepository.CreateUser(user)
 }
 
 func (u *userUsecase) GetUserByUsername(username string) (entity.User, error) {
@@ -40,6 +41,20 @@ func (u *userUsecase) GetUserByUsername(username string) (entity.User, error) {
 
 func (u *userUsecase) GetUserByID(id string) (entity.User, error) {
 	return u.UserRepository.GetUserByID(id)
+}
+
+func (u *userUsecase) FindUserByUsernamePassword(username, password string) (entity.User, error) {
+	userExist, err := u.UserRepository.GetUserByUsername(username)
+	if err != nil {
+		return entity.User{}, fmt.Errorf("user doesn't exists")
+	}
+
+	err = bcrypt.CompareHashAndPassword([]byte(userExist.Password), []byte(password))
+	if err != nil {
+		return entity.User{}, fmt.Errorf("password doesn't match")
+	}
+
+	return userExist, nil
 }
 
 func (u *userUsecase) UpdateUser(user entity.User) (entity.User, error) {

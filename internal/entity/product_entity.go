@@ -1,11 +1,9 @@
 package entity
 
-import "github.com/google/uuid"
-
 type Product struct {
-	IdProduct    string    `db:"id_product" json:"id_product"`
-	NameProvider string    `db:"name_provider" json:"name_provider"`
-	Nominal      float64   `db:"nominal" json:"nominal"`
-	Price        float64   `db:"price" json:"price"`
-	IdSupliyer   uuid.UUID `db:"id_supliyer" json:"id_supliyer"`
+	IdProduct    string  `db:"id_product" json:"idProduct"`
+	NameProvider string  `db:"name_provider" json:"nameProvider"`
+	Nominal      float64 `db:"nominal" json:"nominal"`
+	Price        float64 `db:"price" json:"price"`
+	IdSupliyer   string  `db:"id_supliyer" json:"idSupliyer"`
 }

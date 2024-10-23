@@ -6,7 +6,7 @@ import (
 )
 
 type UserRepository interface {
-	RegisterUser(user entity.User) (entity.User, error)
+	CreateUser(user entity.User) (entity.User, error)
 	GetUserByID(id string) (entity.User, error)
 	GetUserByUsername(username string) (entity.User, error)
 	UpdateUser(user entity.User) (entity.User, error)
@@ -17,7 +17,7 @@ type userRepository struct {
 	db *sql.DB
 }
 
-func (u *userRepository) RegisterUser(user entity.User) (entity.User, error) {
+func (u *userRepository) CreateUser(user entity.User) (entity.User, error) {
 	err := u.db.QueryRow(`INSERT INTO mst_user (username, password, role) VALUES ($1, $2, $3) RETURNING id_user`, user.Username, user.Password, user.Role).Scan(&user.Id_user)
 	if err != nil {
 		return entity.User{}, err

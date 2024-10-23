@@ -10,7 +10,7 @@ CREATE TABLE mst_supliyer(
     balance DOUBLE PRECISION NOT NULL
 );
 
-CREATE TABLE mst_produk(
+CREATE TABLE mst_product(
     id_product uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
     name_provider VARCHAR(255) NOT NULL,
     nominal DOUBLE PRECISION NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE mst_user(
     id_user uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
     username VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    role VARCHAR(255) NOT NULL
+    role roles NOT NULL
 );
 
 CREATE TABLE mst_merchant(

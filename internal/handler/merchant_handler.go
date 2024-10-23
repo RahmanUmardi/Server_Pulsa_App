@@ -4,17 +4,19 @@ import (
 	"net/http"
 	"server-pulsa-app/config"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/middleware"
 	"server-pulsa-app/internal/usecase"
 
 	"github.com/gin-gonic/gin"
 )
 
-type MerchantController struct {
-	merchantUc usecase.MerchantUseCase
-	rg         *gin.RouterGroup
+type MerchantHandler struct {
+	merchantUc     usecase.MerchantUseCase
+	rg             *gin.RouterGroup
+	authMiddleware middleware.AuthMiddleware
 }
 
-func (m *MerchantController) createHandler(ctx *gin.Context) {
+func (m *MerchantHandler) createHandler(ctx *gin.Context) {
 	var payload entity.Merchant
 	if err := ctx.ShouldBindJSON(&payload); err != nil {
 		ctx.JSON(http.StatusBadRequest, err.Error())
@@ -28,7 +30,7 @@ func (m *MerchantController) createHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, merchant)
 }
 
-func (m *MerchantController) listHandler(ctx *gin.Context) {
+func (m *MerchantHandler) listHandler(ctx *gin.Context) {
 	merchants, err := m.merchantUc.FindAllMerchant()
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, err.Error())
@@ -40,7 +42,7 @@ func (m *MerchantController) listHandler(ctx *gin.Context) {
 	}
 	ctx.JSON(http.StatusOK, gin.H{"message": "List of merchant is empty"})
 }
-func (m *MerchantController) getHandler(ctx *gin.Context) {
+func (m *MerchantHandler) getHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 	merchant, err := m.merchantUc.FindMerchantByID(id)
 	if err != nil {
@@ -50,7 +52,7 @@ func (m *MerchantController) getHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, merchant)
 }
 
-func (m *MerchantController) updateHandler(ctx *gin.Context) {
+func (m *MerchantHandler) updateHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 	var payload entity.Merchant
 	if err := ctx.ShouldBindJSON(&payload); err != nil {
@@ -68,7 +70,7 @@ func (m *MerchantController) updateHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, expense)
 }
 
-func (m *MerchantController) deleteHandler(ctx *gin.Context) {
+func (m *MerchantHandler) deleteHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 	err := m.merchantUc.DeleteMerchant(id)
 	if err != nil {
@@ -78,14 +80,14 @@ func (m *MerchantController) deleteHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusNoContent, nil)
 }
 
-func (m *MerchantController) Route() {
-	m.rg.POST(config.PostMerchant, m.createHandler)
-	m.rg.GET(config.GetMerchantList, m.listHandler)
-	m.rg.GET(config.GetMerchant, m.getHandler)
-	m.rg.PUT(config.PutMerchant, m.updateHandler)
-	m.rg.DELETE(config.DeleteMerchant, m.deleteHandler)
+func (m *MerchantHandler) Route() {
+	m.rg.POST(config.PostMerchant, m.authMiddleware.RequireToken("employee"), m.createHandler)
+	m.rg.GET(config.GetMerchantList, m.authMiddleware.RequireToken("employee"), m.listHandler)
+	m.rg.GET(config.GetMerchant, m.authMiddleware.RequireToken("employee"), m.getHandler)
+	m.rg.PUT(config.PutMerchant, m.authMiddleware.RequireToken("employee"), m.updateHandler)
+	m.rg.DELETE(config.DeleteMerchant, m.authMiddleware.RequireToken("employee"), m.deleteHandler)
 }
 
-func NewMerchantController(merchantUc usecase.MerchantUseCase, rg *gin.RouterGroup) *MerchantController {
-	return &MerchantController{merchantUc: merchantUc, rg: rg}
+func NewMerchantHandler(merchantUc usecase.MerchantUseCase, authMiddleware middleware.AuthMiddleware, rg *gin.RouterGroup) *MerchantHandler {
+	return &MerchantHandler{merchantUc: merchantUc, authMiddleware: authMiddleware, rg: rg}
 }

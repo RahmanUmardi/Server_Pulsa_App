@@ -11,17 +11,17 @@ import (
 )
 
 type ProductController struct {
-	useCase        usecase.ProductUseCase    // use case untuk operasi puku
-	rg             *gin.RouterGroup          // router group untuk menghandle request
-	authMiddleware middleware.AuthMiddleware // middleware untuk autentikasi
+	useCase        usecase.ProductUseCase
+	rg             *gin.RouterGroup
+	authMiddleware middleware.AuthMiddleware
 }
 
 func (p *ProductController) Route() {
-	p.rg.POST(config.PostProduct, p.createProduct)
-	p.rg.GET(config.GetProductList, p.getAllProduct)
-	p.rg.GET(config.GetProduct, p.getProductpyId)
-	p.rg.PUT(config.PutProduct, p.updateProduct)
-	p.rg.DELETE(config.DeleteProduct, p.deleteProduct)
+	p.rg.POST(config.PostProduct, p.authMiddleware.RequireToken("employee"), p.createProduct)
+	p.rg.GET(config.GetProductList, p.authMiddleware.RequireToken("employee"), p.getAllProduct)
+	p.rg.GET(config.GetProduct, p.authMiddleware.RequireToken("employee"), p.getProductpyId)
+	p.rg.PUT(config.PutProduct, p.authMiddleware.RequireToken("employee"), p.updateProduct)
+	p.rg.DELETE(config.DeleteProduct, p.authMiddleware.RequireToken("employee"), p.deleteProduct)
 }
 
 func (p *ProductController) createProduct(c *gin.Context) {
@@ -35,7 +35,7 @@ func (p *ProductController) createProduct(c *gin.Context) {
 	Product, err := p.useCase.CreateNewProduct(payload)
 	if err != nil {
 
-		c.JSON(http.StatusInternalServerError, gin.H{"err": "Failed to create Product"})
+		c.JSON(http.StatusInternalServerError, gin.H{"err": err.Error()})
 		return
 	}
 
@@ -104,6 +104,6 @@ func (p *ProductController) deleteProduct(c *gin.Context) {
 	c.JSON(http.StatusNoContent, nil)
 }
 
-func NewProductController(useCase usecase.ProductUseCase, rg *gin.RouterGroup, am middleware.AuthMiddleware) *ProductController {
-	return &ProductController{useCase: useCase, rg: rg, authMiddleware: am}
+func NewProductController(useCase usecase.ProductUseCase, rg *gin.RouterGroup, authMiddleware middleware.AuthMiddleware) *ProductController {
+	return &ProductController{useCase: useCase, rg: rg, authMiddleware: authMiddleware}
 }

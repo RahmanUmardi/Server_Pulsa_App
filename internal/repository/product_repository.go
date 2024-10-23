@@ -77,6 +77,6 @@ func (p *productRepository) Delete(id string) error {
 	return nil
 }
 
-func NewproductRepository(db *sql.DB) ProductRepository {
+func NewProductRepository(db *sql.DB) ProductRepository {
 	return &productRepository{db: db}
 }
