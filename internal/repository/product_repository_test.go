@@ -1,22 +1,38 @@
 package repository
 
 import (
+	"database/sql"
+	"regexp"
+	"server-pulsa-app/internal/entity"
 	"testing"
 
-	"server-pulsa-app/internal/entity"
-
 	"github.com/DATA-DOG/go-sqlmock"
+	"github.com/stretchr/testify/suite"
 )
 
-func TestCreate(t *testing.T) {
-	db, mock, err := sqlmock.New()
+type productRepoTestSuite struct {
+	suite.Suite
+	mockDB      *sql.DB
+	mockSql     sqlmock.Sqlmock
+	productRepo ProductRepository
+}
+
+func (p *productRepoTestSuite) SetupTest() {
+	mockDb, mockSql, err := sqlmock.New()
 	if err != nil {
-		t.Fatalf("an error '%s' occurred when opening a mock database connection", err)
+		p.T().Fatalf("an error '%s' occurred when opening a mock database connection", err)
 	}
-	defer db.Close()
 
-	repo := NewProductRepository(db)
+	p.mockDB = mockDb
+	p.mockSql = mockSql
+	p.productRepo = NewProductRepository(p.mockDB)
+}
 
+func (p *productRepoTestSuite) TearDownTest() {
+	p.mockDB.Close()
+}
+
+func (p *productRepoTestSuite) TestCreateProduct_Repository() {
 	product := entity.Product{
 		NameProvider: "Provider A",
 		Nominal:      10000,
@@ -24,125 +40,95 @@ func TestCreate(t *testing.T) {
 		IdSupliyer:   "Supplier A",
 	}
 
-	mock.ExpectQuery("INSERT INTO mst_product").
-		WithArgs(product.NameProvider, product.Nominal, product.Price, product.IdSupliyer).
-		WillReturnRows(sqlmock.NewRows([]string{"id_product"}).AddRow("1"))
+	query := "INSERT INTO mst_product (name_provider, nominal, price, id_supliyer) VALUES ($1, $2, $3, $4) RETURNING id_product"
 
-	createdProduct, err := repo.Create(product)
-	if err != nil {
-		t.Errorf("error was not expected while creating product: %s", err)
-	}
+	p.mockSql.ExpectQuery(regexp.QuoteMeta(query)).WithArgs(product.NameProvider, product.Nominal, product.Price, product.IdSupliyer).WillReturnRows(sqlmock.NewRows([]string{"id"}).AddRow(1))
 
-	if createdProduct.IdProduct != "1" {
-		t.Errorf("expected product ID to be '1', got '%s'", createdProduct.IdProduct)
-	}
+	createdProduct, err := p.productRepo.Create(product)
+
+	p.Nil(err)
+	p.Equal("1", createdProduct.IdProduct)
+	p.Equal(product.NameProvider, createdProduct.NameProvider)
+	p.Equal(product.Nominal, createdProduct.Nominal)
+	p.Equal(product.Price, createdProduct.Price)
+	p.Equal(product.IdSupliyer, createdProduct.IdSupliyer)
 }
 
-func TestGet(t *testing.T) {
-	db, mock, err := sqlmock.New()
-	if err != nil {
-		t.Fatalf("an error '%s' occurred when opening a mock database connection", err)
-	}
-	defer db.Close()
+func (p *productRepoTestSuite) TestGetProductById_Repository() {
+	id := "1"
 
-	repo := NewProductRepository(db)
+	query := "SELECT id_product, name_provider, nominal, price, id_supliyer FROM mst_product WHERE id_product = $1"
 
-	productID := "1"
-	expectedProduct := entity.Product{
-		IdProduct:    productID,
+	p.mockSql.ExpectQuery(regexp.QuoteMeta(query)).WithArgs(id).WillReturnRows(sqlmock.NewRows([]string{"id_product", "name_provider", "nominal", "price", "id_supliyer"}).AddRow(id, "Provider A", 10000, 12000, "Supplier A"))
+
+	product, err := p.productRepo.Get(id)
+
+	p.Nil(err)
+	p.Equal("1", product.IdProduct)
+	p.Equal("Provider A", product.NameProvider)
+	p.Equal(float64(10000), product.Nominal)
+	p.Equal(float64(12000), product.Price)
+	p.Equal("Supplier A", product.IdSupliyer)
+}
+
+func (p *productRepoTestSuite) TestFindAllProduct_Repository() {
+	query := "SELECT id_product, name_provider, nominal, price, id_supliyer FROM mst_product"
+
+	p.mockSql.ExpectQuery(regexp.QuoteMeta(query)).WillReturnRows(sqlmock.NewRows([]string{"id_product", "name_provider", "nominal", "price", "id_supliyer"}).
+		AddRow("1", "Provider A", 10000, 12000, "Supplier A").
+		AddRow("2", "Provider B", 20000, 24000, "Supplier B"))
+
+	products, err := p.productRepo.List()
+
+	p.Nil(err)
+	p.Len(products, 2)
+	p.Equal("1", products[0].IdProduct)
+	p.Equal("Provider A", products[0].NameProvider)
+	p.Equal(float64(10000), products[0].Nominal)
+	p.Equal(float64(12000), products[0].Price)
+	p.Equal("Supplier A", products[0].IdSupliyer)
+	p.Equal("2", products[1].IdProduct)
+	p.Equal("Provider B", products[1].NameProvider)
+	p.Equal(float64(20000), products[1].Nominal)
+	p.Equal(float64(24000), products[1].Price)
+	p.Equal("Supplier B", products[1].IdSupliyer)
+}
+
+func (p *productRepoTestSuite) TestUpdateProduct_Repository() {
+	product := entity.Product{
+		IdProduct:    "1",
 		NameProvider: "Provider A",
 		Nominal:      10000,
 		Price:        12000,
 		IdSupliyer:   "Supplier A",
 	}
 
-	mock.ExpectQuery("SELECT id_product, name_provider, nominal, price, id_supliyer FROM mst_product WHERE id_product = ?").
-		WithArgs(productID).
-		WillReturnRows(sqlmock.NewRows([]string{"id_product", "name_provider", "nominal", "price", "id_supliyer"}).
-			AddRow(expectedProduct.IdProduct, expectedProduct.NameProvider, expectedProduct.Nominal, expectedProduct.Price, expectedProduct.IdSupliyer))
+	query := "UPDATE mst_product SET name_provider = $1, nominal = $2, price = $3, id_supliyer = $4 WHERE id_product = $5"
 
-	product, err := repo.Get(productID)
-	if err != nil {
-		t.Errorf("error was not expected while getting product: %s", err)
-	}
+	p.mockSql.ExpectExec(regexp.QuoteMeta(query)).WithArgs(product.NameProvider, product.Nominal, product.Price, product.IdSupliyer, product.IdProduct).WillReturnResult(sqlmock.NewResult(1, 1))
 
-	if product != expectedProduct {
-		t.Errorf("expected product %+v, got %+v", expectedProduct, product)
-	}
+	updatedProduct, err := p.productRepo.Update(product)
+
+	p.Nil(err)
+	p.Equal("1", updatedProduct.IdProduct)
+	p.Equal("Provider A", updatedProduct.NameProvider)
+	p.Equal(float64(10000), updatedProduct.Nominal)
+	p.Equal(float64(12000), updatedProduct.Price)
+	p.Equal("Supplier A", updatedProduct.IdSupliyer)
 }
 
-func TestList(t *testing.T) {
-	db, mock, err := sqlmock.New()
-	if err != nil {
-		t.Fatalf("an error '%s' occurred when opening a mock database connection", err)
-	}
-	defer db.Close()
+func (p *productRepoTestSuite) TestDeleteProduct_Repository() {
+	id := "1"
 
-	repo := NewProductRepository(db)
+	query := "DELETE FROM mst_product WHERE id_product = $1"
 
-	mock.ExpectQuery("SELECT id_product, name_provider, nominal, price, id_supliyer FROM mst_product").
-		WillReturnRows(sqlmock.NewRows([]string{"id_product", "name_provider", "nominal", "price", "id_supliyer"}).
-			AddRow("1", "Provider A", 10000, 12000, "Supplier A").
-			AddRow("2", "Provider B", 20000, 22000, "Supplier B"))
+	p.mockSql.ExpectExec(regexp.QuoteMeta(query)).WithArgs(id).WillReturnResult(sqlmock.NewResult(1, 1))
 
-	products, err := repo.List()
-	if err != nil {
-		t.Errorf("error was not expected while listing products: %s", err)
-	}
+	err := p.productRepo.Delete(id)
 
-	if len(products) != 2 {
-		t.Errorf("expected 2 products, got %d", len(products))
-	}
+	p.Nil(err)
 }
 
-func TestUpdate(t *testing.T) {
-	db, mock, err := sqlmock.New()
-	if err != nil {
-		t.Fatalf("an error '%s' occurred when opening a mock database connection", err)
-	}
-	defer db.Close()
-
-	repo := NewProductRepository(db)
-
-	productID := "1"
-	product := entity.Product{
-		NameProvider: "Updated Provider",
-		Nominal:      15000,
-		Price:        17000,
-		IdSupliyer:   "Updated Supplier",
-	}
-
-	mock.ExpectExec("UPDATE mst_product SET name_provider = ?, nominal = ?, price = ?, id_supliyer = ? WHERE id_product = ?").
-		WithArgs(product.NameProvider, product.Nominal, product.Price, product.IdSupliyer, productID).
-		WillReturnResult(sqlmock.NewResult(1, 1))
-
-	updatedProduct, err := repo.Update(productID, product)
-	if err != nil {
-		t.Errorf("error was not expected while updating product: %s", err)
-	}
-
-	if updatedProduct.IdProduct != productID {
-		t.Errorf("expected product ID to be '%s', got '%s'", productID, updatedProduct.IdProduct)
-	}
-}
-
-func TestDelete(t *testing.T) {
-	db, mock, err := sqlmock.New()
-	if err != nil {
-		t.Fatalf("an error '%s' occurred when opening a mock database connection", err)
-	}
-	defer db.Close()
-
-	repo := NewProductRepository(db)
-
-	productID := "1"
-
-	mock.ExpectExec("DELETE FROM mst_product WHERE id_product = ?").
-		WithArgs(productID).
-		WillReturnResult(sqlmock.NewResult(1, 1))
-
-	err = repo.Delete(productID)
-	if err != nil {
-		t.Errorf("error was not expected while deleting product: %s", err)
-	}
+func TestProductRepositoryTestSuite(t *testing.T) {
+	suite.Run(t, new(productRepoTestSuite))
 }

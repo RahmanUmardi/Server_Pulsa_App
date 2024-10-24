@@ -2,6 +2,7 @@ package repository
 
 import (
 	"database/sql"
+	"fmt"
 	"server-pulsa-app/internal/entity"
 )
 
@@ -9,7 +10,7 @@ type ProductRepository interface {
 	Create(product entity.Product) (entity.Product, error)
 	List() ([]entity.Product, error)
 	Get(id string) (entity.Product, error)
-	Update(id string, product entity.Product) (entity.Product, error)
+	Update(product entity.Product) (entity.Product, error)
 	Delete(id string) error
 }
 
@@ -56,15 +57,22 @@ func (p *productRepository) List() ([]entity.Product, error) {
 	return products, nil
 }
 
-func (b *productRepository) Update(id string, product entity.Product) (entity.Product, error) {
+func (b *productRepository) Update(product entity.Product) (entity.Product, error) {
 	// Menggunakan id yang diberikan untuk mengupdate buku
-	_, err := b.db.Exec("UPDATE mst_product SET name_provider = $1, nominal = $2, price = $3, id_supliyer = $4 WHERE id_product = $5", product.NameProvider, product.Nominal, product.Price, product.IdSupliyer, id)
+	row, err := b.db.Exec("UPDATE mst_product SET name_provider = $1, nominal = $2, price = $3, id_supliyer = $4 WHERE id_product = $5", product.NameProvider, product.Nominal, product.Price, product.IdSupliyer, product.IdProduct)
 	if err != nil {
 		return entity.Product{}, err
 	}
 
-	// Mengatur id pada product yang dikembalikan
-	product.IdProduct = id
+	rows, err := row.RowsAffected()
+	if err != nil {
+		return entity.Product{}, fmt.Errorf("error checking affected rows: %v", err)
+	}
+
+	if rows == 0 {
+		return entity.Product{}, fmt.Errorf("no rows affected by update")
+	}
+
 	return product, nil
 }
 

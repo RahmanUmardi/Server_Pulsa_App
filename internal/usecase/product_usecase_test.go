@@ -1,26 +1,33 @@
 package usecase
 
 import (
-	"fmt"
 	"server-pulsa-app/internal/entity"
-	mock "server-pulsa-app/mock/usecase_mock"
+	repositorymock "server-pulsa-app/internal/mock/repository_mock"
+	"testing"
 
-	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 )
 
-type productUCSuite struct {
+type productRepoTestSuite struct {
 	suite.Suite
-	ProductUseCase *mock.ProductUseCaseMock
-	PrductUC       ProductUseCase
+	mockProductRepository *repositorymock.MockProductRepository
+	ProductUseCase        ProductUseCase
 }
 
-func (p *productUCSuite) SetupTest() {
-	p.ProductUseCase = new(mock.ProductUseCaseMock)
+func (p *productRepoTestSuite) SetupTest() {
+	p.mockProductRepository = new(repositorymock.MockProductRepository)
+	p.ProductUseCase = NewProductUseCase(p.mockProductRepository)
 }
 
-func (p *productUCSuite) TestCreateNewProduct_Failed() {
+func (p *productRepoTestSuite) TestCreateNewProduct_Success() {
 	newProduct := entity.Product{
+		NameProvider: "Test Product",
+		Nominal:      1000,
+		Price:        1000,
+		IdSupliyer:   "1",
+	}
+
+	CreatedProduct := entity.Product{
 		IdProduct:    "1",
 		NameProvider: "Test Product",
 		Nominal:      1000,
@@ -28,212 +35,90 @@ func (p *productUCSuite) TestCreateNewProduct_Failed() {
 		IdSupliyer:   "1",
 	}
 
-	p.ProductUseCase.On("CreateNewProduct", newProduct).Return(entity.Product{
-		IdProduct:    "1",
-		NameProvider: "Test Product",
-		Nominal:      1000,
-		Price:        1000,
-		IdSupliyer:   "1",
-	}, nil).Once()
+	p.mockProductRepository.On("Create", newProduct).Return(CreatedProduct, nil).Once()
 
-	_, err := p.PrductUC.CreateNewProduct(newProduct)
+	product, err := p.ProductUseCase.CreateNewProduct(newProduct)
 
-	p.ProductUseCase.AssertExpectations(p.T())
-
-	assert.Nil(p.T(), err)
-
+	p.Nil(err)
+	p.Equal(CreatedProduct, product)
 }
 
-func (p *productUCSuite) TestCreateNewProduct_Success() {
-	newProduct := entity.Product{
-		IdProduct:    "1",
-		NameProvider: "Test Product",
-		Nominal:      1000,
-		Price:        1000,
-		IdSupliyer:   "1",
-	}
-
-	p.ProductUseCase.On("CreateNewProduct", newProduct).Return(entity.Product{
-		IdProduct:    "1",
-		NameProvider: "Test Product",
-		Nominal:      1000,
-		Price:        1000,
-		IdSupliyer:   "1",
-	}, nil).Once()
-
-	_, err := p.PrductUC.CreateNewProduct(newProduct)
-
-	p.ProductUseCase.AssertExpectations(p.T())
-
-	assert.Nil(p.T(), err)
-
-}
-
-func (p *productUCSuite) TestFindAllProduct_Failed() {
-
+func (p *productRepoTestSuite) TestListAllProducts_Success() {
 	products := []entity.Product{
 		{
 			IdProduct:    "1",
-			NameProvider: "Test Product",
+			NameProvider: "Product A",
 			Nominal:      1000,
 			Price:        1000,
 			IdSupliyer:   "1",
 		},
 		{
 			IdProduct:    "2",
-			NameProvider: "Test Product",
-			Nominal:      1000,
-			Price:        1000,
-			IdSupliyer:   "1",
+			NameProvider: "Product B",
+			Nominal:      2000,
+			Price:        2000,
+			IdSupliyer:   "2",
 		},
 	}
 
-	p.ProductUseCase.On("FindAllProduct").Return(products, fmt.Errorf("failed")).Once()
+	p.mockProductRepository.On("List").Return(products, nil).Once()
 
-	_, err := p.PrductUC.FindAllProduct()
+	productsList, err := p.ProductUseCase.FindAllProduct()
 
-	p.ProductUseCase.AssertExpectations(p.T())
-
-	assert.NotNil(p.T(), err)
-
+	p.Nil(err)
+	p.Equal(products, productsList)
 }
 
-func (p *productUCSuite) TestFindAllProduct_Success() {
+func (p *productRepoTestSuite) TestFindProductById_Success() {
+	id := "1"
 
-	products := []entity.Product{
-		{
-			IdProduct:    "1",
-			NameProvider: "Test Product",
-			Nominal:      1000,
-			Price:        1000,
-			IdSupliyer:   "1",
-		},
-		{
-			IdProduct:    "2",
-			NameProvider: "Test Product",
-			Nominal:      1000,
-			Price:        1000,
-			IdSupliyer:   "1",
-		},
-	}
-
-	p.ProductUseCase.On("FindAllProduct").Return(products, nil).Once()
-
-	_, err := p.PrductUC.FindAllProduct()
-
-	p.ProductUseCase.AssertExpectations(p.T())
-
-	assert.Nil(p.T(), err)
-
-}
-
-func (p *productUCSuite) TestFindProductById_Success() {
-
-	p.ProductUseCase.On("FindProductbyId", "1").Return(entity.Product{
+	product := entity.Product{
 		IdProduct:    "1",
-		NameProvider: "Test Product",
-		Nominal:      1000,
-		Price:        1000,
-		IdSupliyer:   "1",
-	}, nil).Once()
-
-	_, err := p.PrductUC.FindProductById("1")
-
-	p.ProductUseCase.AssertExpectations(p.T())
-
-	assert.Nil(p.T(), err)
-
-}
-
-func (p *productUCSuite) TestFindProductById_Failed() {
-
-	p.ProductUseCase.On("FindProductbyId", "1").Return(entity.Product{
-		IdProduct:    "1",
-		NameProvider: "Test Product",
-		Nominal:      1000,
-		Price:        1000,
-		IdSupliyer:   "1",
-	}, nil).Once()
-
-	_, err := p.PrductUC.FindProductById("1")
-
-	p.ProductUseCase.AssertExpectations(p.T())
-
-	assert.NotNil(p.T(), err)
-
-}
-func (p *productUCSuite) TestUpdateProduct_Success() {
-
-	newProduct := entity.Product{
-		IdProduct:    "1",
-		NameProvider: "Test Product",
+		NameProvider: "Product A",
 		Nominal:      1000,
 		Price:        1000,
 		IdSupliyer:   "1",
 	}
 
-	p.ProductUseCase.On("UpdateProduct", newProduct).Return(entity.Product{
-		IdProduct:    "1",
-		NameProvider: "Test Product",
-		Nominal:      1000,
-		Price:        1000,
-		IdSupliyer:   "1",
-	}, nil).Once()
+	p.mockProductRepository.On("Get", id).Return(product, nil).Once()
 
-	_, err := p.PrductUC.UpdateProduct(newProduct)
+	productFound, err := p.ProductUseCase.FindProductById(id)
 
-	p.ProductUseCase.AssertExpectations(p.T())
-
-	assert.Nil(p.T(), err)
-
+	p.Nil(err)
+	p.Equal(product, productFound)
 }
 
-func (p *productUCSuite) TestUpdateProduct_Failed() {
+func (p *productRepoTestSuite) TestUpdateProduct_Success() {
+	id := "1"
 
-	newProduct := entity.Product{
+	updatedProduct := entity.Product{
 		IdProduct:    "1",
-		NameProvider: "Test Product",
-		Nominal:      1000,
-		Price:        1000,
+		NameProvider: "Updated Product",
+		Nominal:      2000,
+		Price:        2000,
 		IdSupliyer:   "1",
 	}
 
-	p.ProductUseCase.On("UpdateProduct", newProduct).Return(entity.Product{
-		IdProduct:    "1",
-		NameProvider: "Test Product",
-		Nominal:      1000,
-		Price:        1000,
-		IdSupliyer:   "1",
-	}, fmt.Errorf("failed")).Once()
+	p.mockProductRepository.On("Get", id).Return(updatedProduct, nil).Once()
+	p.mockProductRepository.On("Update", updatedProduct).Return(updatedProduct, nil).Once()
 
-	_, err := p.PrductUC.UpdateProduct(newProduct)
+	productUpdated, err := p.ProductUseCase.UpdateProduct(updatedProduct)
 
-	p.ProductUseCase.AssertExpectations(p.T())
-
-	assert.NotNil(p.T(), err)
-
+	p.Nil(err)
+	p.Equal(updatedProduct, productUpdated)
 }
 
-func (p *productUCSuite) TestDeleteProduct_Success() {
+func (p *productRepoTestSuite) TestDeleteProduct_Success() {
+	id := "1"
 
-	p.ProductUseCase.On("DeleteProduct", "1").Return(nil).Once()
+	p.mockProductRepository.On("Get", id).Return(entity.Product{}, nil).Once()
+	p.mockProductRepository.On("Delete", id).Return(nil).Once()
 
-	err := p.PrductUC.DeleteProduct("1")
+	err := p.ProductUseCase.DeleteProduct(id)
 
-	p.ProductUseCase.AssertExpectations(p.T())
-
-	assert.Nil(p.T(), err)
-
+	p.Nil(err)
 }
 
-func (p *productUCSuite) TestDeleteProduct_Failed() {
-
-	p.ProductUseCase.On("DeleteProduct", "1").Return(fmt.Errorf("failed")).Once()
-
-	err := p.PrductUC.DeleteProduct("1")
-
-	p.ProductUseCase.AssertExpectations(p.T())
-
-	assert.NotNil(p.T(), err)
-
+func TestProductRepoTestSuite(t *testing.T) {
+	suite.Run(t, new(productRepoTestSuite))
 }

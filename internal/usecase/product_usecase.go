@@ -35,7 +35,7 @@ func (p *productUseCase) UpdateProduct(product entity.Product) (entity.Product, 
 		// return entity.Product{}, fmt.Errorf("Product with ID %d not found",product.IdProduct)
 		return entity.Product{}, err
 	}
-	return p.repo.Update(product.IdProduct, product)
+	return p.repo.Update(product)
 }
 
 func (p *productUseCase) DeleteProduct(id string) error {

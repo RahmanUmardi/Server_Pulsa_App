@@ -14,8 +14,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-type mockProductUseCase struct{
-	
+type mockProductUseCase struct {
 }
 
 func (m *mockProductUseCase) CreateNewProduct(product entity.Product) (entity.Product, error) {
@@ -133,85 +132,3 @@ func TestDeleteProduct(t *testing.T) {
 
 	assert.Equal(t, http.StatusNoContent, res.Code)
 }
-
-// package handler
-
-// import (
-// 	"bytes"
-// 	"server-pulsa-app/internal/entity"
-// 	"server-pulsa-app/internal/middleware"
-// 	mock "server-pulsa-app/mock/usecase_mock.go"
-
-// 	"github.com/gin-gonic/gin"
-// 	"github.com/gin-gonic/gin/internal/json"
-// 	"github.com/stretchr/testify/suite"
-// )
-
-// type ProductControllerTest struct {
-// 	suite.Suite
-// 	rg        *gin.Engine
-// 	productUC *mock.ProductUseCaseMock
-// 	// am middleware.AuthMiddleware
-// }
-
-// // func (s *ProductControllerTest) SetupTest() {
-// // 	s.productUC = new(mock.ProductUseCaseMock)
-// // 	s.rg = gin.Default()
-
-// // 	gin.SetMode(gin.TestMode)
-
-// // 	rg := s.rg.Group("/api/v1")
-
-// // 	productUC := NewProductController(s.productUC,rg,am)
-// // 	s.rg.po
-// // }
-
-// func (s *ProductControllerTest) TestCreateProductHandler_success() {
-// 	payload := entity.Product{
-// 		IdProduct:    "1",
-// 		NameProvider: "test",
-// 		Nominal:      10000,
-// 		Price:        10000,
-// 		IdSupliyer:   "1",
-// 	}
-
-// 	s.productUC.On("CreateNewProduct", payload).Return(entity.Product{
-// 		IdProduct:    "1",
-// 		NameProvider: "test",
-// 		Nominal:      10000,
-// 		Price:        10000,
-// 		IdSupliyer:   "1",
-// 	}, nil).Once()
-
-// 	var buf bytes.Buffer
-// 	err:= json.NewEncoder(&buf).NewEncoder(payload)
-
-// 	if err != nil {
-// 		panic(err)
-// 	}
-
-// }
-
-// // func (s *ProductControllerTest) TestCreateProductHandler_success() {
-// // 	payload := entity.Product{
-// // 		IdProduct:    "1",
-// // 		NameProvider: "test",
-// // 		Nominal:      10000,
-// // 		Price:        10000,
-// // 		IdSupliyer:   "1",
-// // 	}
-
-// // 	s.productUC.On("CreateNewProduct", payload).Return(entity.Product{
-// // 		IdProduct:    "1",
-// // 		NameProvider: "test",
-// // 		Nominal:      10000,
-// // 		Price:        10000,
-// // 		IdSupliyer:   "1",
-// // 	}, nil).Once()
-
-// // 	var buf bytes.Buffer
-// // 	err:= json.NewEncoder(&buf).NewEncoder(payload)
-
-// // 	if err != nil {
-// // 		panic(err)
-// // 	}
