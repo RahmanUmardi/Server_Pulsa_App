@@ -2,14 +2,17 @@ package repository
 
 import (
 	"database/sql"
+	"log"
 	"server-pulsa-app/internal/entity"
+	"strings"
 )
 
 type UserRepository interface {
 	CreateUser(user entity.User) (entity.User, error)
+	ListUser() ([]entity.User, error)
 	GetUserByID(id string) (entity.User, error)
 	GetUserByUsername(username string) (entity.User, error)
-	UpdateUser(user entity.User) (entity.User, error)
+	UpdateUser(user, payload entity.User) (entity.User, error)
 	DeleteUser(id string) error
 }
 
@@ -23,6 +26,26 @@ func (u *userRepository) CreateUser(user entity.User) (entity.User, error) {
 		return entity.User{}, err
 	}
 	return user, nil
+}
+
+func (u *userRepository) ListUser() ([]entity.User, error) {
+	var users []entity.User
+
+	rows, err := u.db.Query(`SELECT id_user, username, password, role FROM mst_user`)
+	if err != nil {
+		log.Printf("UserRepository.ListUser: %v \n", err.Error())
+		return nil, err
+	}
+	defer rows.Close()
+	for rows.Next() {
+		var user entity.User
+		err := rows.Scan(&user.Id_user, &user.Username, &user.Password, &user.Role)
+		if err != nil {
+			return nil, err
+		}
+		users = append(users, user)
+	}
+	return users, nil
 }
 
 func (u *userRepository) GetUserByUsername(username string) (entity.User, error) {
@@ -44,8 +67,17 @@ func (u *userRepository) GetUserByID(id string) (entity.User, error) {
 	return user, nil
 
 }
-func (u *userRepository) UpdateUser(user entity.User) (entity.User, error) {
-	_, err := u.db.Exec(`UPDATE mst_user SET username = $1, password = $2, role = $3 WHERE id_user = $4`, user.Username, user.Password, user.Role, user.Id_user)
+func (u *userRepository) UpdateUser(user, payload entity.User) (entity.User, error) {
+	if strings.TrimSpace(payload.Username) != "" {
+		user.Username = payload.Username
+	}
+	if strings.TrimSpace(payload.Password) != "" {
+		user.Password = payload.Password
+	}
+	if strings.TrimSpace(payload.Role) != "" {
+		user.Role = payload.Role
+	}
+	_, err := u.db.Exec(`UPDATE mst_user SET username = $2, password = $3, role = $4 WHERE id_user = $1`, user.Id_user, user.Username, user.Password, user.Role)
 	if err != nil {
 		return entity.User{}, err
 	}

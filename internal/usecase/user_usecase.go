@@ -11,8 +11,9 @@ import (
 type UserUsecase interface {
 	RegisterUser(user entity.User) (entity.User, error)
 	GetUserByID(id string) (entity.User, error)
+	ListUser() ([]entity.User, error)
 	FindUserByUsernamePassword(username, password string) (entity.User, error)
-	UpdateUser(user entity.User) (entity.User, error)
+	UpdateUser(payload entity.User) (entity.User, error)
 	DeleteUser(id string) error
 }
 
@@ -39,6 +40,10 @@ func (u *userUsecase) GetUserByUsername(username string) (entity.User, error) {
 	return u.UserRepository.GetUserByUsername(username)
 }
 
+func (u *userUsecase) ListUser() ([]entity.User, error) {
+	return u.UserRepository.ListUser()
+}
+
 func (u *userUsecase) GetUserByID(id string) (entity.User, error) {
 	return u.UserRepository.GetUserByID(id)
 }
@@ -57,20 +62,29 @@ func (u *userUsecase) FindUserByUsernamePassword(username, password string) (ent
 	return userExist, nil
 }
 
-func (u *userUsecase) UpdateUser(user entity.User) (entity.User, error) {
-	_, err := u.UserRepository.UpdateUser(user)
+func (u *userUsecase) UpdateUser(payload entity.User) (entity.User, error) {
+	user, err := u.UserRepository.GetUserByID(payload.Id_user)
 	if err != nil {
-		return entity.User{}, fmt.Errorf("failed to update user: %v", err)
+		return entity.User{}, fmt.Errorf("user ID of \\'%s\\' not found", payload.Id_user)
 	}
-	return user, nil
+	_, err = u.UserRepository.UpdateUser(user, payload)
+	if err != nil {
+		return entity.User{}, fmt.Errorf("user ID of \\'%s\\' not updated", payload.Id_user)
+	}
+	hash, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
+	if err != nil {
+		return entity.User{}, err
+	}
+	user.Password = string(hash)
+	return u.UserRepository.UpdateUser(user, payload)
 }
 
 func (u *userUsecase) DeleteUser(id string) error {
-	err := u.UserRepository.DeleteUser(id)
+	_, err := u.UserRepository.GetUserByID(id)
 	if err != nil {
-		return fmt.Errorf("failed to delete user: %v", err)
+		return fmt.Errorf("merchant ID of \\%s\\ not found", err)
 	}
-	return nil
+	return u.UserRepository.DeleteUser(id)
 }
 
 func NewUserUsecase(userRepository repository.UserRepository) UserUsecase {
