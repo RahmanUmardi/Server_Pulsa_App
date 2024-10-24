@@ -2,6 +2,7 @@ package repository
 
 import (
 	"database/sql"
+	"fmt"
 	"server-pulsa-app/internal/entity"
 	"server-pulsa-app/internal/logger"
 )
@@ -12,7 +13,7 @@ type ProductRepository interface {
 	Create(product entity.Product) (entity.Product, error)
 	List() ([]entity.Product, error)
 	Get(id string) (entity.Product, error)
-	Update(id string, product entity.Product) (entity.Product, error)
+	Update(product entity.Product) (entity.Product, error)
 	Delete(id string) error
 }
 

@@ -20,14 +20,14 @@ type ProductController struct {
 }
 
 func (p *ProductController) Route() {
-	p.rg.POST(config.PostProduct, p.authMiddleware.RequireToken("employee"), p.createProduct)
-	p.rg.GET(config.GetProductList, p.authMiddleware.RequireToken("employee"), p.getAllProduct)
-	p.rg.GET(config.GetProduct, p.authMiddleware.RequireToken("employee"), p.getProductpyId)
-	p.rg.PUT(config.PutProduct, p.authMiddleware.RequireToken("employee"), p.updateProduct)
-	p.rg.DELETE(config.DeleteProduct, p.authMiddleware.RequireToken("employee"), p.deleteProduct)
+	p.rg.POST(config.PostProduct, p.authMiddleware.RequireToken("employee"), p.CreateProduct)
+	p.rg.GET(config.GetProductList, p.authMiddleware.RequireToken("employee"), p.GetAllProduct)
+	p.rg.GET(config.GetProduct, p.authMiddleware.RequireToken("employee"), p.GetProductById)
+	p.rg.PUT(config.PutProduct, p.authMiddleware.RequireToken("employee"), p.UpdateProduct)
+	p.rg.DELETE(config.DeleteProduct, p.authMiddleware.RequireToken("employee"), p.DeleteProduct)
 }
 
-func (p *ProductController) createProduct(c *gin.Context) {
+func (p *ProductController) CreateProduct(c *gin.Context) {
 	var payload entity.Product
 
 	logProduct.Info("Starting to create a new product in the handler layer")
@@ -85,7 +85,7 @@ func (p *ProductController) getAllProduct(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "List Product empty"})
 }
 
-func (p *ProductController) getProductpyId(c *gin.Context) {
+func (p *ProductController) GetProductById(c *gin.Context) {
 	id := (c.Param("id"))
 
 	logProduct.Info("Starting to retrieve product with id in the handler layer")
@@ -108,7 +108,7 @@ func (p *ProductController) getProductpyId(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-func (b *ProductController) updateProduct(c *gin.Context) {
+func (b *ProductController) UpdateProduct(c *gin.Context) {
 	var payload entity.Product
 	id := (c.Param("id"))
 
@@ -141,7 +141,7 @@ func (b *ProductController) updateProduct(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
-func (p *ProductController) deleteProduct(c *gin.Context) {
+func (p *ProductController) DeleteProduct(c *gin.Context) {
 	id := c.Param("id")
 
 	logProduct.Info("Starting to delete product with id in the handler layer")
