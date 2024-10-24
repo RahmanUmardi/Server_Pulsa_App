@@ -33,7 +33,7 @@ func (p *productUseCase) FindProductpyId(id string) (entity.Product, error) {
 func (p *productUseCase) UpdateProduct(product entity.Product) (entity.Product, error) {
 	_, err := p.repo.Get(product.IdProduct)
 	if err != nil {
-		return entity.Product{}, fmt.Errorf("Product with ID %d not found", product.IdProduct)
+		return entity.Product{}, fmt.Errorf("product with ID %s not found", product.IdProduct)
 	}
 	return p.repo.Update(product.IdProduct, product)
 }
@@ -41,7 +41,7 @@ func (p *productUseCase) UpdateProduct(product entity.Product) (entity.Product, 
 func (p *productUseCase) DeleteProduct(id string) error {
 	_, err := p.repo.Get(id)
 	if err != nil {
-		return fmt.Errorf("Product with ID %d not found", id)
+		return fmt.Errorf("product with ID %s not found", id)
 	}
 	return p.repo.Delete(id)
 }

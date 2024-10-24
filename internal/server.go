@@ -16,12 +16,13 @@ import (
 )
 
 type Server struct {
-	jwtService service.JwtService
-	authUc     usecase.AuthUseCase
-	productUc  usecase.ProductUseCase
-	merchantUc usecase.MerchantUseCase
-	engine     *gin.Engine
-	host       string
+	jwtService    service.JwtService
+	authUc        usecase.AuthUseCase
+	productUc     usecase.ProductUseCase
+	merchantUc    usecase.MerchantUseCase
+	transactionUc usecase.TransactionUseCase
+	engine        *gin.Engine
+	host          string
 }
 
 func (s *Server) initRoute() {
@@ -31,6 +32,7 @@ func (s *Server) initRoute() {
 	handler.NewMerchantHandler(s.merchantUc, authMiddleware, rg).Route()
 	handler.NewAuthController(s.authUc, rg).Route()
 	handler.NewProductController(s.productUc, rg, authMiddleware).Route()
+	handler.NewTransactionHandler(s.transactionUc, authMiddleware, rg).Route()
 }
 
 func (s *Server) Run() {
@@ -54,6 +56,7 @@ func NewServer() *Server {
 	userRepo := repository.NewUserRepository(db)
 	productRepo := repository.NewProductRepository(db)
 	merchantRepo := repository.NewMerchantRepository(db)
+	transactionRepo := repository.NewTransactionRepository(db)
 
 	//inject dependencies usecase layer
 	jwtService := service.NewJwtService(cfg.TokenConfig)
@@ -61,15 +64,18 @@ func NewServer() *Server {
 	authUc := usecase.NewAuthUseCase(userUc, jwtService)
 	productUc := usecase.NewProductUseCase(productRepo)
 	merchantUc := usecase.NewMerchantUseCase(merchantRepo)
+	transactionUc := usecase.NewTransactionUseCase(transactionRepo)
 
 	engine := gin.Default()
 	host := fmt.Sprintf(":%s", cfg.ApiPort)
 	return &Server{
-		jwtService: jwtService,
-		authUc:     authUc,
-		productUc:  productUc,
-		merchantUc: merchantUc,
-		engine:     engine,
-		host:       host,
+		jwtService:    jwtService,
+		authUc:        authUc,
+		productUc:     productUc,
+		merchantUc:    merchantUc,
+		transactionUc: transactionUc,
+
+		engine: engine,
+		host:   host,
 	}
 }

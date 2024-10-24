@@ -14,7 +14,7 @@ CREATE TABLE mst_product(
     id_product uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
     name_provider VARCHAR(255) NOT NULL,
     nominal DOUBLE PRECISION NOT NULL,
-    price DOUBLE PRECISION NOT NULL,
+    price DECIMAL(10, 2) NOT NULL
     id_supliyer uuid REFERENCES mst_supliyer(id_supliyer)
 );
 
@@ -34,16 +34,18 @@ CREATE TABLE mst_merchant(
     balance DOUBLE PRECISION NOT NULL
 );
 
-CREATE TABLE tx_trx_detail(
-    id_tx_trx_detail uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
+CREATE TABLE transactions(
+    transaction_id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    id_merchant UUID REFERENCES mst_merchant(id_merchant),
+    id_user UUID REFERENCES mst_user(id_user),
+    customer_name VARCHAR(255) NOT NULL,
     destination_number VARCHAR(15) NOT NULL,
-    transaction_date DATE,
-    total_price DOUBLE PRECISION NOT NULL
+    transaction_date DATE
 );
 
-CREATE TABLE tx_trx(
-    id_tx_trx uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
-    id_merchant uuid REFERENCES mst_merchant(id_merchant),
-    id_tx_trx_detail uuid REFERENCES tx_trx_detail(id_tx_trx_detail),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE transaction_detail(
+    transaction_detail_id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    transaction_id UUID REFERENCES transactions(transaction_id),
+    id_product UUID REFERENCES mst_product(id_product),
+    price DECIMAL(10, 2) NOT NULL
 );
