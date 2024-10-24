@@ -40,7 +40,6 @@ func (p *productUseCase) UpdateProduct(product entity.Product) (entity.Product, 
 
 	_, err := p.repo.Get(product.IdProduct)
 	if err != nil {
-		logProduct.Errorf("Product ID %s not found: %v", product.IdProduct, err)
 		return entity.Product{}, fmt.Errorf("product with ID %s not found", product.IdProduct)
 	}
 
@@ -53,7 +52,6 @@ func (p *productUseCase) DeleteProduct(id string) error {
 
 	_, err := p.repo.Get(id)
 	if err != nil {
-		logProduct.Errorf("Product ID %s not found: %v", id, err)
 		return fmt.Errorf("product with ID %s not found", id)
 	}
 
