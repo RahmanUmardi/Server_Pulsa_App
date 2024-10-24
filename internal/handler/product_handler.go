@@ -19,7 +19,7 @@ type ProductController struct {
 func (p *ProductController) Route() {
 	p.rg.POST(config.PostProduct, p.authMiddleware.RequireToken("employee"), p.createProduct)
 	p.rg.GET(config.GetProductList, p.authMiddleware.RequireToken("employee"), p.getAllProduct)
-	p.rg.GET(config.GetProduct, p.authMiddleware.RequireToken("employee"), p.getProductpyId)
+	p.rg.GET(config.GetProduct, p.authMiddleware.RequireToken("employee"), p.getProductById)
 	p.rg.PUT(config.PutProduct, p.authMiddleware.RequireToken("employee"), p.updateProduct)
 	p.rg.DELETE(config.DeleteProduct, p.authMiddleware.RequireToken("employee"), p.deleteProduct)
 }
@@ -73,9 +73,9 @@ func (p *ProductController) getAllProduct(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "List Product empty"})
 }
 
-func (p *ProductController) getProductpyId(c *gin.Context) {
+func (p *ProductController) getProductById(c *gin.Context) {
 	id := (c.Param("id"))
-	Product, err := p.useCase.FindProductpyId(id)
+	Product, err := p.useCase.FindProductById(id)
 	if err != nil {
 
 		c.JSON(http.StatusInternalServerError, gin.H{"err": "Failed to get Product py ID"})

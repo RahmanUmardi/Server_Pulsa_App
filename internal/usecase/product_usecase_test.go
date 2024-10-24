@@ -3,7 +3,7 @@ package usecase
 import (
 	"fmt"
 	"server-pulsa-app/internal/entity"
-	mock "server-pulsa-app/mock/usecase_mock.go"
+	mock "server-pulsa-app/mock/usecase_mock"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
