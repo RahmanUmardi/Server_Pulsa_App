@@ -5,6 +5,8 @@ import (
 	"server-pulsa-app/internal/entity"
 	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/repository"
+
+	"github.com/sirupsen/logrus"
 )
 
 var logMerchant = logger.GetLogger()
@@ -22,17 +24,17 @@ type merchantUseCase struct {
 }
 
 func (m *merchantUseCase) RegisterNewMerchant(payload entity.Merchant) (entity.Merchant, error) {
-	logMerchant.Info("Starting to create a new merchant in the usecase layer")
+	logrus.Info("Starting to create a new merchant in the usecase layer")
 	return m.repo.Create(payload)
 }
 
 func (m *merchantUseCase) FindAllMerchant() ([]entity.Merchant, error) {
-	logMerchant.Info("Starting to retrive all merchant in the usecase layer")
+	logrus.Info("Starting to retrive all merchant in the usecase layer")
 	return m.repo.List()
 }
 
 func (m *merchantUseCase) FindMerchantByID(id string) (entity.Merchant, error) {
-	logMerchant.Info("Starting to retrive a merchant by id in the usecase layer")
+	logrus.Info("Starting to retrive a merchant by id in the usecase layer")
 	return m.repo.Get(id)
 }
 
