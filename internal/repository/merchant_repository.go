@@ -8,6 +8,8 @@ import (
 	"server-pulsa-app/internal/logger"
 )
 
+var logMerchant = logger.GetLogger()
+
 type MerchantRepository interface {
 	Create(payload entity.Merchant) (entity.Merchant, error)
 	List() ([]entity.Merchant, error)
@@ -21,16 +23,15 @@ type merchantRepository struct {
 }
 
 func (m *merchantRepository) Create(payload entity.Merchant) (entity.Merchant, error) {
-	log := logger.GetLogger()
-	log.Infof("Starting to create a new merchant in the repository layer")
+	logMerchant.Info("Starting to create a new merchant in the repository layer")
 
 	err := m.db.QueryRow("INSERT INTO mst_merchant (id_user, name_merchant, address, id_product, balance) VALUES ($1, $2, $3, $4, $5) RETURNING id_merchant", payload.IdUser, payload.NameMerchant, payload.Address, payload.IdProduct, payload.Balance).Scan(&payload.IdMerchant)
 	if err != nil {
-		log.Error("Failed to create the merchant: ", err)
+		logMerchant.Error("Failed to create the merchant: ", err)
 		return entity.Merchant{}, err
 	}
 
-	log.Info("Merchant has been created successfully: ", payload)
+	logMerchant.Info("Merchant has been created successfully: ", payload)
 	return payload, nil
 }
 
@@ -39,49 +40,49 @@ func (m *merchantRepository) List() ([]entity.Merchant, error) {
 	var rows *sql.Rows
 	var err error
 
-	log := logger.GetLogger()
-	log.Info("Starting to retrive all merchant in the repository layer")
+	logMerchant.Info("Starting to retrive all merchant in the repository layer")
 
 	rows, err = m.db.Query("SELECT id_merchant, id_user, name_merchant, address, id_product, balance FROM mst_merchant")
 
 	if err != nil {
-		log.Error("Failed to retrive the product: ", err)
+		logMerchant.Error("Failed to retrive the product: ", err)
 		return nil, err
 	}
 
 	for rows.Next() {
 		var merchant entity.Merchant
 
-		log.Info("Starting to scan all merchant in the repository layer")
+		logMerchant.Info("Starting to scan all merchant in the repository layer")
 		if err := rows.Scan(&merchant.IdMerchant, &merchant.IdUser, &merchant.NameMerchant, &merchant.Address, &merchant.IdProduct, &merchant.Balance); err != nil {
-			log.Error("Failed to scan the merchant: ", err)
+			logMerchant.Error("Failed to scan the merchant: ", err)
 			return nil, err
 		}
 
-		log.Info("Starting to add merchant in the repository layer")
+		logMerchant.Info("Starting to add merchant in the repository layer")
 		merchants = append(merchants, merchant)
 	}
 
-	log.Info("Getting all merchant was successfully: ", merchants)
+	logMerchant.Info("Getting all merchant was successfully: ", merchants)
 	return merchants, nil
 }
 
 func (m *merchantRepository) Get(id string) (entity.Merchant, error) {
 	var merchant entity.Merchant
 
-	log := logger.GetLogger()
-	log.Info("Starting to retrive a merchant by id in the repository layer")
+	logMerchant.Info("Starting to retrive a merchant by id in the repository layer")
 
 	if err := m.db.QueryRow("SELECT id_merchant, id_user, name_merchant, address, id_product, balance FROM mst_merchant WHERE id_merchant = $1", id).Scan(&merchant.IdMerchant, &merchant.IdUser, &merchant.NameMerchant, &merchant.Address, &merchant.IdProduct, &merchant.Balance); err != nil {
-		log.Error("Failed to retrive the merchant: ", err)
+		logMerchant.Error("Failed to retrive the merchant: ", err)
 		return entity.Merchant{}, err
 	}
 
-	log.Info("Getting merchant by id was successfully: ", merchant)
+	logMerchant.Info("Getting merchant by id was successfully: ", merchant)
 	return merchant, nil
 }
 
 func (m *merchantRepository) Update(merchant, payload entity.Merchant) (entity.Merchant, error) {
+	logMerchant.Info("Starting to map merchant and payload in the repository layer")
+
 	if strings.TrimSpace(payload.IdUser) != "" {
 		merchant.IdUser = payload.IdUser
 	}
@@ -98,30 +99,28 @@ func (m *merchantRepository) Update(merchant, payload entity.Merchant) (entity.M
 		merchant.Balance = payload.Balance
 	}
 
-	log := logger.GetLogger()
-	log.Info("Starting to update merchant in the repository layer")
+	logMerchant.Info("Starting to update merchant in the repository layer")
 
 	_, err := m.db.Exec("UPDATE mst_merchant SET id_user = $2, name_merchant = $3, address = $4, id_product = $5, balance = $6 WHERE id_merchant = $1", merchant.IdMerchant, merchant.IdUser, merchant.NameMerchant, merchant.Address, merchant.IdProduct, merchant.Balance)
 	if err != nil {
-		log.Error("Failed to update the merchant: ", err)
+		logMerchant.Error("Failed to update the merchant: ", err)
 		return entity.Merchant{}, err
 	}
 
-	log.Info("Merchant has been updated successfully: ", merchant)
+	logMerchant.Info("Merchant has been updated successfully: ", merchant)
 	return merchant, nil
 }
 
 func (m *merchantRepository) Delete(id string) error {
-	log := logger.GetLogger()
-	log.Info("Starting to delete merchant in the repository layer")
+	logMerchant.Info("Starting to delete merchant in the repository layer")
 
 	_, err := m.db.Exec("DELETE FROM mst_merchant WHERE id_merchant = $1", id)
 	if err != nil {
-		log.Error("Failed to delete the merchant: ", err)
+		logMerchant.Error("Failed to delete the merchant: ", err)
 		return err
 	}
 
-	log.Info("Merchant has been deleted successfully: ", id)
+	logMerchant.Info("Merchant has been deleted successfully: ", id)
 	return nil
 }
 
