@@ -8,18 +8,18 @@ import (
 	"github.com/stretchr/testify/suite"
 )
 
-type productRepoTestSuite struct {
+type productUsecaseTestSuite struct {
 	suite.Suite
 	mockProductRepository *repositorymock.MockProductRepository
 	ProductUseCase        ProductUseCase
 }
 
-func (p *productRepoTestSuite) SetupTest() {
+func (p *productUsecaseTestSuite) SetupTest() {
 	p.mockProductRepository = new(repositorymock.MockProductRepository)
 	p.ProductUseCase = NewProductUseCase(p.mockProductRepository)
 }
 
-func (p *productRepoTestSuite) TestCreateNewProduct_Success() {
+func (p *productUsecaseTestSuite) TestCreateNewProduct_Success() {
 	newProduct := entity.Product{
 		NameProvider: "Test Product",
 		Nominal:      1000,
@@ -43,7 +43,7 @@ func (p *productRepoTestSuite) TestCreateNewProduct_Success() {
 	p.Equal(CreatedProduct, product)
 }
 
-func (p *productRepoTestSuite) TestListAllProducts_Success() {
+func (p *productUsecaseTestSuite) TestListAllProducts_Success() {
 	products := []entity.Product{
 		{
 			IdProduct:    "1",
@@ -69,7 +69,7 @@ func (p *productRepoTestSuite) TestListAllProducts_Success() {
 	p.Equal(products, productsList)
 }
 
-func (p *productRepoTestSuite) TestFindProductById_Success() {
+func (p *productUsecaseTestSuite) TestFindProductById_Success() {
 	id := "1"
 
 	product := entity.Product{
@@ -88,7 +88,7 @@ func (p *productRepoTestSuite) TestFindProductById_Success() {
 	p.Equal(product, productFound)
 }
 
-func (p *productRepoTestSuite) TestUpdateProduct_Success() {
+func (p *productUsecaseTestSuite) TestUpdateProduct_Success() {
 	id := "1"
 
 	updatedProduct := entity.Product{
@@ -108,7 +108,7 @@ func (p *productRepoTestSuite) TestUpdateProduct_Success() {
 	p.Equal(updatedProduct, productUpdated)
 }
 
-func (p *productRepoTestSuite) TestDeleteProduct_Success() {
+func (p *productUsecaseTestSuite) TestDeleteProduct_Success() {
 	id := "1"
 
 	p.mockProductRepository.On("Get", id).Return(entity.Product{}, nil).Once()
@@ -119,6 +119,6 @@ func (p *productRepoTestSuite) TestDeleteProduct_Success() {
 	p.Nil(err)
 }
 
-func TestProductRepoTestSuite(t *testing.T) {
-	suite.Run(t, new(productRepoTestSuite))
+func TestProductUsecaseTestSuite(t *testing.T) {
+	suite.Run(t, new(productUsecaseTestSuite))
 }

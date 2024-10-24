@@ -5,130 +5,156 @@ import (
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
+	"server-pulsa-app/internal/entity"
+	am "server-pulsa-app/internal/mock/auth_mock"
+	mock "server-pulsa-app/internal/mock/usecase_mock"
 	"testing"
 
-	"server-pulsa-app/internal/entity"
-	"server-pulsa-app/internal/middleware"
-
 	"github.com/gin-gonic/gin"
-	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/suite"
 )
 
-type mockProductUseCase struct {
+type ProductControllerTestSuite struct {
+	suite.Suite
+	mockProductUC      *mock.ProductUseCaseMock
+	mockAuthMiddleware *am.AuthMiddlewareMock
+	ProductController  *ProductController
+	router             *gin.Engine
 }
 
-func (m *mockProductUseCase) CreateNewProduct(product entity.Product) (entity.Product, error) {
-	return product, nil
-}
-
-func (m *mockProductUseCase) FindAllProduct() ([]entity.Product, error) {
-	return []entity.Product{}, nil
-}
-
-func (m *mockProductUseCase) FindProductById(id string) (entity.Product, error) {
-	return entity.Product{IdProduct: id}, nil
-}
-
-func (m *mockProductUseCase) UpdateProduct(product entity.Product) (entity.Product, error) {
-	return product, nil
-}
-
-func (m *mockProductUseCase) DeleteProduct(id string) error {
-	return nil
-}
-
-func TestCreateProduct(t *testing.T) {
+func (suite *ProductControllerTestSuite) SetupTest() {
+	suite.mockProductUC = new(mock.ProductUseCaseMock)
+	suite.mockAuthMiddleware = new(am.AuthMiddlewareMock)
 	gin.SetMode(gin.TestMode)
-	router := gin.Default()
-	useCase := &mockProductUseCase{}
-	authMiddleware := middleware.NewAuthMiddleware()
-	productController := NewProductController(useCase, router.Group("/products"), authMiddleware)
+	suite.router = gin.New()
 
-	router.POST("/products", productController.createProduct)
-
-	product := entity.Product{IdProduct: "1", NameProvider: "Test Product"}
-	jsonValue, _ := json.Marshal(product)
-
-	req, _ := http.NewRequest("POST", "/products", bytes.NewBuffer(jsonValue))
-	req.Header.Set("Authorization", "Bearer token")
-
-	res := httptest.NewRecorder()
-	router.ServeHTTP(res, req)
-
-	assert.Equal(t, http.StatusCreated, res.Code)
+	suite.ProductController = NewProductController(suite.mockProductUC, suite.router.Group("/api/v1/products"), suite.mockAuthMiddleware)
+	suite.router.POST("/api/v1/product", suite.ProductController.CreateProduct)
+	suite.router.PUT("/api/v1/product/:id", suite.ProductController.UpdateProduct)
+	suite.router.DELETE("/api/v1/product/:id", suite.ProductController.DeleteProduct)
+	suite.router.GET("/api/v1/products", suite.ProductController.GetAllProduct)
+	suite.router.GET("/api/v1/product/:id", suite.ProductController.GetProductById)
 }
 
-func TestGetAllProduct(t *testing.T) {
-	gin.SetMode(gin.TestMode)
-	router := gin.Default()
-	useCase := &mockProductUseCase{}
-	authMiddleware := middleware.AuthMiddleware{}
-	productController := handler.NewProductController(useCase, router.Group("/products"), authMiddleware)
+func (suite *ProductControllerTestSuite) TestCreateProduct() {
+	payload := entity.Product{
+		IdProduct:    "1",
+		NameProvider: "Axis",
+		Nominal:      10000,
+		Price:        11000,
+		IdSupliyer:   "1",
+	}
 
-	router.GET("/products", productController.GetAllProduct)
+	jsonPayload, err := json.Marshal(payload)
 
-	req, _ := http.NewRequest("GET", "/products", nil)
-	req.Header.Set("Authorization", "Bearer token")
+	if err != nil {
+		panic(err)
+	}
 
-	res := httptest.NewRecorder()
-	router.ServeHTTP(res, req)
+	suite.mockProductUC.On("CreateNewProduct", payload).Return(payload, nil)
 
-	assert.Equal(t, http.StatusOK, res.Code)
+	req, err := http.NewRequest("POST", "/api/v1/product", bytes.NewBuffer(jsonPayload))
+
+	if err != nil {
+		panic(err)
+	}
+
+	w := httptest.NewRecorder()
+
+	suite.router.ServeHTTP(w, req)
+
+	suite.Equal(http.StatusCreated, w.Code)
+
 }
 
-func TestGetProductById(t *testing.T) {
-	gin.SetMode(gin.TestMode)
-	router := gin.Default()
-	useCase := &mockProductUseCase{}
-	authMiddleware := middleware.AuthMiddleware{}
-	productController := handler.NewProductController(useCase, router.Group("/products"), authMiddleware)
+func (suite *ProductControllerTestSuite) TestGetProductById() {
+	id := "1"
+	intID := "1"
 
-	router.GET("/products/:id", productController.GetProductById)
+	suite.mockProductUC.On("FindProductById", intID).Return(entity.Product{}, nil)
 
-	req, _ := http.NewRequest("GET", "/products/1", nil)
-	req.Header.Set("Authorization", "Bearer token")
+	req, err := http.NewRequest("GET", "/api/v1/product/"+id, nil)
 
-	res := httptest.NewRecorder()
-	router.ServeHTTP(res, req)
+	if err != nil {
+		panic(err)
+	}
 
-	assert.Equal(t, http.StatusOK, res.Code)
+	w := httptest.NewRecorder()
+
+	suite.router.ServeHTTP(w, req)
+
+	suite.Equal(http.StatusOK, w.Code)
+
 }
 
-func TestUpdateProduct(t *testing.T) {
-	gin.SetMode(gin.TestMode)
-	router := gin.Default()
-	useCase := &mockProductUseCase{}
-	authMiddleware := middleware.AuthMiddleware{}
-	productController := handler.NewProductController(useCase, router.Group("/products"), authMiddleware)
+func (suite *ProductControllerTestSuite) TestUpdateProduct() {
+	payload := entity.Product{
+		IdProduct:    "1",
+		NameProvider: "Axis",
+		Nominal:      10000,
+		Price:        11000,
+		IdSupliyer:   "1",
+	}
 
-	router.PUT("/products/:id", productController.UpdateProduct)
+	suite.mockProductUC.On("UpdateProduct", payload).Return(payload, nil)
 
-	product := entity.Product{IdProduct: "1", NameProvider: "Updated Product"}
-	jsonValue, _ := json.Marshal(product)
+	jsonPayload, err := json.Marshal(payload)
 
-	req, _ := http.NewRequest("PUT", "/products/1", bytes.NewBuffer(jsonValue))
-	req.Header.Set("Authorization", "Bearer token")
+	if err != nil {
+		panic(err)
+	}
 
-	res := httptest.NewRecorder()
-	router.ServeHTTP(res, req)
+	req, err := http.NewRequest("PUT", "/api/v1/product/1", bytes.NewBuffer(jsonPayload))
 
-	assert.Equal(t, http.StatusOK, res.Code)
+	if err != nil {
+		panic(err)
+	}
+
+	w := httptest.NewRecorder()
+	suite.router.ServeHTTP(w, req)
+
+	suite.Equal(http.StatusOK, w.Code)
+
 }
 
-func TestDeleteProduct(t *testing.T) {
-	gin.SetMode(gin.TestMode)
-	router := gin.Default()
-	useCase := &mockProductUseCase{}
-	authMiddleware := middleware.AuthMiddleware{}
-	productController := handler.NewProductController(useCase, router.Group("/products"), authMiddleware)
+func (suite *ProductControllerTestSuite) TestDeleteProduct() {
+	id := "1"
+	intID := "1"
 
-	router.DELETE("/products/:id", productController.DeleteProduct)
+	suite.mockProductUC.On("DeleteProduct", intID).Return(nil)
 
-	req, _ := http.NewRequest("DELETE", "/products/1", nil)
-	req.Header.Set("Authorization", "Bearer token")
+	req, err := http.NewRequest("DELETE", "/api/v1/product/"+id, nil)
 
-	res := httptest.NewRecorder()
-	router.ServeHTTP(res, req)
+	if err != nil {
+		panic(err)
+	}
 
-	assert.Equal(t, http.StatusNoContent, res.Code)
+	w := httptest.NewRecorder()
+
+	suite.router.ServeHTTP(w, req)
+
+	suite.Equal(http.StatusNoContent, w.Code)
+
+}
+
+func (suite *ProductControllerTestSuite) TestGetAllProduct() {
+
+	suite.mockProductUC.On("FindAllProduct").Return([]entity.Product{}, nil)
+
+	req, err := http.NewRequest("GET", "/api/v1/products", nil)
+
+	if err != nil {
+		panic(err)
+	}
+
+	w := httptest.NewRecorder()
+
+	suite.router.ServeHTTP(w, req)
+
+	suite.Equal(http.StatusOK, w.Code)
+
+}
+
+func TestProductControllerTestSuite(t *testing.T) {
+	suite.Run(t, new(ProductControllerTestSuite))
 }
