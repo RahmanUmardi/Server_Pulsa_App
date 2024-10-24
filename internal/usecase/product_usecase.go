@@ -1,7 +1,6 @@
 package usecase
 
 import (
-	"fmt"
 	"server-pulsa-app/internal/entity"
 	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/repository"
@@ -12,7 +11,7 @@ var logProduct = logger.GetLogger()
 type ProductUseCase interface {
 	CreateNewProduct(Product entity.Product) (entity.Product, error)
 	FindAllProduct() ([]entity.Product, error)
-	FindProductpyId(id string) (entity.Product, error)
+	FindProductById(id string) (entity.Product, error)
 	UpdateProduct(Product entity.Product) (entity.Product, error)
 	DeleteProduct(id string) error
 }
