@@ -24,9 +24,9 @@ func TestCreate(t *testing.T) {
 		Role:     "test",
 	}
 
-	mock.ExpectQuery("INSERT INTO mst_user").
-		WithArgs(user.Id_user, user.Username, user.Password, user.Role).
-		WillReturnRows(sqlmock.NewRows([]string{"id_user"}).AddRow("1"))
+	mock.ExpectExec("INSERT INTO mst_user (username, password, role) VALUES (?, ?, ?)").
+		WithArgs(user.Username, user.Password, user.Role).
+		WillReturnResult(sqlmock.NewResult(1, 1)) // Perbaiki ini untuk menggunakan Exec
 
 	createdUser, err := repo.CreateUser(user)
 	if err != nil {
@@ -34,7 +34,7 @@ func TestCreate(t *testing.T) {
 	}
 
 	if createdUser.Id_user != "1" {
-		t.Errorf("expected  Id_user to be '1', got '%s'", createdUser.Id_user)
+		t.Errorf("expected Id_user to be '1', got '%s'", createdUser.Id_user)
 	}
 }
 
@@ -55,9 +55,10 @@ func TestGetByUsername(t *testing.T) {
 		Role:     "test",
 	}
 
-	mock.ExpectQuery("SELECT id_user, username, password, role FROM mst_user WHERE username= ?").
+	mock.ExpectQuery("SELECT id_user, username, password, role FROM mst_user WHERE username = \\$1").
 		WithArgs(Username).
-		WillReturnRows(sqlmock.NewRows([]string{"id_user", "username", "password", "role"}).AddRow(expectedUser.Id_user, expectedUser.Username, expectedUser.Password, expectedUser.Role))
+		WillReturnRows(sqlmock.NewRows([]string{"id_user", "username", "password", "role"}).
+			AddRow(expectedUser.Id_user, expectedUser.Username, expectedUser.Password, expectedUser.Role))
 
 	user, err := repo.GetUserByUsername(Username)
 	if err != nil {
@@ -86,7 +87,7 @@ func TestGetById(t *testing.T) {
 		Role:     "test",
 	}
 
-	mock.ExpectQuery("SELECT id_user, username, password, role FROM mst_user WHERE id_user= ?").
+	mock.ExpectQuery("SELECT id_user, username, password, role FROM mst_user WHERE id_user = \\$1").
 		WithArgs(Id_user).
 		WillReturnRows(sqlmock.NewRows([]string{"id_user", "username", "password", "role"}).
 			AddRow(expectedUser.Id_user, expectedUser.Username, expectedUser.Password, expectedUser.Role))
@@ -110,7 +111,7 @@ func TestList(t *testing.T) {
 
 	repo := NewUserRepository(db)
 
-	mock.ExpectQuery("SELECT * FROM mst_user").
+	mock.ExpectQuery("SELECT id_user, username, password, role FROM mst_user").
 		WillReturnRows(sqlmock.NewRows([]string{"id_user", "username", "password", "role"}).
 			AddRow("1", "userA", "passA", "admin").
 			AddRow("2", "userB", "passB", "user"))
@@ -141,11 +142,11 @@ func TestUpdate(t *testing.T) {
 		Role:     "test",
 	}
 
-	mock.ExpectExec("UPDATE mst_product SET username = ?, password = ?, role = ? WHERE id_user = ?").
+	mock.ExpectExec("UPDATE mst_user SET username = \\$2, password = \\$3, role = \\$4 WHERE id_user = \\$1").
 		WithArgs(user.Username, user.Password, user.Role, Id_user).
 		WillReturnResult(sqlmock.NewResult(1, 1))
 
-	updatedUser, err := repo.UpdateUser(user, user)
+	updatedUser, err := repo.UpdateUser(user, user) // Pastikan Anda memanggil metode dengan benar
 	if err != nil {
 		t.Errorf("error was not expected while updating user: %s", err)
 	}
@@ -166,7 +167,7 @@ func TestDelete(t *testing.T) {
 
 	Id_user := "1"
 
-	mock.ExpectExec("DELETE FROM mst_user WHERE id_user = ?").
+	mock.ExpectExec("DELETE FROM mst_user WHERE id_user = \\$1").
 		WithArgs(Id_user).
 		WillReturnResult(sqlmock.NewResult(1, 1))
 

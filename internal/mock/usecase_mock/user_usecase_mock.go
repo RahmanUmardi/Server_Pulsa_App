@@ -25,7 +25,12 @@ func (u *UserUseCaseMock) GetUserByID(id string) (entity.User, error) {
 	return args.Get(0).(entity.User), args.Error(1)
 }
 
-func (u *UserUseCaseMock) GetListUser() ([]entity.User, error) {
+func (u *UserUseCaseMock) FindUserByUsernamePassword(username, password string) (entity.User, error) {
+	args := u.Called(username, password)
+	return args.Get(0).(entity.User), args.Error(1)
+}
+
+func (u *UserUseCaseMock) ListUser() ([]entity.User, error) {
 	args := u.Called()
 	return args.Get(0).([]entity.User), args.Error(1)
 }
