@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"regexp"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
@@ -15,6 +16,7 @@ type productRepoTestSuite struct {
 	mockDB      *sql.DB
 	mockSql     sqlmock.Sqlmock
 	productRepo ProductRepository
+	log         logger.Logger
 }
 
 func (p *productRepoTestSuite) SetupTest() {
@@ -25,7 +27,8 @@ func (p *productRepoTestSuite) SetupTest() {
 
 	p.mockDB = mockDb
 	p.mockSql = mockSql
-	p.productRepo = NewProductRepository(p.mockDB)
+	p.log = logger.NewLogger()
+	p.productRepo = NewProductRepository(p.mockDB, &p.log)
 }
 
 func (p *productRepoTestSuite) TearDownTest() {

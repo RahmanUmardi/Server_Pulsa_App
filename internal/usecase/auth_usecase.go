@@ -3,10 +3,9 @@ package usecase
 import (
 	"server-pulsa-app/internal/entity"
 	"server-pulsa-app/internal/entity/dto"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/shared/service"
 )
-
-// var log = logger.GetLogger()
 
 type AuthUseCase interface {
 	Login(payload dto.AuthRequestDto) (dto.AuthResponseDto, error)
@@ -16,21 +15,22 @@ type AuthUseCase interface {
 type authUseCase struct {
 	useCase    UserUsecase
 	jwtService service.JwtService
+	log        *logger.Logger
 }
 
 func (a *authUseCase) Login(payload dto.AuthRequestDto) (dto.AuthResponseDto, error) {
-	// logrus.Info("Starting to authenticate user in the use case layer")
+	a.log.Info("Starting to authenticate user in the use case layer", nil)
 
 	user, err := a.useCase.FindUserByUsernamePassword(payload.Username, payload.Password)
 	if err != nil {
-		// logrus.Error("Failed to authenticate user: ", err)
+		a.log.Error("Failed to authenticate user: ", err)
 		return dto.AuthResponseDto{}, err
 	}
 
-	// logrus.Info("User has been authenticated successfully")
+	a.log.Info("User has been authenticated successfully", nil)
 	token, err := a.jwtService.CreateToken(user)
 	if err != nil {
-		// logrus.Error("Failed to create token: ", err)
+		a.log.Error("Failed to create token: ", err)
 		return dto.AuthResponseDto{}, err
 	}
 
@@ -38,15 +38,15 @@ func (a *authUseCase) Login(payload dto.AuthRequestDto) (dto.AuthResponseDto, er
 		Token: token.Token,
 	}
 
-	// logrus.Infof("User ID %s has been authenticated successfully", user.Id_user)
+	a.log.Info("User ID %s has been authenticated successfully", user.Id_user)
 	return response, nil
 }
 
 func (a *authUseCase) Register(payload dto.AuthRequestDto) (entity.User, error) {
-	// logrus.Info("Starting to register a new user in the use case layer")
+	a.log.Info("Starting to register a new user in the use case layer", nil)
 	return a.useCase.RegisterUser(entity.User{Username: payload.Username, Password: payload.Password})
 }
 
-func NewAuthUseCase(uc UserUsecase, jwtService service.JwtService) AuthUseCase {
-	return &authUseCase{useCase: uc, jwtService: jwtService}
+func NewAuthUseCase(uc UserUsecase, jwtService service.JwtService, log *logger.Logger) AuthUseCase {
+	return &authUseCase{useCase: uc, jwtService: jwtService, log: log}
 }
