@@ -17,7 +17,7 @@ type (
 
 	TransactionDetailReq struct {
 		TransactionDetailId string     `json:"transactionDetailId"`
-		TransactionsId      string     `json:"transactionId"`
+		TransactionsId      string     `json:"transactionId,omitempty"`
 		Product             ProductRes `json:"product"`
 	}
 

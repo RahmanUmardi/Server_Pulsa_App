@@ -5,12 +5,11 @@ import (
 	"strings"
 
 	"server-pulsa-app/internal/entity"
-	"server-pulsa-app/internal/logger"
 
 	"github.com/sirupsen/logrus"
 )
 
-var logMerchant = logger.GetLogger()
+// var logMerchant = logger.GetLogger()
 
 type MerchantRepository interface {
 	Create(payload entity.Merchant) (entity.Merchant, error)
@@ -25,15 +24,15 @@ type merchantRepository struct {
 }
 
 func (m *merchantRepository) Create(payload entity.Merchant) (entity.Merchant, error) {
-	logrus.Info("Starting to create a new merchant in the repository layer")
+	// logrus.Info("Starting to create a new merchant in the repository layer")
 
 	err := m.db.QueryRow("INSERT INTO mst_merchant (id_user, name_merchant, address, id_product, balance) VALUES ($1, $2, $3, $4, $5) RETURNING id_merchant", payload.IdUser, payload.NameMerchant, payload.Address, payload.IdProduct, payload.Balance).Scan(&payload.IdMerchant)
 	if err != nil {
-		logrus.Error("Failed to create the merchant: ", err)
+		// logrus.Error("Failed to create the merchant: ", err)
 		return entity.Merchant{}, err
 	}
 
-	logrus.Info("Merchant has been created successfully: ", payload)
+	// logrus.Info("Merchant has been created successfully: ", payload)
 	return payload, nil
 }
 
@@ -42,12 +41,12 @@ func (m *merchantRepository) List() ([]entity.Merchant, error) {
 	var rows *sql.Rows
 	var err error
 
-	logrus.Info("Starting to retrive all merchant in the repository layer")
+	// logrus.Info("Starting to retrive all merchant in the repository layer")
 
 	rows, err = m.db.Query("SELECT id_merchant, id_user, name_merchant, address, id_product, balance FROM mst_merchant")
 
 	if err != nil {
-		logrus.Error("Failed to retrive the product: ", err)
+		// logrus.Error("Failed to retrive the product: ", err)
 		return nil, err
 	}
 
@@ -56,34 +55,34 @@ func (m *merchantRepository) List() ([]entity.Merchant, error) {
 
 		logrus.Info("Starting to scan all merchant in the repository layer")
 		if err := rows.Scan(&merchant.IdMerchant, &merchant.IdUser, &merchant.NameMerchant, &merchant.Address, &merchant.IdProduct, &merchant.Balance); err != nil {
-			logrus.Error("Failed to scan the merchant: ", err)
+			// logrus.Error("Failed to scan the merchant: ", err)
 			return nil, err
 		}
 
-		logrus.Info("Starting to add merchant in the repository layer")
+		// logrus.Info("Starting to add merchant in the repository layer")
 		merchants = append(merchants, merchant)
 	}
 
-	logrus.Info("Getting all merchant was successfully: ", merchants)
+	// logrus.Info("Getting all merchant was successfully: ", merchants)
 	return merchants, nil
 }
 
 func (m *merchantRepository) Get(id string) (entity.Merchant, error) {
 	var merchant entity.Merchant
 
-	logrus.Info("Starting to retrive a merchant by id in the repository layer")
+	// logrus.Info("Starting to retrive a merchant by id in the repository layer")
 
 	if err := m.db.QueryRow("SELECT id_merchant, id_user, name_merchant, address, id_product, balance FROM mst_merchant WHERE id_merchant = $1", id).Scan(&merchant.IdMerchant, &merchant.IdUser, &merchant.NameMerchant, &merchant.Address, &merchant.IdProduct, &merchant.Balance); err != nil {
 		logrus.Error("Failed to retrive the merchant: ", err)
 		return entity.Merchant{}, err
 	}
 
-	logrus.Info("Getting merchant by id was successfully: ", merchant)
+	// logrus.Info("Getting merchant by id was successfully: ", merchant)
 	return merchant, nil
 }
 
 func (m *merchantRepository) Update(merchant, payload entity.Merchant) (entity.Merchant, error) {
-	logrus.Info("Starting to map merchant and payload in the repository layer")
+	// logrus.Info("Starting to map merchant and payload in the repository layer")
 
 	if strings.TrimSpace(payload.IdUser) != "" {
 		merchant.IdUser = payload.IdUser
@@ -101,28 +100,28 @@ func (m *merchantRepository) Update(merchant, payload entity.Merchant) (entity.M
 		merchant.Balance = payload.Balance
 	}
 
-	logrus.Info("Starting to update merchant in the repository layer")
+	// logrus.Info("Starting to update merchant in the repository layer")
 
 	_, err := m.db.Exec("UPDATE mst_merchant SET id_user = $2, name_merchant = $3, address = $4, id_product = $5, balance = $6 WHERE id_merchant = $1", merchant.IdMerchant, merchant.IdUser, merchant.NameMerchant, merchant.Address, merchant.IdProduct, merchant.Balance)
 	if err != nil {
-		logrus.Error("Failed to update the merchant: ", err)
+		// logrus.Error("Failed to update the merchant: ", err)
 		return entity.Merchant{}, err
 	}
 
-	logrus.Info("Merchant has been updated successfully: ", merchant)
+	// logrus.Info("Merchant has been updated successfully: ", merchant)
 	return merchant, nil
 }
 
 func (m *merchantRepository) Delete(id string) error {
-	logrus.Info("Starting to delete merchant in the repository layer")
+	// logrus.Info("Starting to delete merchant in the repository layer")
 
 	_, err := m.db.Exec("DELETE FROM mst_merchant WHERE id_merchant = $1", id)
 	if err != nil {
-		logrus.Error("Failed to delete the merchant: ", err)
+		// logrus.Error("Failed to delete the merchant: ", err)
 		return err
 	}
 
-	logrus.Info("Merchant has been deleted successfully: ", id)
+	// logrus.Info("Merchant has been deleted successfully: ", id)
 	return nil
 }
 

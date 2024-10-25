@@ -141,8 +141,8 @@ func (r *transactionRepository) GetById(id string) (custom.TransactionsReq, erro
 		t.transaction_id, t.customer_name, t.destination_number, t.transaction_date,
 		u.id_user, u.username, u.role,
 		m.id_merchant, m.name_merchant, m.address,
-		td.transaction_detail_id, p.id_product, p.name_provider, p.nominal, p.price,
-		SUM(td.price) OVER (PARTITION BY t.transaction_id) AS total_price
+		td.transaction_detail_id, p.id_product, p.name_provider, p.nominal, p.price
+		
 	FROM transactions t
 	JOIN mst_user u ON t.id_user = u.id_user
 	JOIN mst_merchant m ON t.id_merchant = m.id_merchant
