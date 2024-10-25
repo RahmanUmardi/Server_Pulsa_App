@@ -1,11 +1,13 @@
 package main
 
 import (
-	"fmt"
 	"server-pulsa-app/internal"
+	"server-pulsa-app/internal/logger"
 )
 
 func main() {
-	fmt.Println("Server Pulsa App")
+	logger.InitLogger()
+	log := logger.GetLogger()
+	log.Info("Server Pulsa App Started")
 	internal.NewServer().Run()
 }

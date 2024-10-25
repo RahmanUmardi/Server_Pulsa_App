@@ -19,65 +19,156 @@ type MerchantHandler struct {
 func (m *MerchantHandler) createHandler(ctx *gin.Context) {
 	var payload entity.Merchant
 	if err := ctx.ShouldBindJSON(&payload); err != nil {
-		ctx.JSON(http.StatusBadRequest, err.Error())
+		response := struct {
+			Message string
+			Data    entity.Merchant
+		}{
+			Message: "Invalid Payload for Merchant",
+			Data:    entity.Merchant{},
+		}
+		ctx.JSON(http.StatusBadRequest, response)
 		return
 	}
 	merchant, err := m.merchantUc.RegisterNewMerchant(payload)
 	if err != nil {
-		ctx.JSON(http.StatusInternalServerError, err.Error())
+		response := struct {
+			Message string
+			Data    entity.Merchant
+		}{
+			Message: "Merchant Creation Failed",
+			Data:    entity.Merchant{},
+		}
+		ctx.JSON(http.StatusInternalServerError, response)
 		return
 	}
-	ctx.JSON(http.StatusCreated, merchant)
+	response := struct {
+		Message string
+		Data    entity.Merchant
+	}{
+		Message: "Merchant Created",
+		Data:    merchant,
+	}
+	ctx.JSON(http.StatusCreated, response)
 }
 
 func (m *MerchantHandler) listHandler(ctx *gin.Context) {
 	merchants, err := m.merchantUc.FindAllMerchant()
 	if err != nil {
-		ctx.JSON(http.StatusInternalServerError, err.Error())
+		response := struct {
+			Message string
+			Data    entity.Merchant
+		}{
+			Message: err.Error(),
+			Data:    entity.Merchant{},
+		}
+		ctx.JSON(http.StatusInternalServerError, response)
 		return
 	}
 	if len(merchants) > 0 {
-		ctx.JSON(http.StatusOK, merchants)
+		response := struct {
+			Message string
+			Data    []entity.Merchant
+		}{
+			Message: "Merchant List Found",
+			Data:    merchants,
+		}
+		ctx.JSON(http.StatusOK, response)
 		return
 	}
-	ctx.JSON(http.StatusOK, gin.H{"message": "List of merchant is empty"})
+	response := struct {
+		Message string
+		Data    entity.Merchant
+	}{
+		Message: "List of merchant is empty",
+		Data:    entity.Merchant{},
+	}
+	ctx.JSON(http.StatusOK, response)
 }
 func (m *MerchantHandler) getHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 	merchant, err := m.merchantUc.FindMerchantByID(id)
 	if err != nil {
-		ctx.JSON(http.StatusNotFound, err.Error())
+		response := struct {
+			Message string
+			Data    entity.Merchant
+		}{
+			Message: "Merchant of Id " + id + " Not Found",
+			Data:    entity.Merchant{},
+		}
+		ctx.JSON(http.StatusNotFound, response)
 		return
 	}
-	ctx.JSON(http.StatusOK, merchant)
+	response := struct {
+		Message string
+		Data    entity.Merchant
+	}{
+		Message: "Merchant Found",
+		Data:    merchant,
+	}
+	ctx.JSON(http.StatusOK, response)
 }
 
 func (m *MerchantHandler) updateHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 	var payload entity.Merchant
 	if err := ctx.ShouldBindJSON(&payload); err != nil {
-		ctx.JSON(http.StatusBadRequest, err.Error())
+		response := struct {
+			Message string
+			Data    entity.Merchant
+		}{
+			Message: "Invalid Payload for Merchant",
+			Data:    entity.Merchant{},
+		}
+		ctx.JSON(http.StatusBadRequest, response)
 		return
 	}
 
 	payload.IdMerchant = id
 
-	expense, err := m.merchantUc.UpdateMerchant(payload)
+	merchant, err := m.merchantUc.UpdateMerchant(payload)
 	if err != nil {
-		ctx.JSON(http.StatusNotFound, err.Error())
+		response := struct {
+			Message string
+			Data    entity.Merchant
+		}{
+			Message: "Merchant of Id " + id + " Not Found",
+			Data:    entity.Merchant{},
+		}
+		ctx.JSON(http.StatusNotFound, response)
 		return
 	}
-	ctx.JSON(http.StatusOK, expense)
+	response := struct {
+		Message string
+		Data    entity.Merchant
+	}{
+		Message: "Merchant of Id " + id + " Updated",
+		Data:    merchant,
+	}
+	ctx.JSON(http.StatusOK, response)
 }
 
 func (m *MerchantHandler) deleteHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 	err := m.merchantUc.DeleteMerchant(id)
 	if err != nil {
-		ctx.JSON(http.StatusNotFound, err.Error())
+		response := struct {
+			Message string
+			Data    entity.Merchant
+		}{
+			Message: "Merchant of Id " + id + " Not Found",
+			Data:    entity.Merchant{},
+		}
+		ctx.JSON(http.StatusNotFound, response)
 		return
 	}
-	ctx.JSON(http.StatusNoContent, nil)
+	response := struct {
+		Message string
+		Data    entity.Merchant
+	}{
+		Message: "Merchant of Id " + id + " Deleted",
+		Data:    entity.Merchant{},
+	}
+	ctx.JSON(http.StatusOK, response)
 }
 
 func (m *MerchantHandler) Route() {
