@@ -18,7 +18,7 @@ func TestCreate(t *testing.T) {
 	repo := NewUserRepository(db)
 
 	user := entity.User{
-		Id_user:  "1", // Anda mungkin ingin menghapus ini karena Id_user akan diisi setelah pembuatan
+		Id_user:  "1",
 		Username: "test",
 		Password: "test",
 		Role:     "test",
@@ -26,8 +26,7 @@ func TestCreate(t *testing.T) {
 
 	mock.ExpectQuery(`INSERT INTO mst_user \(username, password, role\) VALUES \(\$1, \$2, \$3\) RETURNING id_user`).
 		WithArgs(user.Username, user.Password, user.Role).
-		WillReturnRows(sqlmock.NewRows([]string{"id_user"}).AddRow("1")) // Menyesuaikan untuk menggunakan Query
-
+		WillReturnRows(sqlmock.NewRows([]string{"id_user"}).AddRow("1"))
 	createdUser, err := repo.CreateUser(user)
 	if err != nil {
 		t.Errorf("error was not expected while creating user: %s", err)
@@ -135,10 +134,8 @@ func TestUpdate(t *testing.T) {
 
 	repo := NewUserRepository(db)
 
-	// ID pengguna yang ingin diperbarui
 	Id_user := "1"
 
-	// User yang ada
 	existingUser := entity.User{
 		Id_user:  Id_user,
 		Username: "test",
@@ -146,7 +143,6 @@ func TestUpdate(t *testing.T) {
 		Role:     "test",
 	}
 
-	// Payload yang ingin diperbarui
 	payload := entity.User{
 		Username: "updatedTest",
 		Password: "updatedTest",
@@ -157,7 +153,7 @@ func TestUpdate(t *testing.T) {
 		WithArgs(existingUser.Id_user, payload.Username, payload.Password, payload.Role).
 		WillReturnResult(sqlmock.NewResult(1, 1))
 
-	updatedUser, err := repo.UpdateUser(existingUser, payload) // Memanggil dengan pengguna yang ada dan payload
+	updatedUser, err := repo.UpdateUser(existingUser, payload)
 	if err != nil {
 		t.Errorf("error was not expected while updating user: %s", err)
 	}

@@ -38,3 +38,4 @@ time="2024-10-24T10:50:57+07:00" level=info msg="Starting to retrive a user by i
 time="2024-10-24T10:50:57+07:00" level=error msg="Failed to retrive the user: sql: no rows in result set"
 time="2024-10-25T06:18:32+07:00" level=info msg="Server Pulsa App Started"
 time="2024-10-25T13:04:58+07:00" level=info msg="Server Pulsa App Started"
+time="2024-10-25T13:08:56+07:00" level=info msg="Server Pulsa App Started"
