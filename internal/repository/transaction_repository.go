@@ -41,6 +41,39 @@ func (r *transactionRepository) Create(payload entity.Transactions) (entity.Tran
 		return entity.Transactions{}, err
 	}
 
+	// Check merchant's current balance before processing
+	var currentBalance float64
+	if err := tx.QueryRow(
+		"SELECT balance FROM mst_merchant WHERE id_merchant = $1 FOR UPDATE",
+		payload.MerchantId,
+	).Scan(&currentBalance); err != nil {
+		tx.Rollback()
+		r.log.Error("Failed to fetch merchant balance", err)
+		return entity.Transactions{}, err
+	}
+
+	// Calculate total nominal needed for the transaction
+	var totalNominal float64
+	for _, detail := range payload.TransactionDetail {
+		var nominal float64
+		if err := tx.QueryRow(
+			"SELECT nominal FROM mst_product WHERE id_product = $1",
+			detail.ProductId,
+		).Scan(&nominal); err != nil {
+			tx.Rollback()
+			r.log.Error("Failed to fetch product nominal", err)
+			return entity.Transactions{}, err
+		}
+		totalNominal += nominal
+	}
+
+	// Check if merchant has sufficient balance
+	if currentBalance < totalNominal {
+		tx.Rollback()
+		r.log.Error("Insufficient merchant balance", fmt.Errorf("required balance: %v, current balance: %v", totalNominal, currentBalance))
+		return entity.Transactions{}, fmt.Errorf("insufficient merchant balance: required %v, current balance %v", totalNominal, currentBalance)
+	}
+
 	//insert into transactions table
 	var transactionId string
 	insertTransaction := "INSERT INTO transactions (id_merchant, id_user, customer_name, destination_number, transaction_date) VALUES ($1, $2, $3, $4, $5) RETURNING transaction_id"
@@ -52,6 +85,9 @@ func (r *transactionRepository) Create(payload entity.Transactions) (entity.Tran
 	}
 
 	payload.TransactionsId = transactionId
+
+	// Track total price for revenue
+	var totalPrice float64
 
 	//insert into transaction detail table
 	insertTransactionDetail := "INSERT INTO transaction_detail (transaction_id, id_product, price) VALUES ($1, $2, $3) RETURNING transaction_detail_id"
@@ -67,26 +103,54 @@ func (r *transactionRepository) Create(payload entity.Transactions) (entity.Tran
 		payload.TransactionDetail[i].TransactionDetailId = transactionDetailId
 		payload.TransactionDetail[i].TransactionsId = transactionId
 
-		//fetch product price from product table
-		var productPrice float64
-
-		if err := r.db.QueryRow("SELECT price FROM mst_product WHERE id_product = $1", payload.TransactionDetail[i].ProductId).Scan(&productPrice); err != nil {
+		// Fetch product details (price and nominal) from product table
+		var product entity.Product
+		if err := tx.QueryRow(
+			"SELECT price, nominal FROM mst_product WHERE id_product = $1",
+			payload.TransactionDetail[i].ProductId,
+		).Scan(&product.Price, &product.Nominal); err != nil {
 			tx.Rollback()
-			r.log.Error("Failed to fetch price from product table", err)
+			r.log.Error("Failed to fetch product details", err)
 			return entity.Transactions{}, err
 		}
-		payload.TransactionDetail[i].Price = productPrice
+
+		// Update the price in the payload
+		payload.TransactionDetail[i].Price = product.Price
+		totalPrice += product.Price
 	}
+
+	// Update merchant balance
+	// Subtract nominal (cost) and add price (revenue)
+	updateMerchantBalance := `
+		UPDATE mst_merchant 
+		SET balance = balance - $1 + $2 
+		WHERE id_merchant = $3
+		RETURNING balance`
+
+	var newBalance float64
+	if err := tx.QueryRow(
+		updateMerchantBalance,
+		totalNominal, // amount to subtract (cost)
+		totalPrice,   // amount to add (revenue)
+		payload.MerchantId,
+	).Scan(&newBalance); err != nil {
+		tx.Rollback()
+		r.log.Error("Failed to update merchant balance", err)
+		return entity.Transactions{}, err
+	}
+
 	// commit transaction
 	if err := tx.Commit(); err != nil {
-		r.log.Error("Failed to commit transaction", nil)
+		r.log.Error("Failed to commit transaction", err)
 		return entity.Transactions{}, err
 	}
 
 	payload.TransactionDate = parsedDate.Format("02-01-2006")
-	r.log.Info("Transaction created successfully : ", payload)
+	r.log.Info("Transaction created successfully with updated merchant balance", map[string]interface{}{
+		"payload":    payload,
+		"newBalance": newBalance,
+	})
 	return payload, nil
-
 }
 
 func (r *transactionRepository) GetAll() ([]custom.TransactionsReq, error) {

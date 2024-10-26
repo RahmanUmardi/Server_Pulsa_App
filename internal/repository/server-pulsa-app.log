@@ -1822,3 +1822,1074 @@
   "msg": "User has been deleted successfully",
   "time": "2024-10-26 12:12:21"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": "Query: could not match actual sql: \"INSERT INTO mst_merchant (id_user, name_merchant, address, id_product, balance) VALUES ($1, $2, $3, $4, $5) RETURNING id_merchant\" with expected regexp \"INSERT INTO mst_merchant \\(id_merchant, id_user, name_merchant, address, id_product, balance\\) VALUES \\(\\$1, \\$2, \\$3, \\$4, \\$5, \\$6\\) RETURNING id_merchant\"",
+  "level": "error",
+  "msg": "Failed to create the merchant: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": {
+    "idMerchant": "uuid-merchant-test",
+    "idUser": "uuid-user-test",
+    "nameMerchant": "name-merchant-test",
+    "address": "address-test",
+    "idProduct": "uuid-product-test",
+    "balance": 10000
+  },
+  "level": "info",
+  "msg": "Merchant has been created successfully: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": "call to ExecQuery 'DELETE FROM mst_merchant WHERE id_merchant = $1' with args [{Name: Ordinal:1 Value:uuid-merchant-test}], was not expected, next expectation is: ExpectedQuery =\u003e expecting Query, QueryContext or QueryRow which:\n  - matches sql: 'DELETE FROM mst_merchant WHERE id_merchant = \\$1'\n  - is without arguments\n  - should return error: sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to delete the merchant: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the merchant: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": {
+    "idMerchant": "uuid-merchant-test",
+    "idUser": "uuid-user-test",
+    "nameMerchant": "name-merchant-test",
+    "address": "address-test",
+    "idProduct": "uuid-product-test",
+    "balance": 10000
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the product: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": [
+    {
+      "idMerchant": "uuid-merchant-test",
+      "idUser": "uuid-user-test",
+      "nameMerchant": "name-merchant-test",
+      "address": "address-test",
+      "idProduct": "uuid-product-test",
+      "balance": 10000
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all merchant was successfully: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to map merchant and payload in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": "call to ExecQuery 'UPDATE mst_merchant SET id_user = $2, name_merchant = $3, address = $4, id_product = $5, balance = $6 WHERE id_merchant = $1' with args [{Name: Ordinal:1 Value:uuid-merchant-test} {Name: Ordinal:2 Value:uuid-user-test} {Name: Ordinal:3 Value:name-merchant-test} {Name: Ordinal:4 Value:address-test} {Name: Ordinal:5 Value:uuid-product-test} {Name: Ordinal:6 Value:10000}], was not expected, next expectation is: ExpectedQuery =\u003e expecting Query, QueryContext or QueryRow which:\n  - matches sql: 'UPDATE mst_merchant SET id_user = \\$1, name_merchant = \\$2, address = \\$3, id_product = \\$4, balance = \\$5 WHERE id_merchant = \\$6'\n  - is without arguments\n  - should return error: sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to update the merchant: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new product in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": {
+    "idProduct": "1",
+    "nameProvider": "Provider A",
+    "nominal": 10000,
+    "price": 12000,
+    "idSupliyer": "Supplier A"
+  },
+  "level": "info",
+  "msg": "Product has been created successfully: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete product in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": "1",
+  "level": "info",
+  "msg": "Product has been deleted successfully: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": [
+    {
+      "idProduct": "1",
+      "nameProvider": "Provider A",
+      "nominal": 10000,
+      "price": 12000,
+      "idSupliyer": "Supplier A"
+    },
+    {
+      "idProduct": "2",
+      "nameProvider": "Provider B",
+      "nominal": 20000,
+      "price": 24000,
+      "idSupliyer": "Supplier B"
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all product was successfully: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": {
+    "idProduct": "1",
+    "nameProvider": "Provider A",
+    "nominal": 10000,
+    "price": 12000,
+    "idSupliyer": "Supplier A"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update product in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": {
+    "idProduct": "1",
+    "nameProvider": "Provider A",
+    "nominal": 10000,
+    "price": 12000,
+    "idSupliyer": "Supplier A"
+  },
+  "level": "info",
+  "msg": "Product has been updated successfully: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": {
+    "id_user": "1",
+    "name": "test",
+    "password": "test",
+    "role": "test"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": {
+    "id_user": "1",
+    "name": "test",
+    "password": "test",
+    "role": "test"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": {
+    "id_user": "1",
+    "name": "test",
+    "password": "test",
+    "role": "test"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": "ExecQuery: could not match actual sql: \"UPDATE mst_user SET username = $1, password = $2, role = $3 WHERE id_user = $4\" with expected regexp \"UPDATE mst_user SET username = \\$2, password = \\$3, role = \\$4 WHERE id_user = \\$1\"",
+  "level": "error",
+  "msg": "Failed to update the user: ",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the repository layer",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been deleted successfully",
+  "time": "2024-10-26 19:25:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "Query: could not match actual sql: \"INSERT INTO mst_merchant (id_user, name_merchant, address, id_product, balance) VALUES ($1, $2, $3, $4, $5) RETURNING id_merchant\" with expected regexp \"INSERT INTO mst_merchant \\(id_merchant, id_user, name_merchant, address, id_product, balance\\) VALUES \\(\\$1, \\$2, \\$3, \\$4, \\$5, \\$6\\) RETURNING id_merchant\"",
+  "level": "error",
+  "msg": "Failed to create the merchant: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": {
+    "idMerchant": "uuid-merchant-test",
+    "idUser": "uuid-user-test",
+    "nameMerchant": "name-merchant-test",
+    "address": "address-test",
+    "idProduct": "uuid-product-test",
+    "balance": 10000
+  },
+  "level": "info",
+  "msg": "Merchant has been created successfully: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "call to ExecQuery 'DELETE FROM mst_merchant WHERE id_merchant = $1' with args [{Name: Ordinal:1 Value:uuid-merchant-test}], was not expected, next expectation is: ExpectedQuery =\u003e expecting Query, QueryContext or QueryRow which:\n  - matches sql: 'DELETE FROM mst_merchant WHERE id_merchant = \\$1'\n  - is without arguments\n  - should return error: sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to delete the merchant: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the merchant: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": {
+    "idMerchant": "uuid-merchant-test",
+    "idUser": "uuid-user-test",
+    "nameMerchant": "name-merchant-test",
+    "address": "address-test",
+    "idProduct": "uuid-product-test",
+    "balance": 10000
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the product: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": [
+    {
+      "idMerchant": "uuid-merchant-test",
+      "idUser": "uuid-user-test",
+      "nameMerchant": "name-merchant-test",
+      "address": "address-test",
+      "idProduct": "uuid-product-test",
+      "balance": 10000
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all merchant was successfully: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to map merchant and payload in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "call to ExecQuery 'UPDATE mst_merchant SET id_user = $2, name_merchant = $3, address = $4, id_product = $5, balance = $6 WHERE id_merchant = $1' with args [{Name: Ordinal:1 Value:uuid-merchant-test} {Name: Ordinal:2 Value:uuid-user-test} {Name: Ordinal:3 Value:name-merchant-test} {Name: Ordinal:4 Value:address-test} {Name: Ordinal:5 Value:uuid-product-test} {Name: Ordinal:6 Value:10000}], was not expected, next expectation is: ExpectedQuery =\u003e expecting Query, QueryContext or QueryRow which:\n  - matches sql: 'UPDATE mst_merchant SET id_user = \\$1, name_merchant = \\$2, address = \\$3, id_product = \\$4, balance = \\$5 WHERE id_merchant = \\$6'\n  - is without arguments\n  - should return error: sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to update the merchant: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new product in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": {
+    "idProduct": "1",
+    "nameProvider": "Provider A",
+    "nominal": 10000,
+    "price": 12000,
+    "idSupliyer": "Supplier A"
+  },
+  "level": "info",
+  "msg": "Product has been created successfully: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete product in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "1",
+  "level": "info",
+  "msg": "Product has been deleted successfully: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": [
+    {
+      "idProduct": "1",
+      "nameProvider": "Provider A",
+      "nominal": 10000,
+      "price": 12000,
+      "idSupliyer": "Supplier A"
+    },
+    {
+      "idProduct": "2",
+      "nameProvider": "Provider B",
+      "nominal": 20000,
+      "price": 24000,
+      "idSupliyer": "Supplier B"
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all product was successfully: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": {
+    "idProduct": "1",
+    "nameProvider": "Provider A",
+    "nominal": 10000,
+    "price": 12000,
+    "idSupliyer": "Supplier A"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update product in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": {
+    "idProduct": "1",
+    "nameProvider": "Provider A",
+    "nominal": 10000,
+    "price": 12000,
+    "idSupliyer": "Supplier A"
+  },
+  "level": "info",
+  "msg": "Product has been updated successfully: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "Query: could not match actual sql: \"INSERT INTO mst_user (username, password, role) VALUES ($1, $2, $3) RETURNING id_user\" with expected regexp \"INSERT INTO mst_user \\(id_user, username, password, role\\) VALUES \\(\\$1, \\$2, \\$3, \\$4\\) RETURNING id_user\"",
+  "level": "error",
+  "msg": "Failed to create the user: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": {
+    "id_user": "uuid-user-test",
+    "name": "username-test",
+    "password": "password-test",
+    "role": "test"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "call to ExecQuery 'DELETE FROM mst_user WHERE id_user = $1' with args [{Name: Ordinal:1 Value:uuid-user-test}], was not expected, next expectation is: ExpectedQuery =\u003e expecting Query, QueryContext or QueryRow which:\n  - matches sql: 'DELETE FROM mst_user WHERE id_user = \\$1'\n  - is without arguments\n  - should return error: sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to delete the user: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "Query 'SELECT id_user, username, password, role FROM mst_user WHERE id_user = $1', arguments do not match: argument 0 expected [string - uuid-user-test] does not match actual [string - uuid-merchant-test]",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": {
+    "id_user": "uuid-user-test",
+    "name": "username-test",
+    "password": "password-test",
+    "role": "test"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "Query: could not match actual sql: \"SELECT id_user, username, password, role FROM mst_user WHERE username = $1\" with expected regexp \"SELECT id_user, username, password, role FROM mst_user WHERE username = \\$2\"",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": {
+    "id_user": "uuid-user-test",
+    "name": "username-test",
+    "password": "password-test",
+    "role": "test"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "UserRepository.ListUser: %v \n",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": "call to ExecQuery 'UPDATE mst_user SET username = $1, password = $2, role = $3 WHERE id_user = $4' with args [{Name: Ordinal:1 Value:username-test} {Name: Ordinal:2 Value:password-test} {Name: Ordinal:3 Value:test} {Name: Ordinal:4 Value:uuid-user-test}], was not expected, next expectation is: ExpectedQuery =\u003e expecting Query, QueryContext or QueryRow which:\n  - matches sql: 'UPDATE mst_merchant SET username = \\$1, password = \\$2, role = \\$3 WHERE id_user = \\$4'\n  - is without arguments\n  - should return error: sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to update the user: ",
+  "time": "2024-10-26 19:34:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "Query: could not match actual sql: \"INSERT INTO mst_merchant (id_user, name_merchant, address, id_product, balance) VALUES ($1, $2, $3, $4, $5) RETURNING id_merchant\" with expected regexp \"INSERT INTO mst_merchant \\(id_merchant, id_user, name_merchant, address, id_product, balance\\) VALUES \\(\\$1, \\$2, \\$3, \\$4, \\$5, \\$6\\) RETURNING id_merchant\"",
+  "level": "error",
+  "msg": "Failed to create the merchant: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": {
+    "idMerchant": "uuid-merchant-test",
+    "idUser": "uuid-user-test",
+    "nameMerchant": "name-merchant-test",
+    "address": "address-test",
+    "idProduct": "uuid-product-test",
+    "balance": 10000
+  },
+  "level": "info",
+  "msg": "Merchant has been created successfully: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "call to ExecQuery 'DELETE FROM mst_merchant WHERE id_merchant = $1' with args [{Name: Ordinal:1 Value:uuid-merchant-test}], was not expected, next expectation is: ExpectedQuery =\u003e expecting Query, QueryContext or QueryRow which:\n  - matches sql: 'DELETE FROM mst_merchant WHERE id_merchant = \\$1'\n  - is without arguments\n  - should return error: sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to delete the merchant: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the merchant: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": {
+    "idMerchant": "uuid-merchant-test",
+    "idUser": "uuid-user-test",
+    "nameMerchant": "name-merchant-test",
+    "address": "address-test",
+    "idProduct": "uuid-product-test",
+    "balance": 10000
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the product: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": [
+    {
+      "idMerchant": "uuid-merchant-test",
+      "idUser": "uuid-user-test",
+      "nameMerchant": "name-merchant-test",
+      "address": "address-test",
+      "idProduct": "uuid-product-test",
+      "balance": 10000
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all merchant was successfully: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to map merchant and payload in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "call to ExecQuery 'UPDATE mst_merchant SET id_user = $2, name_merchant = $3, address = $4, id_product = $5, balance = $6 WHERE id_merchant = $1' with args [{Name: Ordinal:1 Value:uuid-merchant-test} {Name: Ordinal:2 Value:uuid-user-test} {Name: Ordinal:3 Value:name-merchant-test} {Name: Ordinal:4 Value:address-test} {Name: Ordinal:5 Value:uuid-product-test} {Name: Ordinal:6 Value:10000}], was not expected, next expectation is: ExpectedQuery =\u003e expecting Query, QueryContext or QueryRow which:\n  - matches sql: 'UPDATE mst_merchant SET id_user = \\$1, name_merchant = \\$2, address = \\$3, id_product = \\$4, balance = \\$5 WHERE id_merchant = \\$6'\n  - is without arguments\n  - should return error: sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to update the merchant: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new product in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": {
+    "idProduct": "1",
+    "nameProvider": "Provider A",
+    "nominal": 10000,
+    "price": 12000,
+    "idSupliyer": "Supplier A"
+  },
+  "level": "info",
+  "msg": "Product has been created successfully: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete product in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "1",
+  "level": "info",
+  "msg": "Product has been deleted successfully: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": [
+    {
+      "idProduct": "1",
+      "nameProvider": "Provider A",
+      "nominal": 10000,
+      "price": 12000,
+      "idSupliyer": "Supplier A"
+    },
+    {
+      "idProduct": "2",
+      "nameProvider": "Provider B",
+      "nominal": 20000,
+      "price": 24000,
+      "idSupliyer": "Supplier B"
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all product was successfully: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": {
+    "idProduct": "1",
+    "nameProvider": "Provider A",
+    "nominal": 10000,
+    "price": 12000,
+    "idSupliyer": "Supplier A"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update product in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": {
+    "idProduct": "1",
+    "nameProvider": "Provider A",
+    "nominal": 10000,
+    "price": 12000,
+    "idSupliyer": "Supplier A"
+  },
+  "level": "info",
+  "msg": "Product has been updated successfully: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "Query: could not match actual sql: \"INSERT INTO mst_user (username, password, role) VALUES ($1, $2, $3) RETURNING id_user\" with expected regexp \"INSERT INTO mst_user \\(id_user, username, password, role\\) VALUES \\(\\$1, \\$2, \\$3, \\$4\\) RETURNING id_user\"",
+  "level": "error",
+  "msg": "Failed to create the user: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": {
+    "id_user": "uuid-user-test",
+    "name": "username-test",
+    "password": "password-test",
+    "role": "test"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "call to ExecQuery 'DELETE FROM mst_user WHERE id_user = $1' with args [{Name: Ordinal:1 Value:uuid-user-test}], was not expected, next expectation is: ExpectedQuery =\u003e expecting Query, QueryContext or QueryRow which:\n  - matches sql: 'DELETE FROM mst_user WHERE id_user = \\$1'\n  - is without arguments\n  - should return error: sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to delete the user: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "Query 'SELECT id_user, username, password, role FROM mst_user WHERE id_user = $1', arguments do not match: argument 0 expected [string - uuid-user-test] does not match actual [string - uuid-merchant-test]",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": {
+    "id_user": "uuid-user-test",
+    "name": "username-test",
+    "password": "password-test",
+    "role": "test"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "Query: could not match actual sql: \"SELECT id_user, username, password, role FROM mst_user WHERE username = $1\" with expected regexp \"SELECT id_user, username, password, role FROM mst_user WHERE username = \\$2\"",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": {
+    "id_user": "uuid-user-test",
+    "name": "username-test",
+    "password": "password-test",
+    "role": "test"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "UserRepository.ListUser: %v \n",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-26 19:36:34"
+}
+{
+  "data": "call to ExecQuery 'UPDATE mst_user SET username = $1, password = $2, role = $3 WHERE id_user = $4' with args [{Name: Ordinal:1 Value:username-test} {Name: Ordinal:2 Value:password-test} {Name: Ordinal:3 Value:test} {Name: Ordinal:4 Value:uuid-user-test}], was not expected, next expectation is: ExpectedQuery =\u003e expecting Query, QueryContext or QueryRow which:\n  - matches sql: 'UPDATE mst_merchant SET username = \\$1, password = \\$2, role = \\$3 WHERE id_user = \\$4'\n  - is without arguments\n  - should return error: sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to update the user: ",
+  "time": "2024-10-26 19:36:34"
+}

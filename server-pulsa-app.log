@@ -956,3 +956,629 @@ time="2024-10-25T11:13:17+07:00" level=info msg="Getting user by username was su
   "msg": "transactions list found",
   "time": "2024-10-26 12:11:04"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-26 15:12:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-26 15:12:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-26 15:12:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-26 15:12:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-26 15:12:05"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-26 15:12:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-26 15:12:05"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-26 15:12:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-26 15:12:05"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-26 15:12:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-26 15:12:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transactions list in the handler layer",
+  "time": "2024-10-26 15:12:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all transactions in the usecase layer",
+  "time": "2024-10-26 15:12:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-26 15:12:31"
+}
+{
+  "data": [
+    {
+      "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+      "customerName": "rahman",
+      "destinationNumber": "087654326453",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "120940bc-87c5-4575-ae2d-0a6859531b5c",
+          "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat",
+            "nominal": 5000,
+            "price": 6000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+      "customerName": "Customer baru",
+      "destinationNumber": "08736622342",
+      "user": {
+        "id_user": "76756390-fee0-406b-9637-0a770139527d",
+        "name": "rifki",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+        "nameMerchant": "Merchant Kota A",
+        "address": "Kota A"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "9cf59afc-bc3a-43e6-9c32-8551db679cfb",
+          "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+          "product": {
+            "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+            "nameProvider": "Telkomsel",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+      "customerName": "kevin",
+      "destinationNumber": "087653645242",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "a3e9d675-ca58-4cf5-bdd3-cd1aaf92ed9c",
+          "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat",
+            "nominal": 5000,
+            "price": 6000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+      "customerName": "mbappe",
+      "destinationNumber": "08765465",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "d7929cbd-cd65-4222-ae4a-a5effd2c0ceb",
+          "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat",
+            "nominal": 5000,
+            "price": 6000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+      "customerName": "bima",
+      "destinationNumber": "08157563452",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-24T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "06f44505-46de-4e22-9c5b-fca3652c3650",
+          "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat",
+            "nominal": 5000,
+            "price": 6000
+          }
+        }
+      ]
+    }
+  ],
+  "level": "info",
+  "msg": "Successfully Get the transactions list",
+  "time": "2024-10-26 15:12:31"
+}
+{
+  "data": {
+    "message": "Transaction list",
+    "data": [
+      {
+        "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+        "customerName": "rahman",
+        "destinationNumber": "087654326453",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "120940bc-87c5-4575-ae2d-0a6859531b5c",
+            "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat",
+              "nominal": 5000,
+              "price": 6000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+        "customerName": "Customer baru",
+        "destinationNumber": "08736622342",
+        "user": {
+          "id_user": "76756390-fee0-406b-9637-0a770139527d",
+          "name": "rifki",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+          "nameMerchant": "Merchant Kota A",
+          "address": "Kota A"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "9cf59afc-bc3a-43e6-9c32-8551db679cfb",
+            "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+            "product": {
+              "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+              "nameProvider": "Telkomsel",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+        "customerName": "kevin",
+        "destinationNumber": "087653645242",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "a3e9d675-ca58-4cf5-bdd3-cd1aaf92ed9c",
+            "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat",
+              "nominal": 5000,
+              "price": 6000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+        "customerName": "mbappe",
+        "destinationNumber": "08765465",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "d7929cbd-cd65-4222-ae4a-a5effd2c0ceb",
+            "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat",
+              "nominal": 5000,
+              "price": 6000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+        "customerName": "bima",
+        "destinationNumber": "08157563452",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-24T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "06f44505-46de-4e22-9c5b-fca3652c3650",
+            "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat",
+              "nominal": 5000,
+              "price": 6000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "level": "info",
+  "msg": "transactions list found",
+  "time": "2024-10-26 15:12:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-26 15:13:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-26 15:13:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-26 15:13:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-26 15:13:53"
+}
+{
+  "data": "required balance: 5000, current balance: 0",
+  "level": "error",
+  "msg": "Insufficient merchant balance",
+  "time": "2024-10-26 15:13:53"
+}
+{
+  "data": "insufficient merchant balance: required 5000, current balance 0",
+  "level": "error",
+  "msg": "failed to create a transaction",
+  "time": "2024-10-26 15:13:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the handler layer",
+  "time": "2024-10-26 15:15:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the usecase layer",
+  "time": "2024-10-26 15:15:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-26 15:15:36"
+}
+{
+  "data": {
+    "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+    "idUser": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "nameMerchant": "Konter Pak Sultan",
+    "address": "bogor",
+    "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+    "balance": 1000000
+  },
+  "level": "info",
+  "msg": "Merchant has been created successfully: ",
+  "time": "2024-10-26 15:15:36"
+}
+{
+  "data": {
+    "Message": "Merchant Created",
+    "Data": {
+      "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+      "idUser": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+      "nameMerchant": "Konter Pak Sultan",
+      "address": "bogor",
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "balance": 1000000
+    }
+  },
+  "level": "info",
+  "msg": "Merchant created successfully",
+  "time": "2024-10-26 15:15:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-26 15:15:47"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-26 15:15:47"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-26 15:15:47"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-26 15:15:47"
+}
+{
+  "data": {
+    "newBalance": 1001000,
+    "payload": {
+      "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+      "merchantId": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+      "userId": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+      "customerName": "haaland",
+      "destinationNumber": "456372534",
+      "transactionDate": "26-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "27ec76b1-5739-420b-bc7c-86dd12704deb",
+          "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+          "productId": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+          "Price": 6000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfully with updated merchant balance",
+  "time": "2024-10-26 15:15:47"
+}
+{
+  "data": {
+    "message": "Transaction Created",
+    "data": {
+      "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+      "merchantId": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+      "userId": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+      "customerName": "haaland",
+      "destinationNumber": "456372534",
+      "transactionDate": "26-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "27ec76b1-5739-420b-bc7c-86dd12704deb",
+          "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+          "productId": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+          "Price": 6000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfuly",
+  "time": "2024-10-26 15:15:47"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transaction by id in the handler layer",
+  "time": "2024-10-26 15:16:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transaction by id in the usecase layer",
+  "time": "2024-10-26 15:16:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive transaction by id in the repository layer",
+  "time": "2024-10-26 15:16:38"
+}
+{
+  "data": {
+    "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+    "customerName": "haaland",
+    "destinationNumber": "456372534",
+    "user": {
+      "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+      "name": "hunayn",
+      "role": "employee"
+    },
+    "merchant": {
+      "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+      "nameMerchant": "Konter Pak Sultan",
+      "address": "bogor"
+    },
+    "transactionDate": "2024-10-26T00:00:00Z",
+    "transactionDetail": [
+      {
+        "transactionDetailId": "27ec76b1-5739-420b-bc7c-86dd12704deb",
+        "product": {
+          "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+          "nameProvider": "Indosat",
+          "nominal": 5000,
+          "price": 6000
+        }
+      }
+    ]
+  },
+  "level": "info",
+  "msg": "Successfully Get the transaction by given id",
+  "time": "2024-10-26 15:16:38"
+}
+{
+  "data": {
+    "message": "Transaction detail",
+    "data": {
+      "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+      "customerName": "haaland",
+      "destinationNumber": "456372534",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+        "nameMerchant": "Konter Pak Sultan",
+        "address": "bogor"
+      },
+      "transactionDate": "2024-10-26T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "27ec76b1-5739-420b-bc7c-86dd12704deb",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat",
+            "nominal": 5000,
+            "price": 6000
+          }
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "transaction found",
+  "time": "2024-10-26 15:16:38"
+}
