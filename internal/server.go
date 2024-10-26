@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"server-pulsa-app/config"
 	"server-pulsa-app/internal/handler"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/middleware"
 	"server-pulsa-app/internal/repository"
 	"server-pulsa-app/internal/shared/service"
@@ -16,21 +17,25 @@ import (
 )
 
 type Server struct {
-	jwtService service.JwtService
-	authUc     usecase.AuthUseCase
-	productUc  usecase.ProductUseCase
-	merchantUc usecase.MerchantUseCase
-	engine     *gin.Engine
-	host       string
+	jwtService    service.JwtService
+	authUc        usecase.AuthUseCase
+	productUc     usecase.ProductUseCase
+	merchantUc    usecase.MerchantUseCase
+	transactionUc usecase.TransactionUseCase
+	engine        *gin.Engine
+	host          string
 }
+
+var log = logger.NewLogger()
 
 func (s *Server) initRoute() {
 	rg := s.engine.Group(config.ApiGroup)
 	authMiddleware := middleware.NewAuthMiddleware(s.jwtService)
 
-	handler.NewMerchantHandler(s.merchantUc, authMiddleware, rg).Route()
-	handler.NewAuthController(s.authUc, rg).Route()
-	handler.NewProductController(s.productUc, rg, authMiddleware).Route()
+	handler.NewMerchantHandler(s.merchantUc, authMiddleware, rg, &log).Route()
+	handler.NewAuthController(s.authUc, rg, &log).Route()
+	handler.NewProductController(s.productUc, rg, authMiddleware, &log).Route()
+	handler.NewTransactionHandler(s.transactionUc, authMiddleware, rg).Route()
 }
 
 func (s *Server) Run() {
@@ -51,25 +56,29 @@ func NewServer() *Server {
 	}
 
 	//inject dependencies repo layer
-	userRepo := repository.NewUserRepository(db)
-	productRepo := repository.NewProductRepository(db)
-	merchantRepo := repository.NewMerchantRepository(db)
+	userRepo := repository.NewUserRepository(db, &log)
+	productRepo := repository.NewProductRepository(db, &log)
+	merchantRepo := repository.NewMerchantRepository(db, &log)
+	transactionRepo := repository.NewTransactionRepository(db)
 
 	//inject dependencies usecase layer
 	jwtService := service.NewJwtService(cfg.TokenConfig)
-	userUc := usecase.NewUserUsecase(userRepo)
-	authUc := usecase.NewAuthUseCase(userUc, jwtService)
-	productUc := usecase.NewProductUseCase(productRepo)
-	merchantUc := usecase.NewMerchantUseCase(merchantRepo)
+	userUc := usecase.NewUserUsecase(userRepo, &log)
+	authUc := usecase.NewAuthUseCase(userUc, jwtService, &log)
+	productUc := usecase.NewProductUseCase(productRepo, &log)
+	merchantUc := usecase.NewMerchantUseCase(merchantRepo, &log)
+	transactionUc := usecase.NewTransactionUseCase(transactionRepo)
 
 	engine := gin.Default()
 	host := fmt.Sprintf(":%s", cfg.ApiPort)
 	return &Server{
-		jwtService: jwtService,
-		authUc:     authUc,
-		productUc:  productUc,
-		merchantUc: merchantUc,
-		engine:     engine,
-		host:       host,
+		jwtService:    jwtService,
+		authUc:        authUc,
+		productUc:     productUc,
+		merchantUc:    merchantUc,
+		transactionUc: transactionUc,
+
+		engine: engine,
+		host:   host,
 	}
 }

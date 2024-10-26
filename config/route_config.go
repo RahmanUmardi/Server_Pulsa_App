@@ -15,4 +15,9 @@ const (
 	GetProduct     = "/product/:id"
 	PutProduct     = "/product/:id"
 	DeleteProduct  = "/product/:id"
+
+	//transaction route
+	PostTransaction   = "/transaction"
+	ListTransactions  = "/transactions/history"
+	DetailTransaction = "/transaction/history/:id"
 )

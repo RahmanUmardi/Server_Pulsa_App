@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/mock/repo_mock"
 
 	"github.com/stretchr/testify/assert"
@@ -12,7 +13,8 @@ import (
 
 func TestCreate(t *testing.T) {
 	merchantRepo := new(repo_mock.MerchantRepoMock)
-	useCase := NewMerchantUseCase(merchantRepo)
+	log := logger.NewLogger()
+	useCase := NewMerchantUseCase(merchantRepo, &log)
 
 	merchant := entity.Merchant{
 		IdMerchant:   "uuid-merchant-test",
@@ -34,7 +36,8 @@ func TestCreate(t *testing.T) {
 
 func TestGetAll(t *testing.T) {
 	mockRepo := new(repo_mock.MerchantRepoMock)
-	useCase := NewMerchantUseCase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewMerchantUseCase(mockRepo, &log)
 
 	merchants := []entity.Merchant{
 		{
@@ -66,7 +69,8 @@ func TestGetAll(t *testing.T) {
 
 func TestGetByID(t *testing.T) {
 	mockRepo := new(repo_mock.MerchantRepoMock)
-	useCase := NewMerchantUseCase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewMerchantUseCase(mockRepo, &log)
 
 	merchant := entity.Merchant{
 		IdMerchant:   "uuid-merchant-test",

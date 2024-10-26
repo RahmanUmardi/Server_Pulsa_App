@@ -12,19 +12,17 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-var logMerchant = logger.GetLogger()
-
 type MerchantHandler struct {
 	merchantUc     usecase.MerchantUseCase
 	rg             *gin.RouterGroup
 	authMiddleware middleware.AuthMiddleware
+	log            *logger.Logger
 }
 
 func (m *MerchantHandler) createHandler(ctx *gin.Context) {
 	var payload entity.Merchant
 
-	// Todo log.Info
-	logrus.Info("Starting to create a new merchant in the handler layer")
+	m.log.Info("Starting to create a new merchant in the handler layer", nil)
 
 	if err := ctx.ShouldBindJSON(&payload); err != nil {
 		response := struct {
@@ -35,7 +33,7 @@ func (m *MerchantHandler) createHandler(ctx *gin.Context) {
 			Data:    entity.Merchant{},
 		}
 
-		logrus.Errorf("Invalid payload for merchant: %v", err)
+		m.log.Error("Invalid payload for merchant: ", err)
 		ctx.JSON(http.StatusBadRequest, response)
 		return
 	}
@@ -45,11 +43,11 @@ func (m *MerchantHandler) createHandler(ctx *gin.Context) {
 			Message string
 			Data    entity.Merchant
 		}{
-			Message: "Merchant Creation Failed",
+			Message: err.Error(),
 			Data:    entity.Merchant{},
 		}
 
-		logrus.Errorf("Merchant creation failed")
+		m.log.Error("Merchant creation failed", response)
 		ctx.JSON(http.StatusInternalServerError, response)
 		return
 	}
@@ -62,12 +60,12 @@ func (m *MerchantHandler) createHandler(ctx *gin.Context) {
 		Data:    merchant,
 	}
 
-	logrus.Info("Merchant created successfully")
+	m.log.Info("Merchant created successfully", response)
 	ctx.JSON(http.StatusCreated, response)
 }
 
 func (m *MerchantHandler) listHandler(ctx *gin.Context) {
-	logrus.Info("Starting to retrieve all merchant in the handler layer")
+	m.log.Info("Starting to retrieve all merchant in the handler layer", nil)
 
 	merchants, err := m.merchantUc.FindAllMerchant()
 	if err != nil {
@@ -91,7 +89,7 @@ func (m *MerchantHandler) listHandler(ctx *gin.Context) {
 			Data:    merchants,
 		}
 
-		logrus.Info("Merchant found successfully")
+		m.log.Info("Merchant found successfully", nil)
 		ctx.JSON(http.StatusOK, response)
 		return
 	}
@@ -103,13 +101,13 @@ func (m *MerchantHandler) listHandler(ctx *gin.Context) {
 		Data:    entity.Merchant{},
 	}
 
-	logrus.Info("Merchant not found")
+	m.log.Info("Merchant not found", response)
 	ctx.JSON(http.StatusOK, response)
 }
 func (m *MerchantHandler) getHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 
-	logrus.Info("Starting to retrieve merchant with id in the handler layer")
+	m.log.Info("Starting to retrieve merchant with id in the handler layer", nil)
 	merchant, err := m.merchantUc.FindMerchantByID(id)
 	if err != nil {
 		response := struct {
@@ -120,7 +118,7 @@ func (m *MerchantHandler) getHandler(ctx *gin.Context) {
 			Data:    entity.Merchant{},
 		}
 
-		logrus.Errorf("Merchant ID %s not found: %v", id, err)
+		m.log.Error("Merchant ID %s not found: ", response)
 		ctx.JSON(http.StatusNotFound, response)
 		return
 	}
@@ -132,7 +130,7 @@ func (m *MerchantHandler) getHandler(ctx *gin.Context) {
 		Data:    merchant,
 	}
 
-	logrus.Info("Merchant found successfully")
+	m.log.Info("Merchant found successfully", nil)
 	ctx.JSON(http.StatusOK, response)
 }
 
@@ -140,7 +138,7 @@ func (m *MerchantHandler) updateHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 	var payload entity.Merchant
 
-	logrus.Info("Starting to update merchant with id in the handler layer")
+	m.log.Info("Starting to update merchant with id in the handler layer", nil)
 	if err := ctx.ShouldBindJSON(&payload); err != nil {
 		response := struct {
 			Message string
@@ -150,7 +148,7 @@ func (m *MerchantHandler) updateHandler(ctx *gin.Context) {
 			Data:    entity.Merchant{},
 		}
 
-		logrus.Errorf("Invalid payload for merchant: %v", err)
+		m.log.Error("Invalid payload for merchant: ", err)
 		ctx.JSON(http.StatusBadRequest, response)
 		return
 	}
@@ -167,7 +165,7 @@ func (m *MerchantHandler) updateHandler(ctx *gin.Context) {
 			Data:    entity.Merchant{},
 		}
 
-		logrus.Errorf("Merchant ID %s not found: %v", id, err)
+		m.log.Error("Merchant ID %s not found: ", response)
 		ctx.JSON(http.StatusNotFound, response)
 		return
 	}
@@ -179,14 +177,14 @@ func (m *MerchantHandler) updateHandler(ctx *gin.Context) {
 		Data:    merchant,
 	}
 
-	logrus.Info("Merchant updated successfully")
+	m.log.Info("Merchant updated successfully", response)
 	ctx.JSON(http.StatusOK, response)
 }
 
 func (m *MerchantHandler) deleteHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 
-	logrus.Info("Starting to delete merchant with id in the handler layer")
+	m.log.Info("Starting to delete merchant with id in the handler layer", nil)
 	err := m.merchantUc.DeleteMerchant(id)
 	if err != nil {
 		response := struct {
@@ -197,7 +195,7 @@ func (m *MerchantHandler) deleteHandler(ctx *gin.Context) {
 			Data:    entity.Merchant{},
 		}
 
-		logrus.Errorf("Merchant ID %s not found: %v", id, err)
+		m.log.Error("Merchant ID %s not found: ", response)
 		ctx.JSON(http.StatusNotFound, response)
 		return
 	}
@@ -209,7 +207,7 @@ func (m *MerchantHandler) deleteHandler(ctx *gin.Context) {
 		Data:    entity.Merchant{},
 	}
 
-	logrus.Info("Merchant deleted successfully")
+	m.log.Info("Merchant deleted successfully", response)
 	ctx.JSON(http.StatusOK, response)
 }
 
@@ -221,6 +219,6 @@ func (m *MerchantHandler) Route() {
 	m.rg.DELETE(config.DeleteMerchant, m.authMiddleware.RequireToken("employee"), m.deleteHandler)
 }
 
-func NewMerchantHandler(merchantUc usecase.MerchantUseCase, authMiddleware middleware.AuthMiddleware, rg *gin.RouterGroup) *MerchantHandler {
-	return &MerchantHandler{merchantUc: merchantUc, authMiddleware: authMiddleware, rg: rg}
+func NewMerchantHandler(merchantUc usecase.MerchantUseCase, authMiddleware middleware.AuthMiddleware, rg *gin.RouterGroup, log *logger.Logger) *MerchantHandler {
+	return &MerchantHandler{merchantUc: merchantUc, authMiddleware: authMiddleware, rg: rg, log: log}
 }

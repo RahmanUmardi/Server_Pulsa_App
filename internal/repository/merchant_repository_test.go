@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"regexp"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	"testing"
 
 	"github.com/DATA-DOG/go-sqlmock"
@@ -24,6 +25,7 @@ type merchantRepositoryTestSuite struct {
 	mockDb  *sql.DB
 	mockSql sqlmock.Sqlmock
 	mr      MerchantRepository
+	log     logger.Logger
 }
 
 func TestMerchantRepositoryTestSuite(t *testing.T) {
@@ -36,7 +38,8 @@ func (m *merchantRepositoryTestSuite) SetupTest() {
 
 	m.mockDb = mockDb
 	m.mockSql = mockSql
-	m.mr = NewMerchantRepository(mockDb)
+	m.log = logger.NewLogger()
+	m.mr = NewMerchantRepository(mockDb, &m.log)
 }
 
 func (m *merchantRepositoryTestSuite) TestGet_success() {
