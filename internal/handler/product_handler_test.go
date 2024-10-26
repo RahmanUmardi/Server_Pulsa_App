@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	am "server-pulsa-app/internal/mock/auth_mock"
 	mock "server-pulsa-app/internal/mock/usecase_mock"
 	"testing"
@@ -20,6 +21,7 @@ type ProductControllerTestSuite struct {
 	mockAuthMiddleware *am.AuthMiddlewareMock
 	ProductController  *ProductController
 	router             *gin.Engine
+	log                logger.Logger
 }
 
 func (suite *ProductControllerTestSuite) SetupTest() {
@@ -28,7 +30,8 @@ func (suite *ProductControllerTestSuite) SetupTest() {
 	gin.SetMode(gin.TestMode)
 	suite.router = gin.New()
 
-	suite.ProductController = NewProductController(suite.mockProductUC, suite.router.Group("/api/v1/products"), suite.mockAuthMiddleware)
+	suite.log = logger.NewLogger()
+	suite.ProductController = NewProductController(suite.mockProductUC, suite.router.Group("/api/v1/products"), suite.mockAuthMiddleware, &suite.log)
 	suite.router.POST("/api/v1/product", suite.ProductController.CreateProduct)
 	suite.router.PUT("/api/v1/product/:id", suite.ProductController.UpdateProduct)
 	suite.router.DELETE("/api/v1/product/:id", suite.ProductController.DeleteProduct)

@@ -2,6 +2,7 @@ package usecase
 
 import (
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	repositorymock "server-pulsa-app/internal/mock/repository_mock"
 	"testing"
 
@@ -12,11 +13,13 @@ type productUsecaseTestSuite struct {
 	suite.Suite
 	mockProductRepository *repositorymock.MockProductRepository
 	ProductUseCase        ProductUseCase
+	log                   logger.Logger
 }
 
 func (p *productUsecaseTestSuite) SetupTest() {
 	p.mockProductRepository = new(repositorymock.MockProductRepository)
-	p.ProductUseCase = NewProductUseCase(p.mockProductRepository)
+	p.log = logger.NewLogger()
+	p.ProductUseCase = NewProductUseCase(p.mockProductRepository, &p.log)
 }
 
 func (p *productUsecaseTestSuite) TestCreateNewProduct_Success() {

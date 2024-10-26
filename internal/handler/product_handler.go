@@ -4,18 +4,18 @@ import (
 	"net/http"
 	"server-pulsa-app/config"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/middleware"
 	"server-pulsa-app/internal/usecase"
 
 	"github.com/gin-gonic/gin"
 )
 
-// var logProduct = logger.GetLogger()
-
 type ProductController struct {
 	useCase        usecase.ProductUseCase
 	rg             *gin.RouterGroup
 	authMiddleware middleware.AuthMiddleware
+	log            *logger.Logger
 }
 
 func (p *ProductController) Route() {
@@ -29,17 +29,17 @@ func (p *ProductController) Route() {
 func (p *ProductController) CreateProduct(c *gin.Context) {
 	var payload entity.Product
 
-	// logProduct.Info("Starting to create a new product in the handler layer")
+	p.log.Info("Starting to create a new product in the handler layer", nil)
 
 	if err := c.ShouldBindJSON(&payload); err != nil {
-		// logProduct.Errorf("Invalid payload for product: %v", err)
+		p.log.Error("Invalid payload for product: ", err)
 		c.JSON(http.StatusBadRequest, gin.H{"err": err.Error()})
 		return
 	}
 
 	Product, err := p.useCase.CreateNewProduct(payload)
 	if err != nil {
-		// logProduct.Errorf("Product creation failed")
+		p.log.Error("Product creation failed", err)
 		c.JSON(http.StatusInternalServerError, gin.H{"err": err.Error()})
 		return
 	}
@@ -52,12 +52,12 @@ func (p *ProductController) CreateProduct(c *gin.Context) {
 		Data:    Product,
 	}
 
-	// logProduct.Info("Product created successfully")
+	p.log.Info("Product created successfully", response)
 	c.JSON(http.StatusCreated, response)
 }
 
 func (p *ProductController) GetAllProduct(c *gin.Context) {
-	// logProduct.Info("Starting to retrieve all product in the handler layer")
+	p.log.Info("Starting to retrieve all product in the handler layer", nil)
 
 	Products, err := p.useCase.FindAllProduct()
 	if err != nil {
@@ -75,22 +75,22 @@ func (p *ProductController) GetAllProduct(c *gin.Context) {
 			Data:    Products,
 		}
 
-		// logProduct.Info("Product found successfully")
+		p.log.Info("Product found successfully", nil)
 		c.JSON(http.StatusOK, response)
 		return
 	}
 
-	// logProduct.Info("Product not found")
+	p.log.Info("Product not found", nil)
 	c.JSON(http.StatusOK, gin.H{"message": "List Product empty"})
 }
 
 func (p *ProductController) GetProductById(c *gin.Context) {
 	id := (c.Param("id"))
 
-	// logProduct.Info("Starting to retrieve product with id in the handler layer")
+	p.log.Info("Starting to retrieve product with id in the handler layer", nil)
 	Product, err := p.useCase.FindProductById(id)
 	if err != nil {
-		// logProduct.Errorf("Product ID %s not found: %v", id, err)
+		p.log.Error("Product ID %s not found: ", id)
 		c.JSON(http.StatusNotFound, gin.H{"err": "Product not found"})
 		return
 	}
@@ -103,26 +103,26 @@ func (p *ProductController) GetProductById(c *gin.Context) {
 		Data:    Product,
 	}
 
-	// logProduct.Info("Product found successfully")
+	p.log.Info("Product found successfully", nil)
 	c.JSON(http.StatusOK, response)
 }
 
-func (b *ProductController) UpdateProduct(c *gin.Context) {
+func (p *ProductController) UpdateProduct(c *gin.Context) {
 	var payload entity.Product
 	id := (c.Param("id"))
 
-	// logProduct.Info("Starting to update product with id in the handler layer")
+	p.log.Info("Starting to update product with id in the handler layer", nil)
 
 	if err := c.ShouldBindJSON(&payload); err != nil {
-		// logProduct.Errorf("Invalid payload for product: %v", err)
+		p.log.Error("Invalid payload for product: ", err)
 		c.JSON(http.StatusBadRequest, gin.H{"err": err.Error()})
 		return
 	}
 
 	payload.IdProduct = id
 
-	// logProduct.Infof("Updating product ID %s", id)
-	product, err := b.useCase.UpdateProduct(payload)
+	p.log.Info("Updating product ID %s", id)
+	product, err := p.useCase.UpdateProduct(payload)
 	if err != nil {
 
 		c.JSON(http.StatusInternalServerError, gin.H{"err": err.Error()})
@@ -136,17 +136,17 @@ func (b *ProductController) UpdateProduct(c *gin.Context) {
 		Data:    product,
 	}
 
-	// logProduct.Info("Product updated successfully")
+	p.log.Info("Product updated successfully", response)
 	c.JSON(http.StatusOK, response)
 }
 
 func (p *ProductController) DeleteProduct(c *gin.Context) {
 	id := c.Param("id")
 
-	// logProduct.Info("Starting to delete product with id in the handler layer")
+	p.log.Info("Starting to delete product with id in the handler layer", nil)
 	err := p.useCase.DeleteProduct(id)
 	if err != nil {
-		// logProduct.Errorf("Product ID %s not found: %v", id, err)
+		p.log.Error("Product ID %s not found: ", id)
 		c.JSON(http.StatusNotFound, err.Error())
 		return
 	}
@@ -159,10 +159,10 @@ func (p *ProductController) DeleteProduct(c *gin.Context) {
 		Data:    entity.Product{},
 	}
 
-	// logProduct.Info("Product deleted successfully")
+	p.log.Info("Product deleted successfully", response)
 	c.JSON(http.StatusNoContent, response)
 }
 
-func NewProductController(useCase usecase.ProductUseCase, rg *gin.RouterGroup, authMiddleware middleware.AuthMiddleware) *ProductController {
-	return &ProductController{useCase: useCase, rg: rg, authMiddleware: authMiddleware}
+func NewProductController(useCase usecase.ProductUseCase, rg *gin.RouterGroup, authMiddleware middleware.AuthMiddleware, log *logger.Logger) *ProductController {
+	return &ProductController{useCase: useCase, rg: rg, authMiddleware: authMiddleware, log: log}
 }
