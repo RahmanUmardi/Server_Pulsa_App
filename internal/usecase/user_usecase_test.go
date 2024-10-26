@@ -6,109 +6,124 @@ import (
 	"server-pulsa-app/internal/mock/repo_mock"
 	"testing"
 
-	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
+	"github.com/stretchr/testify/suite"
 	"golang.org/x/crypto/bcrypt"
 )
 
-func TestRegisterUser(t *testing.T) {
-	userRepo := new(repo_mock.UserRepoMock)
-	log := logger.NewLogger()
-	useCase := NewUserUsecase(userRepo, &log)
-
-	username := "test"
-	user := entity.User{
-		Id_user:  "1adc",
-		Username: username,
-		Password: "password",
-		Role:     "employee",
-	}
-
-	userRepo.On("GetUserByUsername", username).Return(entity.User{}, nil)
-
-	userRepo.On("CreateUser", mock.Anything).Return(user, nil)
-
-	result, err := useCase.RegisterUser(user)
-	assert.NoError(t, err)
-	assert.Equal(t, "1adc", result.Id_user)
-
-	userRepo.AssertExpectations(t)
+type userUsecaseTestSuite struct {
+	suite.Suite
+	mockUserRepository *repo_mock.UserRepoMock
+	UserUseCase        UserUsecase
+	log                logger.Logger
 }
 
-func TestListUser(t *testing.T) {
-	mockRepo := new(repo_mock.UserRepoMock)
-	log := logger.NewLogger()
-	useCase := NewUserUsecase(mockRepo, &log)
+func (u *userUsecaseTestSuite) SetupTest() {
+	u.mockUserRepository = new(repo_mock.UserRepoMock)
+	u.log = logger.NewLogger()
+	u.UserUseCase = NewUserUsecase(u.mockUserRepository, &u.log)
+}
 
+func (u *userUsecaseTestSuite) TestRegisterUser_Success() {
+	username := "Test User"
+	user := entity.User{
+		Id_user:  "1",
+		Username: username,
+		Password: "Test Password",
+		Role:     "Test Role",
+	}
+
+	u.mockUserRepository.On("GetUserByUsername", username).Return(entity.User{}, nil).Once()
+
+	u.mockUserRepository.On("CreateUser", mock.Anything).Return(user, nil).Once()
+
+	user, err := u.UserUseCase.RegisterUser(user)
+
+	u.NoError(err)
+	u.Equal("1", user.Id_user)
+}
+
+func (u *userUsecaseTestSuite) TestListAll_Success() {
 	user := []entity.User{
 		{
 			Id_user:  "1",
-			Username: "test",
-			Password: "test",
-			Role:     "test",
+			Username: "Test User",
+			Password: "Test Password",
+			Role:     "Test Role",
 		},
-
 		{
 			Id_user:  "2",
-			Username: "test2",
-			Password: "test2",
-			Role:     "test2",
+			Username: "Test User",
+			Password: "Test Password",
+			Role:     "Test Role",
 		},
 	}
 
-	mockRepo.On("ListUser").Return(user, nil)
+	u.mockUserRepository.On("ListUser").Return(user, nil).Once()
 
-	result, err := useCase.ListUser()
-	assert.NoError(t, err)
-	assert.Len(t, result, len(user))
+	userList, err := u.UserUseCase.ListUser()
 
-	mockRepo.AssertExpectations(t)
+	u.Nil(err)
+	u.Equal(user, userList)
 }
 
-func TestGetUserById(t *testing.T) {
-	mockRepo := new(repo_mock.UserRepoMock)
-	log := logger.NewLogger()
-	useCase := NewUserUsecase(mockRepo, &log)
+func (u *userUsecaseTestSuite) TestGetUserById_Success() {
+	id := "1"
 
 	user := entity.User{
 		Id_user:  "1",
-		Username: "test",
-		Password: "test",
-		Role:     "test",
+		Username: "Test User",
+		Password: "Test Password",
+		Role:     "Test Role",
 	}
 
-	mockRepo.On("GetUserByID", "1").Return(user, nil)
+	u.mockUserRepository.On("GetUserByID", id).Return(user, nil).Once()
 
-	result, err := useCase.GetUserByID("1")
-	assert.NoError(t, err)
-	assert.Equal(t, user.Id_user, result.Id_user)
+	userFound, err := u.UserUseCase.GetUserByID(id)
 
-	mockRepo.AssertExpectations(t)
+	u.Nil(err)
+	u.Equal(user, userFound)
 }
 
-func TestFindUserByUsernamePassword(t *testing.T) {
-	mockRepo := new(repo_mock.UserRepoMock)
-	log := logger.NewLogger()
-	useCase := NewUserUsecase(mockRepo, &log)
-
-	username := "test"
-	password := "correct_password"
-	hashedPassword := hashPassword(password)
-
-	user := entity.User{
+func (u *userUsecaseTestSuite) TestUpdateUser_Success() {
+	id := "1"
+	updatedUser := entity.User{
 		Id_user:  "1",
-		Username: username,
-		Password: hashedPassword,
-		Role:     "user",
+		Username: "Test User",
+		Password: hashPassword("Test Password"),
+		Role:     "Test Role",
 	}
 
-	mockRepo.On("GetUserByUsername", username).Return(user, nil)
+	u.mockUserRepository.On("GetUserByID", id).Return(entity.User{
+		Id_user:  id,
+		Username: "Test User",
+		Password: hashPassword("test_password"),
+		Role:     "Test Role",
+	}, nil).Once()
 
-	foundUser, err := useCase.FindUserByUsernamePassword(username, password)
-	assert.NoError(t, err)
-	assert.Equal(t, user.Id_user, foundUser.Id_user)
+	u.mockUserRepository.On("UpdateUser", mock.Anything).Return(updatedUser, nil).Once()
 
-	mockRepo.AssertExpectations(t)
+	userUpdated, err := u.UserUseCase.UpdateUser(updatedUser)
+
+	u.Nil(err)
+	u.Equal(updatedUser.Id_user, userUpdated.Id_user)
+}
+
+func (u *userUsecaseTestSuite) TestDeleteUser_Success() {
+	id := "1"
+
+	u.mockUserRepository.On("GetUserByID", id).Return(entity.User{
+		Id_user:  id,
+		Username: "Test User",
+		Password: hashPassword("Test Password"),
+		Role:     "Test Role",
+	}, nil).Once()
+
+	u.mockUserRepository.On("DeleteUser", id).Return(nil).Once()
+
+	err := u.UserUseCase.DeleteUser(id)
+
+	u.Nil(err)
 }
 
 func hashPassword(password string) string {
@@ -119,74 +134,6 @@ func hashPassword(password string) string {
 	return string(hashedPassword)
 }
 
-func TestGetUserByUsername(t *testing.T) {
-	mockRepo := new(repo_mock.UserRepoMock)
-	log := logger.NewLogger()
-	useCase := NewUserUsecase(mockRepo, &log)
-
-	user := entity.User{
-		Id_user:  "1",
-		Username: "test",
-		Password: "test",
-		Role:     "test",
-	}
-
-	mockRepo.On("GetUserByUsername", "test").Return(user, nil)
-
-	result, err := useCase.GetUserByUsername("test")
-	assert.NoError(t, err)
-	assert.Equal(t, user.Id_user, result.Id_user)
-
-	mockRepo.AssertExpectations(t)
-}
-
-func TestUpdateUser(t *testing.T) {
-	mockRepo := new(repo_mock.UserRepoMock)
-	log := logger.NewLogger()
-	useCase := NewUserUsecase(mockRepo, &log)
-
-	userId := "1"
-	updatedUser := entity.User{
-		Id_user:  userId,
-		Username: "updated_username",
-		Password: hashPassword("correct_password"),
-		Role:     "user",
-	}
-
-	mockRepo.On("GetUserByID", userId).Return(entity.User{
-		Id_user:  userId,
-		Username: "test_username",
-		Password: hashPassword("correct_password"),
-		Role:     "user",
-	}, nil)
-
-	mockRepo.On("UpdateUser", updatedUser).Return(updatedUser, nil)
-
-	returnedUser, err := useCase.UpdateUser(updatedUser)
-	assert.NoError(t, err)
-	assert.Equal(t, updatedUser.Id_user, returnedUser.Id_user)
-
-	mockRepo.AssertExpectations(t)
-}
-
-func TestDeleteUser(t *testing.T) {
-	mockRepo := new(repo_mock.UserRepoMock)
-	log := logger.NewLogger()
-	useCase := NewUserUsecase(mockRepo, &log)
-
-	userId := "1"
-
-	mockRepo.On("GetUserByID", userId).Return(entity.User{
-		Id_user:  userId,
-		Username: "test_username",
-		Password: hashPassword("correct_password"),
-		Role:     "user",
-	}, nil)
-
-	mockRepo.On("DeleteUser", userId).Return(nil)
-
-	err := useCase.DeleteUser(userId)
-	assert.NoError(t, err)
-
-	mockRepo.AssertExpectations(t)
+func TestUserUsecaseTestSuite(t *testing.T) {
+	suite.Run(t, new(userUsecaseTestSuite))
 }

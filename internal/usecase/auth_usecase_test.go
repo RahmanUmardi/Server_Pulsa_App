@@ -10,42 +10,50 @@ import (
 	"server-pulsa-app/internal/mock/usecase_mock"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/suite"
 )
 
-var log *logger.Logger
-
-func TestAuthUseCase_Login(t *testing.T) {
-	mockUserUsecase := new(usecase_mock.UserUseCaseMock)
-	mockJwtService := new(service_mock.JwtServiceMock)
-
-	user := entity.User{Username: "testuser", Password: "password"}
-	mockUserUsecase.On("FindUserByUsernamePassword", "testuser", "password").Return(user, nil)
-	mockJwtService.On("CreateToken", user).Return(dto.AuthResponseDto{Token: "mockToken"}, nil)
-
-	authUC := NewAuthUseCase(mockUserUsecase, mockJwtService, log)
-
-	response, err := authUC.Login(dto.AuthRequestDto{Username: "testuser", Password: "password"})
-
-	assert.NoError(t, err)
-	assert.Equal(t, "mockToken", response.Token)
-
-	mockUserUsecase.AssertExpectations(t)
-	mockJwtService.AssertExpectations(t)
+type AuthUseCaseTestSuite struct {
+	suite.Suite
+	authUC          AuthUseCase
+	mockUserUsecase *usecase_mock.UserUseCaseMock
+	mockJwtService  *service_mock.JwtServiceMock
+	log             logger.Logger
 }
 
-func TestAuthUseCase_Register(t *testing.T) {
-	mockUserUsecase := new(usecase_mock.UserUseCaseMock)
-	mockJwtService := new(service_mock.JwtServiceMock)
+func (suite *AuthUseCaseTestSuite) SetupTest() {
+	suite.mockUserUsecase = new(usecase_mock.UserUseCaseMock)
+	suite.mockJwtService = new(service_mock.JwtServiceMock)
+	suite.log = logger.NewLogger()
+	suite.authUC = NewAuthUseCase(suite.mockUserUsecase, suite.mockJwtService, &suite.log)
+}
 
+func (suite *AuthUseCaseTestSuite) TestLogin() {
 	user := entity.User{Username: "testuser", Password: "password"}
-	mockUserUsecase.On("RegisterUser", user).Return(user, nil)
+	suite.mockUserUsecase.On("FindUserByUsernamePassword", "testuser", "password").Return(user, nil)
+	suite.mockJwtService.On("CreateToken", user).Return(dto.AuthResponseDto{Token: "mockToken"}, nil)
 
-	authUC := NewAuthUseCase(mockUserUsecase, mockJwtService, log)
+	response, err := suite.authUC.Login(dto.AuthRequestDto{Username: "testuser", Password: "password"})
 
-	createdUser, err := authUC.Register(dto.AuthRequestDto{Username: "testuser", Password: "password"})
+	assert.NoError(suite.T(), err)
+	assert.Equal(suite.T(), "mockToken", response.Token)
 
-	assert.NoError(t, err)
-	assert.Equal(t, user.Username, createdUser.Username)
+	suite.mockUserUsecase.AssertExpectations(suite.T())
+	suite.mockJwtService.AssertExpectations(suite.T())
+}
 
-	mockUserUsecase.AssertExpectations(t)
+func (suite *AuthUseCaseTestSuite) TestRegister() {
+	user := entity.User{Username: "testuser", Password: "password"}
+	suite.mockUserUsecase.On("RegisterUser", user).Return(user, nil)
+
+	createdUser, err := suite.authUC.Register(dto.AuthRequestDto{Username: "testuser", Password: "password"})
+
+	assert.NoError(suite.T(), err)
+	assert.Equal(suite.T(), user.Username, createdUser.Username)
+
+	suite.mockUserUsecase.AssertExpectations(suite.T())
+}
+
+func TestAuthUseCaseTestSuite(t *testing.T) {
+	suite.Run(t, new(AuthUseCaseTestSuite))
 }
