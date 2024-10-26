@@ -24,26 +24,36 @@ type UserUsecase interface {
 
 type userUsecase struct {
 	UserRepository repository.UserRepository
+	log            *logger.Logger
 }
 
 func (u *userUsecase) RegisterUser(user entity.User) (entity.User, error) {
-	logrus.Info("Starting to register user in the usecase layer")
+	u.log.Info("Starting to create a new user in the usecase layer", nil)
+
 	existUser, _ := u.UserRepository.GetUserByUsername(user.Username)
+	u.log.Info("Starting to validate a new user", nil)
 	if existUser.Username == user.Username {
-		return entity.User{}, fmt.Errorf("username already exists")
+		u.log.Error("Username already exist", existUser.Username)
+		return entity.User{}, fmt.Errorf("username already exist")
 	}
+
+	u.log.Info("Starting to set default role for new user", nil)
 	user.Role = "employee"
+	u.log.Info("Starting to hash the password", nil)
 	hash, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
 	if err != nil {
+		u.log.Error("Failed to hash password: ", err)
 		return entity.User{}, err
 	}
+
 	user.Password = string(hash)
 
+	u.log.Info("Starting to create a new user in the repository layer", nil)
 	return u.UserRepository.CreateUser(user)
 }
 
 func (u *userUsecase) GetUserByUsername(username string) (entity.User, error) {
-	logrus.Info("Starting to get user by username in the usecaselayer")
+	u.log.Info("Starting to retrieve a user by username in the usecase layer", nil)
 	return u.UserRepository.GetUserByUsername(username)
 }
 
@@ -53,51 +63,56 @@ func (u *userUsecase) ListUser() ([]entity.User, error) {
 }
 
 func (u *userUsecase) GetUserByID(id string) (entity.User, error) {
+	u.log.Info("Starting to retrieve a user by id in the usecase layer", nil)
 	return u.UserRepository.GetUserByID(id)
 }
 
 func (u *userUsecase) FindUserByUsernamePassword(username, password string) (entity.User, error) {
-	logrus.Info("Starting find user by username password in the usecase")
+	u.log.Info("Starting to authenticate a user in the usecase layer", nil)
+
 	userExist, err := u.UserRepository.GetUserByUsername(username)
 	if err != nil {
+		u.log.Error("User ID %s not found: %v", userExist.Id_user)
 		return entity.User{}, fmt.Errorf("user doesn't exists")
 	}
 
+	u.log.Info("Starting to validate password", nil)
 	err = bcrypt.CompareHashAndPassword([]byte(userExist.Password), []byte(password))
 	if err != nil {
+		u.log.Error("Password doesn't match", err)
 		return entity.User{}, fmt.Errorf("password doesn't match")
 	}
 
+	u.log.Info("User ID %s has been authenticated successfully: ", userExist.Id_user)
 	return userExist, nil
 }
 
-func (u *userUsecase) UpdateUser(payload entity.User) (entity.User, error) {
-	logrus.Info("Starting update user in the usecase layer")
-	user, err := u.UserRepository.GetUserByID(payload.Id_user)
+func (u *userUsecase) UpdateUser(user entity.User) (entity.User, error) {
+	u.log.Info("Starting to update a user in the usecase layer", nil)
+
+	_, err := u.UserRepository.UpdateUser(user)
 	if err != nil {
-		return entity.User{}, fmt.Errorf("user ID of \\'%s\\' not found", payload.Id_user)
+		u.log.Error("Failed to update user: ", err)
+		return entity.User{}, fmt.Errorf("failed to update user: %v", err)
 	}
-	_, err = u.UserRepository.UpdateUser(user, payload)
-	if err != nil {
-		return entity.User{}, fmt.Errorf("user ID of \\'%s\\' not updated", payload.Id_user)
-	}
-	hash, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
-	if err != nil {
-		return entity.User{}, err
-	}
-	user.Password = string(hash)
-	return u.UserRepository.UpdateUser(user, payload)
+
+	u.log.Info("User ID %s has been updated successfully: ", user.Id_user)
+	return user, nil
 }
 
 func (u *userUsecase) DeleteUser(id string) error {
-	logrus.Info("Starting delete user in the usecase layer")
-	_, err := u.UserRepository.GetUserByID(id)
+	u.log.Info("Starting to delete a user in the usecase layer", nil)
+
+	err := u.UserRepository.DeleteUser(id)
 	if err != nil {
-		return fmt.Errorf("merchant ID of \\%s\\ not found", err)
+		u.log.Error("Failed to delete user: ", err)
+		return fmt.Errorf("failed to delete user: %v", err)
 	}
-	return u.UserRepository.DeleteUser(id)
+
+	u.log.Info("User ID %s has been deleted successfully: ", id)
+	return nil
 }
 
-func NewUserUsecase(userRepository repository.UserRepository) UserUsecase {
-	return &userUsecase{UserRepository: userRepository}
+func NewUserUsecase(userRepository repository.UserRepository, log *logger.Logger) UserUsecase {
+	return &userUsecase{UserRepository: userRepository, log: log}
 }

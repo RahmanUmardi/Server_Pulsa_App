@@ -1,0 +1,60 @@
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the usecase layer",
+  "time": "2024-10-25 14:46:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-25 14:46:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-25 14:46:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new product in the usecase layer",
+  "time": "2024-10-25 14:46:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-25 14:46:50"
+}
+{
+  "data": "1",
+  "level": "info",
+  "msg": "Product has been deleted successfully: ",
+  "time": "2024-10-25 14:46:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-25 14:46:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the usecase layer",
+  "time": "2024-10-25 14:46:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-25 14:46:50"
+}
+{
+  "data": "1",
+  "level": "info",
+  "msg": "Product ID %s has been updated successfully: ",
+  "time": "2024-10-25 14:46:50"
+}

@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"server-pulsa-app/config"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/middleware"
 	"server-pulsa-app/internal/usecase"
 
@@ -14,27 +15,31 @@ type ProductController struct {
 	useCase        usecase.ProductUseCase
 	rg             *gin.RouterGroup
 	authMiddleware middleware.AuthMiddleware
+	log            *logger.Logger
 }
 
 func (p *ProductController) Route() {
-	p.rg.POST(config.PostProduct, p.authMiddleware.RequireToken("employee"), p.createProduct)
-	p.rg.GET(config.GetProductList, p.authMiddleware.RequireToken("employee"), p.getAllProduct)
-	p.rg.GET(config.GetProduct, p.authMiddleware.RequireToken("employee"), p.getProductpyId)
-	p.rg.PUT(config.PutProduct, p.authMiddleware.RequireToken("employee"), p.updateProduct)
-	p.rg.DELETE(config.DeleteProduct, p.authMiddleware.RequireToken("employee"), p.deleteProduct)
+	p.rg.POST(config.PostProduct, p.authMiddleware.RequireToken("employee"), p.CreateProduct)
+	p.rg.GET(config.GetProductList, p.authMiddleware.RequireToken("employee"), p.GetAllProduct)
+	p.rg.GET(config.GetProduct, p.authMiddleware.RequireToken("employee"), p.GetProductById)
+	p.rg.PUT(config.PutProduct, p.authMiddleware.RequireToken("employee"), p.UpdateProduct)
+	p.rg.DELETE(config.DeleteProduct, p.authMiddleware.RequireToken("employee"), p.DeleteProduct)
 }
 
-func (p *ProductController) createProduct(c *gin.Context) {
+func (p *ProductController) CreateProduct(c *gin.Context) {
 	var payload entity.Product
-	if err := c.ShouldBindJSON(&payload); err != nil {
 
+	p.log.Info("Starting to create a new product in the handler layer", nil)
+
+	if err := c.ShouldBindJSON(&payload); err != nil {
+		p.log.Error("Invalid payload for product: ", err)
 		c.JSON(http.StatusBadRequest, gin.H{"err": err.Error()})
 		return
 	}
 
 	Product, err := p.useCase.CreateNewProduct(payload)
 	if err != nil {
-
+		p.log.Error("Product creation failed", err)
 		c.JSON(http.StatusInternalServerError, gin.H{"err": err.Error()})
 		return
 	}
@@ -46,10 +51,14 @@ func (p *ProductController) createProduct(c *gin.Context) {
 		Message: "Product Created",
 		Data:    Product,
 	}
+
+	p.log.Info("Product created successfully", response)
 	c.JSON(http.StatusCreated, response)
 }
 
-func (p *ProductController) getAllProduct(c *gin.Context) {
+func (p *ProductController) GetAllProduct(c *gin.Context) {
+	p.log.Info("Starting to retrieve all product in the handler layer", nil)
+
 	Products, err := p.useCase.FindAllProduct()
 	if err != nil {
 
@@ -66,19 +75,23 @@ func (p *ProductController) getAllProduct(c *gin.Context) {
 			Data:    Products,
 		}
 
+		p.log.Info("Product found successfully", nil)
 		c.JSON(http.StatusOK, response)
 		return
 	}
 
+	p.log.Info("Product not found", nil)
 	c.JSON(http.StatusOK, gin.H{"message": "List Product empty"})
 }
 
-func (p *ProductController) getProductpyId(c *gin.Context) {
+func (p *ProductController) GetProductById(c *gin.Context) {
 	id := (c.Param("id"))
-	Product, err := p.useCase.FindProductpyId(id)
-	if err != nil {
 
-		c.JSON(http.StatusInternalServerError, gin.H{"err": "Failed to get Product py ID"})
+	p.log.Info("Starting to retrieve product with id in the handler layer", nil)
+	Product, err := p.useCase.FindProductById(id)
+	if err != nil {
+		p.log.Error("Product ID %s not found: ", id)
+		c.JSON(http.StatusNotFound, gin.H{"err": "Product not found"})
 		return
 	}
 
@@ -90,22 +103,26 @@ func (p *ProductController) getProductpyId(c *gin.Context) {
 		Data:    Product,
 	}
 
+	p.log.Info("Product found successfully", nil)
 	c.JSON(http.StatusOK, response)
 }
 
-func (b *ProductController) updateProduct(c *gin.Context) {
+func (p *ProductController) UpdateProduct(c *gin.Context) {
 	var payload entity.Product
 	id := (c.Param("id"))
 
-	if err := c.ShouldBindJSON(&payload); err != nil {
+	p.log.Info("Starting to update product with id in the handler layer", nil)
 
+	if err := c.ShouldBindJSON(&payload); err != nil {
+		p.log.Error("Invalid payload for product: ", err)
 		c.JSON(http.StatusBadRequest, gin.H{"err": err.Error()})
 		return
 	}
 
 	payload.IdProduct = id
 
-	product, err := b.useCase.UpdateProduct(payload)
+	p.log.Info("Updating product ID %s", id)
+	product, err := p.useCase.UpdateProduct(payload)
 	if err != nil {
 
 		c.JSON(http.StatusInternalServerError, gin.H{"err": err.Error()})
@@ -119,14 +136,17 @@ func (b *ProductController) updateProduct(c *gin.Context) {
 		Data:    product,
 	}
 
+	p.log.Info("Product updated successfully", response)
 	c.JSON(http.StatusOK, response)
 }
 
-func (p *ProductController) deleteProduct(c *gin.Context) {
+func (p *ProductController) DeleteProduct(c *gin.Context) {
 	id := c.Param("id")
 
+	p.log.Info("Starting to delete product with id in the handler layer", nil)
 	err := p.useCase.DeleteProduct(id)
 	if err != nil {
+		p.log.Error("Product ID %s not found: ", id)
 		c.JSON(http.StatusNotFound, err.Error())
 		return
 	}
@@ -139,9 +159,10 @@ func (p *ProductController) deleteProduct(c *gin.Context) {
 		Data:    entity.Product{},
 	}
 
+	p.log.Info("Product deleted successfully", response)
 	c.JSON(http.StatusNoContent, response)
 }
 
-func NewProductController(useCase usecase.ProductUseCase, rg *gin.RouterGroup, authMiddleware middleware.AuthMiddleware) *ProductController {
-	return &ProductController{useCase: useCase, rg: rg, authMiddleware: authMiddleware}
+func NewProductController(useCase usecase.ProductUseCase, rg *gin.RouterGroup, authMiddleware middleware.AuthMiddleware, log *logger.Logger) *ProductController {
+	return &ProductController{useCase: useCase, rg: rg, authMiddleware: authMiddleware, log: log}
 }
