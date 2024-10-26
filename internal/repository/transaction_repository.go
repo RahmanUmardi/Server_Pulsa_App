@@ -4,12 +4,14 @@ import (
 	"database/sql"
 	"fmt"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/shared/custom"
 	"time"
 )
 
 type transactionRepository struct {
-	db *sql.DB
+	db  *sql.DB
+	log *logger.Logger
 }
 
 type TransactionRepository interface {
@@ -20,18 +22,22 @@ type TransactionRepository interface {
 	// Delete(id string) error
 }
 
-func NewTransactionRepository(db *sql.DB) TransactionRepository {
-	return &transactionRepository{db: db}
+func NewTransactionRepository(db *sql.DB, log *logger.Logger) TransactionRepository {
+	return &transactionRepository{db: db, log: log}
 }
 
 func (r *transactionRepository) Create(payload entity.Transactions) (entity.Transactions, error) {
+	r.log.Info("Starting to create a new transaction in the repository layer", nil)
 	parsedDate, err := time.Parse("02-01-2006", payload.TransactionDate)
 	if err != nil {
+		r.log.Error("invalid date format", err)
 		return entity.Transactions{}, fmt.Errorf("invalid date format. Please use dd-mm-yyyy format: %v", err)
 	}
 
+	r.log.Info("Starting the db transaction create method in the repository layer", nil)
 	tx, err := r.db.Begin()
 	if err != nil {
+		r.log.Error("Failed start db transaction", err)
 		return entity.Transactions{}, err
 	}
 
@@ -41,6 +47,7 @@ func (r *transactionRepository) Create(payload entity.Transactions) (entity.Tran
 
 	if err := tx.QueryRow(insertTransaction, payload.MerchantId, payload.UserId, payload.CustomerName, payload.DestinationNumber, parsedDate).Scan(&transactionId); err != nil {
 		tx.Rollback()
+		r.log.Error("Failed to insert into transactions table", err)
 		return entity.Transactions{}, err
 	}
 
@@ -54,6 +61,7 @@ func (r *transactionRepository) Create(payload entity.Transactions) (entity.Tran
 
 		if err := tx.QueryRow(insertTransactionDetail, transactionId, payload.TransactionDetail[i].ProductId, payload.TransactionDetail[i].Price).Scan(&transactionDetailId); err != nil {
 			tx.Rollback()
+			r.log.Error("Failed to insert into transaction detail table", err)
 			return entity.Transactions{}, err
 		}
 		payload.TransactionDetail[i].TransactionDetailId = transactionDetailId
@@ -64,16 +72,19 @@ func (r *transactionRepository) Create(payload entity.Transactions) (entity.Tran
 
 		if err := r.db.QueryRow("SELECT price FROM mst_product WHERE id_product = $1", payload.TransactionDetail[i].ProductId).Scan(&productPrice); err != nil {
 			tx.Rollback()
+			r.log.Error("Failed to fetch price from product table", err)
 			return entity.Transactions{}, err
 		}
 		payload.TransactionDetail[i].Price = productPrice
 	}
 	// commit transaction
 	if err := tx.Commit(); err != nil {
+		r.log.Error("Failed to commit transaction", nil)
 		return entity.Transactions{}, err
 	}
 
 	payload.TransactionDate = parsedDate.Format("02-01-2006")
+	r.log.Info("Transaction created successfully : ", payload)
 	return payload, nil
 
 }
@@ -93,8 +104,11 @@ func (r *transactionRepository) GetAll() ([]custom.TransactionsReq, error) {
 		JOIN mst_product p ON td.id_product = p.id_product
 		ORDER BY t.transaction_date DESC`
 
+	r.log.Info("Starting to retrive all transactions in the repository layer", nil)
+
 	rows, err := r.db.Query(selectQuery)
 	if err != nil {
+		r.log.Error("Failed to retrieve the transactions", err)
 		return nil, err
 	}
 	defer rows.Close()
@@ -117,6 +131,7 @@ func (r *transactionRepository) GetAll() ([]custom.TransactionsReq, error) {
 			&transactionDetail.TransactionDetailId, &transactionDetail.TransactionsId,
 			&product.IdProduct, &product.NameProvider, &product.Nominal, &product.Price,
 		); err != nil {
+			r.log.Error("Failed to scan transactions", err)
 			return nil, err
 		}
 
@@ -133,6 +148,7 @@ func (r *transactionRepository) GetAll() ([]custom.TransactionsReq, error) {
 	}
 
 	if err := rows.Err(); err != nil {
+		r.log.Error("Rows not found", err)
 		return nil, err
 	}
 
@@ -141,6 +157,7 @@ func (r *transactionRepository) GetAll() ([]custom.TransactionsReq, error) {
 		transactions = append(transactions, *transaction)
 	}
 
+	r.log.Info("Successfully Get the transactions list", transactions)
 	return transactions, nil
 }
 
@@ -159,8 +176,10 @@ func (r *transactionRepository) GetById(id string) (custom.TransactionsReq, erro
 	JOIN mst_product p ON td.id_product = p.id_product
 	WHERE t.transaction_id = $1
 	`
+	r.log.Info("Starting to retrive transaction by id in the repository layer", nil)
 	rows, err := r.db.Query(selectQuery, id)
 	if err != nil {
+		r.log.Error("Failed to retrieve the transaction", err)
 		return custom.TransactionsReq{}, err
 	}
 	defer rows.Close()
@@ -182,6 +201,7 @@ func (r *transactionRepository) GetById(id string) (custom.TransactionsReq, erro
 			&merchant.IdMerchant, &merchant.NameMerchant, &merchant.Address,
 			&transactionDetail.TransactionDetailId,
 			&product.IdProduct, &product.NameProvider, &product.Nominal, &product.Price); err != nil {
+			r.log.Error("Failed to scan transaction", err)
 			return custom.TransactionsReq{}, err
 		}
 		transaction.User = user
@@ -199,6 +219,7 @@ func (r *transactionRepository) GetById(id string) (custom.TransactionsReq, erro
 	for _, detail := range transactionDetailMap {
 		transaction.TransactionDetail = append(transaction.TransactionDetail, detail)
 	}
+	r.log.Info("Successfully Get the transaction by given id", transaction)
 	return transaction, nil
 }
 

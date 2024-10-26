@@ -7,6 +7,7 @@ import (
 	"net/http/httptest"
 	"server-pulsa-app/internal/entity"
 	"server-pulsa-app/internal/entity/dto"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/mock/usecase_mock"
 	"testing"
 
@@ -19,6 +20,7 @@ type AuthHandlerTest struct {
 	authUc         *usecase_mock.AuthUseCaseMock
 	router         *gin.Engine
 	AuthController *AuthController
+	log            *logger.Logger
 }
 
 func (a *AuthHandlerTest) SetupTest() {
@@ -29,7 +31,7 @@ func (a *AuthHandlerTest) SetupTest() {
 
 	rg := a.router.Group("/api/v1")
 
-	a.AuthController = NewAuthController(a.authUc, rg)
+	a.AuthController = NewAuthController(a.authUc, rg, a.log)
 
 	a.AuthController.Route()
 }
@@ -49,7 +51,7 @@ func (a *AuthHandlerTest) TestLogin() {
 	a.Equal(http.StatusNotFound, recorder.Code)
 
 	var response dto.AuthResponseDto
-	err = json.Unmarshal(recorder.Body.Bytes(), &response)
+	_ = json.Unmarshal(recorder.Body.Bytes(), &response)
 	a.Equal("", response.Token)
 }
 
@@ -68,7 +70,7 @@ func (a *AuthHandlerTest) TestRegister() {
 	a.Equal(http.StatusNotFound, recorder.Code)
 
 	var response entity.User
-	err = json.Unmarshal(recorder.Body.Bytes(), &response)
+	_ = json.Unmarshal(recorder.Body.Bytes(), &response)
 	a.Equal("", response.Username)
 }
 

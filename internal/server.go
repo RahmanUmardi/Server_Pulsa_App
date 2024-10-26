@@ -35,7 +35,7 @@ func (s *Server) initRoute() {
 	handler.NewMerchantHandler(s.merchantUc, authMiddleware, rg, &log).Route()
 	handler.NewAuthController(s.authUc, rg, &log).Route()
 	handler.NewProductController(s.productUc, rg, authMiddleware, &log).Route()
-	handler.NewTransactionHandler(s.transactionUc, authMiddleware, rg).Route()
+	handler.NewTransactionHandler(s.transactionUc, authMiddleware, rg, &log).Route()
 }
 
 func (s *Server) Run() {
@@ -59,7 +59,7 @@ func NewServer() *Server {
 	userRepo := repository.NewUserRepository(db, &log)
 	productRepo := repository.NewProductRepository(db, &log)
 	merchantRepo := repository.NewMerchantRepository(db, &log)
-	transactionRepo := repository.NewTransactionRepository(db)
+	transactionRepo := repository.NewTransactionRepository(db, &log)
 
 	//inject dependencies usecase layer
 	jwtService := service.NewJwtService(cfg.TokenConfig)
@@ -67,7 +67,7 @@ func NewServer() *Server {
 	authUc := usecase.NewAuthUseCase(userUc, jwtService, &log)
 	productUc := usecase.NewProductUseCase(productRepo, &log)
 	merchantUc := usecase.NewMerchantUseCase(merchantRepo, &log)
-	transactionUc := usecase.NewTransactionUseCase(transactionRepo)
+	transactionUc := usecase.NewTransactionUseCase(transactionRepo, &log)
 
 	engine := gin.Default()
 	host := fmt.Sprintf(":%s", cfg.ApiPort)

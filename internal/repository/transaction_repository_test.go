@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"regexp"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/shared/custom"
 	"testing"
 	"time"
@@ -65,6 +66,7 @@ type transactionRepositoryTestSuite struct {
 	mockDb          *sql.DB
 	mockSql         sqlmock.Sqlmock
 	transactionRepo TransactionRepository
+	log             logger.Logger
 }
 
 func TestTransactionRepositoryTestSuite(t *testing.T) {
@@ -77,7 +79,7 @@ func (s *transactionRepositoryTestSuite) SetupTest() {
 
 	s.mockDb = mockDb
 	s.mockSql = mockSql
-	s.transactionRepo = NewTransactionRepository(mockDb)
+	s.transactionRepo = NewTransactionRepository(mockDb, &s.log)
 }
 
 func (s *transactionRepositoryTestSuite) TearDownTest() {

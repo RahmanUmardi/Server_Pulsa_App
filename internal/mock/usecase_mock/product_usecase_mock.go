@@ -1,4 +1,4 @@
-package mock
+package usecase_mock
 
 import (
 	"server-pulsa-app/internal/entity"

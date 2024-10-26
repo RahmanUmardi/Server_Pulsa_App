@@ -2,6 +2,7 @@ package usecase
 
 import (
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/mock/repo_mock"
 	"testing"
 
@@ -12,7 +13,8 @@ import (
 
 func TestRegisterUser(t *testing.T) {
 	userRepo := new(repo_mock.UserRepoMock)
-	useCase := NewUserUsecase(userRepo)
+	log := logger.NewLogger()
+	useCase := NewUserUsecase(userRepo, &log)
 
 	username := "test"
 	user := entity.User{
@@ -35,7 +37,8 @@ func TestRegisterUser(t *testing.T) {
 
 func TestListUser(t *testing.T) {
 	mockRepo := new(repo_mock.UserRepoMock)
-	useCase := NewUserUsecase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewUserUsecase(mockRepo, &log)
 
 	user := []entity.User{
 		{
@@ -64,7 +67,8 @@ func TestListUser(t *testing.T) {
 
 func TestGetUserById(t *testing.T) {
 	mockRepo := new(repo_mock.UserRepoMock)
-	useCase := NewUserUsecase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewUserUsecase(mockRepo, &log)
 
 	user := entity.User{
 		Id_user:  "1",
@@ -84,11 +88,12 @@ func TestGetUserById(t *testing.T) {
 
 func TestFindUserByUsernamePassword(t *testing.T) {
 	mockRepo := new(repo_mock.UserRepoMock)
-	useCase := NewUserUsecase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewUserUsecase(mockRepo, &log)
 
 	username := "test"
 	password := "correct_password"
-	hashedPassword := hashPassword(entity.User{}, password)
+	hashedPassword := hashPassword(password)
 
 	user := entity.User{
 		Id_user:  "1",
@@ -106,8 +111,7 @@ func TestFindUserByUsernamePassword(t *testing.T) {
 	mockRepo.AssertExpectations(t)
 }
 
-func hashPassword(user entity.User, password string) string {
-
+func hashPassword(password string) string {
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil {
 		return ""
@@ -117,7 +121,8 @@ func hashPassword(user entity.User, password string) string {
 
 func TestGetUserByUsername(t *testing.T) {
 	mockRepo := new(repo_mock.UserRepoMock)
-	useCase := NewUserUsecase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewUserUsecase(mockRepo, &log)
 
 	user := entity.User{
 		Id_user:  "1",
@@ -137,20 +142,21 @@ func TestGetUserByUsername(t *testing.T) {
 
 func TestUpdateUser(t *testing.T) {
 	mockRepo := new(repo_mock.UserRepoMock)
-	useCase := NewUserUsecase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewUserUsecase(mockRepo, &log)
 
 	userId := "1"
 	updatedUser := entity.User{
 		Id_user:  userId,
 		Username: "updated_username",
-		Password: hashPassword(entity.User{}, "correct_password"),
+		Password: hashPassword("correct_password"),
 		Role:     "user",
 	}
 
 	mockRepo.On("GetUserByID", userId).Return(entity.User{
 		Id_user:  userId,
 		Username: "test_username",
-		Password: hashPassword(entity.User{}, "correct_password"),
+		Password: hashPassword("correct_password"),
 		Role:     "user",
 	}, nil)
 
@@ -165,14 +171,15 @@ func TestUpdateUser(t *testing.T) {
 
 func TestDeleteUser(t *testing.T) {
 	mockRepo := new(repo_mock.UserRepoMock)
-	useCase := NewUserUsecase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewUserUsecase(mockRepo, &log)
 
 	userId := "1"
 
 	mockRepo.On("GetUserByID", userId).Return(entity.User{
 		Id_user:  userId,
 		Username: "test_username",
-		Password: hashPassword(entity.User{}, "correct_password"),
+		Password: hashPassword("correct_password"),
 		Role:     "user",
 	}, nil)
 

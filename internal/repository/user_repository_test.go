@@ -4,18 +4,22 @@ import (
 	"testing"
 
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 
 	"github.com/DATA-DOG/go-sqlmock"
 )
 
+var log = logger.NewLogger()
+
 func TestCreate(t *testing.T) {
 	db, mock, err := sqlmock.New()
+
 	if err != nil {
 		t.Fatalf("an error '%s' occurred when opening a mock database connection", err)
 	}
 	defer db.Close()
 
-	repo := NewUserRepository(db)
+	repo := NewUserRepository(db, &log)
 
 	user := entity.User{
 		Id_user:  "1",
@@ -44,7 +48,7 @@ func TestGetByUsername(t *testing.T) {
 	}
 	defer db.Close()
 
-	repo := NewUserRepository(db)
+	repo := NewUserRepository(db, &log)
 
 	Username := "test"
 	expectedUser := entity.User{
@@ -76,7 +80,7 @@ func TestGetById(t *testing.T) {
 	}
 	defer db.Close()
 
-	repo := NewUserRepository(db)
+	repo := NewUserRepository(db, &log)
 
 	Id_user := "1"
 	expectedUser := entity.User{
@@ -108,7 +112,7 @@ func TestList(t *testing.T) {
 	}
 	defer db.Close()
 
-	repo := NewUserRepository(db)
+	repo := NewUserRepository(db, &log)
 
 	mock.ExpectQuery("SELECT id_user, username, password, role FROM mst_user").
 		WillReturnRows(sqlmock.NewRows([]string{"id_user", "username", "password", "role"}).
@@ -132,16 +136,9 @@ func TestUpdate(t *testing.T) {
 	}
 	defer db.Close()
 
-	repo := NewUserRepository(db)
+	repo := NewUserRepository(db, &log)
 
 	Id_user := "1"
-
-	existingUser := entity.User{
-		Id_user:  Id_user,
-		Username: "test",
-		Password: "test",
-		Role:     "test",
-	}
 
 	payload := entity.User{
 		Username: "updatedTest",
@@ -150,10 +147,10 @@ func TestUpdate(t *testing.T) {
 	}
 
 	mock.ExpectExec("UPDATE mst_user SET username = \\$2, password = \\$3, role = \\$4 WHERE id_user = \\$1").
-		WithArgs(existingUser.Id_user, payload.Username, payload.Password, payload.Role).
+		WithArgs(Id_user, payload.Username, payload.Password, payload.Role).
 		WillReturnResult(sqlmock.NewResult(1, 1))
 
-	updatedUser, err := repo.UpdateUser(existingUser, payload)
+	updatedUser, err := repo.UpdateUser(payload)
 	if err != nil {
 		t.Errorf("error was not expected while updating user: %s", err)
 	}
@@ -170,7 +167,7 @@ func TestDelete(t *testing.T) {
 	}
 	defer db.Close()
 
-	repo := NewUserRepository(db)
+	repo := NewUserRepository(db, &log)
 
 	Id_user := "1"
 

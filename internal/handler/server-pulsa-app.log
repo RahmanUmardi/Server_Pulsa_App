@@ -91,3 +91,189 @@
   "msg": "Product updated successfully",
   "time": "2024-10-25 14:46:47"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new product in the handler layer",
+  "time": "2024-10-26 11:17:43"
+}
+{
+  "data": {
+    "Message": "Product Created",
+    "Data": {
+      "idProduct": "1",
+      "nameProvider": "Axis",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "1"
+    }
+  },
+  "level": "info",
+  "msg": "Product created successfully",
+  "time": "2024-10-26 11:17:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete product with id in the handler layer",
+  "time": "2024-10-26 11:17:43"
+}
+{
+  "data": {
+    "Message": "The product has been deleted",
+    "Data": {
+      "idProduct": "",
+      "nameProvider": "",
+      "nominal": 0,
+      "price": 0,
+      "idSupliyer": ""
+    }
+  },
+  "level": "info",
+  "msg": "Product deleted successfully",
+  "time": "2024-10-26 11:17:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all product in the handler layer",
+  "time": "2024-10-26 11:17:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product not found",
+  "time": "2024-10-26 11:17:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve product with id in the handler layer",
+  "time": "2024-10-26 11:17:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-26 11:17:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update product with id in the handler layer",
+  "time": "2024-10-26 11:17:43"
+}
+{
+  "data": "1",
+  "level": "info",
+  "msg": "Updating product ID %s",
+  "time": "2024-10-26 11:17:43"
+}
+{
+  "data": {
+    "Message": "The product has been updated",
+    "Data": {
+      "idProduct": "1",
+      "nameProvider": "Axis",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "1"
+    }
+  },
+  "level": "info",
+  "msg": "Product updated successfully",
+  "time": "2024-10-26 11:17:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new product in the handler layer",
+  "time": "2024-10-26 12:12:35"
+}
+{
+  "data": {
+    "Message": "Product Created",
+    "Data": {
+      "idProduct": "1",
+      "nameProvider": "Axis",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "1"
+    }
+  },
+  "level": "info",
+  "msg": "Product created successfully",
+  "time": "2024-10-26 12:12:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete product with id in the handler layer",
+  "time": "2024-10-26 12:12:35"
+}
+{
+  "data": {
+    "Message": "The product has been deleted",
+    "Data": {
+      "idProduct": "",
+      "nameProvider": "",
+      "nominal": 0,
+      "price": 0,
+      "idSupliyer": ""
+    }
+  },
+  "level": "info",
+  "msg": "Product deleted successfully",
+  "time": "2024-10-26 12:12:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all product in the handler layer",
+  "time": "2024-10-26 12:12:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product not found",
+  "time": "2024-10-26 12:12:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve product with id in the handler layer",
+  "time": "2024-10-26 12:12:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-26 12:12:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update product with id in the handler layer",
+  "time": "2024-10-26 12:12:35"
+}
+{
+  "data": "1",
+  "level": "info",
+  "msg": "Updating product ID %s",
+  "time": "2024-10-26 12:12:35"
+}
+{
+  "data": {
+    "Message": "The product has been updated",
+    "Data": {
+      "idProduct": "1",
+      "nameProvider": "Axis",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "1"
+    }
+  },
+  "level": "info",
+  "msg": "Product updated successfully",
+  "time": "2024-10-26 12:12:35"
+}

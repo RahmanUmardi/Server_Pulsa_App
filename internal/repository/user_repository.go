@@ -11,7 +11,7 @@ type UserRepository interface {
 	ListUser() ([]entity.User, error)
 	GetUserByID(id string) (entity.User, error)
 	GetUserByUsername(username string) (entity.User, error)
-	UpdateUser(user, payload entity.User) (entity.User, error)
+	UpdateUser(payload entity.User) (entity.User, error)
 	DeleteUser(id string) error
 }
 
@@ -39,7 +39,7 @@ func (u *userRepository) ListUser() ([]entity.User, error) {
 
 	rows, err := u.db.Query(`SELECT id_user, username, password, role FROM mst_user`)
 	if err != nil {
-		logrus.Printf("UserRepository.ListUser: %v \n", err.Error())
+		u.log.Error("UserRepository.ListUser: %v \n", err.Error())
 		return nil, err
 	}
 	defer rows.Close()

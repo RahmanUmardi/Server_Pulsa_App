@@ -10,8 +10,6 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-var logUser = logger.GetLogger()
-
 type UserUsecase interface {
 	RegisterUser(user entity.User) (entity.User, error)
 	GetUserByID(id string) (entity.User, error)

@@ -9,7 +9,6 @@ import (
 	"server-pulsa-app/internal/usecase"
 
 	"github.com/gin-gonic/gin"
-	"github.com/sirupsen/logrus"
 )
 
 type MerchantHandler struct {

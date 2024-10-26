@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/mock/middleware_mock"
 	"server-pulsa-app/internal/mock/usecase_mock"
 	"testing"
@@ -20,6 +21,7 @@ type MerchantHandlerTest struct {
 	router          *gin.Engine
 	authMiddleware  *middleware_mock.AuthMiddlewareMock
 	merchantHandler *MerchantHandler
+	log             *logger.Logger
 }
 
 func (m *MerchantHandlerTest) SetupTest() {
@@ -31,7 +33,7 @@ func (m *MerchantHandlerTest) SetupTest() {
 
 	rg := m.router.Group("/api/v1")
 
-	m.merchantHandler = NewMerchantHandler(m.merchantUc, m.authMiddleware, rg)
+	m.merchantHandler = NewMerchantHandler(m.merchantUc, m.authMiddleware, rg, m.log)
 	m.router.POST("/api/v1/merchant", m.merchantHandler.createHandler)
 	m.router.GET("/api/v1/merchants", m.merchantHandler.listHandler)
 	m.router.GET("/api/v1/merchant/:id", m.merchantHandler.getHandler)

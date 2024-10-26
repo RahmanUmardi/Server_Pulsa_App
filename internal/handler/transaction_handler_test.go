@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	am "server-pulsa-app/internal/mock/auth_mock"
 	mock "server-pulsa-app/internal/mock/usecase_mock"
 	"testing"
@@ -20,6 +21,7 @@ type TransactionHandlerTestSuite struct {
 	mockAuthMiddleware *am.AuthMiddlewareMock
 	TransactionHandler *TransactionHandler
 	router             *gin.Engine
+	log                logger.Logger
 }
 
 func (suite *TransactionHandlerTestSuite) SetupTest() {
@@ -28,7 +30,7 @@ func (suite *TransactionHandlerTestSuite) SetupTest() {
 	gin.SetMode(gin.TestMode)
 	suite.router = gin.New()
 
-	suite.TransactionHandler = NewTransactionHandler(suite.mockTxUc, suite.mockAuthMiddleware, suite.router.Group("/api/v1"))
+	suite.TransactionHandler = NewTransactionHandler(suite.mockTxUc, suite.mockAuthMiddleware, suite.router.Group("/api/v1"), &suite.log)
 	suite.router.POST("/transaction", suite.TransactionHandler.createHandler)
 	suite.router.GET("/transactions/history", suite.TransactionHandler.listHandler)
 	suite.router.GET("/transactions/history/:id", suite.TransactionHandler.getByIdHandler)

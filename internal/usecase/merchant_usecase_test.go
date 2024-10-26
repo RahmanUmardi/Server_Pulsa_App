@@ -92,7 +92,8 @@ func TestGetByID(t *testing.T) {
 
 func TestUpdate(t *testing.T) {
 	mockRepo := new(repo_mock.MerchantRepoMock)
-	useCase := NewMerchantUseCase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewMerchantUseCase(mockRepo, &log)
 
 	merchant := entity.Merchant{
 		IdMerchant:   "uuid-merchant-test",
@@ -115,7 +116,8 @@ func TestUpdate(t *testing.T) {
 
 func TestUpdateFailed(t *testing.T) {
 	mockRepo := new(repo_mock.MerchantRepoMock)
-	useCase := NewMerchantUseCase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewMerchantUseCase(mockRepo, &log)
 
 	merchant := entity.Merchant{
 		IdMerchant:   "uuid-merchant-test",
@@ -138,7 +140,8 @@ func TestUpdateFailed(t *testing.T) {
 
 func TestDelete(t *testing.T) {
 	mockRepo := new(repo_mock.MerchantRepoMock)
-	useCase := NewMerchantUseCase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewMerchantUseCase(mockRepo, &log)
 
 	merchant := entity.Merchant{
 		IdMerchant:   "uuid-merchant-test",
@@ -160,7 +163,8 @@ func TestDelete(t *testing.T) {
 
 func TestDeleteFailed(t *testing.T) {
 	mockRepo := new(repo_mock.MerchantRepoMock)
-	useCase := NewMerchantUseCase(mockRepo)
+	log := logger.NewLogger()
+	useCase := NewMerchantUseCase(mockRepo, &log)
 
 	merchant := entity.Merchant{
 		IdMerchant: "uuid-merchant-test",

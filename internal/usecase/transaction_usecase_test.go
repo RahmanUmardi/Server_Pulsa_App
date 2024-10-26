@@ -2,6 +2,7 @@ package usecase
 
 import (
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	repositorymock "server-pulsa-app/internal/mock/repository_mock"
 	"server-pulsa-app/internal/shared/custom"
 	"testing"
@@ -14,11 +15,12 @@ type transactionUsecaseTestSuite struct {
 	suite.Suite
 	mockTransactionRepo *repositorymock.MockTransactionRepository
 	transactionUseCase  TransactionUseCase
+	log                 logger.Logger
 }
 
 func (tx *transactionUsecaseTestSuite) SetupTest() {
 	tx.mockTransactionRepo = new(repositorymock.MockTransactionRepository)
-	tx.transactionUseCase = NewTransactionUseCase(tx.mockTransactionRepo)
+	tx.transactionUseCase = NewTransactionUseCase(tx.mockTransactionRepo, &tx.log)
 }
 
 func (tx *transactionUsecaseTestSuite) TestCreate_Success() {

@@ -30,7 +30,7 @@ func (u *UserRepoMock) ListUser() ([]entity.User, error) {
 	return args.Get(0).([]entity.User), args.Error(1)
 }
 
-func (u *UserRepoMock) UpdateUser(user, payload entity.User) (entity.User, error) {
+func (u *UserRepoMock) UpdateUser(payload entity.User) (entity.User, error) {
 	args := u.Called(payload)
 	return args.Get(0).(entity.User), args.Error(1)
 }
