@@ -6,14 +6,19 @@ import (
 	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/repository"
 
+	"github.com/sirupsen/logrus"
 	"golang.org/x/crypto/bcrypt"
 )
+
+var logUser = logger.GetLogger()
 
 type UserUsecase interface {
 	RegisterUser(user entity.User) (entity.User, error)
 	GetUserByID(id string) (entity.User, error)
+	ListUser() ([]entity.User, error)
+	GetUserByUsername(username string) (entity.User, error)
 	FindUserByUsernamePassword(username, password string) (entity.User, error)
-	UpdateUser(user entity.User) (entity.User, error)
+	UpdateUser(payload entity.User) (entity.User, error)
 	DeleteUser(id string) error
 }
 
@@ -50,6 +55,11 @@ func (u *userUsecase) RegisterUser(user entity.User) (entity.User, error) {
 func (u *userUsecase) GetUserByUsername(username string) (entity.User, error) {
 	u.log.Info("Starting to retrieve a user by username in the usecase layer", nil)
 	return u.UserRepository.GetUserByUsername(username)
+}
+
+func (u *userUsecase) ListUser() ([]entity.User, error) {
+	logrus.Info("Starting to get list user in the usecase layer")
+	return u.UserRepository.ListUser()
 }
 
 func (u *userUsecase) GetUserByID(id string) (entity.User, error) {

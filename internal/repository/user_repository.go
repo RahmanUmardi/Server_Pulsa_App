@@ -8,9 +8,10 @@ import (
 
 type UserRepository interface {
 	CreateUser(user entity.User) (entity.User, error)
+	ListUser() ([]entity.User, error)
 	GetUserByID(id string) (entity.User, error)
 	GetUserByUsername(username string) (entity.User, error)
-	UpdateUser(user entity.User) (entity.User, error)
+	UpdateUser(user, payload entity.User) (entity.User, error)
 	DeleteUser(id string) error
 }
 
@@ -31,6 +32,26 @@ func (u *userRepository) CreateUser(user entity.User) (entity.User, error) {
 
 	u.log.Info("User has been created successfully", user)
 	return user, nil
+}
+
+func (u *userRepository) ListUser() ([]entity.User, error) {
+	var users []entity.User
+
+	rows, err := u.db.Query(`SELECT id_user, username, password, role FROM mst_user`)
+	if err != nil {
+		logrus.Printf("UserRepository.ListUser: %v \n", err.Error())
+		return nil, err
+	}
+	defer rows.Close()
+	for rows.Next() {
+		var user entity.User
+		err := rows.Scan(&user.Id_user, &user.Username, &user.Password, &user.Role)
+		if err != nil {
+			return nil, err
+		}
+		users = append(users, user)
+	}
+	return users, nil
 }
 
 func (u *userRepository) GetUserByUsername(username string) (entity.User, error) {
