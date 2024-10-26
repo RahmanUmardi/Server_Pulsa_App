@@ -1,8 +1,6 @@
 package custom
 
-import (
-	"time"
-)
+import "time"
 
 type (
 	TransactionsReq struct {

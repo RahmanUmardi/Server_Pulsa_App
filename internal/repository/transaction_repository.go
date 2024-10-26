@@ -2,8 +2,10 @@ package repository
 
 import (
 	"database/sql"
+	"fmt"
 	"server-pulsa-app/internal/entity"
 	"server-pulsa-app/internal/shared/custom"
+	"time"
 )
 
 type transactionRepository struct {
@@ -23,6 +25,11 @@ func NewTransactionRepository(db *sql.DB) TransactionRepository {
 }
 
 func (r *transactionRepository) Create(payload entity.Transactions) (entity.Transactions, error) {
+	parsedDate, err := time.Parse("02-01-2006", payload.TransactionDate)
+	if err != nil {
+		return entity.Transactions{}, fmt.Errorf("invalid date format. Please use dd-mm-yyyy format: %v", err)
+	}
+
 	tx, err := r.db.Begin()
 	if err != nil {
 		return entity.Transactions{}, err
@@ -32,7 +39,7 @@ func (r *transactionRepository) Create(payload entity.Transactions) (entity.Tran
 	var transactionId string
 	insertTransaction := "INSERT INTO transactions (id_merchant, id_user, customer_name, destination_number, transaction_date) VALUES ($1, $2, $3, $4, $5) RETURNING transaction_id"
 
-	if err := tx.QueryRow(insertTransaction, payload.MerchantId, payload.UserId, payload.CustomerName, payload.DestinationNumber, payload.TransactionDate).Scan(&transactionId); err != nil {
+	if err := tx.QueryRow(insertTransaction, payload.MerchantId, payload.UserId, payload.CustomerName, payload.DestinationNumber, parsedDate).Scan(&transactionId); err != nil {
 		tx.Rollback()
 		return entity.Transactions{}, err
 	}
@@ -65,6 +72,8 @@ func (r *transactionRepository) Create(payload entity.Transactions) (entity.Tran
 	if err := tx.Commit(); err != nil {
 		return entity.Transactions{}, err
 	}
+
+	payload.TransactionDate = parsedDate.Format("02-01-2006")
 	return payload, nil
 
 }

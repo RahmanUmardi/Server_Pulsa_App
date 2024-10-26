@@ -21,10 +21,6 @@ func NewTransactionUseCase(repo repository.TransactionRepository) TransactionUse
 }
 
 func (u *transactionUseCase) Create(payload entity.Transactions) (entity.Transactions, error) {
-	// transactionDate, err := time.Parse("2006-01-02", payload.TransactionDate)
-	// if err != nil {
-	// 	return entity.Transactions{}, fmt.Errorf("invalid billDate format: %v", err)
-	// }
 	return u.repo.Create(payload)
 }
 
