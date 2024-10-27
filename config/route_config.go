@@ -18,8 +18,8 @@ const (
 
 	//transaction route
 	PostTransaction   = "/transaction"
-	ListTransactions  = "/transactions/history"
-	DetailTransaction = "/transaction/history/:id"
+	ListTransactions  = "/transactions"
+	DetailTransaction = "/transaction/:id"
 
 	// user route
 	GetUserList = "/users"

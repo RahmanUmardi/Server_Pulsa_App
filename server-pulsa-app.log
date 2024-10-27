@@ -3481,3 +3481,1832 @@ time="2024-10-25T11:13:17+07:00" level=info msg="Getting user by username was su
   "msg": "User has been registered successfully",
   "time": "2024-10-27 13:20:35"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-27 13:40:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-27 13:40:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-27 13:40:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-27 13:40:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-27 13:40:39"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-27 13:40:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-27 13:40:40"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-27 13:40:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 13:40:40"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-27 13:40:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 13:40:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all product in the handler layer",
+  "time": "2024-10-27 13:41:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the usecase layer",
+  "time": "2024-10-27 13:41:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the repository layer",
+  "time": "2024-10-27 13:41:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-27 13:41:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-27 13:41:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-27 13:41:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-27 13:41:05"
+}
+{
+  "data": [
+    {
+      "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+      "nameProvider": "Telkomsel",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    },
+    {
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "nameProvider": "Indosat Oredoo",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all product was successfully: ",
+  "time": "2024-10-27 13:41:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-27 13:41:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-27 14:10:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-27 14:10:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-27 14:10:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-27 14:10:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-27 14:10:45"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-27 14:10:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-27 14:10:45"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-27 14:10:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 14:10:45"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-27 14:10:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 14:10:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all product in the handler layer",
+  "time": "2024-10-27 14:17:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the usecase layer",
+  "time": "2024-10-27 14:17:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the repository layer",
+  "time": "2024-10-27 14:17:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-27 14:17:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-27 14:17:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-27 14:17:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-27 14:17:02"
+}
+{
+  "data": [
+    {
+      "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+      "nameProvider": "Telkomsel",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    },
+    {
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "nameProvider": "Indosat Oredoo",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all product was successfully: ",
+  "time": "2024-10-27 14:17:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-27 14:17:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-27 14:56:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-27 14:56:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-27 14:56:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-27 14:56:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-27 14:56:37"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-27 14:56:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-27 14:56:37"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-27 14:56:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 14:56:37"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-27 14:56:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 14:56:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant in the handler layer",
+  "time": "2024-10-27 14:56:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-27 14:56:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-27 14:56:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-27 14:56:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-27 14:56:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-27 14:56:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-27 14:56:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-27 14:56:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-27 14:56:58"
+}
+{
+  "data": [
+    {
+      "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+      "idUser": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+      "nameMerchant": "Konter Pak Eko",
+      "address": "jakarta",
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "balance": 0
+    },
+    {
+      "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+      "idUser": "76756390-fee0-406b-9637-0a770139527d",
+      "nameMerchant": "Merchant Kota A",
+      "address": "Kota A",
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "balance": 0
+    },
+    {
+      "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+      "idUser": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+      "nameMerchant": "Konter Pak Sultan",
+      "address": "bogor",
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "balance": 1001000
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all merchant was successfully: ",
+  "time": "2024-10-27 14:56:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Merchant found successfully",
+  "time": "2024-10-27 14:56:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve merchant with id in the handler layer",
+  "time": "2024-10-27 14:57:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 14:57:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-27 14:57:28"
+}
+{
+  "data": {
+    "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+    "idUser": "76756390-fee0-406b-9637-0a770139527d",
+    "nameMerchant": "Merchant Kota A",
+    "address": "Kota A",
+    "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-27 14:57:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Merchant found successfully",
+  "time": "2024-10-27 14:57:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant with id in the handler layer",
+  "time": "2024-10-27 14:57:51"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 14:57:51"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-27 14:57:51"
+}
+{
+  "data": {
+    "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+    "idUser": "76756390-fee0-406b-9637-0a770139527d",
+    "nameMerchant": "Merchant Kota A",
+    "address": "Kota A",
+    "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-27 14:57:51"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the usecase layer",
+  "time": "2024-10-27 14:57:51"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to map merchant and payload in the repository layer",
+  "time": "2024-10-27 14:57:51"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the repository layer",
+  "time": "2024-10-27 14:57:51"
+}
+{
+  "data": "pq: invalid input syntax for type uuid: \"eyJhbGciOiJIUzI1NiIs...\"",
+  "level": "error",
+  "msg": "Failed to update the merchant: ",
+  "time": "2024-10-27 14:57:51"
+}
+{
+  "data": "pq: invalid input syntax for type uuid: \"eyJhbGciOiJIUzI1NiIs...\"",
+  "level": "error",
+  "msg": "Failed to update the merchant: ",
+  "time": "2024-10-27 14:57:51"
+}
+{
+  "data": {
+    "Message": "Merchant of Id 6f567be9-e409-4604-85ef-25dcca62fee0 Not Found",
+    "Data": {
+      "idMerchant": "",
+      "idUser": "",
+      "nameMerchant": "",
+      "address": "",
+      "idProduct": "",
+      "balance": 0
+    }
+  },
+  "level": "error",
+  "msg": "Merchant ID %s not found: ",
+  "time": "2024-10-27 14:57:51"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all product in the handler layer",
+  "time": "2024-10-27 14:59:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the usecase layer",
+  "time": "2024-10-27 14:59:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the repository layer",
+  "time": "2024-10-27 14:59:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-27 14:59:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-27 14:59:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-27 14:59:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-27 14:59:50"
+}
+{
+  "data": [
+    {
+      "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+      "nameProvider": "Telkomsel",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    },
+    {
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "nameProvider": "Indosat Oredoo",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all product was successfully: ",
+  "time": "2024-10-27 14:59:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-27 14:59:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant with id in the handler layer",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": {
+    "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+    "idUser": "76756390-fee0-406b-9637-0a770139527d",
+    "nameMerchant": "Merchant Kota A",
+    "address": "Kota A",
+    "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the usecase layer",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to map merchant and payload in the repository layer",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the repository layer",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": {
+    "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+    "idUser": "76756390-fee0-406b-9637-0a770139527d",
+    "nameMerchant": "Konter Pak Ekonomis",
+    "address": "Jombang",
+    "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+    "balance": 500000
+  },
+  "level": "info",
+  "msg": "Merchant has been updated successfully: ",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": "6f567be9-e409-4604-85ef-25dcca62fee0",
+  "level": "info",
+  "msg": "Merchant ID %s has been updated successfully: ",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": {
+    "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+    "idUser": "76756390-fee0-406b-9637-0a770139527d",
+    "nameMerchant": "Konter Pak Ekonomis",
+    "address": "Jombang",
+    "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+    "balance": 500000
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": {
+    "Message": "Merchant of Id 6f567be9-e409-4604-85ef-25dcca62fee0 Updated",
+    "Data": {
+      "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+      "idUser": "76756390-fee0-406b-9637-0a770139527d",
+      "nameMerchant": "Konter Pak Ekonomis",
+      "address": "Jombang",
+      "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+      "balance": 500000
+    }
+  },
+  "level": "info",
+  "msg": "Merchant updated successfully",
+  "time": "2024-10-27 15:00:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve merchant with id in the handler layer",
+  "time": "2024-10-27 15:00:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 15:00:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-27 15:00:57"
+}
+{
+  "data": {
+    "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+    "idUser": "76756390-fee0-406b-9637-0a770139527d",
+    "nameMerchant": "Konter Pak Ekonomis",
+    "address": "Jombang",
+    "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+    "balance": 500000
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-27 15:00:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Merchant found successfully",
+  "time": "2024-10-27 15:00:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant with id in the handler layer",
+  "time": "2024-10-27 15:01:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 15:01:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-27 15:01:06"
+}
+{
+  "data": {
+    "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+    "idUser": "76756390-fee0-406b-9637-0a770139527d",
+    "nameMerchant": "Konter Pak Ekonomis",
+    "address": "Jombang",
+    "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+    "balance": 500000
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-27 15:01:06"
+}
+{
+  "data": "6f567be9-e409-4604-85ef-25dcca62fee0",
+  "level": "info",
+  "msg": "Merchant has been deleted successfully: ",
+  "time": "2024-10-27 15:01:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant in the repository layer",
+  "time": "2024-10-27 15:01:06"
+}
+{
+  "data": "pq: update or delete on table \"mst_merchant\" violates foreign key constraint \"transactions_id_merchant_fkey\" on table \"transactions\"",
+  "level": "error",
+  "msg": "Failed to delete the merchant: ",
+  "time": "2024-10-27 15:01:06"
+}
+{
+  "data": {
+    "Message": "Merchant of Id 6f567be9-e409-4604-85ef-25dcca62fee0 Not Found",
+    "Data": {
+      "idMerchant": "",
+      "idUser": "",
+      "nameMerchant": "",
+      "address": "",
+      "idProduct": "",
+      "balance": 0
+    }
+  },
+  "level": "error",
+  "msg": "Merchant ID %s not found: ",
+  "time": "2024-10-27 15:01:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve merchant with id in the handler layer",
+  "time": "2024-10-27 15:01:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 15:01:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-27 15:01:35"
+}
+{
+  "data": {
+    "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+    "idUser": "76756390-fee0-406b-9637-0a770139527d",
+    "nameMerchant": "Konter Pak Ekonomis",
+    "address": "Jombang",
+    "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+    "balance": 500000
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-27 15:01:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Merchant found successfully",
+  "time": "2024-10-27 15:01:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant with id in the handler layer",
+  "time": "2024-10-27 15:01:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 15:01:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-27 15:01:46"
+}
+{
+  "data": {
+    "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+    "idUser": "76756390-fee0-406b-9637-0a770139527d",
+    "nameMerchant": "Konter Pak Ekonomis",
+    "address": "Jombang",
+    "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+    "balance": 500000
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-27 15:01:46"
+}
+{
+  "data": "6f567be9-e409-4604-85ef-25dcca62fee0",
+  "level": "info",
+  "msg": "Merchant has been deleted successfully: ",
+  "time": "2024-10-27 15:01:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant in the repository layer",
+  "time": "2024-10-27 15:01:46"
+}
+{
+  "data": "pq: update or delete on table \"mst_merchant\" violates foreign key constraint \"transactions_id_merchant_fkey\" on table \"transactions\"",
+  "level": "error",
+  "msg": "Failed to delete the merchant: ",
+  "time": "2024-10-27 15:01:46"
+}
+{
+  "data": {
+    "Message": "Merchant of Id 6f567be9-e409-4604-85ef-25dcca62fee0 Not Found",
+    "Data": {
+      "idMerchant": "",
+      "idUser": "",
+      "nameMerchant": "",
+      "address": "",
+      "idProduct": "",
+      "balance": 0
+    }
+  },
+  "level": "error",
+  "msg": "Merchant ID %s not found: ",
+  "time": "2024-10-27 15:01:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve merchant with id in the handler layer",
+  "time": "2024-10-27 15:02:52"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 15:02:52"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-27 15:02:52"
+}
+{
+  "data": {
+    "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+    "idUser": "76756390-fee0-406b-9637-0a770139527d",
+    "nameMerchant": "Konter Pak Ekonomis",
+    "address": "Jombang",
+    "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+    "balance": 500000
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-27 15:02:52"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Merchant found successfully",
+  "time": "2024-10-27 15:02:52"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant with id in the handler layer",
+  "time": "2024-10-27 15:03:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 15:03:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-27 15:03:00"
+}
+{
+  "data": {
+    "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+    "idUser": "76756390-fee0-406b-9637-0a770139527d",
+    "nameMerchant": "Konter Pak Ekonomis",
+    "address": "Jombang",
+    "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+    "balance": 500000
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-27 15:03:00"
+}
+{
+  "data": "6f567be9-e409-4604-85ef-25dcca62fee0",
+  "level": "info",
+  "msg": "Merchant has been deleted successfully: ",
+  "time": "2024-10-27 15:03:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant in the repository layer",
+  "time": "2024-10-27 15:03:00"
+}
+{
+  "data": "pq: update or delete on table \"mst_merchant\" violates foreign key constraint \"transactions_id_merchant_fkey\" on table \"transactions\"",
+  "level": "error",
+  "msg": "Failed to delete the merchant: ",
+  "time": "2024-10-27 15:03:00"
+}
+{
+  "data": {
+    "Message": "Merchant of Id 6f567be9-e409-4604-85ef-25dcca62fee0 Not Found",
+    "Data": {
+      "idMerchant": "",
+      "idUser": "",
+      "nameMerchant": "",
+      "address": "",
+      "idProduct": "",
+      "balance": 0
+    }
+  },
+  "level": "error",
+  "msg": "Merchant ID %s not found: ",
+  "time": "2024-10-27 15:03:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-27 15:16:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-27 15:16:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-27 15:16:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-27 15:16:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-27 15:16:08"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-27 15:16:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-27 15:16:08"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-27 15:16:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 15:16:08"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-27 15:16:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 15:16:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transactions list in the handler layer",
+  "time": "2024-10-27 15:16:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all transactions in the usecase layer",
+  "time": "2024-10-27 15:16:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-27 15:16:31"
+}
+{
+  "data": [
+    {
+      "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+      "customerName": "haaland",
+      "destinationNumber": "456372534",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+        "nameMerchant": "Konter Pak Sultan",
+        "address": "bogor"
+      },
+      "transactionDate": "2024-10-26T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "27ec76b1-5739-420b-bc7c-86dd12704deb",
+          "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat Oredoo",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+      "customerName": "rahman",
+      "destinationNumber": "087654326453",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "120940bc-87c5-4575-ae2d-0a6859531b5c",
+          "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat Oredoo",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+      "customerName": "Customer baru",
+      "destinationNumber": "08736622342",
+      "user": {
+        "id_user": "76756390-fee0-406b-9637-0a770139527d",
+        "name": "rifki",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+        "nameMerchant": "Konter Pak Ekonomis",
+        "address": "Jombang"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "9cf59afc-bc3a-43e6-9c32-8551db679cfb",
+          "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+          "product": {
+            "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+            "nameProvider": "Telkomsel",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+      "customerName": "kevin",
+      "destinationNumber": "087653645242",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "a3e9d675-ca58-4cf5-bdd3-cd1aaf92ed9c",
+          "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat Oredoo",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+      "customerName": "mbappe",
+      "destinationNumber": "08765465",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "d7929cbd-cd65-4222-ae4a-a5effd2c0ceb",
+          "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat Oredoo",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+      "customerName": "bima",
+      "destinationNumber": "08157563452",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-24T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "06f44505-46de-4e22-9c5b-fca3652c3650",
+          "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat Oredoo",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    }
+  ],
+  "level": "info",
+  "msg": "Successfully Get the transactions list",
+  "time": "2024-10-27 15:16:31"
+}
+{
+  "data": {
+    "message": "Transaction list",
+    "data": [
+      {
+        "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+        "customerName": "haaland",
+        "destinationNumber": "456372534",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+          "nameMerchant": "Konter Pak Sultan",
+          "address": "bogor"
+        },
+        "transactionDate": "2024-10-26T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "27ec76b1-5739-420b-bc7c-86dd12704deb",
+            "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat Oredoo",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+        "customerName": "rahman",
+        "destinationNumber": "087654326453",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "120940bc-87c5-4575-ae2d-0a6859531b5c",
+            "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat Oredoo",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+        "customerName": "Customer baru",
+        "destinationNumber": "08736622342",
+        "user": {
+          "id_user": "76756390-fee0-406b-9637-0a770139527d",
+          "name": "rifki",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+          "nameMerchant": "Konter Pak Ekonomis",
+          "address": "Jombang"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "9cf59afc-bc3a-43e6-9c32-8551db679cfb",
+            "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+            "product": {
+              "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+              "nameProvider": "Telkomsel",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+        "customerName": "kevin",
+        "destinationNumber": "087653645242",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "a3e9d675-ca58-4cf5-bdd3-cd1aaf92ed9c",
+            "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat Oredoo",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+        "customerName": "mbappe",
+        "destinationNumber": "08765465",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "d7929cbd-cd65-4222-ae4a-a5effd2c0ceb",
+            "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat Oredoo",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+        "customerName": "bima",
+        "destinationNumber": "08157563452",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-24T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "06f44505-46de-4e22-9c5b-fca3652c3650",
+            "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat Oredoo",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "level": "info",
+  "msg": "transactions list found",
+  "time": "2024-10-27 15:16:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transaction by id in the handler layer",
+  "time": "2024-10-27 15:16:49"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transaction by id in the usecase layer",
+  "time": "2024-10-27 15:16:49"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive transaction by id in the repository layer",
+  "time": "2024-10-27 15:16:49"
+}
+{
+  "data": {
+    "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+    "customerName": "haaland",
+    "destinationNumber": "456372534",
+    "user": {
+      "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+      "name": "hunayn",
+      "role": "employee"
+    },
+    "merchant": {
+      "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+      "nameMerchant": "Konter Pak Sultan",
+      "address": "bogor"
+    },
+    "transactionDate": "2024-10-26T00:00:00Z",
+    "transactionDetail": [
+      {
+        "transactionDetailId": "27ec76b1-5739-420b-bc7c-86dd12704deb",
+        "product": {
+          "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+          "nameProvider": "Indosat Oredoo",
+          "nominal": 10000,
+          "price": 11000
+        }
+      }
+    ]
+  },
+  "level": "info",
+  "msg": "Successfully Get the transaction by given id",
+  "time": "2024-10-27 15:16:49"
+}
+{
+  "data": {
+    "message": "Transaction detail",
+    "data": {
+      "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+      "customerName": "haaland",
+      "destinationNumber": "456372534",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+        "nameMerchant": "Konter Pak Sultan",
+        "address": "bogor"
+      },
+      "transactionDate": "2024-10-26T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "27ec76b1-5739-420b-bc7c-86dd12704deb",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat Oredoo",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "transaction found",
+  "time": "2024-10-27 15:16:49"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant in the handler layer",
+  "time": "2024-10-27 15:17:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-27 15:17:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-27 15:17:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-27 15:17:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-27 15:17:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-27 15:17:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-27 15:17:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-27 15:17:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-27 15:17:27"
+}
+{
+  "data": [
+    {
+      "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+      "idUser": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+      "nameMerchant": "Konter Pak Eko",
+      "address": "jakarta",
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "balance": 0
+    },
+    {
+      "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+      "idUser": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+      "nameMerchant": "Konter Pak Sultan",
+      "address": "bogor",
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "balance": 1001000
+    },
+    {
+      "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+      "idUser": "76756390-fee0-406b-9637-0a770139527d",
+      "nameMerchant": "Konter Pak Ekonomis",
+      "address": "Jombang",
+      "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+      "balance": 500000
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all merchant was successfully: ",
+  "time": "2024-10-27 15:17:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Merchant found successfully",
+  "time": "2024-10-27 15:17:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all product in the handler layer",
+  "time": "2024-10-27 15:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the usecase layer",
+  "time": "2024-10-27 15:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the repository layer",
+  "time": "2024-10-27 15:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-27 15:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-27 15:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-27 15:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-27 15:17:57"
+}
+{
+  "data": [
+    {
+      "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+      "nameProvider": "Telkomsel",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    },
+    {
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "nameProvider": "Indosat Oredoo",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all product was successfully: ",
+  "time": "2024-10-27 15:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-27 15:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-27 15:18:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-27 15:18:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-27 15:18:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-27 15:18:42"
+}
+{
+  "data": "required balance: 10000, current balance: 0",
+  "level": "error",
+  "msg": "Insufficient merchant balance",
+  "time": "2024-10-27 15:18:42"
+}
+{
+  "data": "insufficient merchant balance: required 10000, current balance 0",
+  "level": "error",
+  "msg": "failed to create a transaction",
+  "time": "2024-10-27 15:18:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-27 15:19:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-27 15:19:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-27 15:19:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-27 15:19:26"
+}
+{
+  "data": {
+    "newBalance": 501000,
+    "payload": {
+      "transactionId": "7d397130-94ca-4c93-8449-525ac6b58692",
+      "merchantId": "6f567be9-e409-4604-85ef-25dcca62fee0",
+      "userId": "76756390-fee0-406b-9637-0a770139527d",
+      "customerName": "customer coba",
+      "destinationNumber": "087654323",
+      "transactionDate": "27-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "5428e9f7-be01-4dc0-bf59-af55ef6fbbcd",
+          "transactionId": "7d397130-94ca-4c93-8449-525ac6b58692",
+          "productId": "192b7f2a-f114-4182-a725-16e66b630675",
+          "Price": 11000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfully with updated merchant balance",
+  "time": "2024-10-27 15:19:26"
+}
+{
+  "data": {
+    "message": "Transaction Created",
+    "data": {
+      "transactionId": "7d397130-94ca-4c93-8449-525ac6b58692",
+      "merchantId": "6f567be9-e409-4604-85ef-25dcca62fee0",
+      "userId": "76756390-fee0-406b-9637-0a770139527d",
+      "customerName": "customer coba",
+      "destinationNumber": "087654323",
+      "transactionDate": "27-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "5428e9f7-be01-4dc0-bf59-af55ef6fbbcd",
+          "transactionId": "7d397130-94ca-4c93-8449-525ac6b58692",
+          "productId": "192b7f2a-f114-4182-a725-16e66b630675",
+          "Price": 11000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfuly",
+  "time": "2024-10-27 15:19:26"
+}

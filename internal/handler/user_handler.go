@@ -24,10 +24,10 @@ type UserHandler struct {
 	log            *logger.Logger
 }
 
-// ListUser godoc
+// ListUsers godoc
 // @Summary List all Users
 // @Description Get a list of all users
-// @Tags products
+// @Tags users
 // @Accept json
 // @Produce json
 // @Security BearerAuth
@@ -61,6 +61,18 @@ func (u *UserHandler) ListHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, reponse)
 }
 
+// GetUser godoc
+// @Summary Get user by ID
+// @Description Retrieve a user by its ID
+// @Tags users
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "User ID"
+// @Success 200 {object} entity.UserResponse "User found"
+// @Failure 404 {object} entity.UserErrorResponse "User not found"
+// @Failure 401 {object} entity.UserErrorResponse "Unauthorized"
+// @Router /user/{id} [get]
 func (u *UserHandler) getIdHandler(ctx *gin.Context) {
 	u.log.Info("Starting to get user by id in the handler layer", nil)
 
@@ -82,6 +94,20 @@ func (u *UserHandler) getIdHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
+// UpdateUser godoc
+// @Summary Update user
+// @Description Update an existing user
+// @Tags users
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "User ID"
+// @Param request body entity.UserReqUpdate true "Updated user details"
+// @Success 200 {object} entity.UserResponse "Successfully updated user"
+// @Failure 400 {object} entity.UserErrorResponse "Invalid input"
+// @Failure 401 {object} entity.UserErrorResponse "Unauthorized"
+// @Failure 404 {object} entity.UserErrorResponse "User not found"
+// @Router /user/{id} [put]
 func (u *UserHandler) updateHandler(ctx *gin.Context) {
 	u.log.Info("Starting to update user in the handler layer", nil)
 	id := ctx.Param("id")
@@ -112,21 +138,27 @@ func (u *UserHandler) updateHandler(ctx *gin.Context) {
 
 }
 
+// DeleteUser godoc
+// @Summary Delete user
+// @Description Delete a user by its ID
+// @Tags users
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "User ID"
+// @Success 204 "Successfully deleted"
+// @Failure 401 {object} entity.UserErrorResponse "Unauthorized"
+// @Failure 404 {object} entity.UserErrorResponse "User not found"
+// @Router /user/{id} [delete]
 func (u *UserHandler) deleteHandler(ctx *gin.Context) {
 	u.log.Info("Starting to delete user in the handler layer", nil)
 
 	id := ctx.Param("id")
 	err := u.userUc.DeleteUser(id)
 	if err != nil {
-		if err != nil {
-			ctx.JSON(http.StatusNotFound, gin.H{"message": fmt.Sprintf("User with ID %s not found", id)})
-			return
-		}
-
-		ctx.JSON(http.StatusInternalServerError, gin.H{"message": "Failed to delete user", "error": err.Error()})
+		ctx.JSON(http.StatusNotFound, gin.H{"message": fmt.Sprintf("User with ID %s not found", id)})
 		return
 	}
-
 	response := struct {
 		Message string `json:"message"`
 	}{

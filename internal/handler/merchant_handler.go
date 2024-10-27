@@ -11,6 +11,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @title Merchant API
+// @version 1.0
+// @description Merchant management endpoints for the server-pulsa-app
 type MerchantHandler struct {
 	merchantUc     usecase.MerchantUseCase
 	rg             *gin.RouterGroup
@@ -18,6 +21,18 @@ type MerchantHandler struct {
 	log            *logger.Logger
 }
 
+// CreateMerchant godoc
+// @Summary Create new merchant
+// @Description Create a new merchant in the system
+// @Tags merchants
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param request body entity.MerchantRequest true "Merchant details"
+// @Success 201 {object} entity.MerchantResponse "Successfully created"
+// @Failure 400 {object} entity.MerchantErrorResponse "Invalid input"
+// @Failure 401 {object} entity.MerchantErrorResponse "Unauthorized"
+// @Router /merchant [post]
 func (m *MerchantHandler) createHandler(ctx *gin.Context) {
 	var payload entity.Merchant
 
@@ -63,6 +78,18 @@ func (m *MerchantHandler) createHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, response)
 }
 
+// ListMerchants godoc
+// @Summary List all merchants
+// @Description Get a list of all merchants
+// @Tags merchants
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param page query int false "Page number"
+// @Param limit query int false "Items per page"
+// @Success 200 {array} []entity.MerchantResponse "List of merchants"
+// @Failure 401 {object} entity.MerchantErrorResponse "Unauthorized"
+// @Router /merchants [get]
 func (m *MerchantHandler) listHandler(ctx *gin.Context) {
 	m.log.Info("Starting to retrieve all merchant in the handler layer", nil)
 
@@ -103,6 +130,19 @@ func (m *MerchantHandler) listHandler(ctx *gin.Context) {
 	m.log.Info("Merchant not found", response)
 	ctx.JSON(http.StatusOK, response)
 }
+
+// GetMerchant godoc
+// @Summary Get merchant by ID
+// @Description Retrieve a merchant by its ID
+// @Tags merchants
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "Merchant ID"
+// @Success 200 {object} entity.MerchantResponse "Merchant found"
+// @Failure 404 {object} entity.MerchantErrorResponse "Merchant not found"
+// @Failure 401 {object} entity.MerchantErrorResponse "Unauthorized"
+// @Router /merchant/{id} [get]
 func (m *MerchantHandler) getHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 
@@ -133,6 +173,20 @@ func (m *MerchantHandler) getHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
+// UpdateMerchant godoc
+// @Summary Update merchant
+// @Description Update an existing merchant
+// @Tags merchants
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "Merchant ID"
+// @Param request body entity.MerchantRequest true "Updated merchant details"
+// @Success 200 {object} entity.MerchantResponse "Successfully updated merchant"
+// @Failure 400 {object} entity.MerchantErrorResponse "Invalid input"
+// @Failure 401 {object} entity.MerchantErrorResponse "Unauthorized"
+// @Failure 404 {object} entity.MerchantErrorResponse "Merchant not found"
+// @Router /merchant/{id} [put]
 func (m *MerchantHandler) updateHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 	var payload entity.Merchant
@@ -180,6 +234,18 @@ func (m *MerchantHandler) updateHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
+// DeleteMerchant godoc
+// @Summary Delete merchant
+// @Description Delete a merchant by its ID
+// @Tags merchants
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "Merchant ID"
+// @Success 204 "Successfully deleted"
+// @Failure 401 {object} entity.MerchantErrorResponse "Unauthorized"
+// @Failure 404 {object} entity.MerchantErrorResponse "Merchant not found"
+// @Router /merchant/{id} [delete]
 func (m *MerchantHandler) deleteHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 

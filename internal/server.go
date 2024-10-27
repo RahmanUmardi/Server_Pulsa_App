@@ -54,6 +54,8 @@ func (s *Server) initRoute() {
 	handler.NewProductController(s.productUc, rg, authMiddleware, &log).Route()
 	handler.NewTransactionHandler(s.transactionUc, authMiddleware, rg, &log).Route()
 	handler.NewUserHandler(s.userUc, authMiddleware, rg, &log).Route()
+
+	s.engine.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 }
 
 func (s *Server) Run() {

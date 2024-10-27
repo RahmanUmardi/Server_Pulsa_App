@@ -12,6 +12,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @title Transactions API
+// @version 1.0
+// @description Transaction management endpoints for the server-pulsa-app
+
 type TransactionHandler struct {
 	usecase        usecase.TransactionUseCase
 	rg             *gin.RouterGroup
@@ -23,6 +27,18 @@ func NewTransactionHandler(usecase usecase.TransactionUseCase, authMiddleware mi
 	return &TransactionHandler{usecase: usecase, authMiddleware: authMiddleware, rg: rg, log: log}
 }
 
+// CreateTransaction godoc
+// @Summary Create new transaction
+// @Description Create a new transaction in the system
+// @Tags transactions
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param request body entity.TransactionReq true "Transaction details"
+// @Success 201 {object} entity.Transactions "Successfully created transaction"
+// @Failure 400 {object} entity.TransactionErrorResponse "Invalid input"
+// @Failure 401 {object} entity.TransactionErrorResponse "Unauthorized"
+// @Router /transaction [post]
 func (h *TransactionHandler) createHandler(ctx *gin.Context) {
 	var payload entity.Transactions
 
@@ -51,6 +67,18 @@ func (h *TransactionHandler) createHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, response)
 }
 
+// ListTransactions godoc
+// @Summary List all transactions
+// @Description Get a list of all transactions
+// @Tags transactions
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param page query int false "Page number"
+// @Param limit query int false "Items per page"
+// @Success 200 {array} []entity.Transactions "List of transactions"
+// @Failure 401 {object} entity.TransactionErrorResponse "Unauthorized"
+// @Router /transactions [get]
 func (h *TransactionHandler) listHandler(ctx *gin.Context) {
 	h.log.Info("Starting to get transactions list in the handler layer", nil)
 
@@ -77,6 +105,18 @@ func (h *TransactionHandler) listHandler(ctx *gin.Context) {
 	}
 }
 
+// GetTransaction godoc
+// @Summary Get transaction by ID
+// @Description Retrieve a transaction by its ID
+// @Tags transactions
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "Transaction ID"
+// @Success 200 {object} entity.Transactions "Transaction found"
+// @Failure 404 {object} entity.TransactionErrorResponse "Transaction not found"
+// @Failure 401 {object} entity.TransactionErrorResponse "Unauthorized"
+// @Router /transaction/{id} [get]
 func (h *TransactionHandler) getByIdHandler(ctx *gin.Context) {
 	id := ctx.Param("id")
 
