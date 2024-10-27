@@ -49,3 +49,14 @@ CREATE TABLE transaction_detail(
     id_product UUID REFERENCES mst_product(id_product),
     price DECIMAL(10, 2) NOT NULL
 );
+
+CREATE TABLE tx_topup (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    id_merchant UUID REFERENCES mst_merchant(id_merchant),
+    id_supliyer UUID REFERENCES mst_supliyer(id_supliyer),
+    item_name VARCHAR(255) NOT NULL,
+    amount DOUBLE PRECISION NOT NULL,
+    payment_method VARCHAR(255),
+    status VARCHAR(255),
+    created_at TIMESTAMP DEFAULT NOW()
+);

@@ -86,9 +86,6 @@ func (r *transactionRepository) Create(payload entity.Transactions) (entity.Tran
 
 	payload.TransactionsId = transactionId
 
-	// Track total price for revenue
-	var totalPrice float64
-
 	//insert into transaction detail table
 	insertTransactionDetail := "INSERT INTO transaction_detail (transaction_id, id_product, price) VALUES ($1, $2, $3) RETURNING transaction_detail_id"
 
@@ -103,35 +100,31 @@ func (r *transactionRepository) Create(payload entity.Transactions) (entity.Tran
 		payload.TransactionDetail[i].TransactionDetailId = transactionDetailId
 		payload.TransactionDetail[i].TransactionsId = transactionId
 
-		// Fetch product details (price and nominal) from product table
-		var product entity.Product
+		// Fetch product price from product table
+		var productPrice float64
 		if err := tx.QueryRow(
-			"SELECT price, nominal FROM mst_product WHERE id_product = $1",
+			"SELECT price FROM mst_product WHERE id_product = $1",
 			payload.TransactionDetail[i].ProductId,
-		).Scan(&product.Price, &product.Nominal); err != nil {
+		).Scan(&productPrice); err != nil {
 			tx.Rollback()
-			r.log.Error("Failed to fetch product details", err)
+			r.log.Error("Failed to fetch product price", err)
 			return entity.Transactions{}, err
 		}
 
-		// Update the price in the payload
-		payload.TransactionDetail[i].Price = product.Price
-		totalPrice += product.Price
+		payload.TransactionDetail[i].Price = productPrice
 	}
 
-	// Update merchant balance
-	// Subtract nominal (cost) and add price (revenue)
+	// Update merchant balance - only subtract the nominal amount
 	updateMerchantBalance := `
 		UPDATE mst_merchant 
-		SET balance = balance - $1 + $2 
-		WHERE id_merchant = $3
+		SET balance = balance - $1
+		WHERE id_merchant = $2
 		RETURNING balance`
 
 	var newBalance float64
 	if err := tx.QueryRow(
 		updateMerchantBalance,
-		totalNominal, // amount to subtract (cost)
-		totalPrice,   // amount to add (revenue)
+		totalNominal, // amount to subtract (nominal/cost)
 		payload.MerchantId,
 	).Scan(&newBalance); err != nil {
 		tx.Rollback()

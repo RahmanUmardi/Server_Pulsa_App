@@ -31,6 +31,14 @@ const (
 	Login    = "/auth/login"
 	Register = "/auth/register"
 
+	// topup route
+	PostTopup            = "/topup"
+	GetTopupByMerchantId = "/topup/:id"
+	// GetTopupList = "/topups"
+
+	// callback topup
+	PostCallback = "/topup/callback"
+
 	//report route
 	GetReport = "/report"
 )

@@ -7539,3 +7539,253 @@ time="2024-10-25T11:13:17+07:00" level=info msg="Getting user by username was su
   "msg": "Failed to retrieve the transactions",
   "time": "2024-10-28 06:29:14"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 06:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 06:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 06:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 06:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 06:46:10"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 06:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 06:46:10"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 06:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 06:46:10"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 06:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 06:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 06:50:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 06:50:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 06:50:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 06:50:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 06:50:40"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 06:50:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 06:50:40"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 06:50:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 06:50:40"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 06:50:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 06:50:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-28 06:52:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-28 06:52:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-28 06:52:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-28 06:52:27"
+}
+{
+  "data": "pq: could not determine data type of parameter $2",
+  "level": "error",
+  "msg": "Failed to update merchant balance",
+  "time": "2024-10-28 06:52:27"
+}
+{
+  "data": "pq: could not determine data type of parameter $2",
+  "level": "error",
+  "msg": "failed to create a transaction",
+  "time": "2024-10-28 06:52:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-28 06:57:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-28 06:57:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-28 06:57:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-28 06:57:04"
+}
+{
+  "data": {
+    "newBalance": 991000,
+    "payload": {
+      "transactionId": "213b69d4-79b6-4ae2-b0ec-4b5daae2d54d",
+      "merchantId": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+      "userId": "0cf390ac-43ac-4904-9468-05fb9170a2c1",
+      "customerName": "ronaldo",
+      "destinationNumber": "08765432",
+      "transactionDate": "27-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "81650858-0aef-4434-873f-c41c4f146031",
+          "transactionId": "213b69d4-79b6-4ae2-b0ec-4b5daae2d54d",
+          "productId": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+          "Price": 11000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfully with updated merchant balance",
+  "time": "2024-10-28 06:57:04"
+}
+{
+  "data": {
+    "message": "Transaction Created",
+    "data": {
+      "transactionId": "213b69d4-79b6-4ae2-b0ec-4b5daae2d54d",
+      "merchantId": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+      "userId": "0cf390ac-43ac-4904-9468-05fb9170a2c1",
+      "customerName": "ronaldo",
+      "destinationNumber": "08765432",
+      "transactionDate": "27-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "81650858-0aef-4434-873f-c41c4f146031",
+          "transactionId": "213b69d4-79b6-4ae2-b0ec-4b5daae2d54d",
+          "productId": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+          "Price": 11000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfuly",
+  "time": "2024-10-28 06:57:04"
+}
