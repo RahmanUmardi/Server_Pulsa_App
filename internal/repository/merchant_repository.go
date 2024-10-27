@@ -44,7 +44,7 @@ func (m *merchantRepository) List() ([]entity.Merchant, error) {
 	rows, err = m.db.Query("SELECT id_merchant, id_user, name_merchant, address, id_product, balance FROM mst_merchant")
 
 	if err != nil {
-		m.log.Error("Failed to retrive the product: ", err)
+		m.log.Error("Failed to retrive the merchant: ", err)
 		return nil, err
 	}
 
