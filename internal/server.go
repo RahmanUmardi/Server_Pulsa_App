@@ -12,10 +12,26 @@ import (
 	"server-pulsa-app/internal/usecase"
 
 	_ "github.com/lib/pq"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
+
+	_ "server-pulsa-app/docs"
 
 	"github.com/gin-gonic/gin"
 )
 
+// @title Server Pulsa API
+// @version 1.0
+// @description API Server for Pulsa Application
+
+// @securityDefinitions.apikey BearerAuth
+// @in header
+// @name Authorization
+// @description Type "Bearer" followed by a space and JWT token.
+
+// @host localhost:8080
+// @BasePath /api/v1
+// @schemes http https
 type Server struct {
 	jwtService    service.JwtService
 	authUc        usecase.AuthUseCase
@@ -36,6 +52,8 @@ func (s *Server) initRoute() {
 	handler.NewAuthController(s.authUc, rg, &log).Route()
 	handler.NewProductController(s.productUc, rg, authMiddleware, &log).Route()
 	handler.NewTransactionHandler(s.transactionUc, authMiddleware, rg, &log).Route()
+
+	s.engine.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 }
 
 func (s *Server) Run() {

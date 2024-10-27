@@ -10,12 +10,27 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @title User API
+// @version 1.0
+// @description User management endpoints for the server-pulsa-app
 type UserHandler struct {
 	userUc         usecase.UserUsecase
 	rg             *gin.RouterGroup
 	authMiddleware middleware.AuthMiddleware
 }
 
+// ListUser godoc
+// @Summary List all Users
+// @Description Get a list of all users
+// @Tags products
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param page query int false "Page number"
+// @Param limit query int false "Items per page"
+// @Success 200 {array} []entity.User "List of users"
+// @Failure 401 {object} entity.UserErrorResponse "Unauthorized"
+// @Router /users [get]
 func (u *UserHandler) ListHandler(ctx *gin.Context) {
 
 	users, err := u.userUc.ListUser()

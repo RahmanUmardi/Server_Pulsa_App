@@ -15,6 +15,17 @@ type AuthController struct {
 	log         *logger.Logger
 }
 
+// Login godoc
+// @Summary Login user
+// @Description Authenticate a user and get JWT token
+// @Tags authentication
+// @Accept json
+// @Produce json
+// @Param request body dto.AuthRequest true "Login credentials"
+// @Success 200 {object} dto.AuthResponse "Successfully authenticated"
+// @Failure 400 {object} dto.ErrorResponse "Invalid input"
+// @Failure 401 {object} dto.ErrorResponse "Authentication failed"
+// @Router /auth/login [post]
 func (a *AuthController) loginHandler(ctx *gin.Context) {
 	var payload dto.AuthRequestDto
 
@@ -38,6 +49,17 @@ func (a *AuthController) loginHandler(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, token)
 }
 
+// Login godoc
+// @Summary Register user
+// @Description Create a new user
+// @Tags authentication
+// @Accept json
+// @Produce json
+// @Param request body dto.AuthRequest true "Login credentials"
+// @Success 201 {object} dto.AuthRegisterRes "Successfully registered"
+// @Failure 400 {object} dto.ErrorResponse "Invalid input"
+// @Failure 401 {object} dto.ErrorResponse "Authentication failed"
+// @Router /auth/register [post]
 func (a *AuthController) registerHandler(ctx *gin.Context) {
 	var payload dto.AuthRequestDto
 
