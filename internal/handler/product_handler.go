@@ -11,6 +11,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @title Product API
+// @version 1.0
+// @description Product management endpoints for the server-pulsa-app
+
 type ProductController struct {
 	useCase        usecase.ProductUseCase
 	rg             *gin.RouterGroup
@@ -26,6 +30,18 @@ func (p *ProductController) Route() {
 	p.rg.DELETE(config.DeleteProduct, p.authMiddleware.RequireToken("employee"), p.DeleteProduct)
 }
 
+// CreateProduct godoc
+// @Summary Create new product
+// @Description Create a new product in the system
+// @Tags products
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param request body entity.ProductRequest true "Product details"
+// @Success 201 {object} entity.ProductResponse "Successfully created product"
+// @Failure 400 {object} entity.ProductErrorResponse "Invalid input"
+// @Failure 401 {object} entity.ProductErrorResponse "Unauthorized"
+// @Router /product [post]
 func (p *ProductController) CreateProduct(c *gin.Context) {
 	var payload entity.Product
 
@@ -56,6 +72,18 @@ func (p *ProductController) CreateProduct(c *gin.Context) {
 	c.JSON(http.StatusCreated, response)
 }
 
+// ListProducts godoc
+// @Summary List all products
+// @Description Get a list of all products
+// @Tags products
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param page query int false "Page number"
+// @Param limit query int false "Items per page"
+// @Success 200 {array} []entity.ProductResponse "List of products"
+// @Failure 401 {object} entity.ProductErrorResponse "Unauthorized"
+// @Router /products [get]
 func (p *ProductController) GetAllProduct(c *gin.Context) {
 	p.log.Info("Starting to retrieve all product in the handler layer", nil)
 
@@ -84,6 +112,18 @@ func (p *ProductController) GetAllProduct(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "List Product empty"})
 }
 
+// GetProduct godoc
+// @Summary Get product by ID
+// @Description Retrieve a product by its ID
+// @Tags products
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "Product ID"
+// @Success 200 {object} entity.ProductResponse "Product found"
+// @Failure 404 {object} entity.ProductErrorResponse "Product not found"
+// @Failure 401 {object} entity.ProductErrorResponse "Unauthorized"
+// @Router /product/{id} [get]
 func (p *ProductController) GetProductById(c *gin.Context) {
 	id := (c.Param("id"))
 
@@ -107,6 +147,20 @@ func (p *ProductController) GetProductById(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
+// UpdateProduct godoc
+// @Summary Update product
+// @Description Update an existing product
+// @Tags products
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "Product ID"
+// @Param request body entity.ProductRequest true "Updated product details"
+// @Success 200 {object} entity.ProductResponse "Successfully updated product"
+// @Failure 400 {object} entity.ProductErrorResponse "Invalid input"
+// @Failure 401 {object} entity.ProductErrorResponse "Unauthorized"
+// @Failure 404 {object} entity.ProductErrorResponse "Product not found"
+// @Router /product/{id} [put]
 func (p *ProductController) UpdateProduct(c *gin.Context) {
 	var payload entity.Product
 	id := (c.Param("id"))
@@ -140,6 +194,18 @@ func (p *ProductController) UpdateProduct(c *gin.Context) {
 	c.JSON(http.StatusOK, response)
 }
 
+// DeleteProduct godoc
+// @Summary Delete product
+// @Description Delete a product by its ID
+// @Tags products
+// @Accept json
+// @Produce json
+// @Security BearerAuth
+// @Param id path string true "Product ID"
+// @Success 204 "Successfully deleted"
+// @Failure 401 {object} entity.ProductErrorResponse "Unauthorized"
+// @Failure 404 {object} entity.ProductErrorResponse "Product not found"
+// @Router /product/{id} [delete]
 func (p *ProductController) DeleteProduct(c *gin.Context) {
 	id := c.Param("id")
 

@@ -1,0 +1,318 @@
+basePath: /api/v1
+definitions:
+  dto.AuthRegisterRes:
+    properties:
+      password:
+        example: Hashed Password
+        type: string
+    type: object
+  dto.AuthRequest:
+    properties:
+      password:
+        example: secret123
+        type: string
+      username:
+        example: john_doe
+        type: string
+    required:
+    - password
+    - username
+    type: object
+  dto.AuthResponse:
+    properties:
+      token:
+        example: eyJhbGciOiJIUzI1NiIs...
+        type: string
+    type: object
+  dto.ErrorResponse:
+    properties:
+      error:
+        example: Invalid credentials
+        type: string
+    type: object
+  entity.ProductErrorResponse:
+    properties:
+      error:
+        example: Invalid product
+        type: string
+    type: object
+  entity.ProductRequest:
+    properties:
+      idSupliyer:
+        example: eyJhbGciOiJIUzI1NiIs...
+        type: string
+      nameProvider:
+        example: Indosat
+        type: string
+      nominal:
+        example: 5000
+        type: number
+      price:
+        example: 6000
+        type: number
+    required:
+    - idSupliyer
+    - nameProvider
+    - nominal
+    - price
+    type: object
+  entity.ProductResponse:
+    properties:
+      idProduct:
+        example: eyJhbGciOiJIUzI1NiIs...
+        type: string
+      idSupliyer:
+        example: eyJhbGciOiJIUzI1NiIs...
+        type: string
+      nameProvider:
+        example: Indosat
+        type: string
+      nominal:
+        example: 5000
+        type: number
+      price:
+        example: 6000
+        type: number
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: API Server for Pulsa Application
+  title: Server Pulsa API
+  version: "1.0"
+paths:
+  /auth/login:
+    post:
+      consumes:
+      - application/json
+      description: Authenticate a user and get JWT token
+      parameters:
+      - description: Login credentials
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AuthRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successfully authenticated
+          schema:
+            $ref: '#/definitions/dto.AuthResponse'
+        "400":
+          description: Invalid input
+          schema:
+            $ref: '#/definitions/dto.ErrorResponse'
+        "401":
+          description: Authentication failed
+          schema:
+            $ref: '#/definitions/dto.ErrorResponse'
+      summary: Login user
+      tags:
+      - authentication
+  /auth/register:
+    post:
+      consumes:
+      - application/json
+      description: Create a new user
+      parameters:
+      - description: Login credentials
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/dto.AuthRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Successfully registered
+          schema:
+            $ref: '#/definitions/dto.AuthRegisterRes'
+        "400":
+          description: Invalid input
+          schema:
+            $ref: '#/definitions/dto.ErrorResponse'
+        "401":
+          description: Authentication failed
+          schema:
+            $ref: '#/definitions/dto.ErrorResponse'
+      summary: Register user
+      tags:
+      - authentication
+  /product:
+    post:
+      consumes:
+      - application/json
+      description: Create a new product in the system
+      parameters:
+      - description: Product details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/entity.ProductRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Successfully created product
+          schema:
+            $ref: '#/definitions/entity.ProductResponse'
+        "400":
+          description: Invalid input
+          schema:
+            $ref: '#/definitions/entity.ProductErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/entity.ProductErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Create new product
+      tags:
+      - products
+  /product/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a product by its ID
+      parameters:
+      - description: Product ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "204":
+          description: Successfully deleted
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/entity.ProductErrorResponse'
+        "404":
+          description: Product not found
+          schema:
+            $ref: '#/definitions/entity.ProductErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Delete product
+      tags:
+      - products
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a product by its ID
+      parameters:
+      - description: Product ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Product found
+          schema:
+            $ref: '#/definitions/entity.ProductResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/entity.ProductErrorResponse'
+        "404":
+          description: Product not found
+          schema:
+            $ref: '#/definitions/entity.ProductErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Get product by ID
+      tags:
+      - products
+    put:
+      consumes:
+      - application/json
+      description: Update an existing product
+      parameters:
+      - description: Product ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Updated product details
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/entity.ProductRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successfully updated product
+          schema:
+            $ref: '#/definitions/entity.ProductResponse'
+        "400":
+          description: Invalid input
+          schema:
+            $ref: '#/definitions/entity.ProductErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/entity.ProductErrorResponse'
+        "404":
+          description: Product not found
+          schema:
+            $ref: '#/definitions/entity.ProductErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: Update product
+      tags:
+      - products
+  /products:
+    get:
+      consumes:
+      - application/json
+      description: Get a list of all products
+      parameters:
+      - description: Page number
+        in: query
+        name: page
+        type: integer
+      - description: Items per page
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: List of products
+          schema:
+            items:
+              items:
+                $ref: '#/definitions/entity.ProductResponse'
+              type: array
+            type: array
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/entity.ProductErrorResponse'
+      security:
+      - BearerAuth: []
+      summary: List all products
+      tags:
+      - products
+schemes:
+- http
+- https
+securityDefinitions:
+  BearerAuth:
+    description: Type "Bearer" followed by a space and JWT token.
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
