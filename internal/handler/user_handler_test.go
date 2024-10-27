@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/mock/middleware_mock"
 	"server-pulsa-app/internal/mock/usecase_mock"
 	"testing"
@@ -20,6 +21,7 @@ type UserHandlerTest struct {
 	router         *gin.Engine
 	authMiddleware *middleware_mock.AuthMiddlewareMock
 	userHandler    *UserHandler
+	log            logger.Logger
 }
 
 func (u *UserHandlerTest) SetupTest() {
@@ -31,7 +33,8 @@ func (u *UserHandlerTest) SetupTest() {
 
 	rg := u.router.Group("/api/v1")
 
-	u.userHandler = NewUserHandler(u.userUc, u.authMiddleware, rg)
+	u.log = logger.NewLogger()
+	u.userHandler = NewUserHandler(u.userUc, u.authMiddleware, rg, &u.log)
 	u.router.GET("/api/v1/users", u.userHandler.ListHandler)
 	u.router.GET("/api/v1/user/:id", u.userHandler.getIdHandler)
 	u.router.PUT("/api/v1/user/:id", u.userHandler.updateHandler)

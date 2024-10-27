@@ -2,6 +2,7 @@ package handler
 
 import (
 	"net/http"
+	"server-pulsa-app/config"
 	"server-pulsa-app/internal/entity/dto"
 	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/usecase"
@@ -83,8 +84,8 @@ func (a *AuthController) registerHandler(ctx *gin.Context) {
 }
 
 func (a *AuthController) Route() {
-	a.rg.POST("/auth/login", a.loginHandler)
-	a.rg.POST("/auth/register", a.registerHandler)
+	a.rg.POST(config.Login, a.loginHandler)
+	a.rg.POST(config.Register, a.registerHandler)
 }
 
 func NewAuthController(authUc usecase.AuthUseCase, rg *gin.RouterGroup, log *logger.Logger) *AuthController {

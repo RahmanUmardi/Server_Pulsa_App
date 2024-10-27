@@ -20,4 +20,14 @@ const (
 	PostTransaction   = "/transaction"
 	ListTransactions  = "/transactions/history"
 	DetailTransaction = "/transaction/history/:id"
+
+	// user route
+	GetUserList = "/users"
+	GetUser     = "/user/:id"
+	PutUser     = "/user/:id"
+	DeleteUser  = "/user/:id"
+
+	// auth route
+	Login    = "/auth/login"
+	Register = "/auth/register"
 )

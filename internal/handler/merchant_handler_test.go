@@ -21,7 +21,7 @@ type MerchantHandlerTest struct {
 	router          *gin.Engine
 	authMiddleware  *middleware_mock.AuthMiddlewareMock
 	merchantHandler *MerchantHandler
-	log             *logger.Logger
+	log             logger.Logger
 }
 
 func (m *MerchantHandlerTest) SetupTest() {
@@ -33,7 +33,8 @@ func (m *MerchantHandlerTest) SetupTest() {
 
 	rg := m.router.Group("/api/v1")
 
-	m.merchantHandler = NewMerchantHandler(m.merchantUc, m.authMiddleware, rg, m.log)
+	m.log = logger.NewLogger()
+	m.merchantHandler = NewMerchantHandler(m.merchantUc, m.authMiddleware, rg, &m.log)
 	m.router.POST("/api/v1/merchant", m.merchantHandler.createHandler)
 	m.router.GET("/api/v1/merchants", m.merchantHandler.listHandler)
 	m.router.GET("/api/v1/merchant/:id", m.merchantHandler.getHandler)
