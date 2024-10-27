@@ -277,11 +277,11 @@ func (m *MerchantHandler) deleteHandler(ctx *gin.Context) {
 }
 
 func (m *MerchantHandler) Route() {
-	m.rg.POST(config.PostMerchant, m.authMiddleware.RequireToken("employee"), m.createHandler)
-	m.rg.GET(config.GetMerchantList, m.authMiddleware.RequireToken("employee"), m.listHandler)
-	m.rg.GET(config.GetMerchant, m.authMiddleware.RequireToken("employee"), m.getHandler)
-	m.rg.PUT(config.PutMerchant, m.authMiddleware.RequireToken("employee"), m.updateHandler)
-	m.rg.DELETE(config.DeleteMerchant, m.authMiddleware.RequireToken("employee"), m.deleteHandler)
+	m.rg.POST(config.PostMerchant, m.authMiddleware.RequireToken("admin"), m.createHandler)
+	m.rg.GET(config.GetMerchantList, m.authMiddleware.RequireToken("admin"), m.listHandler)
+	m.rg.GET(config.GetMerchant, m.authMiddleware.RequireToken("admin"), m.getHandler)
+	m.rg.PUT(config.PutMerchant, m.authMiddleware.RequireToken("admin"), m.updateHandler)
+	m.rg.DELETE(config.DeleteMerchant, m.authMiddleware.RequireToken("admin"), m.deleteHandler)
 }
 
 func NewMerchantHandler(merchantUc usecase.MerchantUseCase, authMiddleware middleware.AuthMiddleware, rg *gin.RouterGroup, log *logger.Logger) *MerchantHandler {

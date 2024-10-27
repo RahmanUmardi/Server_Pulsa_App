@@ -5310,3 +5310,1779 @@ time="2024-10-25T11:13:17+07:00" level=info msg="Getting user by username was su
   "msg": "Transaction created successfuly",
   "time": "2024-10-27 15:19:26"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to set default role for new user",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": {
+    "id_user": "0cf390ac-43ac-4904-9468-05fb9170a2c1",
+    "name": "rahman",
+    "password": "$2a$10$p7yfYEdw/nSodV1jNRNTUulYDUjY2qNTRSXVrUGZW2MPO0kErOsl2",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been registered successfully",
+  "time": "2024-10-27 21:53:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-27 21:55:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-27 21:55:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-27 21:55:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-27 21:55:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-27 21:55:19"
+}
+{
+  "data": {
+    "id_user": "0cf390ac-43ac-4904-9468-05fb9170a2c1",
+    "name": "rahman",
+    "password": "$2a$10$p7yfYEdw/nSodV1jNRNTUulYDUjY2qNTRSXVrUGZW2MPO0kErOsl2",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-27 21:55:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-27 21:55:19"
+}
+{
+  "data": "0cf390ac-43ac-4904-9468-05fb9170a2c1",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-27 21:55:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 21:55:19"
+}
+{
+  "data": "0cf390ac-43ac-4904-9468-05fb9170a2c1",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-27 21:55:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 21:55:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all product in the handler layer",
+  "time": "2024-10-27 21:57:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the usecase layer",
+  "time": "2024-10-27 21:57:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the repository layer",
+  "time": "2024-10-27 21:57:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-27 21:57:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-27 21:57:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-27 21:57:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-27 21:57:18"
+}
+{
+  "data": [
+    {
+      "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+      "nameProvider": "Telkomsel",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    },
+    {
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "nameProvider": "Indosat Oredoo",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all product was successfully: ",
+  "time": "2024-10-27 21:57:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-27 21:57:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transactions list in the handler layer",
+  "time": "2024-10-27 21:58:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all transactions in the usecase layer",
+  "time": "2024-10-27 21:58:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-27 21:58:05"
+}
+{
+  "data": [
+    {
+      "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+      "customerName": "rahman",
+      "destinationNumber": "087654326453",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "120940bc-87c5-4575-ae2d-0a6859531b5c",
+          "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat Oredoo",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+      "customerName": "bima",
+      "destinationNumber": "08157563452",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-24T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "06f44505-46de-4e22-9c5b-fca3652c3650",
+          "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat Oredoo",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "7d397130-94ca-4c93-8449-525ac6b58692",
+      "customerName": "customer coba",
+      "destinationNumber": "087654323",
+      "user": {
+        "id_user": "76756390-fee0-406b-9637-0a770139527d",
+        "name": "rifki",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+        "nameMerchant": "Konter Pak Ekonomis",
+        "address": "Jombang"
+      },
+      "transactionDate": "2024-10-27T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "5428e9f7-be01-4dc0-bf59-af55ef6fbbcd",
+          "transactionId": "7d397130-94ca-4c93-8449-525ac6b58692",
+          "product": {
+            "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+            "nameProvider": "Telkomsel",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+      "customerName": "haaland",
+      "destinationNumber": "456372534",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+        "nameMerchant": "Konter Pak Sultan",
+        "address": "bogor"
+      },
+      "transactionDate": "2024-10-26T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "27ec76b1-5739-420b-bc7c-86dd12704deb",
+          "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat Oredoo",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+      "customerName": "Customer baru",
+      "destinationNumber": "08736622342",
+      "user": {
+        "id_user": "76756390-fee0-406b-9637-0a770139527d",
+        "name": "rifki",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+        "nameMerchant": "Konter Pak Ekonomis",
+        "address": "Jombang"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "9cf59afc-bc3a-43e6-9c32-8551db679cfb",
+          "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+          "product": {
+            "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+            "nameProvider": "Telkomsel",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+      "customerName": "mbappe",
+      "destinationNumber": "08765465",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "d7929cbd-cd65-4222-ae4a-a5effd2c0ceb",
+          "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat Oredoo",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+      "customerName": "kevin",
+      "destinationNumber": "087653645242",
+      "user": {
+        "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+        "nameMerchant": "Konter Pak Eko",
+        "address": "jakarta"
+      },
+      "transactionDate": "2024-10-25T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "a3e9d675-ca58-4cf5-bdd3-cd1aaf92ed9c",
+          "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+          "product": {
+            "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+            "nameProvider": "Indosat Oredoo",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    }
+  ],
+  "level": "info",
+  "msg": "Successfully Get the transactions list",
+  "time": "2024-10-27 21:58:05"
+}
+{
+  "data": {
+    "message": "Transaction list",
+    "data": [
+      {
+        "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+        "customerName": "rahman",
+        "destinationNumber": "087654326453",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "120940bc-87c5-4575-ae2d-0a6859531b5c",
+            "transactionId": "83881046-778b-4ad5-b1a0-d5d96f44de03",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat Oredoo",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+        "customerName": "bima",
+        "destinationNumber": "08157563452",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-24T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "06f44505-46de-4e22-9c5b-fca3652c3650",
+            "transactionId": "31c53a6b-3259-442f-98e6-2db923bb4e88",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat Oredoo",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "7d397130-94ca-4c93-8449-525ac6b58692",
+        "customerName": "customer coba",
+        "destinationNumber": "087654323",
+        "user": {
+          "id_user": "76756390-fee0-406b-9637-0a770139527d",
+          "name": "rifki",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+          "nameMerchant": "Konter Pak Ekonomis",
+          "address": "Jombang"
+        },
+        "transactionDate": "2024-10-27T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "5428e9f7-be01-4dc0-bf59-af55ef6fbbcd",
+            "transactionId": "7d397130-94ca-4c93-8449-525ac6b58692",
+            "product": {
+              "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+              "nameProvider": "Telkomsel",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+        "customerName": "haaland",
+        "destinationNumber": "456372534",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+          "nameMerchant": "Konter Pak Sultan",
+          "address": "bogor"
+        },
+        "transactionDate": "2024-10-26T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "27ec76b1-5739-420b-bc7c-86dd12704deb",
+            "transactionId": "fac7a832-9003-4b5d-ab79-52ebf7febc44",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat Oredoo",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+        "customerName": "Customer baru",
+        "destinationNumber": "08736622342",
+        "user": {
+          "id_user": "76756390-fee0-406b-9637-0a770139527d",
+          "name": "rifki",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+          "nameMerchant": "Konter Pak Ekonomis",
+          "address": "Jombang"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "9cf59afc-bc3a-43e6-9c32-8551db679cfb",
+            "transactionId": "2765e539-e281-44d6-abab-491a8f749265",
+            "product": {
+              "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+              "nameProvider": "Telkomsel",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+        "customerName": "mbappe",
+        "destinationNumber": "08765465",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "d7929cbd-cd65-4222-ae4a-a5effd2c0ceb",
+            "transactionId": "946fb395-a0d2-4143-88e0-fb4828478f09",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat Oredoo",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+        "customerName": "kevin",
+        "destinationNumber": "087653645242",
+        "user": {
+          "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+          "nameMerchant": "Konter Pak Eko",
+          "address": "jakarta"
+        },
+        "transactionDate": "2024-10-25T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "a3e9d675-ca58-4cf5-bdd3-cd1aaf92ed9c",
+            "transactionId": "dc30af5a-1f18-45e6-b821-18ffd84e325d",
+            "product": {
+              "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+              "nameProvider": "Indosat Oredoo",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "level": "info",
+  "msg": "transactions list found",
+  "time": "2024-10-27 21:58:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 05:23:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 05:23:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 05:23:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 05:23:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 05:23:44"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 05:23:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 05:23:44"
+}
+{
+  "data": "crypto/bcrypt: hashedPassword is not the hash of the given password",
+  "level": "error",
+  "msg": "Password doesn't match",
+  "time": "2024-10-28 05:23:44"
+}
+{
+  "data": "password doesn't match",
+  "level": "error",
+  "msg": "Failed to authenticate user: ",
+  "time": "2024-10-28 05:23:44"
+}
+{
+  "data": "password doesn't match",
+  "level": "error",
+  "msg": "Failed to authenticate user: ",
+  "time": "2024-10-28 05:23:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 05:23:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 05:23:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 05:23:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 05:23:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 05:23:55"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 05:23:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 05:23:55"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 05:23:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 05:23:55"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 05:23:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 05:23:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 05:29:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 05:29:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 05:29:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 05:29:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 05:29:23"
+}
+{
+  "data": {
+    "id_user": "e6fcf981-addd-45bc-8414-c48ae8bb8cfc",
+    "name": "admin",
+    "password": "admin",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 05:29:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 05:29:23"
+}
+{
+  "data": "crypto/bcrypt: hashedSecret too short to be a bcrypted password",
+  "level": "error",
+  "msg": "Password doesn't match",
+  "time": "2024-10-28 05:29:23"
+}
+{
+  "data": "password doesn't match",
+  "level": "error",
+  "msg": "Failed to authenticate user: ",
+  "time": "2024-10-28 05:29:23"
+}
+{
+  "data": "password doesn't match",
+  "level": "error",
+  "msg": "Failed to authenticate user: ",
+  "time": "2024-10-28 05:29:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 05:29:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 05:29:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 05:29:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 05:29:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 05:29:34"
+}
+{
+  "data": {
+    "id_user": "e6fcf981-addd-45bc-8414-c48ae8bb8cfc",
+    "name": "admin",
+    "password": "admin",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 05:29:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 05:29:34"
+}
+{
+  "data": "crypto/bcrypt: hashedSecret too short to be a bcrypted password",
+  "level": "error",
+  "msg": "Password doesn't match",
+  "time": "2024-10-28 05:29:34"
+}
+{
+  "data": "password doesn't match",
+  "level": "error",
+  "msg": "Failed to authenticate user: ",
+  "time": "2024-10-28 05:29:34"
+}
+{
+  "data": "password doesn't match",
+  "level": "error",
+  "msg": "Failed to authenticate user: ",
+  "time": "2024-10-28 05:29:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 05:30:16"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 05:30:16"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 05:30:16"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 05:30:16"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 05:30:16"
+}
+{
+  "data": {
+    "id_user": "e6fcf981-addd-45bc-8414-c48ae8bb8cfc",
+    "name": "admin",
+    "password": "admin",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 05:30:16"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 05:30:16"
+}
+{
+  "data": "crypto/bcrypt: hashedSecret too short to be a bcrypted password",
+  "level": "error",
+  "msg": "Password doesn't match",
+  "time": "2024-10-28 05:30:16"
+}
+{
+  "data": "password doesn't match",
+  "level": "error",
+  "msg": "Failed to authenticate user: ",
+  "time": "2024-10-28 05:30:16"
+}
+{
+  "data": "password doesn't match",
+  "level": "error",
+  "msg": "Failed to authenticate user: ",
+  "time": "2024-10-28 05:30:16"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to set default role for new user",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": {
+    "id_user": "8d7719f9-96ec-421f-b66b-ee751d9095e0",
+    "name": "admin",
+    "password": "$2a$10$Xz5UGFm7fLLLOBr/t.m2tO4/fSKQ3PLHMVPNNdOWj1LUYTkQZix4K",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been registered successfully",
+  "time": "2024-10-28 05:34:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 05:35:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 05:35:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 05:35:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 05:35:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 05:35:55"
+}
+{
+  "data": {
+    "id_user": "8d7719f9-96ec-421f-b66b-ee751d9095e0",
+    "name": "admin",
+    "password": "$2a$10$Xz5UGFm7fLLLOBr/t.m2tO4/fSKQ3PLHMVPNNdOWj1LUYTkQZix4K",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 05:35:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 05:35:55"
+}
+{
+  "data": "8d7719f9-96ec-421f-b66b-ee751d9095e0",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 05:35:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 05:35:55"
+}
+{
+  "data": "8d7719f9-96ec-421f-b66b-ee751d9095e0",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 05:35:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 05:35:55"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant in the handler layer",
+  "time": "2024-10-28 05:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 05:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-28 05:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-28 05:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-28 05:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-28 05:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-28 05:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-28 05:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-28 05:36:34"
+}
+{
+  "data": [
+    {
+      "idMerchant": "ba61ec93-a8cf-4798-9c1c-2d617fcf3d58",
+      "idUser": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+      "nameMerchant": "Konter Pak Eko",
+      "address": "jakarta",
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "balance": 0
+    },
+    {
+      "idMerchant": "bc413396-cd66-4422-948b-ebe2aa36dea5",
+      "idUser": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+      "nameMerchant": "Konter Pak Sultan",
+      "address": "bogor",
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "balance": 1001000
+    },
+    {
+      "idMerchant": "6f567be9-e409-4604-85ef-25dcca62fee0",
+      "idUser": "76756390-fee0-406b-9637-0a770139527d",
+      "nameMerchant": "Konter Pak Ekonomis",
+      "address": "Jombang",
+      "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+      "balance": 501000
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all merchant was successfully: ",
+  "time": "2024-10-28 05:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Merchant found successfully",
+  "time": "2024-10-28 05:36:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-28 05:36:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to set default role for new user",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": {
+    "id_user": "b8a6527e-9f97-47c8-8cee-0b56446c993a",
+    "name": "userbaru",
+    "password": "$2a$10$IK5uxKmNNOXWTZ1YjVmHTue6ZfSycVlQfLVoe8z.ey.gZFo/NSfjK",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been registered successfully",
+  "time": "2024-10-28 05:39:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get user by id in the handler layer",
+  "time": "2024-10-28 05:39:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve a user by id in the usecase layer",
+  "time": "2024-10-28 05:39:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-28 05:39:44"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki",
+    "password": "$2a$10$iypT7kKnnbstfDLzkXGJsOUCc2BHcyPVE23U0F6nPpp9vH/.8BdTe",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-28 05:39:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-28 05:40:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-28 05:40:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-28 05:40:01"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki",
+    "password": "$2a$10$iypT7kKnnbstfDLzkXGJsOUCc2BHcyPVE23U0F6nPpp9vH/.8BdTe",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-28 05:40:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-28 05:40:01"
+}
+{
+  "data": "pq: invalid input value for enum roles: \"\"",
+  "level": "error",
+  "msg": "Failed to update the user: ",
+  "time": "2024-10-28 05:40:01"
+}
+{
+  "data": "pq: invalid input value for enum roles: \"\"",
+  "level": "error",
+  "msg": "Failed to update user: ",
+  "time": "2024-10-28 05:40:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-28 05:42:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-28 05:42:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-28 05:42:12"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki",
+    "password": "$2a$10$iypT7kKnnbstfDLzkXGJsOUCc2BHcyPVE23U0F6nPpp9vH/.8BdTe",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-28 05:42:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-28 05:42:12"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki tiarsa",
+    "password": "",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-28 05:42:12"
+}
+{
+  "data": "76756390-fee0-406b-9637-0a770139527d",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-28 05:42:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get user by id in the handler layer",
+  "time": "2024-10-28 05:42:25"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve a user by id in the usecase layer",
+  "time": "2024-10-28 05:42:25"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-28 05:42:25"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki tiarsa",
+    "password": "",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-28 05:42:25"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-28 05:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-28 05:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-28 05:46:10"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki tiarsa",
+    "password": "",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-28 05:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-28 05:46:10"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki tiarsa update",
+    "password": "",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-28 05:46:10"
+}
+{
+  "data": "76756390-fee0-406b-9637-0a770139527d",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-28 05:46:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get user by id in the handler layer",
+  "time": "2024-10-28 05:46:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve a user by id in the usecase layer",
+  "time": "2024-10-28 05:46:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-28 05:46:18"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki tiarsa update",
+    "password": "",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-28 05:46:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-28 05:47:49"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-28 05:47:49"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-28 05:47:49"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki tiarsa update",
+    "password": "",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-28 05:47:49"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-28 05:47:49"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki tiarsa update bgt",
+    "password": "",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-28 05:47:49"
+}
+{
+  "data": "76756390-fee0-406b-9637-0a770139527d",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-28 05:47:49"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 05:48:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 05:48:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 05:48:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 05:48:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 05:48:12"
+}
+{
+  "data": {
+    "id_user": "8d7719f9-96ec-421f-b66b-ee751d9095e0",
+    "name": "admin",
+    "password": "$2a$10$Xz5UGFm7fLLLOBr/t.m2tO4/fSKQ3PLHMVPNNdOWj1LUYTkQZix4K",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 05:48:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 05:48:12"
+}
+{
+  "data": "8d7719f9-96ec-421f-b66b-ee751d9095e0",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 05:48:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 05:48:13"
+}
+{
+  "data": "8d7719f9-96ec-421f-b66b-ee751d9095e0",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 05:48:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 05:48:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-28 05:48:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the handler layer",
+  "time": "2024-10-28 05:48:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete a user in the usecase layer",
+  "time": "2024-10-28 05:48:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-28 05:48:58"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki tiarsa update bgt",
+    "password": "",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-28 05:48:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the repository layer",
+  "time": "2024-10-28 05:48:58"
+}
+{
+  "data": "pq: update or delete on table \"mst_user\" violates foreign key constraint \"mst_merchant_id_user_fkey\" on table \"mst_merchant\"",
+  "level": "error",
+  "msg": "Failed to delete the user: ",
+  "time": "2024-10-28 05:48:58"
+}
+{
+  "data": "pq: update or delete on table \"mst_user\" violates foreign key constraint \"mst_merchant_id_user_fkey\" on table \"mst_merchant\"",
+  "level": "error",
+  "msg": "Failed to delete user: ",
+  "time": "2024-10-28 05:48:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the handler layer",
+  "time": "2024-10-28 05:49:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete a user in the usecase layer",
+  "time": "2024-10-28 05:49:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-28 05:49:06"
+}
+{
+  "data": {
+    "id_user": "76756390-fee0-406b-9637-0a770139527d",
+    "name": "rifki tiarsa update bgt",
+    "password": "",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-28 05:49:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the repository layer",
+  "time": "2024-10-28 05:49:06"
+}
+{
+  "data": "pq: update or delete on table \"mst_user\" violates foreign key constraint \"mst_merchant_id_user_fkey\" on table \"mst_merchant\"",
+  "level": "error",
+  "msg": "Failed to delete the user: ",
+  "time": "2024-10-28 05:49:06"
+}
+{
+  "data": "pq: update or delete on table \"mst_user\" violates foreign key constraint \"mst_merchant_id_user_fkey\" on table \"mst_merchant\"",
+  "level": "error",
+  "msg": "Failed to delete user: ",
+  "time": "2024-10-28 05:49:06"
+}

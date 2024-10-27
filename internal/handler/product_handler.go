@@ -23,11 +23,11 @@ type ProductController struct {
 }
 
 func (p *ProductController) Route() {
-	p.rg.POST(config.PostProduct, p.authMiddleware.RequireToken("employee"), p.CreateProduct)
-	p.rg.GET(config.GetProductList, p.authMiddleware.RequireToken("employee"), p.GetAllProduct)
-	p.rg.GET(config.GetProduct, p.authMiddleware.RequireToken("employee"), p.GetProductById)
-	p.rg.PUT(config.PutProduct, p.authMiddleware.RequireToken("employee"), p.UpdateProduct)
-	p.rg.DELETE(config.DeleteProduct, p.authMiddleware.RequireToken("employee"), p.DeleteProduct)
+	p.rg.POST(config.PostProduct, p.authMiddleware.RequireToken("admin"), p.CreateProduct)
+	p.rg.GET(config.GetProductList, p.authMiddleware.RequireToken("admin"), p.GetAllProduct)
+	p.rg.GET(config.GetProduct, p.authMiddleware.RequireToken("admin"), p.GetProductById)
+	p.rg.PUT(config.PutProduct, p.authMiddleware.RequireToken("admin"), p.UpdateProduct)
+	p.rg.DELETE(config.DeleteProduct, p.authMiddleware.RequireToken("admin"), p.DeleteProduct)
 }
 
 // CreateProduct godoc
