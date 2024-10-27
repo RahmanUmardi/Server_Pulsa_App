@@ -1,3 +1,8 @@
+## Prerequisites
+
+- `Go 1.23.2` or higher.
+- [Swaggo](https://github.com/swaggo/swag).
+
 > to add module requirements and sums:
     - go mod tidy
 
