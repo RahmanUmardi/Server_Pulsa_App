@@ -3,9 +3,13 @@ package handler
 import (
 	"fmt"
 	"net/http"
+	"server-pulsa-app/config"
 	"server-pulsa-app/internal/entity"
+	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/middleware"
 	"server-pulsa-app/internal/usecase"
+
+	// "server-pulsa-app/config"
 
 	"github.com/gin-gonic/gin"
 )
@@ -14,9 +18,11 @@ type UserHandler struct {
 	userUc         usecase.UserUsecase
 	rg             *gin.RouterGroup
 	authMiddleware middleware.AuthMiddleware
+	log            *logger.Logger
 }
 
 func (u *UserHandler) ListHandler(ctx *gin.Context) {
+	u.log.Info("Starting to get all user in the handler layer", nil)
 
 	users, err := u.userUc.ListUser()
 	if err != nil {
@@ -41,6 +47,7 @@ func (u *UserHandler) ListHandler(ctx *gin.Context) {
 }
 
 func (u *UserHandler) getIdHandler(ctx *gin.Context) {
+	u.log.Info("Starting to get user by id in the handler layer", nil)
 
 	id := ctx.Param("id")
 
@@ -61,6 +68,7 @@ func (u *UserHandler) getIdHandler(ctx *gin.Context) {
 }
 
 func (u *UserHandler) updateHandler(ctx *gin.Context) {
+	u.log.Info("Starting to update user in the handler layer", nil)
 	id := ctx.Param("id")
 	var payload entity.User
 	if err := ctx.ShouldBindJSON(&payload); err != nil {
@@ -90,27 +98,35 @@ func (u *UserHandler) updateHandler(ctx *gin.Context) {
 }
 
 func (u *UserHandler) deleteHandler(ctx *gin.Context) {
+	u.log.Info("Starting to delete user in the handler layer", nil)
+
 	id := ctx.Param("id")
 	err := u.userUc.DeleteUser(id)
 	if err != nil {
-		ctx.JSON(http.StatusNotFound, fmt.Sprintf("User with id %s not found", id))
+		if err != nil {
+			ctx.JSON(http.StatusNotFound, gin.H{"message": fmt.Sprintf("User with ID %s not found", id)})
+			return
+		}
+
+		ctx.JSON(http.StatusInternalServerError, gin.H{"message": "Failed to delete user", "error": err.Error()})
 		return
 	}
+
 	response := struct {
-		Message string
+		Message string `json:"message"`
 	}{
-		Message: "Success Delete User",
+		Message: "User deleted successfully",
 	}
 	ctx.JSON(http.StatusOK, response)
 }
 
 func (u *UserHandler) Route() {
-	u.rg.GET("/users", u.authMiddleware.RequireToken("admin"), u.ListHandler)
-	u.rg.GET("/user/:id", u.authMiddleware.RequireToken("admin"), u.getIdHandler)
-	u.rg.PUT("/user/:id", u.authMiddleware.RequireToken("admin"), u.updateHandler)
-	u.rg.DELETE("/user/:id", u.authMiddleware.RequireToken("admin"), u.deleteHandler)
+	u.rg.GET(config.GetUserList, u.authMiddleware.RequireToken("admin"), u.ListHandler)
+	u.rg.GET(config.GetUser, u.authMiddleware.RequireToken("admin"), u.getIdHandler)
+	u.rg.PUT(config.PutUser, u.authMiddleware.RequireToken("admin"), u.updateHandler)
+	u.rg.DELETE(config.DeleteUser, u.authMiddleware.RequireToken("admin"), u.deleteHandler)
 }
 
-func NewUserHandler(userUc usecase.UserUsecase, authMiddleware middleware.AuthMiddleware, rg *gin.RouterGroup) *UserHandler {
-	return &UserHandler{userUc: userUc, authMiddleware: authMiddleware, rg: rg}
+func NewUserHandler(userUc usecase.UserUsecase, authMiddleware middleware.AuthMiddleware, rg *gin.RouterGroup, log *logger.Logger) *UserHandler {
+	return &UserHandler{userUc: userUc, authMiddleware: authMiddleware, rg: rg, log: log}
 }

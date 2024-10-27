@@ -88,20 +88,41 @@ func (u *userUsecase) FindUserByUsernamePassword(username, password string) (ent
 func (u *userUsecase) UpdateUser(user entity.User) (entity.User, error) {
 	u.log.Info("Starting to update a user in the usecase layer", nil)
 
-	_, err := u.UserRepository.UpdateUser(user)
+	_, err := u.UserRepository.GetUserByID(user.Id_user)
+	if err != nil {
+		u.log.Error("User ID %s not found: %v", user.Id_user)
+		return entity.User{}, fmt.Errorf("User ID %s not found", user.Id_user)
+	}
+	if user.Password != "" {
+		u.log.Info("Starting to hash the password", nil)
+		hash, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
+		if err != nil {
+			u.log.Error("Failed to hash password: ", err)
+			return entity.User{}, fmt.Errorf("failed to hash password: %v", err)
+		}
+		user.Password = string(hash)
+	}
+
+	updatedUser, err := u.UserRepository.UpdateUser(user)
 	if err != nil {
 		u.log.Error("Failed to update user: ", err)
 		return entity.User{}, fmt.Errorf("failed to update user: %v", err)
 	}
 
 	u.log.Info("User ID %s has been updated successfully: ", user.Id_user)
-	return user, nil
+	return updatedUser, nil
 }
 
 func (u *userUsecase) DeleteUser(id string) error {
 	u.log.Info("Starting to delete a user in the usecase layer", nil)
 
-	err := u.UserRepository.DeleteUser(id)
+	_, err := u.UserRepository.GetUserByID(id)
+	if err != nil {
+		u.log.Error("User ID %s not found: %v", id)
+		return fmt.Errorf("User ID %s not found", id)
+	}
+
+	err = u.UserRepository.DeleteUser(id)
 	if err != nil {
 		u.log.Error("Failed to delete user: ", err)
 		return fmt.Errorf("failed to delete user: %v", err)

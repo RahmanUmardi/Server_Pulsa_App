@@ -22,6 +22,7 @@ type Server struct {
 	productUc     usecase.ProductUseCase
 	merchantUc    usecase.MerchantUseCase
 	transactionUc usecase.TransactionUseCase
+	userUc        usecase.UserUsecase
 	engine        *gin.Engine
 	host          string
 }
@@ -36,6 +37,7 @@ func (s *Server) initRoute() {
 	handler.NewAuthController(s.authUc, rg, &log).Route()
 	handler.NewProductController(s.productUc, rg, authMiddleware, &log).Route()
 	handler.NewTransactionHandler(s.transactionUc, authMiddleware, rg, &log).Route()
+	handler.NewUserHandler(s.userUc, authMiddleware, rg, &log).Route()
 }
 
 func (s *Server) Run() {
@@ -77,6 +79,7 @@ func NewServer() *Server {
 		productUc:     productUc,
 		merchantUc:    merchantUc,
 		transactionUc: transactionUc,
+		userUc:        userUc,
 
 		engine: engine,
 		host:   host,
