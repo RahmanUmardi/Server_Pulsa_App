@@ -7086,3 +7086,456 @@ time="2024-10-25T11:13:17+07:00" level=info msg="Getting user by username was su
   "msg": "Failed to delete user: ",
   "time": "2024-10-28 05:49:06"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 06:08:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 06:08:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 06:08:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 06:08:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 06:08:54"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 06:08:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 06:08:54"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 06:08:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 06:08:54"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 06:08:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 06:08:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 06:10:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 06:10:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 06:10:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 06:10:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 06:10:20"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 06:10:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 06:10:20"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 06:10:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 06:10:20"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 06:10:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 06:10:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant's transactions in the handler layer",
+  "time": "2024-10-28 06:10:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 06:10:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 06:10:46"
+}
+{
+  "data": "pq: invalid input syntax for type date: \"\"",
+  "level": "error",
+  "msg": "Failed to retrieve the transactions",
+  "time": "2024-10-28 06:10:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant's transactions in the handler layer",
+  "time": "2024-10-28 06:11:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 06:11:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 06:11:23"
+}
+{
+  "data": "pq: invalid input syntax for type date: \"\"",
+  "level": "error",
+  "msg": "Failed to retrieve the transactions",
+  "time": "2024-10-28 06:11:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant's transactions in the handler layer",
+  "time": "2024-10-28 06:13:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 06:13:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 06:13:10"
+}
+{
+  "data": "pq: invalid input syntax for type date: \"\"",
+  "level": "error",
+  "msg": "Failed to retrieve the transactions",
+  "time": "2024-10-28 06:13:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant's transactions in the handler layer",
+  "time": "2024-10-28 06:13:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 06:13:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 06:13:12"
+}
+{
+  "data": "pq: invalid input syntax for type date: \"\"",
+  "level": "error",
+  "msg": "Failed to retrieve the transactions",
+  "time": "2024-10-28 06:13:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant's transactions in the handler layer",
+  "time": "2024-10-28 06:16:07"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 06:16:07"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 06:16:07"
+}
+{
+  "data": "pq: invalid input syntax for type date: \"\"",
+  "level": "error",
+  "msg": "Failed to retrieve the transactions",
+  "time": "2024-10-28 06:16:07"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant's transactions in the handler layer",
+  "time": "2024-10-28 06:16:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 06:16:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 06:16:08"
+}
+{
+  "data": "pq: invalid input syntax for type date: \"\"",
+  "level": "error",
+  "msg": "Failed to retrieve the transactions",
+  "time": "2024-10-28 06:16:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant's transactions in the handler layer",
+  "time": "2024-10-28 06:16:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 06:16:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 06:16:22"
+}
+{
+  "data": "pq: invalid input syntax for type date: \"\"",
+  "level": "error",
+  "msg": "Failed to retrieve the transactions",
+  "time": "2024-10-28 06:16:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant's transactions in the handler layer",
+  "time": "2024-10-28 06:16:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 06:16:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 06:16:23"
+}
+{
+  "data": "pq: invalid input syntax for type date: \"\"",
+  "level": "error",
+  "msg": "Failed to retrieve the transactions",
+  "time": "2024-10-28 06:16:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant's transactions in the handler layer",
+  "time": "2024-10-28 06:23:25"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 06:23:25"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 06:23:25"
+}
+{
+  "data": "pq: more than one row returned by a subquery used as an expression",
+  "level": "error",
+  "msg": "Failed to retrieve the transactions",
+  "time": "2024-10-28 06:23:25"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 06:28:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 06:28:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 06:28:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 06:28:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 06:28:57"
+}
+{
+  "data": {
+    "id_user": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+    "name": "hunayn",
+    "password": "$2a$10$nNc6K.NpmaP7ZWb6iudcpOTURrYyF2NStfM7NyvhxAXIuqnXeA.Ua",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 06:28:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 06:28:57"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 06:28:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 06:28:57"
+}
+{
+  "data": "53a6e29c-fe7e-4f41-9c82-76e188513cff",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 06:28:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 06:28:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant's transactions in the handler layer",
+  "time": "2024-10-28 06:29:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 06:29:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 06:29:14"
+}
+{
+  "data": "pq: invalid input syntax for type date: \"\"",
+  "level": "error",
+  "msg": "Failed to retrieve the transactions",
+  "time": "2024-10-28 06:29:14"
+}

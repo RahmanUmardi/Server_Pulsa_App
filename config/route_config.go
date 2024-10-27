@@ -30,4 +30,7 @@ const (
 	// auth route
 	Login    = "/auth/login"
 	Register = "/auth/register"
+
+	//report route
+	GetReport = "/report"
 )
