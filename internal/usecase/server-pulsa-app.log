@@ -850,3 +850,207 @@
   "msg": "User ID %s has been updated successfully: ",
   "time": "2024-10-27 12:15:17"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": "",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": "uuid-merchant-test",
+  "level": "error",
+  "msg": "Merchant ID %s not found: %v",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": "uuid-merchant-test",
+  "level": "info",
+  "msg": "Merchant has been deleted successfully: ",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": "uuid-merchant-test",
+  "level": "error",
+  "msg": "Merchant ID %s not found: ",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": "uuid-merchant-test",
+  "level": "info",
+  "msg": "Merchant ID %s has been updated successfully: ",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new product in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": "1",
+  "level": "info",
+  "msg": "Product has been deleted successfully: ",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": "1",
+  "level": "info",
+  "msg": "Product ID %s has been updated successfully: ",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete a user in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": "1",
+  "level": "info",
+  "msg": "User ID %s has been deleted successfully: ",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve a user by id in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to set default role for new user",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-27 22:44:12"
+}
+{
+  "data": "1",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-27 22:44:12"
+}

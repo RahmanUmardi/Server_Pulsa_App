@@ -5310,3 +5310,501 @@ time="2024-10-25T11:13:17+07:00" level=info msg="Getting user by username was su
   "msg": "Transaction created successfuly",
   "time": "2024-10-27 15:19:26"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-27 23:05:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-27 23:05:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-27 23:05:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-27 23:05:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-27 23:05:13"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-27 23:05:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-27 23:05:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to set default role for new user",
+  "time": "2024-10-27 23:05:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-27 23:05:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-27 23:05:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-27 23:05:14"
+}
+{
+  "data": {
+    "id_user": "85495a68-b95d-415c-9929-9e44b3294191",
+    "name": "john_doe",
+    "password": "$2a$10$zy9aF5iPAFyKQRAQD6U84eVwcSexxCuAZrAxojvu/OMQic0RBB1GC",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-27 23:05:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been registered successfully",
+  "time": "2024-10-27 23:05:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-27 23:05:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-27 23:05:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-27 23:05:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-27 23:05:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-27 23:05:22"
+}
+{
+  "data": {
+    "id_user": "85495a68-b95d-415c-9929-9e44b3294191",
+    "name": "john_doe",
+    "password": "$2a$10$zy9aF5iPAFyKQRAQD6U84eVwcSexxCuAZrAxojvu/OMQic0RBB1GC",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-27 23:05:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-27 23:05:22"
+}
+{
+  "data": "john_doe",
+  "level": "error",
+  "msg": "Username already exist",
+  "time": "2024-10-27 23:05:22"
+}
+{
+  "data": "username already exist",
+  "level": "error",
+  "msg": "Failed to register user: ",
+  "time": "2024-10-27 23:05:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-27 23:05:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-27 23:05:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-27 23:05:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-27 23:05:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-27 23:05:40"
+}
+{
+  "data": {
+    "id_user": "85495a68-b95d-415c-9929-9e44b3294191",
+    "name": "john_doe",
+    "password": "$2a$10$zy9aF5iPAFyKQRAQD6U84eVwcSexxCuAZrAxojvu/OMQic0RBB1GC",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-27 23:05:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-27 23:05:40"
+}
+{
+  "data": "john_doe",
+  "level": "error",
+  "msg": "Username already exist",
+  "time": "2024-10-27 23:05:40"
+}
+{
+  "data": "username already exist",
+  "level": "error",
+  "msg": "Failed to register user: ",
+  "time": "2024-10-27 23:05:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-27 23:06:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-27 23:06:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-27 23:06:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-27 23:06:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-27 23:06:17"
+}
+{
+  "data": {
+    "id_user": "85495a68-b95d-415c-9929-9e44b3294191",
+    "name": "john_doe",
+    "password": "$2a$10$zy9aF5iPAFyKQRAQD6U84eVwcSexxCuAZrAxojvu/OMQic0RBB1GC",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-27 23:06:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-27 23:06:17"
+}
+{
+  "data": "85495a68-b95d-415c-9929-9e44b3294191",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-27 23:06:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 23:06:17"
+}
+{
+  "data": "85495a68-b95d-415c-9929-9e44b3294191",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-27 23:06:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 23:06:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-27 23:06:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-27 23:06:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-27 23:06:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-27 23:06:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-27 23:06:19"
+}
+{
+  "data": {
+    "id_user": "85495a68-b95d-415c-9929-9e44b3294191",
+    "name": "john_doe",
+    "password": "$2a$10$zy9aF5iPAFyKQRAQD6U84eVwcSexxCuAZrAxojvu/OMQic0RBB1GC",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-27 23:06:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-27 23:06:19"
+}
+{
+  "data": "85495a68-b95d-415c-9929-9e44b3294191",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-27 23:06:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 23:06:19"
+}
+{
+  "data": "85495a68-b95d-415c-9929-9e44b3294191",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-27 23:06:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-27 23:06:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the handler layer",
+  "time": "2024-10-27 23:12:25"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the usecase layer",
+  "time": "2024-10-27 23:12:25"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-27 23:12:25"
+}
+{
+  "data": {
+    "idMerchant": "16c1a0d9-d797-4069-99ec-d51133d69d4c",
+    "idUser": "85495a68-b95d-415c-9929-9e44b3294191",
+    "nameMerchant": "Konter Jhon Doe",
+    "address": "Jombang",
+    "idProduct": "9971043a-066c-4abf-8bb9-7d0e1a56af94",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Merchant has been created successfully: ",
+  "time": "2024-10-27 23:12:25"
+}
+{
+  "data": {
+    "Message": "Merchant Created",
+    "Data": {
+      "idMerchant": "16c1a0d9-d797-4069-99ec-d51133d69d4c",
+      "idUser": "85495a68-b95d-415c-9929-9e44b3294191",
+      "nameMerchant": "Konter Jhon Doe",
+      "address": "Jombang",
+      "idProduct": "9971043a-066c-4abf-8bb9-7d0e1a56af94",
+      "balance": 0
+    }
+  },
+  "level": "info",
+  "msg": "Merchant created successfully",
+  "time": "2024-10-27 23:12:25"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-27 23:14:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-27 23:14:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-27 23:14:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-27 23:14:39"
+}
+{
+  "data": "required balance: 5000, current balance: 0",
+  "level": "error",
+  "msg": "Insufficient merchant balance",
+  "time": "2024-10-27 23:14:39"
+}
+{
+  "data": "insufficient merchant balance: required 5000, current balance 0",
+  "level": "error",
+  "msg": "failed to create a transaction",
+  "time": "2024-10-27 23:14:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-27 23:16:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-27 23:16:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-27 23:16:10"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-27 23:16:10"
+}
+{
+  "data": {
+    "newBalance": 11000,
+    "payload": {
+      "transactionId": "485658be-4bcf-4ff1-bfe4-d34ba032e4f3",
+      "merchantId": "16c1a0d9-d797-4069-99ec-d51133d69d4c",
+      "userId": "85495a68-b95d-415c-9929-9e44b3294191",
+      "customerName": "Parno",
+      "destinationNumber": "085606077703",
+      "transactionDate": "27-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "4e3589ce-9b53-423a-bd8f-f0d8602c735a",
+          "transactionId": "485658be-4bcf-4ff1-bfe4-d34ba032e4f3",
+          "productId": "9971043a-066c-4abf-8bb9-7d0e1a56af94",
+          "Price": 6000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfully with updated merchant balance",
+  "time": "2024-10-27 23:16:10"
+}
+{
+  "data": {
+    "message": "Transaction Created",
+    "data": {
+      "transactionId": "485658be-4bcf-4ff1-bfe4-d34ba032e4f3",
+      "merchantId": "16c1a0d9-d797-4069-99ec-d51133d69d4c",
+      "userId": "85495a68-b95d-415c-9929-9e44b3294191",
+      "customerName": "Parno",
+      "destinationNumber": "085606077703",
+      "transactionDate": "27-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "4e3589ce-9b53-423a-bd8f-f0d8602c735a",
+          "transactionId": "485658be-4bcf-4ff1-bfe4-d34ba032e4f3",
+          "productId": "9971043a-066c-4abf-8bb9-7d0e1a56af94",
+          "Price": 6000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfuly",
+  "time": "2024-10-27 23:16:10"
+}
