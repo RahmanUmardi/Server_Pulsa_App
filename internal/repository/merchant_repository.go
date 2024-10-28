@@ -24,7 +24,7 @@ type merchantRepository struct {
 func (m *merchantRepository) Create(payload entity.Merchant) (entity.Merchant, error) {
 	m.log.Info("Starting to create a new merchant in the repository layer", nil)
 
-	err := m.db.QueryRow("INSERT INTO mst_merchant (id_user, name_merchant, address, id_product, balance) VALUES ($1, $2, $3, $4, $5) RETURNING id_merchant", payload.IdUser, payload.NameMerchant, payload.Address, payload.IdProduct, payload.Balance).Scan(&payload.IdMerchant)
+	err := m.db.QueryRow("INSERT INTO mst_merchant (id_user, name_merchant, address, id_product) VALUES ($1, $2, $3, $4) RETURNING id_merchant", payload.IdUser, payload.NameMerchant, payload.Address, payload.IdProduct).Scan(&payload.IdMerchant)
 	if err != nil {
 		m.log.Error("Failed to create the merchant: ", err)
 		return entity.Merchant{}, err
@@ -94,13 +94,10 @@ func (m *merchantRepository) Update(merchant, payload entity.Merchant) (entity.M
 	if strings.TrimSpace(payload.IdProduct) != "" {
 		merchant.IdProduct = payload.IdProduct
 	}
-	if payload.Balance != 0 {
-		merchant.Balance = payload.Balance
-	}
 
 	m.log.Info("Starting to update merchant in the repository layer", nil)
 
-	_, err := m.db.Exec("UPDATE mst_merchant SET id_user = $2, name_merchant = $3, address = $4, id_product = $5, balance = $6 WHERE id_merchant = $1", merchant.IdMerchant, merchant.IdUser, merchant.NameMerchant, merchant.Address, merchant.IdProduct, merchant.Balance)
+	_, err := m.db.Exec("UPDATE mst_merchant SET id_user = $2, name_merchant = $3, address = $4, id_product = $5 WHERE id_merchant = $1", merchant.IdMerchant, merchant.IdUser, merchant.NameMerchant, merchant.Address, merchant.IdProduct)
 	if err != nil {
 		m.log.Error("Failed to update the merchant: ", err)
 		return entity.Merchant{}, err

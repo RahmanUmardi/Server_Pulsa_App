@@ -7789,3 +7789,236 @@ time="2024-10-25T11:13:17+07:00" level=info msg="Getting user by username was su
   "msg": "Transaction created successfuly",
   "time": "2024-10-28 06:57:04"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 08:49:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 08:49:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 08:49:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 08:49:00"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 08:49:00"
+}
+{
+  "data": {
+    "id_user": "8d7719f9-96ec-421f-b66b-ee751d9095e0",
+    "name": "admin",
+    "password": "$2a$10$Xz5UGFm7fLLLOBr/t.m2tO4/fSKQ3PLHMVPNNdOWj1LUYTkQZix4K",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 08:49:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 08:49:01"
+}
+{
+  "data": "8d7719f9-96ec-421f-b66b-ee751d9095e0",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 08:49:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 08:49:01"
+}
+{
+  "data": "8d7719f9-96ec-421f-b66b-ee751d9095e0",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 08:49:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 08:49:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all product in the handler layer",
+  "time": "2024-10-28 08:49:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the usecase layer",
+  "time": "2024-10-28 08:49:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the repository layer",
+  "time": "2024-10-28 08:49:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-28 08:49:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-28 08:49:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-28 08:49:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-28 08:49:46"
+}
+{
+  "data": [
+    {
+      "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+      "nameProvider": "Telkomsel",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    },
+    {
+      "idProduct": "6fb3f317-aa06-4cf0-9cd2-0f6c5d5915ec",
+      "nameProvider": "Indosat Oredoo",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "a91a1e20-dde0-4d77-a9a0-84ad839a701f"
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all product was successfully: ",
+  "time": "2024-10-28 08:49:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-28 08:49:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-28 08:50:15"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the handler layer",
+  "time": "2024-10-28 08:50:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the usecase layer",
+  "time": "2024-10-28 08:50:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-28 08:50:41"
+}
+{
+  "data": "pq: null value in column \"balance\" of relation \"mst_merchant\" violates not-null constraint",
+  "level": "error",
+  "msg": "Failed to create the merchant: ",
+  "time": "2024-10-28 08:50:41"
+}
+{
+  "data": {
+    "Message": "pq: null value in column \"balance\" of relation \"mst_merchant\" violates not-null constraint",
+    "Data": {
+      "idMerchant": "",
+      "idUser": "",
+      "nameMerchant": "",
+      "address": "",
+      "idProduct": "",
+      "balance": 0
+    }
+  },
+  "level": "error",
+  "msg": "Merchant creation failed",
+  "time": "2024-10-28 08:50:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the handler layer",
+  "time": "2024-10-28 08:53:07"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the usecase layer",
+  "time": "2024-10-28 08:53:07"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-28 08:53:07"
+}
+{
+  "data": {
+    "idMerchant": "586f498b-addb-4e8e-86f1-48e2be5fc9a7",
+    "idUser": "e4aac8d0-97dc-45ba-8a53-f68ca6febea4",
+    "nameMerchant": "Konter Bli",
+    "address": "Bali",
+    "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Merchant has been created successfully: ",
+  "time": "2024-10-28 08:53:07"
+}
+{
+  "data": {
+    "Message": "Merchant Created",
+    "Data": {
+      "idMerchant": "586f498b-addb-4e8e-86f1-48e2be5fc9a7",
+      "idUser": "e4aac8d0-97dc-45ba-8a53-f68ca6febea4",
+      "nameMerchant": "Konter Bli",
+      "address": "Bali",
+      "idProduct": "192b7f2a-f114-4182-a725-16e66b630675",
+      "balance": 0
+    }
+  },
+  "level": "info",
+  "msg": "Merchant created successfully",
+  "time": "2024-10-28 08:53:07"
+}
