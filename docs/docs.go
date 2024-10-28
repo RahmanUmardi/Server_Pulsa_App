@@ -1106,7 +1106,6 @@ const docTemplate = `{
             "type": "object",
             "required": [
                 "address",
-                "balance",
                 "idProduct",
                 "idUser",
                 "nameMerchant"
@@ -1115,10 +1114,6 @@ const docTemplate = `{
                 "address": {
                     "type": "string",
                     "example": "Jombang"
-                },
-                "balance": {
-                    "type": "number",
-                    "example": 500000
                 },
                 "idProduct": {
                     "type": "string",

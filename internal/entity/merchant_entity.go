@@ -11,11 +11,10 @@ type (
 	}
 
 	MerchantRequest struct {
-		IdUser       string  `json:"idUser" binding:"required" example:"eyJhbGciOiJIUzI1NiIs..."`
-		NameMerchant string  `json:"nameMerchant" binding:"required" example:"Konter Pak Eko"`
-		Address      string  `json:"address" binding:"required" example:"Jombang"`
-		IdProduct    string  `json:"idProduct" binding:"required" example:"eyJhbGciOiJIUzI1NiIs..."`
-		Balance      float64 `json:"balance" binding:"required" example:"500000"`
+		IdUser       string `json:"idUser" binding:"required" example:"eyJhbGciOiJIUzI1NiIs..."`
+		NameMerchant string `json:"nameMerchant" binding:"required" example:"Konter Pak Eko"`
+		Address      string `json:"address" binding:"required" example:"Jombang"`
+		IdProduct    string `json:"idProduct" binding:"required" example:"eyJhbGciOiJIUzI1NiIs..."`
 	}
 
 	MerchantResponse struct {

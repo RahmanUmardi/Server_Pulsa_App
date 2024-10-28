@@ -47,9 +47,6 @@ definitions:
       address:
         example: Jombang
         type: string
-      balance:
-        example: 500000
-        type: number
       idProduct:
         example: eyJhbGciOiJIUzI1NiIs...
         type: string
@@ -61,7 +58,6 @@ definitions:
         type: string
     required:
     - address
-    - balance
     - idProduct
     - idUser
     - nameMerchant
