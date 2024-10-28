@@ -39,8 +39,11 @@ type Server struct {
 	merchantUc    usecase.MerchantUseCase
 	transactionUc usecase.TransactionUseCase
 	userUc        usecase.UserUsecase
-	engine        *gin.Engine
-	host          string
+	reportUc      usecase.ReportUseCase
+	topupUc       usecase.TopupUseCase
+
+	engine *gin.Engine
+	host   string
 }
 
 var log = logger.NewLogger()
@@ -54,6 +57,8 @@ func (s *Server) initRoute() {
 	handler.NewProductController(s.productUc, rg, authMiddleware, &log).Route()
 	handler.NewTransactionHandler(s.transactionUc, authMiddleware, rg, &log).Route()
 	handler.NewUserHandler(s.userUc, authMiddleware, rg, &log).Route()
+	handler.NewReportHandler(s.reportUc, authMiddleware, rg, &log).Route()
+	handler.NewTopupHandler(s.topupUc, authMiddleware, rg, &log).Route()
 
 	s.engine.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 }
@@ -80,6 +85,8 @@ func NewServer() *Server {
 	productRepo := repository.NewProductRepository(db, &log)
 	merchantRepo := repository.NewMerchantRepository(db, &log)
 	transactionRepo := repository.NewTransactionRepository(db, &log)
+	reportRepo := repository.NewReportRepository(db, &log)
+	topupRepo := repository.NewTopupRepository(db)
 
 	//inject dependencies usecase layer
 	jwtService := service.NewJwtService(cfg.TokenConfig)
@@ -88,6 +95,8 @@ func NewServer() *Server {
 	productUc := usecase.NewProductUseCase(productRepo, &log)
 	merchantUc := usecase.NewMerchantUseCase(merchantRepo, &log)
 	transactionUc := usecase.NewTransactionUseCase(transactionRepo, &log)
+	reportUc := usecase.NewReportUseCase(reportRepo, &log)
+	topupUc := usecase.NewTopupUsecase(topupRepo)
 
 	engine := gin.Default()
 	host := fmt.Sprintf(":%s", cfg.ApiPort)
@@ -98,6 +107,8 @@ func NewServer() *Server {
 		merchantUc:    merchantUc,
 		transactionUc: transactionUc,
 		userUc:        userUc,
+		reportUc:      reportUc,
+		topupUc:       topupUc,
 
 		engine: engine,
 		host:   host,

@@ -10,6 +10,11 @@ type MerchantRepoMock struct {
 	mock.Mock
 }
 
+func (m *MerchantRepoMock) CheckBalanceMerchant(id string) (entity.Merchant, error) {
+	args := m.Called(id)
+	return args.Get(0).(entity.Merchant), args.Error(1)
+}
+
 func (m *MerchantRepoMock) Create(payload entity.Merchant) (entity.Merchant, error) {
 	args := m.Called(payload)
 	return args.Get(0).(entity.Merchant), args.Error(1)
