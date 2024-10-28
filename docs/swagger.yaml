@@ -1,11 +1,5 @@
 basePath: /api/v1
 definitions:
-  custom.ReportRes:
-    properties:
-      message:
-        example: transaction report downloaded
-        type: string
-    type: object
   dto.AuthRegisterRes:
     properties:
       password:
@@ -220,6 +214,10 @@ definitions:
   entity.UserReqUpdate:
     properties:
       name:
+        type: string
+      password:
+        type: string
+      role:
         type: string
     type: object
   entity.UserResponse:
@@ -630,36 +628,6 @@ paths:
       summary: List all products
       tags:
       - products
-  /report:
-    get:
-      consumes:
-      - application/json
-      description: Download the transaction report
-      parameters:
-      - description: Page number
-        in: query
-        name: page
-        type: integer
-      - description: Items per page
-        in: query
-        name: limit
-        type: integer
-      produces:
-      - application/json
-      responses:
-        "200":
-          description: Transaction report downloaded
-          schema:
-            $ref: '#/definitions/custom.ReportRes'
-        "401":
-          description: Unauthorized
-          schema:
-            $ref: '#/definitions/entity.TransactionErrorResponse'
-      security:
-      - BearerAuth: []
-      summary: transaction report
-      tags:
-      - transaction
   /transaction:
     post:
       consumes:

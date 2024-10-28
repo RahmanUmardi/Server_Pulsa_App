@@ -16,7 +16,7 @@ func (m *MockTransactionRepository) Create(payload entity.Transactions) (entity.
 	return args.Get(0).(entity.Transactions), args.Error(1)
 }
 
-func (m *MockTransactionRepository) GetAll() ([]custom.TransactionsReq, error) {
+func (m *MockTransactionRepository) GetAll(userId string) ([]custom.TransactionsReq, error) {
 	args := m.Called()
 	return args.Get(0).([]custom.TransactionsReq), args.Error(1)
 }

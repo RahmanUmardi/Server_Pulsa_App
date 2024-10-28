@@ -189,7 +189,7 @@ func (s *transactionRepositoryTestSuite) TestGetAll_Success() {
 			expectedTransactionReq.TransactionDetail[0].Product.Price,
 		))
 
-	result, err := s.transactionRepo.GetAll()
+	result, err := s.transactionRepo.GetAll("")
 
 	s.NoError(err)
 	s.Len(result, 1)
@@ -205,7 +205,7 @@ func (s *transactionRepositoryTestSuite) TestGetAll_EmptyResult() {
 			"transaction_detail_id", "transaction_id", "id_product", "name_provider", "nominal", "price",
 		}))
 
-	result, err := s.transactionRepo.GetAll()
+	result, err := s.transactionRepo.GetAll("")
 
 	s.NoError(err)
 	s.Empty(result)

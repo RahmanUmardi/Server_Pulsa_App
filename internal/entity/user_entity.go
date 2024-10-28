@@ -10,6 +10,8 @@ type (
 
 	UserReqUpdate struct {
 		Username string `json:"name"`
+		Password string `json:"password"`
+		Role     string `json:"role"`
 	}
 
 	UserResponse struct {

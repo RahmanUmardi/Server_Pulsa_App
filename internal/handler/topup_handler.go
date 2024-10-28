@@ -167,9 +167,9 @@ func (t *TopupHandler) GetTopupByMerchantId(c *gin.Context) {
 }
 
 func (t *TopupHandler) Route() {
-	t.rg.POST(config.PostTopup, t.authMiddleware.RequireToken("employee"), t.CreateTopup)
+	t.rg.POST(config.PostTopup, t.authMiddleware.RequireToken("admin"), t.CreateTopup)
 	t.rg.POST(config.PostCallback, t.PaymentCallbackHandler)
-	t.rg.GET(config.GetTopupByMerchantId, t.authMiddleware.RequireToken("employee"), t.GetTopupByMerchantId)
+	t.rg.GET(config.GetTopupByMerchantId, t.authMiddleware.RequireToken("admin"), t.GetTopupByMerchantId)
 }
 
 func NewTopupHandler(usecase usecase.TopupUseCase, authMiddleware middleware.AuthMiddleware, rg *gin.RouterGroup, log *logger.Logger) *TopupHandler {

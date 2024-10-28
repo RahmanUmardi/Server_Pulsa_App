@@ -627,54 +627,6 @@ const docTemplate = `{
                 }
             }
         },
-        "/report": {
-            "get": {
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ],
-                "description": "Download the transaction report",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "transaction"
-                ],
-                "summary": "transaction report",
-                "parameters": [
-                    {
-                        "type": "integer",
-                        "description": "Page number",
-                        "name": "page",
-                        "in": "query"
-                    },
-                    {
-                        "type": "integer",
-                        "description": "Items per page",
-                        "name": "limit",
-                        "in": "query"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Transaction report downloaded",
-                        "schema": {
-                            "$ref": "#/definitions/custom.ReportRes"
-                        }
-                    },
-                    "401": {
-                        "description": "Unauthorized",
-                        "schema": {
-                            "$ref": "#/definitions/entity.TransactionErrorResponse"
-                        }
-                    }
-                }
-            }
-        },
         "/transaction": {
             "post": {
                 "security": [
@@ -1040,15 +992,6 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "custom.ReportRes": {
-            "type": "object",
-            "properties": {
-                "message": {
-                    "type": "string",
-                    "example": "transaction report downloaded"
-                }
-            }
-        },
         "dto.AuthRegisterRes": {
             "type": "object",
             "properties": {
@@ -1355,6 +1298,12 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "name": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "role": {
                     "type": "string"
                 }
             }

@@ -20,6 +20,7 @@ type transactionUsecaseTestSuite struct {
 
 func (tx *transactionUsecaseTestSuite) SetupTest() {
 	tx.mockTransactionRepo = new(repositorymock.MockTransactionRepository)
+	tx.log = logger.NewLogger()
 	tx.transactionUseCase = NewTransactionUseCase(tx.mockTransactionRepo, &tx.log)
 }
 
@@ -128,7 +129,7 @@ func (tx *transactionUsecaseTestSuite) TestList_Success() {
 
 	tx.mockTransactionRepo.On("List").Return(transactions, nil).Once()
 
-	txList, err := tx.transactionUseCase.GetAll()
+	txList, err := tx.transactionUseCase.GetAll("")
 
 	tx.Nil(err)
 	tx.Equal(transactions, txList)

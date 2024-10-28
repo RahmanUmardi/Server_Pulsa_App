@@ -29,7 +29,7 @@ import (
 // @name Authorization
 // @description Type "Bearer" followed by a space and JWT token.
 
-// @host localhost:8080
+// @host 167.172.91.111:8080
 // @BasePath /api/v1
 // @schemes http https
 type Server struct {
