@@ -11,7 +11,7 @@ import (
 )
 
 type ReportUseCase interface {
-	FindAllMerchant(userId, startDate, endDate string)
+	FindAllTransactions(userId, startDate, endDate string) error
 }
 
 type reportUseCase struct {
@@ -19,25 +19,26 @@ type reportUseCase struct {
 	log  *logger.Logger
 }
 
-func (r *reportUseCase) FindAllMerchant(userId, startDate, endDate string) {
-	r.log.Info("Starting to retrive all merchant in the usecase layer", nil)
+func (r *reportUseCase) FindAllTransactions(userId, startDate, endDate string) error {
+	r.log.Info("Starting to retrive report of all transactions in the usecase layer", nil)
 
 	reportSlice, err := r.repo.List(userId, startDate, endDate)
 	if err != nil {
-		return
+		return err
 	}
 
 	f := excelize.NewFile()
-	defer func() {
+	defer func() error {
 		if err := f.Close(); err != nil {
-			return
+			return err
 		}
+		return nil
 	}()
 
 	// Create a new sheet.
 	index, err := f.NewSheet("Sheet1")
 	if err != nil {
-		return
+		return err
 	}
 
 	t := reflect.TypeOf(custom.ReportResp{})
@@ -63,11 +64,11 @@ func (r *reportUseCase) FindAllMerchant(userId, startDate, endDate string) {
 		Fill: excelize.Fill{Type: "pattern", Color: []string{"87CEFA"}, Pattern: 1},
 	})
 	if err != nil {
-		fmt.Println(err)
+		return err
 	}
 	err = f.SetCellStyle("Sheet1", "A1", "B1", style)
 	if err != nil {
-		fmt.Println(err)
+		return err
 	}
 
 	for i := 0; i < len(reportSlice); i++ {
@@ -93,11 +94,11 @@ func (r *reportUseCase) FindAllMerchant(userId, startDate, endDate string) {
 			Fill: excelize.Fill{Type: "pattern", Color: []string{"90EE90"}, Pattern: 1},
 		})
 		if err != nil {
-			fmt.Println(err)
+			return err
 		}
 		err = f.SetCellStyle("Sheet1", fmt.Sprintf("%s%d", columns[0], i+2), fmt.Sprintf("%s%d", columns[1], i+2), style)
 		if err != nil {
-			fmt.Println(err)
+			return err
 		}
 	}
 
@@ -105,8 +106,10 @@ func (r *reportUseCase) FindAllMerchant(userId, startDate, endDate string) {
 	f.SetActiveSheet(index)
 	// Save spreadsheet by the given path.
 	if err := f.SaveAs("./internal/assets/Report.xlsx"); err != nil {
-		fmt.Println(err)
+		return err
 	}
+
+	return nil
 }
 
 func NewReportUseCase(repo repository.ReportRepository, log *logger.Logger) ReportUseCase {

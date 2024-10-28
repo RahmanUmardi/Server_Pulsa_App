@@ -16,7 +16,7 @@ type transactionRepository struct {
 
 type TransactionRepository interface {
 	Create(payload entity.Transactions) (entity.Transactions, error)
-	GetAll() ([]custom.TransactionsReq, error)
+	GetAll(userId string) ([]custom.TransactionsReq, error)
 	GetById(id string) (custom.TransactionsReq, error)
 	// Update(payload entity.Transactions) (entity.Transactions, error)
 	// Delete(id string) error
@@ -146,7 +146,7 @@ func (r *transactionRepository) Create(payload entity.Transactions) (entity.Tran
 	return payload, nil
 }
 
-func (r *transactionRepository) GetAll() ([]custom.TransactionsReq, error) {
+func (r *transactionRepository) GetAll(userId string) ([]custom.TransactionsReq, error) {
 	selectQuery := `
 		SELECT
 			t.transaction_id, t.customer_name, t.destination_number, t.transaction_date,
@@ -159,11 +159,17 @@ func (r *transactionRepository) GetAll() ([]custom.TransactionsReq, error) {
 		JOIN mst_merchant m ON t.id_merchant = m.id_merchant
 		JOIN transaction_detail td ON t.transaction_id = td.transaction_id
 		JOIN mst_product p ON td.id_product = p.id_product
+		WHERE m.id_merchant = (
+			SELECT
+				m.id_merchant
+			FROM mst_merchant m
+			WHERE m.id_user = $1
+		)
 		ORDER BY t.transaction_date DESC`
 
 	r.log.Info("Starting to retrive all transactions in the repository layer", nil)
 
-	rows, err := r.db.Query(selectQuery)
+	rows, err := r.db.Query(selectQuery, userId)
 	if err != nil {
 		r.log.Error("Failed to retrieve the transactions", err)
 		return nil, err

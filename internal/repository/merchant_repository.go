@@ -24,7 +24,7 @@ type merchantRepository struct {
 func (m *merchantRepository) Create(payload entity.Merchant) (entity.Merchant, error) {
 	m.log.Info("Starting to create a new merchant in the repository layer", nil)
 
-	err := m.db.QueryRow("INSERT INTO mst_merchant (id_user, name_merchant, address, id_product) VALUES ($1, $2, $3, $4) RETURNING id_merchant", payload.IdUser, payload.NameMerchant, payload.Address, payload.IdProduct).Scan(&payload.IdMerchant)
+	err := m.db.QueryRow("INSERT INTO mst_merchant (id_user, name_merchant, address, id_product, balance) VALUES ($1, $2, $3, $4, $5) RETURNING id_merchant", payload.IdUser, payload.NameMerchant, payload.Address, payload.IdProduct, 0.0).Scan(&payload.IdMerchant)
 	if err != nil {
 		m.log.Error("Failed to create the merchant: ", err)
 		return entity.Merchant{}, err

@@ -14,7 +14,7 @@ type transactionUseCase struct {
 
 type TransactionUseCase interface {
 	Create(payload entity.Transactions) (entity.Transactions, error)
-	GetAll() ([]custom.TransactionsReq, error)
+	GetAll(userId string) ([]custom.TransactionsReq, error)
 	GetById(id string) (custom.TransactionsReq, error)
 }
 
@@ -27,9 +27,9 @@ func (u *transactionUseCase) Create(payload entity.Transactions) (entity.Transac
 	return u.repo.Create(payload)
 }
 
-func (u *transactionUseCase) GetAll() ([]custom.TransactionsReq, error) {
+func (u *transactionUseCase) GetAll(userId string) ([]custom.TransactionsReq, error) {
 	u.log.Info("Starting to get all transactions in the usecase layer", nil)
-	return u.repo.GetAll()
+	return u.repo.GetAll(userId)
 }
 
 func (u *transactionUseCase) GetById(id string) (custom.TransactionsReq, error) {

@@ -107,7 +107,7 @@ func (t *topupRepository) UpdateBalanceMerchant(tx *sql.Tx, balance int, idMerch
 }
 
 func (t *topupRepository) UpdateBalanceSupliyer(tx *sql.Tx, balance int, idSupliyer string) error {
-	query := "UPDATE mst_supliyer SET balance = balance - $1 WHERE id_supliyer = $2"
+	query := "UPDATE mst_supplier SET balance = balance - $1 WHERE supplier_id = $2"
 
 	if _, err := tx.Exec(query, balance, idSupliyer); err != nil {
 		return fmt.Errorf("failed to update balance")

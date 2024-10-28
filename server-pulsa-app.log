@@ -8022,3 +8022,4357 @@ time="2024-10-25T11:13:17+07:00" level=info msg="Getting user by username was su
   "msg": "Merchant created successfully",
   "time": "2024-10-28 08:53:07"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 11:05:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 11:05:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 11:05:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 11:05:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 11:05:11"
+}
+{
+  "data": {
+    "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+    "name": "hunayn",
+    "password": "$2a$10$WIETgySFFYNa.0K7UBUNU.RsvkDljhZOEtgaO3YxUmp6MfKrkBjSu",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 11:05:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 11:05:11"
+}
+{
+  "data": "72a21825-6e09-4117-b40a-106f49a013e4",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 11:05:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 11:05:11"
+}
+{
+  "data": "72a21825-6e09-4117-b40a-106f49a013e4",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 11:05:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 11:05:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant's transactions in the handler layer",
+  "time": "2024-10-28 11:05:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive report of all transactions in the usecase layer",
+  "time": "2024-10-28 11:05:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive report of all transactions in the repository layer",
+  "time": "2024-10-28 11:05:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Report as Excel File Generated Successfully",
+  "time": "2024-10-28 11:05:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to set default role for new user",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": {
+    "id_user": "7cc2c276-7aeb-4189-b95f-0f270333a5eb",
+    "name": "rangga",
+    "password": "$2a$10$blvcghNy.II1/.9no/cRIOK6lwTK5jrUqFwGtgM8vSztFGAfG8MoO",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been registered successfully",
+  "time": "2024-10-28 11:20:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 11:23:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 11:23:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 11:23:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 11:23:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 11:23:11"
+}
+{
+  "data": {
+    "id_user": "7cc2c276-7aeb-4189-b95f-0f270333a5eb",
+    "name": "rangga",
+    "password": "$2a$10$blvcghNy.II1/.9no/cRIOK6lwTK5jrUqFwGtgM8vSztFGAfG8MoO",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 11:23:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 11:23:11"
+}
+{
+  "data": "7cc2c276-7aeb-4189-b95f-0f270333a5eb",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 11:23:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 11:23:11"
+}
+{
+  "data": "7cc2c276-7aeb-4189-b95f-0f270333a5eb",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 11:23:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 11:23:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to set default role for new user",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": {
+    "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "name": "alfedo",
+    "password": "$2a$10$YBWWsnGnFPvmGRxUNyuYSOcM/UKrGEmfnI5cfxAjgcKEAT/3Y0AxC",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been registered successfully",
+  "time": "2024-10-28 11:24:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-28 11:26:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get user by id in the handler layer",
+  "time": "2024-10-28 11:27:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve a user by id in the usecase layer",
+  "time": "2024-10-28 11:27:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-28 11:27:22"
+}
+{
+  "data": {
+    "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "name": "alfedo",
+    "password": "$2a$10$YBWWsnGnFPvmGRxUNyuYSOcM/UKrGEmfnI5cfxAjgcKEAT/3Y0AxC",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-28 11:27:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all product in the handler layer",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the usecase layer",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all product in the repository layer",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all product in the repository layer",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add product in the repository layer",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": [
+    {
+      "idProduct": "36de8e1e-d2e7-45ac-b7ec-801144cc10de",
+      "nameProvider": "Indosat",
+      "nominal": 5000,
+      "price": 6000,
+      "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+    },
+    {
+      "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+      "nameProvider": "XL",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+    },
+    {
+      "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+      "nameProvider": "Telkomsel",
+      "nominal": 20000,
+      "price": 21000,
+      "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+    },
+    {
+      "idProduct": "c3bc5cfa-eee6-4758-9ddd-71745f04b576",
+      "nameProvider": "Smartfren",
+      "nominal": 25000,
+      "price": 26000,
+      "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all product was successfully: ",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-28 11:28:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve product with id in the handler layer",
+  "time": "2024-10-28 11:29:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-28 11:29:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the repository layer",
+  "time": "2024-10-28 11:29:19"
+}
+{
+  "data": {
+    "idProduct": "36de8e1e-d2e7-45ac-b7ec-801144cc10de",
+    "nameProvider": "Indosat",
+    "nominal": 5000,
+    "price": 6000,
+    "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully: ",
+  "time": "2024-10-28 11:29:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-28 11:29:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new product in the handler layer",
+  "time": "2024-10-28 11:31:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new product in the usecase layer",
+  "time": "2024-10-28 11:31:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new product in the repository layer",
+  "time": "2024-10-28 11:31:20"
+}
+{
+  "data": {
+    "idProduct": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+    "nameProvider": "Simpati",
+    "nominal": 25000,
+    "price": 26000,
+    "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+  },
+  "level": "info",
+  "msg": "Product has been created successfully: ",
+  "time": "2024-10-28 11:31:20"
+}
+{
+  "data": {
+    "Message": "Product Created",
+    "Data": {
+      "idProduct": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+      "nameProvider": "Simpati",
+      "nominal": 25000,
+      "price": 26000,
+      "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+    }
+  },
+  "level": "info",
+  "msg": "Product created successfully",
+  "time": "2024-10-28 11:31:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update product with id in the handler layer",
+  "time": "2024-10-28 11:33:14"
+}
+{
+  "data": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+  "level": "info",
+  "msg": "Updating product ID %s",
+  "time": "2024-10-28 11:33:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-28 11:33:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the repository layer",
+  "time": "2024-10-28 11:33:14"
+}
+{
+  "data": {
+    "idProduct": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+    "nameProvider": "Simpati",
+    "nominal": 25000,
+    "price": 26000,
+    "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully: ",
+  "time": "2024-10-28 11:33:14"
+}
+{
+  "data": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+  "level": "info",
+  "msg": "Product ID %s has been updated successfully: ",
+  "time": "2024-10-28 11:33:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update product in the repository layer",
+  "time": "2024-10-28 11:33:14"
+}
+{
+  "data": {
+    "idProduct": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+    "nameProvider": "ByU",
+    "nominal": 10000,
+    "price": 11000,
+    "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+  },
+  "level": "info",
+  "msg": "Product has been updated successfully: ",
+  "time": "2024-10-28 11:33:14"
+}
+{
+  "data": {
+    "Message": "The product has been updated",
+    "Data": {
+      "idProduct": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+      "nameProvider": "ByU",
+      "nominal": 10000,
+      "price": 11000,
+      "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+    }
+  },
+  "level": "info",
+  "msg": "Product updated successfully",
+  "time": "2024-10-28 11:33:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve product with id in the handler layer",
+  "time": "2024-10-28 11:33:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-28 11:33:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the repository layer",
+  "time": "2024-10-28 11:33:31"
+}
+{
+  "data": {
+    "idProduct": "36de8e1e-d2e7-45ac-b7ec-801144cc10de",
+    "nameProvider": "Indosat",
+    "nominal": 5000,
+    "price": 6000,
+    "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully: ",
+  "time": "2024-10-28 11:33:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-28 11:33:31"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve product with id in the handler layer",
+  "time": "2024-10-28 11:33:51"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-28 11:33:51"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the repository layer",
+  "time": "2024-10-28 11:33:51"
+}
+{
+  "data": {
+    "idProduct": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+    "nameProvider": "ByU",
+    "nominal": 10000,
+    "price": 11000,
+    "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully: ",
+  "time": "2024-10-28 11:33:51"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Product found successfully",
+  "time": "2024-10-28 11:33:51"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update product with id in the handler layer",
+  "time": "2024-10-28 11:34:28"
+}
+{
+  "data": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+  "level": "info",
+  "msg": "Updating product ID %s",
+  "time": "2024-10-28 11:34:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-28 11:34:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the repository layer",
+  "time": "2024-10-28 11:34:28"
+}
+{
+  "data": {
+    "idProduct": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+    "nameProvider": "ByU",
+    "nominal": 10000,
+    "price": 11000,
+    "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully: ",
+  "time": "2024-10-28 11:34:28"
+}
+{
+  "data": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+  "level": "info",
+  "msg": "Product ID %s has been updated successfully: ",
+  "time": "2024-10-28 11:34:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update product in the repository layer",
+  "time": "2024-10-28 11:34:28"
+}
+{
+  "data": {
+    "idProduct": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+    "nameProvider": "ByU",
+    "nominal": 10000,
+    "price": 7000,
+    "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+  },
+  "level": "info",
+  "msg": "Product has been updated successfully: ",
+  "time": "2024-10-28 11:34:28"
+}
+{
+  "data": {
+    "Message": "The product has been updated",
+    "Data": {
+      "idProduct": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+      "nameProvider": "ByU",
+      "nominal": 10000,
+      "price": 7000,
+      "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+    }
+  },
+  "level": "info",
+  "msg": "Product updated successfully",
+  "time": "2024-10-28 11:34:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete product with id in the handler layer",
+  "time": "2024-10-28 11:37:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-28 11:37:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the repository layer",
+  "time": "2024-10-28 11:37:12"
+}
+{
+  "data": {
+    "idProduct": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+    "nameProvider": "ByU",
+    "nominal": 10000,
+    "price": 7000,
+    "idSupliyer": "e9cda0d1-3778-4223-986f-9fdf30c1d80c"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully: ",
+  "time": "2024-10-28 11:37:12"
+}
+{
+  "data": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+  "level": "info",
+  "msg": "Product has been deleted successfully: ",
+  "time": "2024-10-28 11:37:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete product in the repository layer",
+  "time": "2024-10-28 11:37:12"
+}
+{
+  "data": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+  "level": "info",
+  "msg": "Product has been deleted successfully: ",
+  "time": "2024-10-28 11:37:12"
+}
+{
+  "data": {
+    "Message": "The product has been deleted",
+    "Data": {
+      "idProduct": "",
+      "nameProvider": "",
+      "nominal": 0,
+      "price": 0,
+      "idSupliyer": ""
+    }
+  },
+  "level": "info",
+  "msg": "Product deleted successfully",
+  "time": "2024-10-28 11:37:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve product with id in the handler layer",
+  "time": "2024-10-28 11:37:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the usecase layer",
+  "time": "2024-10-28 11:37:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a product by id in the repository layer",
+  "time": "2024-10-28 11:37:44"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the product: ",
+  "time": "2024-10-28 11:37:44"
+}
+{
+  "data": "12e3ffb4-3445-44c0-b786-f76fce69618a",
+  "level": "error",
+  "msg": "Product ID %s not found: ",
+  "time": "2024-10-28 11:37:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant in the handler layer",
+  "time": "2024-10-28 11:38:56"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 11:38:56"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-28 11:38:56"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-28 11:38:56"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-28 11:38:56"
+}
+{
+  "data": [
+    {
+      "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+      "idUser": "72a21825-6e09-4117-b40a-106f49a013e4",
+      "nameMerchant": "Konter Pulsa Rina",
+      "address": "Surabaya",
+      "idProduct": "36de8e1e-d2e7-45ac-b7ec-801144cc10de",
+      "balance": 83000
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all merchant was successfully: ",
+  "time": "2024-10-28 11:38:56"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Merchant found successfully",
+  "time": "2024-10-28 11:38:56"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-28 11:40:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the handler layer",
+  "time": "2024-10-28 11:41:52"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the usecase layer",
+  "time": "2024-10-28 11:41:52"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-28 11:41:52"
+}
+{
+  "data": {
+    "idMerchant": "606cbf87-84eb-4437-ae9f-c1c99df6a066",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Setiawan",
+    "address": "Bandung",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Merchant has been created successfully: ",
+  "time": "2024-10-28 11:41:52"
+}
+{
+  "data": {
+    "Message": "Merchant Created",
+    "Data": {
+      "idMerchant": "606cbf87-84eb-4437-ae9f-c1c99df6a066",
+      "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "nameMerchant": "Konter Pak Setiawan",
+      "address": "Bandung",
+      "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+      "balance": 0
+    }
+  },
+  "level": "info",
+  "msg": "Merchant created successfully",
+  "time": "2024-10-28 11:41:52"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant in the handler layer",
+  "time": "2024-10-28 11:42:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 11:42:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-28 11:42:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-28 11:42:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-28 11:42:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-28 11:42:12"
+}
+{
+  "data": "sql: Scan error on column index 5, name \"balance\": converting NULL to float64 is unsupported",
+  "level": "error",
+  "msg": "Failed to scan the merchant: ",
+  "time": "2024-10-28 11:42:12"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant with id in the handler layer",
+  "time": "2024-10-28 11:47:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-28 11:47:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 11:47:42"
+}
+{
+  "data": "sql: Scan error on column index 5, name \"balance\": converting NULL to float64 is unsupported",
+  "level": "error",
+  "msg": "Failed to retrive the merchant: ",
+  "time": "2024-10-28 11:47:42"
+}
+{
+  "data": "606cbf87-84eb-4437-ae9f-c1c99df6a066",
+  "level": "error",
+  "msg": "Merchant ID %s not found: %v",
+  "time": "2024-10-28 11:47:42"
+}
+{
+  "data": {
+    "Message": "Merchant of Id 606cbf87-84eb-4437-ae9f-c1c99df6a066 Not Found",
+    "Data": {
+      "idMerchant": "",
+      "idUser": "",
+      "nameMerchant": "",
+      "address": "",
+      "idProduct": "",
+      "balance": 0
+    }
+  },
+  "level": "error",
+  "msg": "Merchant ID %s not found: ",
+  "time": "2024-10-28 11:47:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve merchant with id in the handler layer",
+  "time": "2024-10-28 11:50:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-28 11:50:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 11:50:04"
+}
+{
+  "data": "sql: Scan error on column index 5, name \"balance\": converting NULL to float64 is unsupported",
+  "level": "error",
+  "msg": "Failed to retrive the merchant: ",
+  "time": "2024-10-28 11:50:04"
+}
+{
+  "data": {
+    "Message": "Merchant of Id 606cbf87-84eb-4437-ae9f-c1c99df6a066 Not Found",
+    "Data": {
+      "idMerchant": "",
+      "idUser": "",
+      "nameMerchant": "",
+      "address": "",
+      "idProduct": "",
+      "balance": 0
+    }
+  },
+  "level": "error",
+  "msg": "Merchant ID %s not found: ",
+  "time": "2024-10-28 11:50:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve merchant with id in the handler layer",
+  "time": "2024-10-28 11:51:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-28 11:51:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 11:51:05"
+}
+{
+  "data": "sql: Scan error on column index 5, name \"balance\": converting NULL to float64 is unsupported",
+  "level": "error",
+  "msg": "Failed to retrive the merchant: ",
+  "time": "2024-10-28 11:51:05"
+}
+{
+  "data": {
+    "Message": "Merchant of Id 606cbf87-84eb-4437-ae9f-c1c99df6a066 Not Found",
+    "Data": {
+      "idMerchant": "",
+      "idUser": "",
+      "nameMerchant": "",
+      "address": "",
+      "idProduct": "",
+      "balance": 0
+    }
+  },
+  "level": "error",
+  "msg": "Merchant ID %s not found: ",
+  "time": "2024-10-28 11:51:05"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve merchant with id in the handler layer",
+  "time": "2024-10-28 11:51:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-28 11:51:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 11:51:19"
+}
+{
+  "data": "sql: Scan error on column index 5, name \"balance\": converting NULL to float64 is unsupported",
+  "level": "error",
+  "msg": "Failed to retrive the merchant: ",
+  "time": "2024-10-28 11:51:19"
+}
+{
+  "data": {
+    "Message": "Merchant of Id 606cbf87-84eb-4437-ae9f-c1c99df6a066 Not Found",
+    "Data": {
+      "idMerchant": "",
+      "idUser": "",
+      "nameMerchant": "",
+      "address": "",
+      "idProduct": "",
+      "balance": 0
+    }
+  },
+  "level": "error",
+  "msg": "Merchant ID %s not found: ",
+  "time": "2024-10-28 11:51:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve merchant with id in the handler layer",
+  "time": "2024-10-28 11:55:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-28 11:55:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 11:55:42"
+}
+{
+  "data": "sql: Scan error on column index 5, name \"balance\": converting NULL to float64 is unsupported",
+  "level": "error",
+  "msg": "Failed to retrive the merchant: ",
+  "time": "2024-10-28 11:55:42"
+}
+{
+  "data": {
+    "Message": "sql: Scan error on column index 5, name \"balance\": converting NULL to float64 is unsupported",
+    "Data": {
+      "idMerchant": "",
+      "idUser": "",
+      "nameMerchant": "",
+      "address": "",
+      "idProduct": "",
+      "balance": 0
+    }
+  },
+  "level": "error",
+  "msg": "Merchant ID %s not found: ",
+  "time": "2024-10-28 11:55:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve merchant with id in the handler layer",
+  "time": "2024-10-28 11:56:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-28 11:56:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 11:56:40"
+}
+{
+  "data": {
+    "idMerchant": "606cbf87-84eb-4437-ae9f-c1c99df6a066",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Setiawan",
+    "address": "Bandung",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-28 11:56:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Merchant found successfully",
+  "time": "2024-10-28 11:56:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the handler layer",
+  "time": "2024-10-28 11:57:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the usecase layer",
+  "time": "2024-10-28 11:57:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-28 11:57:11"
+}
+{
+  "data": {
+    "idMerchant": "4e23458e-b9c8-4c66-ba9d-5a0e679a1b7d",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Edi",
+    "address": "Semarang",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Merchant has been created successfully: ",
+  "time": "2024-10-28 11:57:11"
+}
+{
+  "data": {
+    "Message": "Merchant Created",
+    "Data": {
+      "idMerchant": "4e23458e-b9c8-4c66-ba9d-5a0e679a1b7d",
+      "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "nameMerchant": "Konter Pak Edi",
+      "address": "Semarang",
+      "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+      "balance": 0
+    }
+  },
+  "level": "info",
+  "msg": "Merchant created successfully",
+  "time": "2024-10-28 11:57:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant in the handler layer",
+  "time": "2024-10-28 11:57:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 11:57:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-28 11:57:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-28 11:57:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-28 11:57:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-28 11:57:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-28 11:57:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-28 11:57:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-28 11:57:41"
+}
+{
+  "data": [
+    {
+      "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+      "idUser": "72a21825-6e09-4117-b40a-106f49a013e4",
+      "nameMerchant": "Konter Pulsa Rina",
+      "address": "Surabaya",
+      "idProduct": "36de8e1e-d2e7-45ac-b7ec-801144cc10de",
+      "balance": 83000
+    },
+    {
+      "idMerchant": "606cbf87-84eb-4437-ae9f-c1c99df6a066",
+      "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "nameMerchant": "Konter Pak Setiawan",
+      "address": "Bandung",
+      "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+      "balance": 0
+    },
+    {
+      "idMerchant": "4e23458e-b9c8-4c66-ba9d-5a0e679a1b7d",
+      "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "nameMerchant": "Konter Pak Edi",
+      "address": "Semarang",
+      "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+      "balance": 0
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all merchant was successfully: ",
+  "time": "2024-10-28 11:57:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Merchant found successfully",
+  "time": "2024-10-28 11:57:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant with id in the handler layer",
+  "time": "2024-10-28 11:58:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-28 11:58:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 11:58:14"
+}
+{
+  "data": {
+    "idMerchant": "4e23458e-b9c8-4c66-ba9d-5a0e679a1b7d",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Edi",
+    "address": "Semarang",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-28 11:58:14"
+}
+{
+  "data": "4e23458e-b9c8-4c66-ba9d-5a0e679a1b7d",
+  "level": "info",
+  "msg": "Merchant has been deleted successfully: ",
+  "time": "2024-10-28 11:58:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant in the repository layer",
+  "time": "2024-10-28 11:58:14"
+}
+{
+  "data": "4e23458e-b9c8-4c66-ba9d-5a0e679a1b7d",
+  "level": "info",
+  "msg": "Merchant has been deleted successfully: ",
+  "time": "2024-10-28 11:58:14"
+}
+{
+  "data": {
+    "Message": "Merchant of Id 4e23458e-b9c8-4c66-ba9d-5a0e679a1b7d Deleted",
+    "Data": {
+      "idMerchant": "",
+      "idUser": "",
+      "nameMerchant": "",
+      "address": "",
+      "idProduct": "",
+      "balance": 0
+    }
+  },
+  "level": "info",
+  "msg": "Merchant deleted successfully",
+  "time": "2024-10-28 11:58:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve all merchant in the handler layer",
+  "time": "2024-10-28 11:59:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the usecase layer",
+  "time": "2024-10-28 11:59:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all merchant in the repository layer",
+  "time": "2024-10-28 11:59:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-28 11:59:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-28 11:59:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to scan all merchant in the repository layer",
+  "time": "2024-10-28 11:59:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to add merchant in the repository layer",
+  "time": "2024-10-28 11:59:23"
+}
+{
+  "data": [
+    {
+      "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+      "idUser": "72a21825-6e09-4117-b40a-106f49a013e4",
+      "nameMerchant": "Konter Pulsa Rina",
+      "address": "Surabaya",
+      "idProduct": "36de8e1e-d2e7-45ac-b7ec-801144cc10de",
+      "balance": 83000
+    },
+    {
+      "idMerchant": "606cbf87-84eb-4437-ae9f-c1c99df6a066",
+      "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "nameMerchant": "Konter Pak Setiawan",
+      "address": "Bandung",
+      "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+      "balance": 0
+    }
+  ],
+  "level": "info",
+  "msg": "Getting all merchant was successfully: ",
+  "time": "2024-10-28 11:59:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Merchant found successfully",
+  "time": "2024-10-28 11:59:23"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant with id in the handler layer",
+  "time": "2024-10-28 11:59:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-28 11:59:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 11:59:40"
+}
+{
+  "data": {
+    "idMerchant": "606cbf87-84eb-4437-ae9f-c1c99df6a066",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Setiawan",
+    "address": "Bandung",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-28 11:59:40"
+}
+{
+  "data": "606cbf87-84eb-4437-ae9f-c1c99df6a066",
+  "level": "info",
+  "msg": "Merchant has been deleted successfully: ",
+  "time": "2024-10-28 11:59:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete merchant in the repository layer",
+  "time": "2024-10-28 11:59:40"
+}
+{
+  "data": "606cbf87-84eb-4437-ae9f-c1c99df6a066",
+  "level": "info",
+  "msg": "Merchant has been deleted successfully: ",
+  "time": "2024-10-28 11:59:40"
+}
+{
+  "data": {
+    "Message": "Merchant of Id 606cbf87-84eb-4437-ae9f-c1c99df6a066 Deleted"
+  },
+  "level": "info",
+  "msg": "Merchant deleted successfully",
+  "time": "2024-10-28 11:59:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the handler layer",
+  "time": "2024-10-28 12:00:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the usecase layer",
+  "time": "2024-10-28 12:00:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-28 12:00:01"
+}
+{
+  "data": {
+    "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Edi",
+    "address": "Semarang",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Merchant has been created successfully: ",
+  "time": "2024-10-28 12:00:01"
+}
+{
+  "data": {
+    "Message": "Merchant Created",
+    "Data": {
+      "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+      "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "nameMerchant": "Konter Pak Edi",
+      "address": "Semarang",
+      "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+      "balance": 0
+    }
+  },
+  "level": "info",
+  "msg": "Merchant created successfully",
+  "time": "2024-10-28 12:00:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant with id in the handler layer",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": {
+    "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Edi",
+    "address": "Semarang",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the usecase layer",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to map merchant and payload in the repository layer",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the repository layer",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": {
+    "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Edi",
+    "address": "Sumatera",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Merchant has been updated successfully: ",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+  "level": "info",
+  "msg": "Merchant ID %s has been updated successfully: ",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": {
+    "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Edi",
+    "address": "Sumatera",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": {
+    "Message": "Merchant of Id c7439cf4-f740-4a83-bdc1-4de02bccf4fd Updated",
+    "Data": {
+      "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+      "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "nameMerchant": "Konter Pak Edi",
+      "address": "Sumatera",
+      "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+      "balance": 0
+    }
+  },
+  "level": "info",
+  "msg": "Merchant updated successfully",
+  "time": "2024-10-28 12:01:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant with id in the handler layer",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": {
+    "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Edi",
+    "address": "Sumatera",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the usecase layer",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to map merchant and payload in the repository layer",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the repository layer",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": {
+    "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Rama",
+    "address": "Jombang",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Merchant has been updated successfully: ",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+  "level": "info",
+  "msg": "Merchant ID %s has been updated successfully: ",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": {
+    "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Rama",
+    "address": "Jombang",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": {
+    "Message": "Merchant of Id c7439cf4-f740-4a83-bdc1-4de02bccf4fd Updated",
+    "Data": {
+      "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+      "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "nameMerchant": "Konter Pak Rama",
+      "address": "Jombang",
+      "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+      "balance": 0
+    }
+  },
+  "level": "info",
+  "msg": "Merchant updated successfully",
+  "time": "2024-10-28 12:01:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant with id in the handler layer",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the usecase layer",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": {
+    "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Rama",
+    "address": "Jombang",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the usecase layer",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to map merchant and payload in the repository layer",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update merchant in the repository layer",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": {
+    "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Rama",
+    "address": "Jombang",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Merchant has been updated successfully: ",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+  "level": "info",
+  "msg": "Merchant ID %s has been updated successfully: ",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a merchant by id in the repository layer",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": {
+    "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Rama",
+    "address": "Jombang",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Getting merchant by id was successfully: ",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": {
+    "Message": "Merchant of Id c7439cf4-f740-4a83-bdc1-4de02bccf4fd Updated",
+    "Data": {
+      "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+      "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "nameMerchant": "Konter Pak Rama",
+      "address": "Jombang",
+      "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+      "balance": 0
+    }
+  },
+  "level": "info",
+  "msg": "Merchant updated successfully",
+  "time": "2024-10-28 12:01:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 12:03:03"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 12:03:03"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 12:03:03"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 12:03:03"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 12:03:03"
+}
+{
+  "data": {
+    "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "name": "alfedo",
+    "password": "$2a$10$YBWWsnGnFPvmGRxUNyuYSOcM/UKrGEmfnI5cfxAjgcKEAT/3Y0AxC",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 12:03:03"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 12:03:03"
+}
+{
+  "data": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 12:03:03"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 12:03:03"
+}
+{
+  "data": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 12:03:03"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 12:03:03"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transactions list in the handler layer",
+  "time": "2024-10-28 12:04:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all transactions in the usecase layer",
+  "time": "2024-10-28 12:04:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 12:04:41"
+}
+{
+  "data": [
+    {
+      "transactionId": "f8732a56-43ab-4660-b49c-d926b8f7200c",
+      "customerName": "Sergio",
+      "destinationNumber": "08773592614",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-27T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "36b23bdf-e28d-4403-81c5-7ab91e44386c",
+          "transactionId": "f8732a56-43ab-4660-b49c-d926b8f7200c",
+          "product": {
+            "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+            "nameProvider": "XL",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "d318ca9c-8dac-45a1-bf99-1689d1be2af1",
+      "customerName": "David",
+      "destinationNumber": "08139416447",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-27T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "0234017f-86a6-419a-9756-a2c2c2230f84",
+          "transactionId": "d318ca9c-8dac-45a1-bf99-1689d1be2af1",
+          "product": {
+            "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+            "nameProvider": "Telkomsel",
+            "nominal": 20000,
+            "price": 21000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "ae079f5a-502a-4b54-a6a8-d6d126c1e688",
+      "customerName": "David",
+      "destinationNumber": "08139416447",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-16T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "2328bcbb-9efb-4c88-ad90-bdaff2812347",
+          "transactionId": "ae079f5a-502a-4b54-a6a8-d6d126c1e688",
+          "product": {
+            "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+            "nameProvider": "Telkomsel",
+            "nominal": 20000,
+            "price": 21000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "28a46042-9972-4099-82aa-7ce275b27e18",
+      "customerName": "David",
+      "destinationNumber": "08139416447",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-16T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "f273b581-dcf6-402f-84f0-c846e20627ab",
+          "transactionId": "28a46042-9972-4099-82aa-7ce275b27e18",
+          "product": {
+            "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+            "nameProvider": "XL",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "0a36b4e7-9c43-44ca-80ff-f083d77643db",
+      "customerName": "David",
+      "destinationNumber": "08139416447",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-16T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "294553ce-2401-4fce-a3f2-ac14914839a9",
+          "transactionId": "0a36b4e7-9c43-44ca-80ff-f083d77643db",
+          "product": {
+            "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+            "nameProvider": "Telkomsel",
+            "nominal": 20000,
+            "price": 21000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "5b1da02f-8901-4760-b84e-0ee5ce2b270b",
+      "customerName": "David",
+      "destinationNumber": "08139416447",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-16T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "c405c5ae-9ee7-4276-b9bb-6b286cdbb4aa",
+          "transactionId": "5b1da02f-8901-4760-b84e-0ee5ce2b270b",
+          "product": {
+            "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+            "nameProvider": "Telkomsel",
+            "nominal": 20000,
+            "price": 21000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "58aefb6d-5c1b-4a4d-9eb0-f29b25ee1ed0",
+      "customerName": "David",
+      "destinationNumber": "08139416447",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-16T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "6b05ec9d-2da4-40f2-9d74-e55bf0c28d5f",
+          "transactionId": "58aefb6d-5c1b-4a4d-9eb0-f29b25ee1ed0",
+          "product": {
+            "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+            "nameProvider": "Telkomsel",
+            "nominal": 20000,
+            "price": 21000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "e52fee22-eef8-477c-9fb3-fdfdda66b881",
+      "customerName": "David",
+      "destinationNumber": "08139416447",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-16T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "e7b8828f-ae76-4e6f-8872-e95491c8fda2",
+          "transactionId": "e52fee22-eef8-477c-9fb3-fdfdda66b881",
+          "product": {
+            "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+            "nameProvider": "XL",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "ffcdf01c-ccfa-4936-b4f9-33ffbc194f7b",
+      "customerName": "Michael",
+      "destinationNumber": "08122542761",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-27T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "96105631-4491-4c1e-96d6-afbcf08f7c2c",
+          "transactionId": "ffcdf01c-ccfa-4936-b4f9-33ffbc194f7b",
+          "product": {
+            "idProduct": "36de8e1e-d2e7-45ac-b7ec-801144cc10de",
+            "nameProvider": "Indosat",
+            "nominal": 5000,
+            "price": 6000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "a3d58994-52e7-45d6-889f-5d2b668440f1",
+      "customerName": "Taylor",
+      "destinationNumber": "0888625437",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-27T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "3fa3b406-4fc4-42ed-b8c5-93681f428684",
+          "transactionId": "a3d58994-52e7-45d6-889f-5d2b668440f1",
+          "product": {
+            "idProduct": "c3bc5cfa-eee6-4758-9ddd-71745f04b576",
+            "nameProvider": "Smartfren",
+            "nominal": 25000,
+            "price": 26000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "7f7ff715-f01f-4090-9b50-69ab1c98c009",
+      "customerName": "David",
+      "destinationNumber": "08139416447",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-16T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "bec44101-aa13-47a7-b07f-9044ed6304ae",
+          "transactionId": "7f7ff715-f01f-4090-9b50-69ab1c98c009",
+          "product": {
+            "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+            "nameProvider": "Telkomsel",
+            "nominal": 20000,
+            "price": 21000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "8f9f7f9a-00bd-4ea0-b206-c652e66a14cc",
+      "customerName": "David",
+      "destinationNumber": "08139416447",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-16T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "2cf0efce-9b36-463c-9af9-4ae2859e5959",
+          "transactionId": "8f9f7f9a-00bd-4ea0-b206-c652e66a14cc",
+          "product": {
+            "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+            "nameProvider": "Telkomsel",
+            "nominal": 20000,
+            "price": 21000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "cf9d7917-8538-4aef-a57a-4a658996572c",
+      "customerName": "David",
+      "destinationNumber": "08139416447",
+      "user": {
+        "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+        "name": "hunayn",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+        "nameMerchant": "Konter Pulsa Rina",
+        "address": "Surabaya"
+      },
+      "transactionDate": "2024-10-16T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "90441c4d-9313-45ef-a00b-c76a5c59e120",
+          "transactionId": "cf9d7917-8538-4aef-a57a-4a658996572c",
+          "product": {
+            "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+            "nameProvider": "XL",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    }
+  ],
+  "level": "info",
+  "msg": "Successfully Get the transactions list",
+  "time": "2024-10-28 12:04:41"
+}
+{
+  "data": {
+    "message": "Transaction list",
+    "data": [
+      {
+        "transactionId": "f8732a56-43ab-4660-b49c-d926b8f7200c",
+        "customerName": "Sergio",
+        "destinationNumber": "08773592614",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-27T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "36b23bdf-e28d-4403-81c5-7ab91e44386c",
+            "transactionId": "f8732a56-43ab-4660-b49c-d926b8f7200c",
+            "product": {
+              "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+              "nameProvider": "XL",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "d318ca9c-8dac-45a1-bf99-1689d1be2af1",
+        "customerName": "David",
+        "destinationNumber": "08139416447",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-27T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "0234017f-86a6-419a-9756-a2c2c2230f84",
+            "transactionId": "d318ca9c-8dac-45a1-bf99-1689d1be2af1",
+            "product": {
+              "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+              "nameProvider": "Telkomsel",
+              "nominal": 20000,
+              "price": 21000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "ae079f5a-502a-4b54-a6a8-d6d126c1e688",
+        "customerName": "David",
+        "destinationNumber": "08139416447",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-16T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "2328bcbb-9efb-4c88-ad90-bdaff2812347",
+            "transactionId": "ae079f5a-502a-4b54-a6a8-d6d126c1e688",
+            "product": {
+              "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+              "nameProvider": "Telkomsel",
+              "nominal": 20000,
+              "price": 21000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "28a46042-9972-4099-82aa-7ce275b27e18",
+        "customerName": "David",
+        "destinationNumber": "08139416447",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-16T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "f273b581-dcf6-402f-84f0-c846e20627ab",
+            "transactionId": "28a46042-9972-4099-82aa-7ce275b27e18",
+            "product": {
+              "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+              "nameProvider": "XL",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "0a36b4e7-9c43-44ca-80ff-f083d77643db",
+        "customerName": "David",
+        "destinationNumber": "08139416447",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-16T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "294553ce-2401-4fce-a3f2-ac14914839a9",
+            "transactionId": "0a36b4e7-9c43-44ca-80ff-f083d77643db",
+            "product": {
+              "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+              "nameProvider": "Telkomsel",
+              "nominal": 20000,
+              "price": 21000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "5b1da02f-8901-4760-b84e-0ee5ce2b270b",
+        "customerName": "David",
+        "destinationNumber": "08139416447",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-16T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "c405c5ae-9ee7-4276-b9bb-6b286cdbb4aa",
+            "transactionId": "5b1da02f-8901-4760-b84e-0ee5ce2b270b",
+            "product": {
+              "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+              "nameProvider": "Telkomsel",
+              "nominal": 20000,
+              "price": 21000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "58aefb6d-5c1b-4a4d-9eb0-f29b25ee1ed0",
+        "customerName": "David",
+        "destinationNumber": "08139416447",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-16T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "6b05ec9d-2da4-40f2-9d74-e55bf0c28d5f",
+            "transactionId": "58aefb6d-5c1b-4a4d-9eb0-f29b25ee1ed0",
+            "product": {
+              "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+              "nameProvider": "Telkomsel",
+              "nominal": 20000,
+              "price": 21000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "e52fee22-eef8-477c-9fb3-fdfdda66b881",
+        "customerName": "David",
+        "destinationNumber": "08139416447",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-16T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "e7b8828f-ae76-4e6f-8872-e95491c8fda2",
+            "transactionId": "e52fee22-eef8-477c-9fb3-fdfdda66b881",
+            "product": {
+              "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+              "nameProvider": "XL",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "ffcdf01c-ccfa-4936-b4f9-33ffbc194f7b",
+        "customerName": "Michael",
+        "destinationNumber": "08122542761",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-27T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "96105631-4491-4c1e-96d6-afbcf08f7c2c",
+            "transactionId": "ffcdf01c-ccfa-4936-b4f9-33ffbc194f7b",
+            "product": {
+              "idProduct": "36de8e1e-d2e7-45ac-b7ec-801144cc10de",
+              "nameProvider": "Indosat",
+              "nominal": 5000,
+              "price": 6000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "a3d58994-52e7-45d6-889f-5d2b668440f1",
+        "customerName": "Taylor",
+        "destinationNumber": "0888625437",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-27T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "3fa3b406-4fc4-42ed-b8c5-93681f428684",
+            "transactionId": "a3d58994-52e7-45d6-889f-5d2b668440f1",
+            "product": {
+              "idProduct": "c3bc5cfa-eee6-4758-9ddd-71745f04b576",
+              "nameProvider": "Smartfren",
+              "nominal": 25000,
+              "price": 26000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "7f7ff715-f01f-4090-9b50-69ab1c98c009",
+        "customerName": "David",
+        "destinationNumber": "08139416447",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-16T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "bec44101-aa13-47a7-b07f-9044ed6304ae",
+            "transactionId": "7f7ff715-f01f-4090-9b50-69ab1c98c009",
+            "product": {
+              "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+              "nameProvider": "Telkomsel",
+              "nominal": 20000,
+              "price": 21000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "8f9f7f9a-00bd-4ea0-b206-c652e66a14cc",
+        "customerName": "David",
+        "destinationNumber": "08139416447",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-16T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "2cf0efce-9b36-463c-9af9-4ae2859e5959",
+            "transactionId": "8f9f7f9a-00bd-4ea0-b206-c652e66a14cc",
+            "product": {
+              "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+              "nameProvider": "Telkomsel",
+              "nominal": 20000,
+              "price": 21000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "cf9d7917-8538-4aef-a57a-4a658996572c",
+        "customerName": "David",
+        "destinationNumber": "08139416447",
+        "user": {
+          "id_user": "72a21825-6e09-4117-b40a-106f49a013e4",
+          "name": "hunayn",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "5db18c1b-1979-4d12-8d46-d6bc02347091",
+          "nameMerchant": "Konter Pulsa Rina",
+          "address": "Surabaya"
+        },
+        "transactionDate": "2024-10-16T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "90441c4d-9313-45ef-a00b-c76a5c59e120",
+            "transactionId": "cf9d7917-8538-4aef-a57a-4a658996572c",
+            "product": {
+              "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+              "nameProvider": "XL",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "level": "info",
+  "msg": "transactions list found",
+  "time": "2024-10-28 12:04:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transactions list in the handler layer",
+  "time": "2024-10-28 12:15:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all transactions in the usecase layer",
+  "time": "2024-10-28 12:15:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 12:15:01"
+}
+{
+  "data": [],
+  "level": "info",
+  "msg": "Successfully Get the transactions list",
+  "time": "2024-10-28 12:15:01"
+}
+{
+  "data": null,
+  "level": "error",
+  "msg": "transactions not found",
+  "time": "2024-10-28 12:15:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-28 12:18:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-28 12:18:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-28 12:18:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-28 12:18:53"
+}
+{
+  "data": "required balance: 10000, current balance: 0",
+  "level": "error",
+  "msg": "Insufficient merchant balance",
+  "time": "2024-10-28 12:18:53"
+}
+{
+  "data": "insufficient merchant balance: required 10000, current balance 0",
+  "level": "error",
+  "msg": "failed to create a transaction",
+  "time": "2024-10-28 12:18:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-28 12:20:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-28 12:20:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-28 12:20:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-28 12:20:22"
+}
+{
+  "data": {
+    "newBalance": 60000,
+    "payload": {
+      "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+      "merchantId": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+      "userId": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "customerName": "Raka",
+      "destinationNumber": "08123415624",
+      "transactionDate": "27-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "6bf6fbbf-5def-411f-a2bc-e0650ebeadb7",
+          "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+          "productId": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+          "Price": 11000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfully with updated merchant balance",
+  "time": "2024-10-28 12:20:22"
+}
+{
+  "data": {
+    "message": "Transaction Created",
+    "data": {
+      "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+      "merchantId": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+      "userId": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "customerName": "Raka",
+      "destinationNumber": "08123415624",
+      "transactionDate": "27-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "6bf6fbbf-5def-411f-a2bc-e0650ebeadb7",
+          "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+          "productId": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+          "Price": 11000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfuly",
+  "time": "2024-10-28 12:20:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transactions list in the handler layer",
+  "time": "2024-10-28 12:20:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all transactions in the usecase layer",
+  "time": "2024-10-28 12:20:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 12:20:53"
+}
+{
+  "data": [
+    {
+      "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+      "customerName": "Raka",
+      "destinationNumber": "08123415624",
+      "user": {
+        "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+        "name": "alfedo",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+        "nameMerchant": "Konter Pak Rama",
+        "address": "Jombang"
+      },
+      "transactionDate": "2024-10-27T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "6bf6fbbf-5def-411f-a2bc-e0650ebeadb7",
+          "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+          "product": {
+            "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+            "nameProvider": "XL",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    }
+  ],
+  "level": "info",
+  "msg": "Successfully Get the transactions list",
+  "time": "2024-10-28 12:20:53"
+}
+{
+  "data": {
+    "message": "Transaction list",
+    "data": [
+      {
+        "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+        "customerName": "Raka",
+        "destinationNumber": "08123415624",
+        "user": {
+          "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+          "name": "alfedo",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+          "nameMerchant": "Konter Pak Rama",
+          "address": "Jombang"
+        },
+        "transactionDate": "2024-10-27T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "6bf6fbbf-5def-411f-a2bc-e0650ebeadb7",
+            "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+            "product": {
+              "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+              "nameProvider": "XL",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "level": "info",
+  "msg": "transactions list found",
+  "time": "2024-10-28 12:20:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-28 12:22:47"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-28 12:22:47"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-28 12:22:47"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-28 12:22:47"
+}
+{
+  "data": {
+    "newBalance": 40000,
+    "payload": {
+      "transactionId": "2dcc4ba8-abd9-4ec3-a403-9ae459709f88",
+      "merchantId": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+      "userId": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "customerName": "Sarah",
+      "destinationNumber": "0857615428",
+      "transactionDate": "27-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "9cf0b51a-b63d-4b91-a773-f8499018a93f",
+          "transactionId": "2dcc4ba8-abd9-4ec3-a403-9ae459709f88",
+          "productId": "523f72d6-bdf5-4716-b92e-7860bb223794",
+          "Price": 21000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfully with updated merchant balance",
+  "time": "2024-10-28 12:22:47"
+}
+{
+  "data": {
+    "message": "Transaction Created",
+    "data": {
+      "transactionId": "2dcc4ba8-abd9-4ec3-a403-9ae459709f88",
+      "merchantId": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+      "userId": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "customerName": "Sarah",
+      "destinationNumber": "0857615428",
+      "transactionDate": "27-10-2024",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "9cf0b51a-b63d-4b91-a773-f8499018a93f",
+          "transactionId": "2dcc4ba8-abd9-4ec3-a403-9ae459709f88",
+          "productId": "523f72d6-bdf5-4716-b92e-7860bb223794",
+          "Price": 21000
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "Transaction created successfuly",
+  "time": "2024-10-28 12:22:47"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transactions list in the handler layer",
+  "time": "2024-10-28 12:23:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all transactions in the usecase layer",
+  "time": "2024-10-28 12:23:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive all transactions in the repository layer",
+  "time": "2024-10-28 12:23:33"
+}
+{
+  "data": [
+    {
+      "transactionId": "2dcc4ba8-abd9-4ec3-a403-9ae459709f88",
+      "customerName": "Sarah",
+      "destinationNumber": "0857615428",
+      "user": {
+        "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+        "name": "alfedo",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+        "nameMerchant": "Konter Pak Rama",
+        "address": "Jombang"
+      },
+      "transactionDate": "2024-10-27T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "9cf0b51a-b63d-4b91-a773-f8499018a93f",
+          "transactionId": "2dcc4ba8-abd9-4ec3-a403-9ae459709f88",
+          "product": {
+            "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+            "nameProvider": "Telkomsel",
+            "nominal": 20000,
+            "price": 21000
+          }
+        }
+      ]
+    },
+    {
+      "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+      "customerName": "Raka",
+      "destinationNumber": "08123415624",
+      "user": {
+        "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+        "name": "alfedo",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+        "nameMerchant": "Konter Pak Rama",
+        "address": "Jombang"
+      },
+      "transactionDate": "2024-10-27T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "6bf6fbbf-5def-411f-a2bc-e0650ebeadb7",
+          "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+          "product": {
+            "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+            "nameProvider": "XL",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    }
+  ],
+  "level": "info",
+  "msg": "Successfully Get the transactions list",
+  "time": "2024-10-28 12:23:33"
+}
+{
+  "data": {
+    "message": "Transaction list",
+    "data": [
+      {
+        "transactionId": "2dcc4ba8-abd9-4ec3-a403-9ae459709f88",
+        "customerName": "Sarah",
+        "destinationNumber": "0857615428",
+        "user": {
+          "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+          "name": "alfedo",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+          "nameMerchant": "Konter Pak Rama",
+          "address": "Jombang"
+        },
+        "transactionDate": "2024-10-27T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "9cf0b51a-b63d-4b91-a773-f8499018a93f",
+            "transactionId": "2dcc4ba8-abd9-4ec3-a403-9ae459709f88",
+            "product": {
+              "idProduct": "523f72d6-bdf5-4716-b92e-7860bb223794",
+              "nameProvider": "Telkomsel",
+              "nominal": 20000,
+              "price": 21000
+            }
+          }
+        ]
+      },
+      {
+        "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+        "customerName": "Raka",
+        "destinationNumber": "08123415624",
+        "user": {
+          "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+          "name": "alfedo",
+          "role": "employee"
+        },
+        "merchant": {
+          "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+          "nameMerchant": "Konter Pak Rama",
+          "address": "Jombang"
+        },
+        "transactionDate": "2024-10-27T00:00:00Z",
+        "transactionDetail": [
+          {
+            "transactionDetailId": "6bf6fbbf-5def-411f-a2bc-e0650ebeadb7",
+            "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+            "product": {
+              "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+              "nameProvider": "XL",
+              "nominal": 10000,
+              "price": 11000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "level": "info",
+  "msg": "transactions list found",
+  "time": "2024-10-28 12:23:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-28 12:25:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-28 12:25:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-28 12:25:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-28 12:25:46"
+}
+{
+  "data": "pq: invalid input syntax for type uuid: \"c7439cf4-f740-4a83-bdc1-4de02b\"",
+  "level": "error",
+  "msg": "Failed to fetch merchant balance",
+  "time": "2024-10-28 12:25:46"
+}
+{
+  "data": "pq: invalid input syntax for type uuid: \"c7439cf4-f740-4a83-bdc1-4de02b\"",
+  "level": "error",
+  "msg": "failed to create a transaction",
+  "time": "2024-10-28 12:25:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-28 12:29:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-28 12:29:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-28 12:29:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-28 12:29:27"
+}
+{
+  "data": "pq: invalid input syntax for type uuid: \"c7439cf4-f740-4a83-bdc1-4de02b\"",
+  "level": "error",
+  "msg": "Failed to fetch merchant balance",
+  "time": "2024-10-28 12:29:27"
+}
+{
+  "data": "pq: invalid input syntax for type uuid: \"c7439cf4-f740-4a83-bdc1-4de02b\"",
+  "level": "error",
+  "msg": "failed to create a transaction",
+  "time": "2024-10-28 12:29:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the handler layer",
+  "time": "2024-10-28 12:30:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the usecase layer",
+  "time": "2024-10-28 12:30:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new transaction in the repository layer",
+  "time": "2024-10-28 12:30:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting the db transaction create method in the repository layer",
+  "time": "2024-10-28 12:30:14"
+}
+{
+  "data": "pq: value too long for type character varying(15)",
+  "level": "error",
+  "msg": "Failed to insert into transactions table",
+  "time": "2024-10-28 12:30:14"
+}
+{
+  "data": "pq: value too long for type character varying(15)",
+  "level": "error",
+  "msg": "failed to create a transaction",
+  "time": "2024-10-28 12:30:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transaction by id in the handler layer",
+  "time": "2024-10-28 12:30:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get transaction by id in the usecase layer",
+  "time": "2024-10-28 12:30:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive transaction by id in the repository layer",
+  "time": "2024-10-28 12:30:54"
+}
+{
+  "data": {
+    "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+    "customerName": "Raka",
+    "destinationNumber": "08123415624",
+    "user": {
+      "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "name": "alfedo",
+      "role": "employee"
+    },
+    "merchant": {
+      "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+      "nameMerchant": "Konter Pak Rama",
+      "address": "Jombang"
+    },
+    "transactionDate": "2024-10-27T00:00:00Z",
+    "transactionDetail": [
+      {
+        "transactionDetailId": "6bf6fbbf-5def-411f-a2bc-e0650ebeadb7",
+        "product": {
+          "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+          "nameProvider": "XL",
+          "nominal": 10000,
+          "price": 11000
+        }
+      }
+    ]
+  },
+  "level": "info",
+  "msg": "Successfully Get the transaction by given id",
+  "time": "2024-10-28 12:30:54"
+}
+{
+  "data": {
+    "message": "Transaction detail",
+    "data": {
+      "transactionId": "9a02182a-d2ad-4fe0-b863-92d040aef130",
+      "customerName": "Raka",
+      "destinationNumber": "08123415624",
+      "user": {
+        "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+        "name": "alfedo",
+        "role": "employee"
+      },
+      "merchant": {
+        "idMerchant": "c7439cf4-f740-4a83-bdc1-4de02bccf4fd",
+        "nameMerchant": "Konter Pak Rama",
+        "address": "Jombang"
+      },
+      "transactionDate": "2024-10-27T00:00:00Z",
+      "transactionDetail": [
+        {
+          "transactionDetailId": "6bf6fbbf-5def-411f-a2bc-e0650ebeadb7",
+          "product": {
+            "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+            "nameProvider": "XL",
+            "nominal": 10000,
+            "price": 11000
+          }
+        }
+      ]
+    }
+  },
+  "level": "info",
+  "msg": "transaction found",
+  "time": "2024-10-28 12:30:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 12:33:29"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 12:33:29"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 12:33:29"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 12:33:29"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 12:33:29"
+}
+{
+  "data": {
+    "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "name": "alfedo",
+    "password": "$2a$10$YBWWsnGnFPvmGRxUNyuYSOcM/UKrGEmfnI5cfxAjgcKEAT/3Y0AxC",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 12:33:29"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 12:33:29"
+}
+{
+  "data": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 12:33:29"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 12:33:29"
+}
+{
+  "data": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 12:33:29"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 12:33:29"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the handler layer",
+  "time": "2024-10-28 12:35:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the usecase layer",
+  "time": "2024-10-28 12:35:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new merchant in the repository layer",
+  "time": "2024-10-28 12:35:53"
+}
+{
+  "data": {
+    "idMerchant": "39066285-b14d-4f94-b884-b50b783399cc",
+    "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "nameMerchant": "Konter Pak Wawan",
+    "address": "Denpasar",
+    "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+    "balance": 0
+  },
+  "level": "info",
+  "msg": "Merchant has been created successfully: ",
+  "time": "2024-10-28 12:35:53"
+}
+{
+  "data": {
+    "Message": "Merchant Created",
+    "Data": {
+      "idMerchant": "39066285-b14d-4f94-b884-b50b783399cc",
+      "idUser": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+      "nameMerchant": "Konter Pak Wawan",
+      "address": "Denpasar",
+      "idProduct": "c1941877-1424-47a7-ab4e-9c54991f0ae2",
+      "balance": 0
+    }
+  },
+  "level": "info",
+  "msg": "Merchant created successfully",
+  "time": "2024-10-28 12:35:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new topup in the handler layer",
+  "time": "2024-10-28 12:37:15"
+}
+{
+  "data": 25000,
+  "level": "info",
+  "msg": "Start validating if the top-up amount is less than 10,000",
+  "time": "2024-10-28 12:37:15"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting validate if merchant and supliyer exist",
+  "time": "2024-10-28 12:37:15"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to the usecase layer",
+  "time": "2024-10-28 12:37:15"
+}
+{
+  "data": "err: pq: column \"id_supliyer\" of relation \"tx_topup\" does not exist",
+  "level": "error",
+  "msg": "Topup creation failed",
+  "time": "2024-10-28 12:37:15"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new topup in the handler layer",
+  "time": "2024-10-28 12:40:34"
+}
+{
+  "data": 25000,
+  "level": "info",
+  "msg": "Start validating if the top-up amount is less than 10,000",
+  "time": "2024-10-28 12:40:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting validate if merchant and supliyer exist",
+  "time": "2024-10-28 12:40:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to the usecase layer",
+  "time": "2024-10-28 12:40:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to Midtrans",
+  "time": "2024-10-28 12:40:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate status code",
+  "time": "2024-10-28 12:40:34"
+}
+{
+  "data": {
+    "token": "4d0a4b1f-814a-4e33-9d5e-7f3b8b0ac74a",
+    "redirect_url": "https://app.sandbox.midtrans.com/snap/v4/redirection/4d0a4b1f-814a-4e33-9d5e-7f3b8b0ac74a"
+  },
+  "level": "info",
+  "msg": "Request topup successfully",
+  "time": "2024-10-28 12:40:34"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-28 14:10:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-28 14:10:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-28 14:10:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-28 14:10:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-28 14:10:33"
+}
+{
+  "data": {
+    "id_user": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+    "name": "alfedo",
+    "password": "$2a$10$YBWWsnGnFPvmGRxUNyuYSOcM/UKrGEmfnI5cfxAjgcKEAT/3Y0AxC",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-28 14:10:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-28 14:10:33"
+}
+{
+  "data": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-28 14:10:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 14:10:33"
+}
+{
+  "data": "9bca658a-48a6-4a5c-b8f4-4e20901dff16",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-28 14:10:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-28 14:10:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new topup in the handler layer",
+  "time": "2024-10-28 14:11:13"
+}
+{
+  "data": 10000,
+  "level": "info",
+  "msg": "Start validating if the top-up amount is less than 10,000",
+  "time": "2024-10-28 14:11:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting validate if merchant and supliyer exist",
+  "time": "2024-10-28 14:11:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to the usecase layer",
+  "time": "2024-10-28 14:11:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to Midtrans",
+  "time": "2024-10-28 14:11:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate status code",
+  "time": "2024-10-28 14:11:15"
+}
+{
+  "data": {
+    "token": "4ac698c2-4bc9-4cb2-82eb-4ecc2d9b8af5",
+    "redirect_url": "https://app.sandbox.midtrans.com/snap/v4/redirection/4ac698c2-4bc9-4cb2-82eb-4ecc2d9b8af5"
+  },
+  "level": "info",
+  "msg": "Request topup successfully",
+  "time": "2024-10-28 14:11:15"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new topup in the handler layer",
+  "time": "2024-10-28 14:17:01"
+}
+{
+  "data": 15000,
+  "level": "info",
+  "msg": "Start validating if the top-up amount is less than 10,000",
+  "time": "2024-10-28 14:17:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting validate if merchant and supliyer exist",
+  "time": "2024-10-28 14:17:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to the usecase layer",
+  "time": "2024-10-28 14:17:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to Midtrans",
+  "time": "2024-10-28 14:17:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate status code",
+  "time": "2024-10-28 14:17:01"
+}
+{
+  "data": {
+    "token": "b46be08f-714d-42fa-a23d-8c7ea9e03e1f",
+    "redirect_url": "https://app.sandbox.midtrans.com/snap/v4/redirection/b46be08f-714d-42fa-a23d-8c7ea9e03e1f"
+  },
+  "level": "info",
+  "msg": "Request topup successfully",
+  "time": "2024-10-28 14:17:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:17:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:17:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:17:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup status is not settlement",
+  "time": "2024-10-28 14:17:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:19:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:19:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:19:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup status is not settlement",
+  "time": "2024-10-28 14:19:18"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:19:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:19:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:19:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update the topup data",
+  "time": "2024-10-28 14:19:40"
+}
+{
+  "data": "failed to update payment: failed to update balance",
+  "level": "error",
+  "msg": "Error updating topup data: ",
+  "time": "2024-10-28 14:19:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:20:15"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:20:15"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:20:15"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update the topup data",
+  "time": "2024-10-28 14:20:15"
+}
+{
+  "data": "failed to update payment: failed to update balance",
+  "level": "error",
+  "msg": "Error updating topup data: ",
+  "time": "2024-10-28 14:20:15"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new topup in the handler layer",
+  "time": "2024-10-28 14:24:37"
+}
+{
+  "data": 20000,
+  "level": "info",
+  "msg": "Start validating if the top-up amount is less than 10,000",
+  "time": "2024-10-28 14:24:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting validate if merchant and supliyer exist",
+  "time": "2024-10-28 14:24:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to the usecase layer",
+  "time": "2024-10-28 14:24:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to Midtrans",
+  "time": "2024-10-28 14:24:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate status code",
+  "time": "2024-10-28 14:24:38"
+}
+{
+  "data": {
+    "token": "1040a4d0-c701-42b7-ba16-702e45c60754",
+    "redirect_url": "https://app.sandbox.midtrans.com/snap/v4/redirection/1040a4d0-c701-42b7-ba16-702e45c60754"
+  },
+  "level": "info",
+  "msg": "Request topup successfully",
+  "time": "2024-10-28 14:24:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:25:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:25:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:25:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup status is not settlement",
+  "time": "2024-10-28 14:25:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:25:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:25:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:25:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update the topup data",
+  "time": "2024-10-28 14:25:27"
+}
+{
+  "data": "failed to update payment: failed to update balance",
+  "level": "error",
+  "msg": "Error updating topup data: ",
+  "time": "2024-10-28 14:25:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:26:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:26:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:26:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update the topup data",
+  "time": "2024-10-28 14:26:43"
+}
+{
+  "data": "failed to update payment: failed to update balance",
+  "level": "error",
+  "msg": "Error updating topup data: ",
+  "time": "2024-10-28 14:26:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:26:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:26:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:26:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup status is not settlement",
+  "time": "2024-10-28 14:26:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:30:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:30:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:30:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup status is not settlement",
+  "time": "2024-10-28 14:30:08"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new topup in the handler layer",
+  "time": "2024-10-28 14:35:13"
+}
+{
+  "data": 14000,
+  "level": "info",
+  "msg": "Start validating if the top-up amount is less than 10,000",
+  "time": "2024-10-28 14:35:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting validate if merchant and supliyer exist",
+  "time": "2024-10-28 14:35:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to the usecase layer",
+  "time": "2024-10-28 14:35:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to Midtrans",
+  "time": "2024-10-28 14:35:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate status code",
+  "time": "2024-10-28 14:35:14"
+}
+{
+  "data": {
+    "token": "a02896a7-ef4c-4bc7-8cb3-861b85c471b3",
+    "redirect_url": "https://app.sandbox.midtrans.com/snap/v4/redirection/a02896a7-ef4c-4bc7-8cb3-861b85c471b3"
+  },
+  "level": "info",
+  "msg": "Request topup successfully",
+  "time": "2024-10-28 14:35:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:35:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:35:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:35:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup status is not settlement",
+  "time": "2024-10-28 14:35:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:36:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:36:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:36:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update the topup data",
+  "time": "2024-10-28 14:36:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup data updated successfully",
+  "time": "2024-10-28 14:36:11"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:37:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:37:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:37:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup status is not settlement",
+  "time": "2024-10-28 14:37:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new topup in the handler layer",
+  "time": "2024-10-28 14:38:50"
+}
+{
+  "data": 18000,
+  "level": "info",
+  "msg": "Start validating if the top-up amount is less than 10,000",
+  "time": "2024-10-28 14:38:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting validate if merchant and supliyer exist",
+  "time": "2024-10-28 14:38:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to the usecase layer",
+  "time": "2024-10-28 14:38:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to send a payload to Midtrans",
+  "time": "2024-10-28 14:38:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate status code",
+  "time": "2024-10-28 14:38:50"
+}
+{
+  "data": {
+    "token": "62543948-613f-4399-8880-322461772240",
+    "redirect_url": "https://app.sandbox.midtrans.com/snap/v4/redirection/62543948-613f-4399-8880-322461772240"
+  },
+  "level": "info",
+  "msg": "Request topup successfully",
+  "time": "2024-10-28 14:38:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:39:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:39:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:39:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup status is not settlement",
+  "time": "2024-10-28 14:39:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:40:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:40:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:40:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup status is not settlement",
+  "time": "2024-10-28 14:40:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:40:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:40:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:40:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup status is not settlement",
+  "time": "2024-10-28 14:40:43"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:42:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:42:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:42:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update the topup data",
+  "time": "2024-10-28 14:42:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup data updated successfully",
+  "time": "2024-10-28 14:42:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to handle payment callback",
+  "time": "2024-10-28 14:48:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Get the data needed for the update",
+  "time": "2024-10-28 14:48:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Update the status and payment method if status condition = settlement",
+  "time": "2024-10-28 14:48:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Topup status is not settlement",
+  "time": "2024-10-28 14:48:46"
+}

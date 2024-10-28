@@ -37,11 +37,11 @@ func (r *reportRepository) List(userId, startDate, endDate string) ([]custom.Rep
 		GROUP BY p.name_provider
 		ORDER BY 2 DESC;`
 
-	r.log.Info("Starting to retrive all transactions in the repository layer", nil)
+	r.log.Info("Starting to retrive report of all transactions in the repository layer", nil)
 
 	rows, err := r.db.Query(selectQuery, userId, startDate, endDate)
 	if err != nil {
-		r.log.Error("Failed to retrieve the transactions", err)
+		r.log.Error("Failed to retrieve the report of transactions", err)
 		return nil, err
 	}
 	defer rows.Close()
@@ -54,14 +54,14 @@ func (r *reportRepository) List(userId, startDate, endDate string) ([]custom.Rep
 			&report.ProviderName,
 			&report.Count,
 		); err != nil {
-			r.log.Error("Failed to scan transactions", err)
+			r.log.Error("Failed to scan report of transactions", err)
 			return nil, err
 		}
 		reportSlice = append(reportSlice, report)
 	}
 
 	if err := rows.Err(); err != nil {
-		r.log.Error("Failed to scan transactions", err)
+		r.log.Error("Failed to scan report of transactions", err)
 		return nil, err
 	}
 

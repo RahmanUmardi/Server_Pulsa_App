@@ -82,7 +82,8 @@ func (h *TransactionHandler) createHandler(ctx *gin.Context) {
 func (h *TransactionHandler) listHandler(ctx *gin.Context) {
 	h.log.Info("Starting to get transactions list in the handler layer", nil)
 
-	transactions, err := h.usecase.GetAll()
+	userId, _ := ctx.Get("employee")
+	transactions, err := h.usecase.GetAll(userId.(string))
 	if err != nil {
 		h.log.Error("failed to retrieve a transactions", err)
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "failed to retrieve transactions " + err.Error()})

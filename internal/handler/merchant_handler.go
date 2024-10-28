@@ -153,7 +153,7 @@ func (m *MerchantHandler) getHandler(ctx *gin.Context) {
 			Message string
 			Data    entity.Merchant
 		}{
-			Message: "Merchant of Id " + id + " Not Found",
+			Message: err.Error(),
 			Data:    entity.Merchant{},
 		}
 
@@ -266,10 +266,8 @@ func (m *MerchantHandler) deleteHandler(ctx *gin.Context) {
 	}
 	response := struct {
 		Message string
-		Data    entity.Merchant
 	}{
 		Message: "Merchant of Id " + id + " Deleted",
-		Data:    entity.Merchant{},
 	}
 
 	m.log.Info("Merchant deleted successfully", response)
