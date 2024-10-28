@@ -2,6 +2,7 @@ package repository
 
 import (
 	"database/sql"
+	"errors"
 	"server-pulsa-app/internal/entity"
 	"server-pulsa-app/internal/logger"
 )
@@ -21,6 +22,13 @@ type productRepository struct {
 
 func (p *productRepository) Create(product entity.Product) (entity.Product, error) {
 	p.log.Info("Starting to create a new product in the repository layer", nil)
+
+	// Menambahkan pemeriksaan untuk memastikan price lebih dari nominal
+	if product.Price < product.Nominal {
+		err := errors.New("price must be greater than nominal")
+		p.log.Error("Failed to create the product: ", err)
+		return entity.Product{}, err
+	}
 
 	err := p.db.QueryRow("INSERT INTO mst_product (name_provider, nominal, price, id_supliyer) VALUES ($1, $2, $3, $4) RETURNING id_product", product.NameProvider, product.Nominal, product.Price, product.IdSupliyer).Scan(&product.IdProduct)
 	if err != nil {
@@ -79,6 +87,14 @@ func (p *productRepository) List() ([]entity.Product, error) {
 
 func (p *productRepository) Update(product entity.Product) (entity.Product, error) {
 	p.log.Info("Starting to update product in the repository layer", nil)
+
+	// Menambahkan pemeriksaan untuk memastikan price lebih dari nominal
+	if product.Price < product.Nominal {
+		err := errors.New("price must be greater than nominal")
+		p.log.Error("Failed to update the product: ", err)
+		return entity.Product{}, err
+	}
+
 	// Menggunakan id yang diberikan untuk mengupdate product
 	_, err := p.db.Exec("UPDATE mst_product SET name_provider = $1, nominal = $2, price = $3, id_supliyer = $4 WHERE id_product = $5", product.NameProvider, product.Nominal, product.Price, product.IdSupliyer, product.IdProduct)
 	if err != nil {

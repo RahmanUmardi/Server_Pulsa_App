@@ -89,7 +89,7 @@ func (u *userRepository) GetUserByID(id string) (entity.User, error) {
 func (u *userRepository) UpdateUser(user entity.User) (entity.User, error) {
 	u.log.Info("Starting to update user in the repository layer", nil)
 
-	_, err := u.db.Exec(`UPDATE mst_user SET username = $1, password = $2, role = $3 WHERE id_user = $4`, user.Username, user.Password, user.Role, user.Id_user)
+	_, err := u.db.Exec(`UPDATE mst_user SET username = $2, password = $3, role = $4 WHERE id_user = $1`, user.Id_user, user.Username, user.Password, user.Role)
 
 	if err != nil {
 		u.log.Error("Failed to update the user: ", err)

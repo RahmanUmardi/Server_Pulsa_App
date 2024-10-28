@@ -104,7 +104,7 @@ func (u *userUsecase) UpdateUser(user entity.User) (entity.User, error) {
 		user.Password = oldUser.Password
 	}
 
-	user.Role = "employee"
+	// user.Role = "employee"
 	updatedUser, err := u.UserRepository.UpdateUser(user)
 	if err != nil {
 		u.log.Error("Failed to update user: ", err)
