@@ -36,34 +36,26 @@ type Config struct {
 	TokenConfig
 }
 
-func getEnv(key, defaultValue string) string {
-	value := os.Getenv(key)
-	if value == "" {
-		return defaultValue
-	}
-	return value
-}
-
 func (c *Config) readConfig() error {
 	err := godotenv.Load()
 	if err != nil {
 		return fmt.Errorf("missing env file %v", err.Error())
 	}
 	c.DBConfig = DBConfig{
-		Host:     getEnv("DB_HOST", "167.172.91.111"),
-		Port:     getEnv("DB_PORT", "5432"),
-		User:     getEnv("DB_USER", "postgres"),
-		Password: getEnv("DB_PASSWORD", "rahasia"),
-		Name:     getEnv("DB_NAME", "server_pulsa_db"),
-		Driver:   getEnv("DB_DRIVER", "postgres"),
+		Host:     os.Getenv("DB_HOST"),
+		Port:     os.Getenv("DB_PORT"),
+		User:     os.Getenv("DB_USER"),
+		Password: os.Getenv("DB_PASSWORD"),
+		Name:     os.Getenv("DB_NAME"),
+		Driver:   os.Getenv("DB_DRIVER"),
 	}
 
-	c.ApiConfig = ApiConfig{ApiPort: getEnv("API_PORT", "8080")}
+	c.ApiConfig = ApiConfig{ApiPort: os.Getenv("API_PORT")}
 
-	tokenExpire, _ := strconv.Atoi(getEnv("TOKEN_EXPIRE", "120"))
+	tokenExpire, _ := strconv.Atoi(os.Getenv("TOKEN_EXPIRE"))
 	c.TokenConfig = TokenConfig{
-		IssuerName:       getEnv("TOKEN_ISSUE", "Enigma Camp Incubation Class"),
-		JwtSignatureKy:   []byte(getEnv("TOKEN_SECRET", "Golang Incubation Class")),
+		IssuerName:       os.Getenv("TOKEN_ISSUE"),
+		JwtSignatureKy:   []byte(os.Getenv("TOKEN_SECRET")),
 		JwtSigningMethod: jwt.SigningMethodHS256,
 		JwtExpiresTime:   time.Duration(tokenExpire) * time.Minute,
 	}
