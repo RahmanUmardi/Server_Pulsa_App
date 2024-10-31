@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"server-pulsa-app/internal/entity"
 	"server-pulsa-app/internal/logger"
+	"strings"
 )
 
 type UserRepository interface {
@@ -11,7 +12,7 @@ type UserRepository interface {
 	ListUser() ([]entity.User, error)
 	GetUserByID(id string) (entity.User, error)
 	GetUserByUsername(username string) (entity.User, error)
-	UpdateUser(payload entity.User) (entity.User, error)
+	UpdateUser(user, payload entity.User) (entity.User, error)
 	DeleteUser(id string) error
 }
 
@@ -86,8 +87,18 @@ func (u *userRepository) GetUserByID(id string) (entity.User, error) {
 	return user, nil
 
 }
-func (u *userRepository) UpdateUser(user entity.User) (entity.User, error) {
+func (u *userRepository) UpdateUser(user, payload entity.User) (entity.User, error) {
 	u.log.Info("Starting to update user in the repository layer", nil)
+
+	if strings.TrimSpace(payload.Username) != "" {
+		user.Username = payload.Username
+	}
+	if strings.TrimSpace(payload.Password) != "" {
+		user.Password = payload.Password
+	}
+	if strings.TrimSpace(payload.Role) != "" {
+		user.Role = payload.Role
+	}
 
 	_, err := u.db.Exec(`UPDATE mst_user SET username = $2, password = $3, role = $4 WHERE id_user = $1`, user.Id_user, user.Username, user.Password, user.Role)
 

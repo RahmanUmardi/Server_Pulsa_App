@@ -5,6 +5,7 @@ import (
 	"server-pulsa-app/internal/entity"
 	"server-pulsa-app/internal/logger"
 	"server-pulsa-app/internal/repository"
+	"strings"
 
 	"github.com/sirupsen/logrus"
 	"golang.org/x/crypto/bcrypt"
@@ -27,6 +28,11 @@ type userUsecase struct {
 
 func (u *userUsecase) RegisterUser(user entity.User) (entity.User, error) {
 	u.log.Info("Starting to create a new user in the usecase layer", nil)
+
+	if strings.TrimSpace(user.Username) == "" || strings.TrimSpace(user.Password) == "" {
+		u.log.Error("Username, password and role can't be empty", nil)
+		return entity.User{}, fmt.Errorf("username, password and role can't be empty")
+	}
 
 	existUser, _ := u.UserRepository.GetUserByUsername(user.Username)
 	u.log.Info("Starting to validate a new user", nil)
@@ -88,7 +94,7 @@ func (u *userUsecase) FindUserByUsernamePassword(username, password string) (ent
 func (u *userUsecase) UpdateUser(user entity.User) (entity.User, error) {
 	u.log.Info("Starting to update a user in the usecase layer", nil)
 
-	_, err := u.UserRepository.GetUserByID(user.Id_user)
+	payload, err := u.UserRepository.GetUserByID(user.Id_user)
 	if err != nil {
 		u.log.Error("User ID %s not found: %v", user.Id_user)
 		return entity.User{}, fmt.Errorf("user ID %s not found", user.Id_user)
@@ -101,7 +107,7 @@ func (u *userUsecase) UpdateUser(user entity.User) (entity.User, error) {
 	}
 	user.Password = string(hash)
 
-	updatedUser, err := u.UserRepository.UpdateUser(user)
+	updatedUser, err := u.UserRepository.UpdateUser(payload, user)
 	if err != nil {
 		u.log.Error("Failed to update user: ", err)
 		return entity.User{}, fmt.Errorf("failed to update user: %v", err)

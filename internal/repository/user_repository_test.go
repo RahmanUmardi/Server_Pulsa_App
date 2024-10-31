@@ -159,7 +159,7 @@ func (u *userRepositoryTestSuite) TestUpdate_fail() {
 
 	u.mockSql.ExpectQuery(regexp.QuoteMeta("UPDATE mst_merchant SET username = $1, password = $2, role = $3 WHERE id_user = $4")).WillReturnError(sql.ErrNoRows)
 
-	_, err := u.ur.UpdateUser(user)
+	_, err := u.ur.UpdateUser(user, expectedUser)
 
 	u.NotNil(err)
 }
