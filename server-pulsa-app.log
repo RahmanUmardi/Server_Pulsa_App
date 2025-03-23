@@ -15340,3 +15340,2294 @@ time="2024-10-25T11:13:17+07:00" level=info msg="Getting user by username was su
   "msg": "User ID %s has been updated successfully: ",
   "time": "2024-10-28 21:33:38"
 }
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-31 16:06:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-31 16:06:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-31 16:06:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-31 16:06:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 16:06:39"
+}
+{
+  "data": {
+    "id_user": "968eb361-674d-4a5e-878b-76aa4ee8f30b",
+    "name": "rahman",
+    "password": "$2a$10$FQXapLgzaoBucrJyXgk.puex8OsX0xEjRMUA1YxuRIPe5vZPnTOte",
+    "role": ""
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-31 16:06:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-31 16:06:39"
+}
+{
+  "data": "rahman",
+  "level": "error",
+  "msg": "Username already exist",
+  "time": "2024-10-31 16:06:39"
+}
+{
+  "data": "username already exist",
+  "level": "error",
+  "msg": "Failed to register user: ",
+  "time": "2024-10-31 16:06:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to set default role for new user",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": {
+    "id_user": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+    "name": "putri",
+    "password": "$2a$10$m5hZNEaGPrO4xiZN/k.iuus9kXsv5JSlqxGGQ6n9SQhpfb5m4lsnW",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been registered successfully",
+  "time": "2024-10-31 16:07:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-31 16:08:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-31 16:08:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-31 16:08:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-31 16:08:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 16:08:48"
+}
+{
+  "data": {
+    "id_user": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+    "name": "putri",
+    "password": "$2a$10$m5hZNEaGPrO4xiZN/k.iuus9kXsv5JSlqxGGQ6n9SQhpfb5m4lsnW",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-31 16:08:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-31 16:08:48"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-31 16:08:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 16:08:48"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-31 16:08:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 16:08:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-31 16:09:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get user by id in the handler layer",
+  "time": "2024-10-31 16:15:24"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve a user by id in the usecase layer",
+  "time": "2024-10-31 16:15:24"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 16:15:24"
+}
+{
+  "data": {
+    "id_user": "6e3fc91e-8172-4992-987d-694f11240fc2",
+    "name": "naa",
+    "password": "$2a$10$ltfkdzQ82UwXOi7WMy7evuVJmZqKPKfGYdE02yIUd7GazIolbaL2u",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 16:15:24"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 16:17:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 16:17:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 16:17:06"
+}
+{
+  "data": {
+    "id_user": "a1e3c0c1-f7e6-4a77-9c19-fa43b693c5b5",
+    "name": "rafi",
+    "password": "$2a$10$vgQ8k8JBajOZocwzMcPvm.VefsaySYHCg/NAt5IViTd.ZsNVTDu62",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 16:17:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 16:17:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 16:17:06"
+}
+{
+  "data": {
+    "id_user": "a1e3c0c1-f7e6-4a77-9c19-fa43b693c5b5",
+    "name": "",
+    "password": "$2a$10$otYCK3edUfURxAlPrALwPO0Z6K5joZgMZYCB/CbpGA0dtsmhgHKi6",
+    "role": ""
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 16:17:06"
+}
+{
+  "data": "a1e3c0c1-f7e6-4a77-9c19-fa43b693c5b5",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 16:17:06"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the handler layer",
+  "time": "2024-10-31 16:17:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete a user in the usecase layer",
+  "time": "2024-10-31 16:17:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 16:17:33"
+}
+{
+  "data": {
+    "id_user": "a1e3c0c1-f7e6-4a77-9c19-fa43b693c5b5",
+    "name": "",
+    "password": "$2a$10$otYCK3edUfURxAlPrALwPO0Z6K5joZgMZYCB/CbpGA0dtsmhgHKi6",
+    "role": ""
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 16:17:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the repository layer",
+  "time": "2024-10-31 16:17:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been deleted successfully",
+  "time": "2024-10-31 16:17:33"
+}
+{
+  "data": "a1e3c0c1-f7e6-4a77-9c19-fa43b693c5b5",
+  "level": "info",
+  "msg": "User ID %s has been deleted successfully: ",
+  "time": "2024-10-31 16:17:33"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the handler layer",
+  "time": "2024-10-31 16:17:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete a user in the usecase layer",
+  "time": "2024-10-31 16:17:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 16:17:36"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-31 16:17:36"
+}
+{
+  "data": "a1e3c0c1-f7e6-4a77-9c19-fa43b693c5b5",
+  "level": "error",
+  "msg": "User ID %s not found: %v",
+  "time": "2024-10-31 16:17:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-31 16:17:53"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-31 16:27:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-31 16:27:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-31 16:27:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-31 16:27:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 16:27:58"
+}
+{
+  "data": {
+    "id_user": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+    "name": "putri",
+    "password": "$2a$10$m5hZNEaGPrO4xiZN/k.iuus9kXsv5JSlqxGGQ6n9SQhpfb5m4lsnW",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-31 16:27:58"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-31 16:27:58"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-31 16:27:59"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 16:27:59"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-31 16:27:59"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 16:27:59"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-31 16:28:56"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 16:29:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 16:29:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 16:29:36"
+}
+{
+  "data": {
+    "id_user": "1cd56763-8b48-4aa9-b5d7-ba6ab2c0968a",
+    "name": "alung",
+    "password": "$2a$10$oU0ZlUcGOUmXy8amC5TlXOq9ZWxqMaMgSP11aGmJyx6BVC1aPbF9m",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 16:29:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 16:29:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 16:29:36"
+}
+{
+  "data": {
+    "id_user": "1cd56763-8b48-4aa9-b5d7-ba6ab2c0968a",
+    "name": "",
+    "password": "$2a$10$iFATJHqilcVzftqpAgFrc.W7VvgBzeHMRRaFb4AyFgxoz1dz.JGbe",
+    "role": ""
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 16:29:36"
+}
+{
+  "data": "1cd56763-8b48-4aa9-b5d7-ba6ab2c0968a",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 16:29:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-31 16:29:54"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the handler layer",
+  "time": "2024-10-31 16:31:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete a user in the usecase layer",
+  "time": "2024-10-31 16:31:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 16:31:35"
+}
+{
+  "data": {
+    "id_user": "1cd56763-8b48-4aa9-b5d7-ba6ab2c0968a",
+    "name": "",
+    "password": "$2a$10$iFATJHqilcVzftqpAgFrc.W7VvgBzeHMRRaFb4AyFgxoz1dz.JGbe",
+    "role": ""
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 16:31:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the repository layer",
+  "time": "2024-10-31 16:31:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been deleted successfully",
+  "time": "2024-10-31 16:31:35"
+}
+{
+  "data": "1cd56763-8b48-4aa9-b5d7-ba6ab2c0968a",
+  "level": "info",
+  "msg": "User ID %s has been deleted successfully: ",
+  "time": "2024-10-31 16:31:35"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the handler layer",
+  "time": "2024-10-31 16:31:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete a user in the usecase layer",
+  "time": "2024-10-31 16:31:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 16:31:39"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-31 16:31:39"
+}
+{
+  "data": "1cd56763-8b48-4aa9-b5d7-ba6ab2c0968a",
+  "level": "error",
+  "msg": "User ID %s not found: %v",
+  "time": "2024-10-31 16:31:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get user by id in the handler layer",
+  "time": "2024-10-31 16:31:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve a user by id in the usecase layer",
+  "time": "2024-10-31 16:31:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 16:31:50"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-31 16:31:50"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-31 16:34:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-31 16:34:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-31 16:34:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-31 16:34:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 16:34:01"
+}
+{
+  "data": {
+    "id_user": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+    "name": "putri",
+    "password": "$2a$10$m5hZNEaGPrO4xiZN/k.iuus9kXsv5JSlqxGGQ6n9SQhpfb5m4lsnW",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-31 16:34:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-31 16:34:01"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-31 16:34:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 16:34:01"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-31 16:34:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 16:34:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-31 16:34:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 16:35:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 16:35:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 16:35:20"
+}
+{
+  "data": {
+    "id_user": "aae51596-9875-4951-a8de-ece67a816610",
+    "name": "boy",
+    "password": "$2a$10$WQbvW1l0BwT.Ao/rc.s/3uBrXlxt5jXe7z.9/zah66c8GP.K8B3o6",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 16:35:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 16:35:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 16:35:20"
+}
+{
+  "data": {
+    "id_user": "aae51596-9875-4951-a8de-ece67a816610",
+    "name": "",
+    "password": "",
+    "role": ""
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 16:35:20"
+}
+{
+  "data": "aae51596-9875-4951-a8de-ece67a816610",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 16:35:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-31 20:14:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-31 20:14:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-31 20:14:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-31 20:14:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 20:14:39"
+}
+{
+  "data": {
+    "id_user": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+    "name": "putri",
+    "password": "$2a$10$m5hZNEaGPrO4xiZN/k.iuus9kXsv5JSlqxGGQ6n9SQhpfb5m4lsnW",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-31 20:14:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-31 20:14:40"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-31 20:14:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 20:14:40"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-31 20:14:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 20:14:40"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-31 20:15:22"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 20:16:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 20:16:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 20:16:04"
+}
+{
+  "data": {
+    "id_user": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+    "name": "aji",
+    "password": "$2a$10$CXb9F7IozvVg5Q6J7R87auALQfFaDOKZBtDLOHhblCa4PXpRBLom6",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 20:16:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 20:16:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 20:16:04"
+}
+{
+  "data": {
+    "id_user": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+    "name": "aji",
+    "password": "$2a$10$QvBk0wephrN6Jt4oZJBvju1ONXdpsWp8vB2Qtj/ls07HE7i/JjMae",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 20:16:04"
+}
+{
+  "data": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 20:16:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 20:16:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 20:16:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 20:16:28"
+}
+{
+  "data": {
+    "id_user": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+    "name": "aji",
+    "password": "$2a$10$QvBk0wephrN6Jt4oZJBvju1ONXdpsWp8vB2Qtj/ls07HE7i/JjMae",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 20:16:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 20:16:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 20:16:28"
+}
+{
+  "data": {
+    "id_user": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+    "name": "ajilaw",
+    "password": "$2a$10$TpIVBPbu.UVeygGzN/DrmueklbbbA4M.bO45GKoIxDJg3a6NGgoHK",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 20:16:28"
+}
+{
+  "data": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 20:16:28"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-31 20:28:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-31 20:28:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-31 20:28:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-31 20:28:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 20:28:37"
+}
+{
+  "data": {
+    "id_user": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+    "name": "putri",
+    "password": "$2a$10$m5hZNEaGPrO4xiZN/k.iuus9kXsv5JSlqxGGQ6n9SQhpfb5m4lsnW",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-31 20:28:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-31 20:28:37"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-31 20:28:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 20:28:37"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-31 20:28:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 20:28:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-31 20:29:21"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 20:30:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 20:30:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 20:30:02"
+}
+{
+  "data": {
+    "id_user": "6e3fc91e-8172-4992-987d-694f11240fc2",
+    "name": "naa",
+    "password": "$2a$10$ltfkdzQ82UwXOi7WMy7evuVJmZqKPKfGYdE02yIUd7GazIolbaL2u",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 20:30:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 20:30:02"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 20:30:02"
+}
+{
+  "data": {
+    "id_user": "6e3fc91e-8172-4992-987d-694f11240fc2",
+    "name": "naa",
+    "password": "$2a$10$ltfkdzQ82UwXOi7WMy7evuVJmZqKPKfGYdE02yIUd7GazIolbaL2u",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 20:30:03"
+}
+{
+  "data": "6e3fc91e-8172-4992-987d-694f11240fc2",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 20:30:03"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 20:30:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 20:30:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 20:30:27"
+}
+{
+  "data": {
+    "id_user": "6e3fc91e-8172-4992-987d-694f11240fc2",
+    "name": "naa",
+    "password": "$2a$10$ltfkdzQ82UwXOi7WMy7evuVJmZqKPKfGYdE02yIUd7GazIolbaL2u",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 20:30:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 20:30:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 20:30:27"
+}
+{
+  "data": {
+    "id_user": "6e3fc91e-8172-4992-987d-694f11240fc2",
+    "name": "naa",
+    "password": "$2a$10$ltfkdzQ82UwXOi7WMy7evuVJmZqKPKfGYdE02yIUd7GazIolbaL2u",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 20:30:27"
+}
+{
+  "data": "6e3fc91e-8172-4992-987d-694f11240fc2",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 20:30:27"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 20:30:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 20:30:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 20:30:46"
+}
+{
+  "data": {
+    "id_user": "6e3fc91e-8172-4992-987d-694f11240fc2",
+    "name": "naa",
+    "password": "$2a$10$ltfkdzQ82UwXOi7WMy7evuVJmZqKPKfGYdE02yIUd7GazIolbaL2u",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 20:30:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 20:30:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 20:30:46"
+}
+{
+  "data": {
+    "id_user": "6e3fc91e-8172-4992-987d-694f11240fc2",
+    "name": "naa",
+    "password": "$2a$10$ltfkdzQ82UwXOi7WMy7evuVJmZqKPKfGYdE02yIUd7GazIolbaL2u",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 20:30:46"
+}
+{
+  "data": "6e3fc91e-8172-4992-987d-694f11240fc2",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 20:30:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-31 20:33:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-31 20:33:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-31 20:33:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-31 20:33:37"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 20:33:37"
+}
+{
+  "data": {
+    "id_user": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+    "name": "putri",
+    "password": "$2a$10$m5hZNEaGPrO4xiZN/k.iuus9kXsv5JSlqxGGQ6n9SQhpfb5m4lsnW",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-31 20:33:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-31 20:33:38"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-31 20:33:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 20:33:38"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-31 20:33:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 20:33:38"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-31 20:34:13"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 20:34:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 20:34:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 20:34:48"
+}
+{
+  "data": {
+    "id_user": "6e3fc91e-8172-4992-987d-694f11240fc2",
+    "name": "naa",
+    "password": "$2a$10$ltfkdzQ82UwXOi7WMy7evuVJmZqKPKfGYdE02yIUd7GazIolbaL2u",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 20:34:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 20:34:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 20:34:48"
+}
+{
+  "data": {
+    "id_user": "6e3fc91e-8172-4992-987d-694f11240fc2",
+    "name": "naa",
+    "password": "$2a$10$qbHmUj1M0m3Y9Swck9WstuIIH8YSJpM8NM10R0wIiCcBmOrpbt5bW",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 20:34:48"
+}
+{
+  "data": "6e3fc91e-8172-4992-987d-694f11240fc2",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 20:34:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 20:35:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 20:35:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 20:35:01"
+}
+{
+  "data": {
+    "id_user": "6e3fc91e-8172-4992-987d-694f11240fc2",
+    "name": "naa",
+    "password": "$2a$10$qbHmUj1M0m3Y9Swck9WstuIIH8YSJpM8NM10R0wIiCcBmOrpbt5bW",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 20:35:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 20:35:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 20:35:01"
+}
+{
+  "data": {
+    "id_user": "6e3fc91e-8172-4992-987d-694f11240fc2",
+    "name": "nani",
+    "password": "$2a$10$xpoIBTGXIi5qOQ1yWadSS.VxBedhP0hxCvEkrDjn10e6LuqQwuxoO",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 20:35:01"
+}
+{
+  "data": "6e3fc91e-8172-4992-987d-694f11240fc2",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 20:35:01"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-31 20:44:09"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-31 20:44:09"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-31 20:44:09"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-31 20:44:09"
+}
+{
+  "data": null,
+  "level": "error",
+  "msg": "Username, password and role can't be empty",
+  "time": "2024-10-31 20:44:09"
+}
+{
+  "data": "username, password and role can't be empty",
+  "level": "error",
+  "msg": "Failed to register user: ",
+  "time": "2024-10-31 20:44:09"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-31 20:45:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-31 20:45:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-31 20:45:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-31 20:45:36"
+}
+{
+  "data": null,
+  "level": "error",
+  "msg": "Username, password and role can't be empty",
+  "time": "2024-10-31 20:45:36"
+}
+{
+  "data": "username, password and role can't be empty",
+  "level": "error",
+  "msg": "Failed to register user: ",
+  "time": "2024-10-31 20:45:36"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-31 20:51:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-31 20:51:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-31 20:51:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-31 20:51:39"
+}
+{
+  "data": null,
+  "level": "error",
+  "msg": "Username, password and role can't be empty",
+  "time": "2024-10-31 20:51:39"
+}
+{
+  "data": "username, password and role can't be empty",
+  "level": "error",
+  "msg": "Failed to register user: ",
+  "time": "2024-10-31 20:51:39"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to set default role for new user",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": {
+    "id_user": "682cf9e4-9c3e-4591-8452-54543f274ef9",
+    "name": "nur",
+    "password": "$2a$10$6trl7AvAvHbDw1n7PiszCOw8/PeGzdZlvibd0mInUOlmRSP43o6Ui",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been registered successfully",
+  "time": "2024-10-31 20:51:48"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-31 20:56:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-31 20:56:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-31 20:56:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-31 20:56:14"
+}
+{
+  "data": null,
+  "level": "error",
+  "msg": "Username, password and role can't be empty",
+  "time": "2024-10-31 20:56:14"
+}
+{
+  "data": "username, password and role can't be empty",
+  "level": "error",
+  "msg": "Failed to register user: ",
+  "time": "2024-10-31 20:56:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to set default role for new user",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": {
+    "id_user": "e7bbcb28-5405-4fdc-8487-86e6554d723e",
+    "name": "asep",
+    "password": "$2a$10$71hJlFLUWvsDt8TvlwW4.OL04wiE1JhxdnWPqRrliyAB0onuYutTS",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been registered successfully",
+  "time": "2024-10-31 20:56:26"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-31 20:56:32"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-31 20:56:32"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-31 20:56:32"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-31 20:56:32"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 20:56:32"
+}
+{
+  "data": {
+    "id_user": "e7bbcb28-5405-4fdc-8487-86e6554d723e",
+    "name": "asep",
+    "password": "$2a$10$71hJlFLUWvsDt8TvlwW4.OL04wiE1JhxdnWPqRrliyAB0onuYutTS",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-31 20:56:32"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-31 20:56:32"
+}
+{
+  "data": "asep",
+  "level": "error",
+  "msg": "Username already exist",
+  "time": "2024-10-31 20:56:32"
+}
+{
+  "data": "username already exist",
+  "level": "error",
+  "msg": "Failed to register user: ",
+  "time": "2024-10-31 20:56:32"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-31 20:58:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-31 20:58:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-31 20:58:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-31 20:58:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 20:58:46"
+}
+{
+  "data": {
+    "id_user": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+    "name": "putri",
+    "password": "$2a$10$m5hZNEaGPrO4xiZN/k.iuus9kXsv5JSlqxGGQ6n9SQhpfb5m4lsnW",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-31 20:58:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-31 20:58:46"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-31 20:58:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 20:58:46"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-31 20:58:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 20:58:46"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-31 20:59:41"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-31 21:17:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-31 21:17:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-31 21:17:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-31 21:17:42"
+}
+{
+  "data": null,
+  "level": "error",
+  "msg": "Username, password and role can't be empty",
+  "time": "2024-10-31 21:17:42"
+}
+{
+  "data": "username, password and role can't be empty",
+  "level": "error",
+  "msg": "Failed to register user: ",
+  "time": "2024-10-31 21:17:42"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the handler layer",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register new user",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to register a new user in the use case layer",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the usecase layer",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate a new user",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to set default role for new user",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to create a new user in the repository layer",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": {
+    "id_user": "457cf843-6953-4d34-86e5-47befcc7637f",
+    "name": "raul",
+    "password": "$2a$10$HJxApFW1GKRtsPf1keY/t.5dhbz8NhmmEBxlrKhY.D42LmiRBx/16",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been created successfully",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been registered successfully",
+  "time": "2024-10-31 21:17:57"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to login a user in the handler layer",
+  "time": "2024-10-31 21:18:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting login",
+  "time": "2024-10-31 21:18:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate user in the use case layer",
+  "time": "2024-10-31 21:18:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to authenticate a user in the usecase layer",
+  "time": "2024-10-31 21:18:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by username in the repository layer",
+  "time": "2024-10-31 21:18:19"
+}
+{
+  "data": {
+    "id_user": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+    "name": "putri",
+    "password": "$2a$10$m5hZNEaGPrO4xiZN/k.iuus9kXsv5JSlqxGGQ6n9SQhpfb5m4lsnW",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by username was successfully",
+  "time": "2024-10-31 21:18:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to validate password",
+  "time": "2024-10-31 21:18:19"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully: ",
+  "time": "2024-10-31 21:18:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 21:18:19"
+}
+{
+  "data": "fe69e309-6850-4480-b3f8-05916d47ddf5",
+  "level": "info",
+  "msg": "User ID %s has been authenticated successfully",
+  "time": "2024-10-31 21:18:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been authenticated successfully",
+  "time": "2024-10-31 21:18:19"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get all user in the handler layer",
+  "time": "2024-10-31 21:18:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get user by id in the handler layer",
+  "time": "2024-10-31 21:19:07"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve a user by id in the usecase layer",
+  "time": "2024-10-31 21:19:07"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 21:19:07"
+}
+{
+  "data": {
+    "id_user": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+    "name": "ajilaw",
+    "password": "$2a$10$TpIVBPbu.UVeygGzN/DrmueklbbbA4M.bO45GKoIxDJg3a6NGgoHK",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 21:19:07"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to get user by id in the handler layer",
+  "time": "2024-10-31 21:19:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrieve a user by id in the usecase layer",
+  "time": "2024-10-31 21:19:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 21:19:14"
+}
+{
+  "data": "pq: invalid input syntax for type uuid: \"6c3761a8-5832-495b-a410-1e27d2c768\"",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-31 21:19:14"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 21:19:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 21:19:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 21:19:44"
+}
+{
+  "data": {
+    "id_user": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+    "name": "ajilaw",
+    "password": "$2a$10$TpIVBPbu.UVeygGzN/DrmueklbbbA4M.bO45GKoIxDJg3a6NGgoHK",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 21:19:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 21:19:44"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 21:19:44"
+}
+{
+  "data": {
+    "id_user": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+    "name": "ajilaw",
+    "password": "$2a$10$3fzFbuWxoN6lZo743k3qrO7sabyoa3di8h5ZD3WiIJcgqGIkaiC9u",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 21:19:45"
+}
+{
+  "data": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 21:19:45"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the handler layer",
+  "time": "2024-10-31 21:20:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update a user in the usecase layer",
+  "time": "2024-10-31 21:20:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 21:20:04"
+}
+{
+  "data": {
+    "id_user": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+    "name": "ajilaw",
+    "password": "$2a$10$3fzFbuWxoN6lZo743k3qrO7sabyoa3di8h5ZD3WiIJcgqGIkaiC9u",
+    "role": "employee"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 21:20:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to hash the password",
+  "time": "2024-10-31 21:20:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to update user in the repository layer",
+  "time": "2024-10-31 21:20:04"
+}
+{
+  "data": {
+    "id_user": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+    "name": "dadi",
+    "password": "$2a$10$1Nma.Ea8ZfT.8AKWLdYmVe02hG4mzMHZEAThUhhYCBnrhPj3b46cK",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "User has been updated successfully",
+  "time": "2024-10-31 21:20:04"
+}
+{
+  "data": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+  "level": "info",
+  "msg": "User ID %s has been updated successfully: ",
+  "time": "2024-10-31 21:20:04"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the handler layer",
+  "time": "2024-10-31 21:20:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete a user in the usecase layer",
+  "time": "2024-10-31 21:20:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 21:20:17"
+}
+{
+  "data": {
+    "id_user": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+    "name": "dadi",
+    "password": "$2a$10$1Nma.Ea8ZfT.8AKWLdYmVe02hG4mzMHZEAThUhhYCBnrhPj3b46cK",
+    "role": "admin"
+  },
+  "level": "info",
+  "msg": "Getting user by id was successfully",
+  "time": "2024-10-31 21:20:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the repository layer",
+  "time": "2024-10-31 21:20:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "User has been deleted successfully",
+  "time": "2024-10-31 21:20:17"
+}
+{
+  "data": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+  "level": "info",
+  "msg": "User ID %s has been deleted successfully: ",
+  "time": "2024-10-31 21:20:17"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete user in the handler layer",
+  "time": "2024-10-31 21:20:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to delete a user in the usecase layer",
+  "time": "2024-10-31 21:20:20"
+}
+{
+  "data": null,
+  "level": "info",
+  "msg": "Starting to retrive a user by id in the repository layer",
+  "time": "2024-10-31 21:20:20"
+}
+{
+  "data": "sql: no rows in result set",
+  "level": "error",
+  "msg": "Failed to retrive the user: ",
+  "time": "2024-10-31 21:20:20"
+}
+{
+  "data": "6c3761a8-5832-495b-a410-1e9f27d2c768",
+  "level": "error",
+  "msg": "User ID %s not found: %v",
+  "time": "2024-10-31 21:20:20"
+}
